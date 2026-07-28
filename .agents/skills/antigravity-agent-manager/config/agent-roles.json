@@ -1,0 +1,34 @@
+{
+  "roles": {
+    "orchestrator": {
+      "name": "Orchestrator",
+      "description": "Master planning, task decomposition, milestone tracking, and subagent dispatch.",
+      "permissions": ["read_all", "write_orchestrator", "dispatch_subagents"],
+      "primaryArtifacts": ["plan.md", "progress.md", "context.md"]
+    },
+    "explorer": {
+      "name": "Explorer / Analyst",
+      "description": "Codebase inspection, dependency analysis, standard discovery, and specification drafting.",
+      "permissions": ["read_all", "write_own_workspace"],
+      "primaryArtifacts": ["analysis.md", "handoff.md"]
+    },
+    "worker": {
+      "name": "Implementer / Specialist",
+      "description": "Code and configuration implementation, test execution, linting, and skill creation.",
+      "permissions": ["read_all", "write_own_workspace", "write_target_files"],
+      "primaryArtifacts": ["BRIEFING.md", "changes.md", "progress.md", "handoff.md"]
+    },
+    "reviewer": {
+      "name": "Quality Assurance Reviewer",
+      "description": "Code review, specification verification, build/test validation, and defect fixing.",
+      "permissions": ["read_all", "write_own_workspace", "run_tests"],
+      "primaryArtifacts": ["review_report.md", "handoff.md"]
+    },
+    "auditor": {
+      "name": "Forensic Integrity Auditor",
+      "description": "Independent anti-cheating audit, genuine logic verification, and compliance certification.",
+      "permissions": ["read_all", "write_own_workspace", "verify_integrity"],
+      "primaryArtifacts": ["audit_report.md", "handoff.md"]
+    }
+  }
+}

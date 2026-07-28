@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal — ZK Revenue Ops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --bg: #09090b;
+            --surface: #121217;
+            --surface-hover: #171720;
+            --border: #1c1c24;
+            --border-hover: #272733;
+            --text-main: #f4f4f5;
+            --text-muted: #71717a;
+            --text-subtle: #52525b;
+            --accent-green: #22c55e;
+            --accent-green-bg: rgba(34,197,94,0.1);
+            --accent-amber: #f59e0b;
+            --accent-amber-bg: rgba(245,158,11,0.1);
+            --accent-rose: #f43f5e;
+            --accent-rose-bg: rgba(244,63,94,0.1);
+            --accent-blue: #3b82f6;
+            --accent-blue-bg: rgba(59,130,246,0.1);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            font-size: 13px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Layout */
+        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+
+        /* Sidebar */
+        aside {
+            background: #0d0d12;
+            border-right: 1px solid var(--border);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portal-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 8px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-badge {
+            width: 32px; height: 32px;
+            border-radius: 6px;
+            background: var(--surface);
+            border: 1px solid var(--border-hover);
+            display: grid; place-items: center;
+            font-weight: 700; font-size: 12px;
+            color: var(--text-main);
+        }
+
+        .brand-name { font-weight: 600; font-size: 13px; color: var(--text-main); }
+        .brand-sub { font-size: 11px; color: var(--text-muted); }
+
+        .agent-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 16px;
+        }
+
+        .agent-label { font-size: 10px; font-weight: 600; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.8px; }
+        .agent-name { font-size: 13px; font-weight: 600; color: var(--text-main); margin-top: 2px; }
+        .agent-agency { font-size: 11px; color: var(--text-muted); }
+
+        .nav-group { margin-top: 24px; }
+        .nav-title { font-size: 10px; font-weight: 600; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.8px; padding: 0 8px 8px; }
+        .nav-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 8px 10px; border-radius: 6px;
+            color: var(--text-muted); font-weight: 500; font-size: 12px;
+            cursor: pointer; transition: all 0.15s; margin-bottom: 2px;
+        }
+        .nav-item:hover, .nav-item.active { background: var(--surface); color: var(--text-main); }
+        .nav-item.active { border: 1px solid var(--border-hover); font-weight: 600; }
+        .nav-count { font-size: 11px; color: var(--text-subtle); font-family: 'JetBrains Mono', monospace; }
+
+        /* Main Workspace */
+        main { padding: 32px 40px; }
+
+        /* Header */
+        header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+        }
+
+        .h-title { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; color: var(--text-main); }
+        .h-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+        .portal-status {
+            display: flex; align-items: center; gap: 8px;
+            padding: 6px 12px; border-radius: 6px;
+            background: var(--surface); border: 1px solid var(--border);
+            font-size: 11px; font-weight: 500; color: var(--text-muted);
+        }
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); }
+
+        /* Metrics */
+        .metrics-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px;
+        }
+
+        .metric-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .metric-label { font-size: 11px; font-weight: 500; color: var(--text-muted); margin-bottom: 6px; }
+        .metric-val { font-size: 26px; font-weight: 600; letter-spacing: -0.8px; line-height: 1; color: var(--text-main); }
+        .metric-sub { font-size: 11px; color: var(--text-subtle); margin-top: 6px; }
+
+        /* Filter Controls */
+        .controls {
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 12px; margin-bottom: 16px;
+        }
+
+        .filter-group { display: flex; gap: 4px; background: #0d0d12; padding: 3px; border-radius: 6px; border: 1px solid var(--border); }
+        .f-tab {
+            padding: 5px 12px; border-radius: 4px; border: none;
+            background: transparent; color: var(--text-muted);
+            font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s;
+        }
+        .f-tab:hover { color: var(--text-main); }
+        .f-tab.active { background: var(--surface); color: var(--text-main); font-weight: 600; border: 1px solid var(--border-hover); }
+
+        .search-field {
+            padding: 6px 12px; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 6px;
+            color: var(--text-main); font-size: 12px; outline: none; width: 240px;
+        }
+        .search-field:focus { border-color: var(--border-hover); }
+
+        .export-link {
+            padding: 6px 12px; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 6px;
+            color: var(--text-main); font-size: 12px; font-weight: 500;
+            cursor: pointer; transition: background 0.15s;
+        }
+        .export-link:hover { background: var(--surface-hover); }
+
+        /* Data Table */
+        .table-container {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+
+        th {
+            padding: 10px 16px; font-size: 11px; font-weight: 500;
+            color: var(--text-muted); border-bottom: 1px solid var(--border);
+            background: #0f0f14;
+        }
+
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: var(--surface-hover); cursor: pointer; }
+
+        .lead-name { font-weight: 500; color: var(--text-main); }
+        .lead-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+
+        .badge {
+            display: inline-block; padding: 2px 6px; border-radius: 4px;
+            font-size: 11px; font-weight: 500;
+        }
+        .badge-a { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(34,197,94,0.2); }
+        .badge-b { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.2); }
+        .badge-c { background: var(--accent-rose-bg); color: var(--accent-rose); border: 1px solid rgba(244,63,94,0.2); }
+
+        .dsr-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; }
+        .dsr-pass { color: var(--accent-green); }
+        .dsr-warn { color: var(--accent-amber); }
+        .dsr-fail { color: var(--accent-rose); }
+
+        /* Modal Drawer */
+        .drawer-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            display: none; place-items: center; z-index: 100;
+        }
+        .drawer-content {
+            width: 480px; background: var(--surface);
+            border: 1px solid var(--border-hover); border-radius: 8px;
+            padding: 24px; position: relative;
+        }
+        .drawer-close {
+            position: absolute; top: 16px; right: 16px;
+            background: transparent; border: none; color: var(--text-muted);
+            font-size: 16px; cursor: pointer;
+        }
+
+        .drawer-title { font-size: 16px; font-weight: 600; color: var(--text-main); }
+        .drawer-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; margin-bottom: 20px; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+        .info-box { background: var(--bg); border: 1px solid var(--border); padding: 10px 12px; border-radius: 6px; }
+        .info-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 500; }
+        .info-val { font-size: 13px; font-weight: 600; color: var(--text-main); margin-top: 2px; }
+
+        .drawer-notes { font-size: 12px; color: var(--text-muted); padding: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; }
+
+        @media(max-width: 900px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { display: none; }
+            main { padding: 20px; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout">
+    <!-- Sidebar -->
+    <aside>
+        <div>
+            <div class="portal-brand">
+                <div class="brand-badge">ZK</div>
+                <div>
+                    <div class="brand-name">ZK Revenue Ops</div>
+                    <div class="brand-sub">Client Portal</div>
+                </div>
+            </div>
+
+            <!-- Single REN Profile Focus -->
+            <div class="agent-card">
+                <div class="agent-label">Client Portal</div>
+                <div class="agent-name" id="portalAgentName">Ahmad Razif</div>
+                <div class="agent-agency" id="portalAgentAgency">IQI Realty</div>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-title">Delegated Leads</div>
+                <div class="nav-item active">
+                    <span>Buyer Pipeline</span>
+                    <span class="nav-count" id="navBuyerCount">2,500</span>
+                </div>
+                <div class="nav-item">
+                    <span>Loan Pre-qualification</span>
+                    <span class="nav-count">DSR Engine</span>
+                </div>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-title">Listings & Deals</div>
+                <div class="nav-item">
+                    <span>Property Listings</span>
+                    <span class="nav-count">3</span>
+                </div>
+                <div class="nav-item">
+                    <span>Commission Ledger</span>
+                    <span class="nav-count">RM 54K</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="font-size:11px; color:var(--text-subtle); padding: 0 8px;">
+            Single-Client Mode • Synced
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <header>
+            <div>
+                <h1 class="h-title" id="headAgentTitle">Ahmad Razif — Client Lead Portal</h1>
+                <div class="h-sub">Personalized Lead Database & DSR Loan Qualification Engine</div>
+            </div>
+            <div class="portal-status">
+                <span class="status-dot"></span>
+                <span>Active Connection</span>
+            </div>
+        </header>
+
+        <!-- Personal Metrics -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Delegated Leads</div>
+                <div class="metric-val mono" id="mTotalLeads">2,500</div>
+                <div class="metric-sub">Assigned to Ahmad Razif</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Grade A (Loan Eligible)</div>
+                <div class="metric-val mono" id="mGradeA" style="color: var(--accent-green);">—</div>
+                <div class="metric-sub">DSR ≤ 65% + Ready to view</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Grade B (Warm Nurture)</div>
+                <div class="metric-val mono" id="mGradeB" style="color: var(--accent-amber);">—</div>
+                <div class="metric-sub">Follow-up 3–6 months</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Est. Grade A Commission</div>
+                <div class="metric-val mono" id="mEstComm" style="color: var(--accent-blue);">—</div>
+                <div class="metric-sub" id="mDsrRate">DSR Pass Rate: —</div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="filter-group">
+                <button class="f-tab active" onclick="setGrade('', this)">All Leads</button>
+                <button class="f-tab" onclick="setGrade('A', this)">Grade A (Eligible)</button>
+                <button class="f-tab" onclick="setGrade('B', this)">Grade B (Nurture)</button>
+                <button class="f-tab" onclick="setGrade('C', this)">Grade C (Cold/Fail DSR)</button>
+            </div>
+            <div style="display:flex; gap:8px;">
+                <input type="text" class="search-field" id="searchInput" placeholder="Search buyer name, phone, area..." oninput="onSearch()">
+                <button class="export-link" onclick="exportCSV()">Export CSV</button>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Buyer Prospect</th>
+                        <th>Grade</th>
+                        <th>Target Area & Budget</th>
+                        <th>Net Income</th>
+                        <th>Commitments</th>
+                        <th>DSR Loan %</th>
+                        <th>Est. Commission</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">Loading client leads...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- Modal Drawer -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
+    <div class="drawer-content">
+        <button class="drawer-close" onclick="hideDrawer()">✕</button>
+        <div class="drawer-title" id="dName">Buyer Lead Details</div>
+        <div class="drawer-sub" id="dMeta">Contact Info</div>
+
+        <div class="grid-2">
+            <div class="info-box"><div class="info-label">Net Income</div><div class="info-val mono" id="dIncome">RM 0</div></div>
+            <div class="info-box"><div class="info-label">Commitments</div><div class="info-val mono" id="dCommitment">RM 0</div></div>
+            <div class="info-box"><div class="info-label">DSR Ratio</div><div class="info-val mono" id="dDsr">0%</div></div>
+            <div class="info-box"><div class="info-label">Est. Commission</div><div class="info-val mono" style="color:var(--accent-green);" id="dComm">RM 0</div></div>
+        </div>
+
+        <div class="drawer-notes" id="dNotes">
+            Lead has passed DSR eligibility criteria. Automated viewing schedule reminder sent.
+        </div>
+    </div>
+</div>
+
+<script>
+const API = window.location.origin;
+let currentGrade = '';
+let searchTimer = null;
+let currentLeads = [];
+const AGENT_ID = 'REN-001';
+
+function rm(n) { return 'RM ' + (n || 0).toLocaleString(); }
+
+async function loadPortal() {
+    try {
+        const q = new URLSearchParams();
+        q.append('renId', AGENT_ID);
+        if (currentGrade) q.append('grade', currentGrade);
+        const search = document.getElementById('searchInput').value.trim();
+        if (search) q.append('search', search);
+
+        // Try API v1 / crm endpoints
+        let res = await fetch(`${API}/api/v1/buyers`);
+        let data = await res.json();
+        
+        let leads = [];
+        if (data.data) {
+            leads = data.data.map(b => ({
+                name: b.name,
+                phone: b.phone || '',
+                source: 'Direct Inflow',
+                grade: b.lead_score >= 80 ? 'A' : (b.lead_score >= 50 ? 'B' : 'C'),
+                location: b.preferred_location || 'Selangor',
+                propertyType: b.property_type || 'Condo',
+                maxBudget: b.max_budget || 500000,
+                netIncome: 8000,
+                existingCommitments: 2500,
+                dsrPercent: Math.round(((2500 + (b.max_budget || 500000)*0.0048) / 8000)*100),
+                estCommission: Math.round((b.max_budget || 500000) * 0.02)
+            }));
+        } else if (data.results) {
+            leads = data.results;
+        }
+
+        // Apply local grade filter if needed
+        if (currentGrade) {
+            leads = leads.filter(l => l.grade === currentGrade);
+        }
+        if (search) {
+            const s = search.toLowerCase();
+            leads = leads.filter(l => l.name.toLowerCase().includes(s) || l.location.toLowerCase().includes(s));
+        }
+
+        currentLeads = leads;
+
+        // Calculate summary
+        const total = currentLeads.length;
+        const gradeA = currentLeads.filter(l => l.grade === 'A').length;
+        const gradeB = currentLeads.filter(l => l.grade === 'B').length;
+        const commA = currentLeads.filter(l => l.grade === 'A').reduce((sum, l) => sum + (l.estCommission || 0), 0);
+
+        document.getElementById('mTotalLeads').textContent = total.toLocaleString();
+        document.getElementById('mGradeA').textContent = gradeA.toLocaleString();
+        document.getElementById('mGradeB').textContent = gradeB.toLocaleString();
+        document.getElementById('mEstComm').textContent = 'RM ' + (commA / 1000).toFixed(0) + 'K';
+        document.getElementById('navBuyerCount').textContent = total.toLocaleString();
+
+        const passRate = total > 0 ? Math.round(((gradeA + gradeB) / total) * 100) : 0;
+        document.getElementById('mDsrRate').textContent = `DSR Pass Rate: ${passRate}%`;
+
+        renderTable(currentLeads);
+    } catch(e) {
+        document.getElementById('tableBody').innerHTML = `<tr><td colspan="7" style="color:var(--accent-rose); text-align:center;">Error loading portal data: ${e.message}</td></tr>`;
+    }
+}
+
+function renderTable(leads) {
+    if (!leads || leads.length === 0) {
+        document.getElementById('tableBody').innerHTML = `<tr><td colspan="7" style="text-align:center; padding:24px; color:var(--text-muted);">No records found.</td></tr>`;
+        return;
+    }
+
+    let rows = '';
+    leads.forEach((l, idx) => {
+        const bCls = l.grade === 'A' ? 'badge-a' : (l.grade === 'B' ? 'badge-b' : 'badge-c');
+        const dsrCls = l.dsrPercent <= 65 ? 'dsr-pass' : (l.dsrPercent <= 75 ? 'dsr-warn' : 'dsr-fail');
+
+        rows += `<tr onclick="openDrawer(${idx})">
+            <td>
+                <div class="lead-name">${l.name}</div>
+                <div class="lead-meta">${l.phone} · ${l.source}</div>
+            </td>
+            <td><span class="badge ${bCls}">Grade ${l.grade}</span></td>
+            <td>
+                <div style="font-weight:500;">${l.location}</div>
+                <div class="lead-meta">${l.propertyType} (Max ${rm(l.maxBudget)})</div>
+            </td>
+            <td class="mono">${rm(l.netIncome)}</td>
+            <td class="mono" style="color:var(--text-muted);">${rm(l.existingCommitments)}</td>
+            <td><span class="dsr-tag ${dsrCls}">${l.dsrPercent}% DSR</span></td>
+            <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(l.estCommission)}</td>
+        </tr>`;
+    });
+
+    document.getElementById('tableBody').innerHTML = rows;
+}
+
+function setGrade(g, btn) {
+    currentGrade = g;
+    document.querySelectorAll('.f-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadPortal();
+}
+
+function onSearch() {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(loadPortal, 250);
+}
+
+function openDrawer(idx) {
+    const l = currentLeads[idx];
+    if (!l) return;
+    document.getElementById('dName').textContent = `${l.name} (Grade ${l.grade})`;
+    document.getElementById('dMeta').textContent = `${l.phone} · ${l.location} · ${l.propertyType}`;
+    document.getElementById('dIncome').textContent = rm(l.netIncome);
+    document.getElementById('dCommitment').textContent = rm(l.existingCommitments);
+    document.getElementById('dDsr').textContent = `${l.dsrPercent}% (${l.dsrPercent <= 65 ? 'PASS' : 'HIGH RISK'})`;
+    document.getElementById('dComm').textContent = rm(l.estCommission);
+    document.getElementById('drawerOverlay').style.display = 'grid';
+}
+
+function hideDrawer() { document.getElementById('drawerOverlay').style.display = 'none'; }
+function closeDrawer(e) { if (e.target.id === 'drawerOverlay') hideDrawer(); }
+
+function exportCSV() {
+    if (!currentLeads || currentLeads.length === 0) return alert('No data to export.');
+    let csv = 'Name,Phone,Grade,Location,PropertyType,MaxBudget,NetIncome,Commitments,DSR_Percent,EstCommission\n';
+    currentLeads.forEach(l => {
+        csv += `"${l.name}","${l.phone}","${l.grade}","${l.location}","${l.propertyType}",${l.maxBudget},${l.netIncome},${l.existingCommitments},${l.dsrPercent},${l.estCommission}\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `Ahmad_Razif_Leads_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+}
+
+loadPortal();
+</script>
+</body>
+</html>

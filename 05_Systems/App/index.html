@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ms" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZK Revenue Ops — Master Workspace Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & JetBrains Mono (Linear / Attio style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        void: '#080a0f',
+                        surface: '#0f141c',
+                        card: '#141b26',
+                        border: '#1f2a3e',
+                        accent: '#6366f1',
+                        gold: '#d4af37'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #080a0f; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .card-minimal { background: #141b26; border: 1px solid #1f2a3e; transition: all 0.15s ease; }
+        .card-minimal:hover { border-color: #334361; }
+        .sidebar-item { transition: all 0.15s ease; }
+        .sidebar-item:hover, .sidebar-item.active { background-color: #1f2a3e; color: #ffffff; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #080a0f; }
+        ::-webkit-scrollbar-thumb { background: #1f2a3e; border-radius: 2px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col bg-void text-slate-100 font-sans">
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 space-y-3 pointer-events-none"></div>
+
+    <!-- GLOBAL TOP HEADER -->
+    <header class="border-b border-border bg-surface/90 backdrop-blur-md sticky top-0 z-40 px-6 py-3 flex justify-between items-center">
+        <!-- BRAND & ROLE SWITCHER -->
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded bg-indigo-600 flex items-center justify-center font-bold text-white text-xs">ZK</div>
+                <span class="font-bold text-sm text-white tracking-tight">ZK REVENUE OPS</span>
+            </div>
+
+            <!-- ROLE SWITCHER (SINGLE WEBAPP ARCHITECTURE) -->
+            <div class="flex items-center bg-void p-1 rounded-lg border border-border">
+                <button id="role-operator-btn" onclick="switchRole('operator')" class="px-3 py-1 rounded text-xs font-medium transition-all bg-indigo-600 text-white">
+                    Operator Console
+                </button>
+                <button id="role-client-btn" onclick="switchRole('client')" class="px-3 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition-all">
+                    Client Portal View
+                </button>
+            </div>
+        </div>
+
+        <!-- SEAT SELECTOR & GLOBAL ACTIONS -->
+        <div class="flex items-center gap-4 text-xs font-mono">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-400">Territory Seat:</span>
+                <select id="seat-selector" onchange="switchSeat(this.value)" class="bg-card border border-border text-xs text-indigo-400 rounded px-2.5 py-1 focus:outline-none focus:border-indigo-500">
+                    <option value="SEAT-001">SEAT-001 | Mont Kiara Subsale (Ahmad REN)</option>
+                    <option value="SEAT-002">SEAT-002 | KLCC Luxury Launch (Siti REN)</option>
+                    <option value="SEAT-003">SEAT-003 | Bangsar Prime Subsale (Raj REN)</option>
+                </select>
+            </div>
+            <button onclick="simulateLead()" class="bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-400 border border-indigo-500/30 px-3 py-1.5 rounded transition-all">
+                + Ingest Lead Hook
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN APP LAYOUT WITH SIDEBAR -->
+    <div class="flex-1 flex overflow-hidden">
+
+        <!-- OPERATOR SIDEBAR -->
+        <aside id="sidebar-operator" class="w-64 border-r border-border bg-surface p-4 flex flex-col justify-between shrink-0 space-y-6">
+            <div class="space-y-6">
+                <!-- NAVIGATION SECTION -->
+                <div class="space-y-1 text-xs">
+                    <span class="text-[10px] font-mono uppercase text-slate-500 font-semibold px-2 block mb-2">Core Workspace</span>
+                    <button onclick="switchView('op-dashboard')" id="nav-op-dashboard" class="sidebar-item active w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>⚡ Executive Command</span>
+                        <span class="text-[10px] font-mono text-slate-500">G+D</span>
+                    </button>
+                    <button onclick="switchView('op-leads')" id="nav-op-leads" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📥 Lead Management</span>
+                        <span class="text-[10px] font-mono text-slate-500">G+L</span>
+                    </button>
+                    <button onclick="switchView('op-followup')" id="nav-op-followup" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>🔄 Follow-up Center</span>
+                        <span class="text-[10px] font-mono text-slate-500">G+F</span>
+                    </button>
+                    <button onclick="switchView('op-appointments')" id="nav-op-appointments" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📅 Appointments</span>
+                        <span class="text-[10px] font-mono text-slate-500">G+A</span>
+                    </button>
+                    <button onclick="switchView('op-tasks')" id="nav-op-tasks" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>✅ Daily Tasks</span>
+                        <span class="text-[10px] font-mono text-slate-500">G+T</span>
+                    </button>
+                </div>
+
+                <div class="space-y-1 text-xs">
+                    <span class="text-[10px] font-mono uppercase text-slate-500 font-semibold px-2 block mb-2">Management & Admin</span>
+                    <button onclick="switchView('op-clients')" id="nav-op-clients" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>🏢 Client Accounts</span>
+                    </button>
+                    <button onclick="switchView('op-reports')" id="nav-op-reports" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📊 Analytics & Reports</span>
+                    </button>
+                    <button onclick="switchView('op-admin')" id="nav-op-admin" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>⚙️ Settings & RLS</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- OPERATOR FOOTER BRIEF -->
+            <div class="bg-void p-3 rounded-lg border border-border text-[11px] font-mono space-y-1">
+                <span class="text-slate-400 block">Operator: SDR-01</span>
+                <span class="text-emerald-400 block">SLA Compliance: 98.2%</span>
+            </div>
+        </aside>
+
+        <!-- CLIENT PORTAL SIDEBAR -->
+        <aside id="sidebar-client" class="w-64 border-r border-border bg-surface p-4 flex flex-col justify-between shrink-0 space-y-6 hidden">
+            <div class="space-y-6">
+                <div class="space-y-1 text-xs">
+                    <span class="text-[10px] font-mono uppercase text-slate-500 font-semibold px-2 block mb-2">REN Partner Portal</span>
+                    <button onclick="switchView('cl-dashboard')" id="nav-cl-dashboard" class="sidebar-item active w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📊 Performance Overview</span>
+                    </button>
+                    <button onclick="switchView('cl-pipeline')" id="nav-cl-pipeline" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📑 Lead Pipeline</span>
+                    </button>
+                    <button onclick="switchView('cl-viewings')" id="nav-cl-viewings" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📅 Confirmed Viewings</span>
+                    </button>
+                    <button onclick="switchView('cl-reports')" id="nav-cl-reports" class="sidebar-item w-full flex items-center justify-between px-3 py-2 rounded text-slate-300 font-medium">
+                        <span>📄 Monday PDF Reports</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-void p-3 rounded-lg border border-border text-[11px] font-mono space-y-1">
+                <span class="text-gold-400 block font-bold">Retainer Value: RM 3,500/mo</span>
+                <span class="text-slate-400 block">Est. ROI: 24.0x Multiplier</span>
+            </div>
+        </aside>
+
+        <!-- DYNAMIC CONTENT WORKSPACE -->
+        <main class="flex-1 p-8 overflow-y-auto max-w-[1600px]">
+
+            <!-- ========================================================= -->
+            <!-- OPERATOR VIEW 1: EXECUTIVE COMMAND DASHBOARD -->
+            <!-- ========================================================= -->
+            <section id="view-op-dashboard" class="space-y-6">
+                
+                <!-- SLA BREACH ALERT BANNER -->
+                <div class="card-minimal p-4 rounded-xl border border-rose-500/30 flex justify-between items-center bg-rose-500/5">
+                    <div class="flex items-center gap-3">
+                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+                        <div>
+                            <h3 class="font-semibold text-xs text-white">SLA Speed-to-lead Warning Queue (&lt; 5 Minutes Target)</h3>
+                            <p class="text-[11px] text-slate-400 font-mono">1 New Ingested Lead Requiring Initial Qualification Greeting</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-rose-400 bg-rose-500/10 px-3 py-1 rounded border border-rose-500/20">03:42 SLA Remaining</span>
+                </div>
+
+                <!-- TODAY'S METRICS -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                    <div class="card-minimal p-4 rounded-xl space-y-1">
+                        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Today's Due Tasks</span>
+                        <div class="text-2xl font-bold text-white font-mono">18</div>
+                    </div>
+                    <div class="card-minimal p-4 rounded-xl space-y-1">
+                        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">SLA Compliance Rate</span>
+                        <div class="text-2xl font-bold text-emerald-400 font-mono">98.2%</div>
+                    </div>
+                    <div class="card-minimal p-4 rounded-xl space-y-1">
+                        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Today's Viewings</span>
+                        <div class="text-2xl font-bold text-indigo-400 font-mono">4 Slots</div>
+                    </div>
+                    <div class="card-minimal p-4 rounded-xl space-y-1 border-gold-500/30">
+                        <span class="text-[11px] font-medium text-gold-400 uppercase tracking-wider block">Active Retainer Seats</span>
+                        <div class="text-2xl font-bold text-gold-400 font-mono">3 / 30 Seats</div>
+                    </div>
+                </div>
+
+                <!-- COMMAND WORKSPACE SPLIT (TASK QUEUE + DETAIL CONSOLE) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <div class="lg:col-span-4 space-y-3">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Priority Task Queue</span>
+                        <div id="cmd-task-list" class="space-y-2 text-xs"></div>
+                    </div>
+
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="card-minimal p-6 rounded-xl space-y-5">
+                            <div class="flex justify-between items-start pb-4 border-b border-border">
+                                <div>
+                                    <span class="text-[10px] font-mono uppercase bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded border border-indigo-500/20">Assistive Script Generator</span>
+                                    <h2 id="cmd-lead-name" class="font-bold text-lg text-white mt-1">Ridzuan Shah</h2>
+                                    <p id="cmd-lead-details" class="text-xs text-slate-400 font-mono">+6012-9876543 | Mont Kiara Subsale (SEAT-001)</p>
+                                </div>
+                                <span id="cmd-lead-tier" class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">TIER 1 QUALIFIED</span>
+                            </div>
+
+                            <!-- DSR AUDIT BOX -->
+                            <div class="bg-void p-4 rounded-lg border border-border text-xs font-mono space-y-2">
+                                <div class="flex justify-between items-center text-[11px]">
+                                    <span class="font-semibold text-slate-300">Financial DSR Audit:</span>
+                                    <span class="text-emerald-400 font-bold">DSR 42.0% (PASSED &lt; 60%)</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 text-[11px] text-slate-400">
+                                    <div>Net Income: <strong class="text-white block">RM 6,675/mo</strong></div>
+                                    <div>Debts: <strong class="text-white block">RM 1,800/mo</strong></div>
+                                    <div>Max Loan: <strong class="text-gold-400 block">RM 680,000</strong></div>
+                                </div>
+                            </div>
+
+                            <!-- SCRIPT EDITOR -->
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-semibold text-slate-300">Contextual Script:</span>
+                                    <span class="text-slate-500 font-mono">TMP-MSG-01 Initial Outreach</span>
+                                </div>
+                                <textarea id="cmd-script-box" rows="5" class="w-full bg-void border border-border rounded-lg p-3 text-xs text-slate-200 font-sans focus:outline-none focus:border-indigo-500 leading-relaxed"></textarea>
+                            </div>
+
+                            <!-- ACTIONS -->
+                            <div class="flex gap-2 text-xs">
+                                <button onclick="copyScript()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2 rounded transition-all">Copy Script</button>
+                                <button onclick="openWhatsApp()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-4 py-2 rounded transition-all">Direct WhatsApp Chat</button>
+                                <button onclick="dispatchWaze()" class="bg-surface hover:bg-border text-slate-200 font-medium px-4 py-2 rounded border border-border transition-all">Dispatch Waze</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- OPERATOR VIEW 2: LEAD MANAGEMENT DIRECTORY -->
+            <!-- ========================================================= -->
+            <section id="view-op-leads" class="hidden space-y-6">
+                <div class="flex justify-between items-center">
+                    <h2 class="font-bold text-base text-white">Lead Management Directory</h2>
+                    <div class="flex gap-2">
+                        <input type="text" id="lead-search" onkeyup="renderLeadTable(this.value)" placeholder="Search leads..." class="bg-card border border-border text-xs px-3 py-1.5 rounded text-white focus:outline-none">
+                        <button onclick="alert('CSV Ingestion Wizard Triggered')" class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded font-medium">+ Bulk Import CSV</button>
+                    </div>
+                </div>
+
+                <div class="card-minimal rounded-xl overflow-hidden">
+                    <table class="w-full text-left text-xs font-mono">
+                        <thead class="bg-surface border-b border-border text-slate-400">
+                            <tr>
+                                <th class="p-3">Lead ID</th>
+                                <th class="p-3">Buyer Name</th>
+                                <th class="p-3">Phone</th>
+                                <th class="p-3">Project</th>
+                                <th class="p-3">Status</th>
+                                <th class="p-3">DSR Score</th>
+                                <th class="p-3">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lead-table-body" class="divide-y divide-border"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- OPERATOR VIEW 3: SMART FOLLOW-UP CENTER -->
+            <!-- ========================================================= -->
+            <section id="view-op-followup" class="hidden space-y-6">
+                <div class="border-b border-border pb-3">
+                    <h2 class="font-bold text-base text-white">Smart Follow-up Center (Cadence Engine)</h2>
+                    <p class="text-xs text-slate-400 font-mono">Automated Day 1, Day 3, Day 7, Day 14 & Day 30 Cadence Revival</p>
+                </div>
+
+                <div id="followup-list" class="space-y-3"></div>
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- CLIENT VIEW 1: CLIENT PORTAL EXECUTIVE OVERVIEW -->
+            <!-- ========================================================= -->
+            <section id="view-cl-dashboard" class="hidden space-y-6">
+                <!-- RETAINER PROOF BANNER -->
+                <div class="card-minimal p-6 rounded-xl border border-gold-500/30 flex justify-between items-center bg-gradient-to-r from-surface to-card">
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-mono uppercase bg-gold-500/10 text-gold-400 px-2 py-0.5 rounded border border-gold-500/20 font-semibold">Territory Commercial Audit</span>
+                        <h2 class="font-bold text-lg text-white">Monthly Retainer: RM 3,500 / month</h2>
+                        <p class="text-xs text-slate-400">Exclusive Seat: Mont Kiara Subsale (SEAT-001) — 100% Data Protection</p>
+                    </div>
+
+                    <div class="flex gap-6 font-mono border-l border-border pl-6 text-xs">
+                        <div><span class="text-slate-500 block text-[10px]">Est. Commission Pipeline:</span><strong class="text-gold-400 text-xl font-bold">RM 84,000</strong></div>
+                        <div><span class="text-slate-500 block text-[10px]">Retainer ROI:</span><strong class="text-emerald-400 text-xl font-bold">24.0x ROI</strong></div>
+                    </div>
+                </div>
+
+                <!-- METRICS -->
+                <div class="grid grid-cols-4 gap-4 text-xs font-mono">
+                    <div class="card-minimal p-4 rounded-xl space-y-1">
+                        <span class="text-slate-400 block text-[10px]">Ingested Leads</span>
+                        <div class="text-2xl font-bold text-white">48</div>
+                    </div>
+                    <div class="card-minimal p-4 rounded-xl space-y-1">
+                        <span class="text-slate-400 block text-[10px]">Tier 1 Qualified</span>
+                        <div class="text-2xl font-bold text-amber-400">14</div>
+                    </div>
+                    <div class="card-minimal p-4 rounded-xl space-y-1">
+                        <span class="text-slate-400 block text-[10px]">Confirmed Viewings</span>
+                        <div class="text-2xl font-bold text-emerald-400">8</div>
+                    </div>
+                    <div class="card-minimal p-4 rounded-xl space-y-1 border-gold-500/30">
+                        <span class="text-gold-400 block text-[10px]">Est. Commission</span>
+                        <div class="text-2xl font-bold text-gold-400">RM 84,000</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- JAVASCRIPT STATE ENGINE -->
+    <script>
+        let leads = [
+            { id: 'LEAD-005', name: 'Ridzuan Shah', phone: '+60129876543', project: 'Mont Kiara Subsale', status: 'hot', tier: 'Tier 1 Qualified', dsr: '42.0%', time: '12m ago', cadenceDue: 'Today' },
+            { id: 'LEAD-001', name: 'Muhammad Khairul', phone: '+60123456789', project: 'Mont Kiara Subsale', status: 'new', tier: 'Tier 2 Warm', dsr: '48.5%', time: '5m ago', cadenceDue: 'Day 1' },
+            { id: 'LEAD-003', name: 'Farhan Azman', phone: '+60134455667', project: 'Mont Kiara Subsale', status: 'screening', tier: 'Tier 2 Warm', dsr: '52.1%', time: 'Day 3', cadenceDue: 'Overdue' },
+            { id: 'LEAD-006', name: 'Tan Wei Ming', phone: '+60161122334', project: 'Mont Kiara Subsale', status: 'hot', tier: 'Tier 1 Qualified', dsr: '38.2%', time: 'Day 7', cadenceDue: 'Today' }
+        ];
+
+        let activeLeadId = 'LEAD-005';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCommandTasks();
+            renderLeadTable();
+            renderFollowupCenter();
+        });
+
+        function switchRole(role) {
+            if (role === 'operator') {
+                document.getElementById('sidebar-operator').classList.remove('hidden');
+                document.getElementById('sidebar-client').classList.add('hidden');
+                document.getElementById('role-operator-btn').className = "px-3 py-1 rounded text-xs font-medium transition-all bg-indigo-600 text-white";
+                document.getElementById('role-client-btn').className = "px-3 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition-all";
+                switchView('op-dashboard');
+            } else {
+                document.getElementById('sidebar-operator').classList.add('hidden');
+                document.getElementById('sidebar-client').classList.remove('hidden');
+                document.getElementById('role-operator-btn').className = "px-3 py-1 rounded text-xs font-medium text-slate-400 hover:text-white transition-all";
+                document.getElementById('role-client-btn').className = "px-3 py-1 rounded text-xs font-medium transition-all bg-indigo-600 text-white";
+                switchView('cl-dashboard');
+            }
+        }
+
+        function switchView(viewId) {
+            document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
+            document.querySelectorAll('.sidebar-item').forEach(btn => btn.classList.remove('active'));
+            
+            const target = document.getElementById(`view-${viewId}`);
+            if (target) target.classList.remove('hidden');
+            
+            const navBtn = document.getElementById(`nav-${viewId}`);
+            if (navBtn) navBtn.classList.add('active');
+        }
+
+        function renderCommandTasks() {
+            document.getElementById('cmd-task-list').innerHTML = leads.map(l => `
+                <div class="card-minimal p-3 rounded-lg flex justify-between items-center cursor-pointer ${l.id === activeLeadId ? 'border-indigo-500 bg-void' : ''}" onclick="selectLead('${l.id}')">
+                    <div>
+                        <h4 class="font-semibold text-white text-xs">${l.name}</h4>
+                        <p class="text-[11px] text-slate-400 font-mono">${l.phone}</p>
+                    </div>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded ${l.status==='hot'?'bg-amber-500/10 text-amber-400 border border-amber-500/20':'bg-void text-slate-400 border border-border'}">${l.status.toUpperCase()}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderLeadTable(filter = '') {
+            const body = document.getElementById('lead-table-body');
+            body.innerHTML = leads.filter(l => l.name.toLowerCase().includes(filter.toLowerCase())).map(l => `
+                <tr class="hover:bg-void">
+                    <td class="p-3 font-semibold text-indigo-400">${l.id}</td>
+                    <td class="p-3 text-white font-sans font-medium">${l.name}</td>
+                    <td class="p-3 text-slate-400">${l.phone}</td>
+                    <td class="p-3 text-slate-300 font-sans">${l.project}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] ${l.status==='hot'?'bg-amber-500/10 text-amber-400 border border-amber-500/20':'bg-void text-slate-400 border border-border'}">${l.status.toUpperCase()}</span></td>
+                    <td class="p-3 text-emerald-400 font-bold">${l.dsr}</td>
+                    <td class="p-3"><button onclick="selectLead('${l.id}'); switchView('op-dashboard');" class="text-indigo-400 hover:underline">Open Console ➔</button></td>
+                </tr>
+            `).join('');
+        }
+
+        function renderFollowupCenter() {
+            document.getElementById('followup-list').innerHTML = leads.map(l => `
+                <div class="card-minimal p-4 rounded-xl flex justify-between items-center">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-bold text-xs text-white">${l.name}</h4>
+                            <span class="text-[10px] font-mono text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">Due: ${l.cadenceDue}</span>
+                        </div>
+                        <p class="text-xs text-slate-400 font-mono">${l.phone} | Project: ${l.project}</p>
+                    </div>
+                    <div class="flex gap-2 text-xs">
+                        <button onclick="copyScript()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-1.5 rounded">Dispatch Script</button>
+                        <button onclick="alert('Cadence Rescheduled')" class="bg-surface hover:bg-border text-slate-300 px-3 py-1.5 rounded border border-border">Reschedule</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectLead(id) {
+            activeLeadId = id;
+            const l = leads.find(item => item.id === id);
+            if (!l) return;
+
+            document.getElementById('cmd-lead-name').innerText = l.name;
+            document.getElementById('cmd-lead-details').innerText = `${l.phone} | ${l.project} (SEAT-001)`;
+            document.getElementById('cmd-lead-tier').innerText = l.tier.toUpperCase();
+
+            document.getElementById('cmd-script-box').value = 
+`Salam ${l.name},
+
+Saya perunding hartanah bagi pihak projek ${l.project}. Terima kasih atas minat anda!
+
+Bagi membantu saya mengesyorkan unit yang bersesuaian dengan bajet anda, mohon maklum balas ringkas:
+1. Pembelian ini untuk kediaman sendiri atau pelaburan?
+2. Anggaran pendapatan kasar bulanan anda?
+3. Adakah anda pernah membuat semakan pra-kelayakan pinjaman bank sebelum ini?
+
+Terima kasih.`;
+
+            renderCommandTasks();
+        }
+
+        function simulateLead() {
+            const names = ['Aiman Zulkifli', 'Mei Ling', 'Surenraj Kumar', 'Farah Nadiah'];
+            const rName = names[Math.floor(Math.random() * names.length)];
+            const rPhone = '+601' + Math.floor(10000000 + Math.random() * 90000000);
+            const rId = 'LEAD-' + Math.floor(100 + Math.random() * 900);
+
+            leads.unshift({ id: rId, name: rName, phone: rPhone, project: 'Mont Kiara Subsale', status: 'new', tier: 'Tier 2 Warm', dsr: '45.0%', time: 'Just Now', cadenceDue: 'Today' });
+            renderCommandTasks();
+            renderLeadTable();
+            renderFollowupCenter();
+            showToast(`New Ingested Lead: ${rName} (${rPhone})`);
+        }
+
+        function copyScript() {
+            navigator.clipboard.writeText(document.getElementById('cmd-script-box').value);
+            showToast('Copied WhatsApp script to clipboard.');
+        }
+
+        function openWhatsApp() {
+            const l = leads.find(item => item.id === activeLeadId);
+            if (!l) return;
+            const text = encodeURIComponent(document.getElementById('cmd-script-box').value);
+            window.open(`https://api.whatsapp.com/send?phone=${l.phone.replace(/[^0-9]/g, '')}&text=${text}`, '_blank');
+            showToast(`Opened WhatsApp chat for ${l.name}`);
+        }
+
+        function dispatchWaze() {
+            showToast('Waze Location Card Dispatched!');
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'card-minimal border border-indigo-500/40 text-white font-mono text-xs px-4 py-3 rounded-xl shadow-2xl transition-all duration-300 pointer-events-auto flex items-center gap-2';
+            toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span> ${msg}`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3000);
+        }
+    </script>
+</body>
+</html>

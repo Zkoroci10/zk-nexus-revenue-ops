@@ -1,0 +1,55 @@
+{
+  "documentTypes": {
+    "SOP": {
+      "name": "Standard Operating Procedure",
+      "prefix": "SOP",
+      "requiredSections": [
+        "Executive Summary",
+        "Purpose & Scope",
+        "Prerequisites & System Requirements",
+        "Step-by-Step Execution Workflow",
+        "Verification & Quality Check",
+        "Troubleshooting & Rollback Procedures",
+        "Change Log"
+      ]
+    },
+    "ADR": {
+      "name": "Architecture Decision Record",
+      "prefix": "ADR",
+      "requiredSections": [
+        "Context & Problem Statement",
+        "Decision Drivers",
+        "Considered Options",
+        "Decision Outcome & Rationale",
+        "Pros & Cons of Options",
+        "Compliance & Security Impact",
+        "Change Log"
+      ]
+    },
+    "PRD": {
+      "name": "Product Requirement Document",
+      "prefix": "PRD",
+      "requiredSections": [
+        "Executive Summary",
+        "Target Audience & User Personas",
+        "Functional Requirements",
+        "Non-Functional Requirements",
+        "User Experience & Wireframe Specs",
+        "Milestones & Delivery Timeline",
+        "Change Log"
+      ]
+    },
+    "MeetingNotes": {
+      "name": "Structured Meeting Minutes",
+      "prefix": "MOM",
+      "requiredSections": [
+        "Meeting Metadata (Date, Attendees, Objective)",
+        "Executive Summary",
+        "Key Decisions Reached",
+        "Discussion Points & Debate Summary",
+        "Action Items & Owner Matrix",
+        "Next Steps & Follow-Up Date"
+      ]
+    }
+  }
+}

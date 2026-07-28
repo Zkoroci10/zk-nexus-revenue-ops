@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZK Revenue Ops — Dual Interface Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="theme-dark">
+    <div class="app-container">
+        <!-- Top Bar Navigation & Mode Switcher -->
+        <header class="top-bar">
+            <div class="brand">
+                <div class="logo-badge">ZK</div>
+                <div class="brand-text">
+                    <span class="brand-name">ZK REVENUE OPS</span>
+                    <span class="brand-sub">Dual-Interface Control System</span>
+                </div>
+            </div>
+
+            <!-- Mode Switcher Tabs -->
+            <div class="mode-switcher">
+                <button id="btn-operator-mode" class="mode-btn active" onclick="switchMode('operator')">
+                    Console Operator Hub <span class="badge-tag internal">INTERNAL</span>
+                </button>
+                <button id="btn-client-mode" class="mode-btn" onclick="switchMode('client')">
+                    REN Client Desk <span class="badge-tag client">CLIENT FACING</span>
+                </button>
+            </div>
+
+            <div class="status-indicator">
+                <span class="dot live"></span> SYSTEM ACTIVE
+            </div>
+        </header>
+
+        <!-- VIEW 1: CONSOLE OPERATOR HUB (Internal Operator View) -->
+        <main id="view-operator" class="view-panel active">
+            <div class="view-header">
+                <h2>Console Operator Hub</h2>
+                <p>Private lead triage, DSR qualification, 1-click WhatsApp outreach, and raw lead management.</p>
+            </div>
+
+            <!-- Quick Add Lead Bar -->
+            <div class="card glass-card new-lead-bar">
+                <h3>Direct Lead Ingestion</h3>
+                <form id="add-lead-form" onsubmit="handleNewLead(event)" class="inline-form">
+                    <input type="text" id="lead-name" placeholder="Full Name" required class="input-field">
+                    <input type="text" id="lead-phone" placeholder="WhatsApp Number (+601...)" required class="input-field">
+                    <input type="text" id="lead-project" placeholder="Project Name" required class="input-field">
+                    <input type="number" id="lead-income" placeholder="Est. Income (RM)" class="input-field">
+                    <button type="submit" class="btn btn-primary">+ Add Lead</button>
+                </form>
+            </div>
+
+            <!-- Operator Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card glass-card">
+                    <span class="metric-label">RAW INGESTED LEADS</span>
+                    <span id="metric-raw" class="metric-value">0</span>
+                </div>
+                <div class="metric-card glass-card">
+                    <span class="metric-label">TIER 1 HOT LEADS</span>
+                    <span id="metric-hot" class="metric-value hot-color">0</span>
+                </div>
+                <div class="metric-card glass-card">
+                    <span class="metric-label">TIER 2 WARM LEADS</span>
+                    <span id="metric-warm" class="metric-value warm-color">0</span>
+                </div>
+                <div class="metric-card glass-card">
+                    <span class="metric-label">PUBLISHED TO CLIENT DESK</span>
+                    <span id="metric-published" class="metric-value client-color">0</span>
+                </div>
+            </div>
+
+            <!-- Triage Kanban Board -->
+            <div class="kanban-grid">
+                <!-- Column 1: New / Screening -->
+                <div class="kanban-column glass-card">
+                    <div class="column-header">
+                        <span class="column-title">NEW & SCREENING QUEUE</span>
+                        <span id="count-new" class="column-count">0</span>
+                    </div>
+                    <div id="container-new" class="kanban-list"></div>
+                </div>
+
+                <!-- Column 2: Tier 1 Hot -->
+                <div class="kanban-column glass-card border-hot">
+                    <div class="column-header">
+                        <span class="column-title">TIER 1 HOT (PRE-APPROVED)</span>
+                        <span id="count-hot" class="column-count">0</span>
+                    </div>
+                    <div id="container-hot" class="kanban-list"></div>
+                </div>
+
+                <!-- Column 3: Tier 2 Warm -->
+                <div class="kanban-column glass-card border-warm">
+                    <div class="column-header">
+                        <span class="column-title">TIER 2 WARM (CADENCE)</span>
+                        <span id="count-warm" class="column-count">0</span>
+                    </div>
+                    <div id="container-warm" class="kanban-list"></div>
+                </div>
+
+                <!-- Column 4: Disqualified / Invalid -->
+                <div class="kanban-column glass-card opacity-muted">
+                    <div class="column-header">
+                        <span class="column-title">DISQUALIFIED / ARCHIVE</span>
+                        <span id="count-disqualified" class="column-count">0</span>
+                    </div>
+                    <div id="container-disqualified" class="kanban-list"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- VIEW 2: REN CLIENT DESK (Client-Facing View) -->
+        <main id="view-client" class="view-panel">
+            <div class="view-header">
+                <h2>REN Client Desk</h2>
+                <p>Executive dashboard for Real Estate Negotiators. Verified buyer dossiers and confirmed viewing bookings.</p>
+            </div>
+
+            <div class="client-banner glass-card">
+                <div class="client-info">
+                    <h3>Agent Ahmad (REN 45102)</h3>
+                    <p>Subang & Shah Alam Territory Lock • Seat SEAT-001</p>
+                </div>
+                <div class="client-stat-badge">
+                    <span class="stat-num" id="client-dossier-count">0</span>
+                    <span class="stat-lbl">Verified Buyer Dossiers</span>
+                </div>
+            </div>
+
+            <!-- Client Dossiers Grid -->
+            <div class="section-title">
+                <h3>Verified Buyer Dossiers & Viewings</h3>
+            </div>
+            <div id="client-dossier-container" class="dossiers-grid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Triage Modal -->
+    <div id="triage-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="modal-lead-name">Lead Qualification</h3>
+                <button class="btn-close" onclick="closeTriageModal()">CLOSE</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-lead-info" class="lead-subtitle"></p>
+                
+                <div class="form-group">
+                    <label>Qualification Tier</label>
+                    <select id="modal-tier-select" class="input-field">
+                        <option value="Hot">Tier 1 Hot (Pre-approved / High DSR)</option>
+                        <option value="Warm">Tier 2 Warm (In Cadence)</option>
+                        <option value="Disqualified">Disqualified (Out of Budget / Invalid)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Loan Pre-Approval Status</label>
+                    <select id="modal-loan-status" class="input-field">
+                        <option value="Pre-Approved">Pre-Approved Loan</option>
+                        <option value="Documents Collected">Documents Collected</option>
+                        <option value="Self-Employed / Cash">Cash / Self-Employed</option>
+                        <option value="Pending Submission">Pending Submission</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirmed Viewing Date & Time</label>
+                    <input type="text" id="modal-viewing-time" placeholder="e.g. Saturday 11:00 AM @ Sales Gallery" class="input-field">
+                </div>
+
+                <div class="form-group">
+                    <label>Operator Notes (Private)</label>
+                    <textarea id="modal-notes" rows="3" placeholder="DSR check, income, preferred floor unit..." class="input-field"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTriageModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveTriageData()">Save & Update Lead</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

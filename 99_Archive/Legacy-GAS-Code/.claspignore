@@ -1,0 +1,10 @@
+**/*
+!appsscript.json
+!gas-code-optimized.js
+!setup_sheets_helper.gs
+!ClientPortal.html
+!OperatorConsole.html
+!PilotClientPortal.html
+!PilotOperatorConsole.html
+
+

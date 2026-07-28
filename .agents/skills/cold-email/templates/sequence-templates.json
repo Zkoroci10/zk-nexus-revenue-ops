@@ -1,0 +1,44 @@
+{
+  "sequenceName": "B2B Tech Lead Outreach Sequence",
+  "version": "1.0.0",
+  "cadence": [
+    {
+      "touchpoint": 1,
+      "dayOffset": 1,
+      "subjectLines": [
+        "Quick question regarding {{painPoint}} at {{companyName}}",
+        "Solving {{painPoint}} for {{companyName}}",
+        "Idea for {{jobTitle}} at {{companyName}}"
+      ],
+      "bodyTemplate": "Hi {{firstName}},\n\nSaw {{companyName}}'s {{customTrigger}} — congrats on the milestone.\n\nMany {{jobTitle}}s we work with in {{industry}} are currently facing challenges around {{painPoint}}. At {{senderCompany}}, we help teams streamline this process, cutting turnaround times by over 40%.\n\nWould you be open to a 5-minute conversation next week to see if this fits your current roadmap?\n\nBest regards,\n{{senderName}}\n{{senderCompany}}",
+      "cta": "Open to a 5-minute conversation next week?"
+    },
+    {
+      "touchpoint": 2,
+      "dayOffset": 4,
+      "subjectLines": [
+        "Re: Solving {{painPoint}} for {{companyName}}"
+      ],
+      "bodyTemplate": "Hi {{firstName}},\n\nFollowing up on my previous message. Thought you might find this benchmark relevant: a peer team in {{industry}} recently implemented {{senderCompany}}'s infrastructure and reduced their verification overhead by 50% within 30 days.\n\nWould it make sense to share a brief 2-page overview with you?\n\nBest,\n{{senderName}}",
+      "cta": "Would it make sense to share a brief overview?"
+    },
+    {
+      "touchpoint": 3,
+      "dayOffset": 8,
+      "subjectLines": [
+        "Re: Solving {{painPoint}} for {{companyName}}"
+      ],
+      "bodyTemplate": "Hi {{firstName}},\n\nQuick bump — I know things get busy at {{companyName}}. Is optimizing {{painPoint}} currently on your team's priority list for this quarter?\n\nThanks,\n{{senderName}}",
+      "cta": "Is this on your priority list for this quarter?"
+    },
+    {
+      "touchpoint": 4,
+      "dayOffset": 14,
+      "subjectLines": [
+        "Closing the loop / {{companyName}}"
+      ],
+      "bodyTemplate": "Hi {{firstName}},\n\nAssuming this isn't a priority right now, I'll stop reaching out. If {{painPoint}} becomes top of mind later this year, feel free to drop me a note.\n\nWishing {{companyName}} continued success.\n\nBest,\n{{senderName}}",
+      "cta": "Feel free to reach back out anytime."
+    }
+  ]
+}

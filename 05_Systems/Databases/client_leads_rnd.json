@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2026-07-28T20:20:54.092Z",
+    "environment": "R&D Development"
+  },
+  "rens": [
+    {
+      "id": "REN-001",
+      "name": "Ahmad Razif",
+      "agency": "IQI Realty",
+      "tier": "Growth",
+      "phone": "+60121234567",
+      "activeLeads": 3,
+      "commissionYTD": 54000
+    },
+    {
+      "id": "REN-002",
+      "name": "Siti Nurhaliza",
+      "agency": "Renstar Properties",
+      "tier": "Enterprise",
+      "phone": "+60139876543",
+      "activeLeads": 2,
+      "commissionYTD": 17000
+    }
+  ],
+  "listings": [
+    {
+      "id": "LST-001",
+      "title": "Suria Jelutong Studio Condo",
+      "location": "Bukit Jelutong, Shah Alam",
+      "price": 380000,
+      "type": "Condo",
+      "rooms": 2,
+      "sizeSqft": 750,
+      "renId": "REN-001"
+    },
+    {
+      "id": "LST-002",
+      "title": "Skyfield 2-Storey Terrace",
+      "location": "Bangi, Selangor",
+      "price": 680000,
+      "type": "Terrace",
+      "rooms": 4,
+      "sizeSqft": 1800,
+      "renId": "REN-002"
+    },
+    {
+      "id": "LST-003",
+      "title": "Cyber Towers Luxury Suite",
+      "location": "Cyberjaya",
+      "price": 850000,
+      "type": "Semi-D",
+      "rooms": 4,
+      "sizeSqft": 2200,
+      "renId": "REN-001"
+    },
+    {
+      "id": "LST-004",
+      "title": "Botanica Hilltop Bungalow",
+      "location": "Damansara Heights",
+      "price": 2400000,
+      "type": "Bungalow",
+      "rooms": 6,
+      "sizeSqft": 5500,
+      "renId": "REN-001"
+    },
+    {
+      "id": "LST-005",
+      "title": "Puchong Heights Subsale Apt",
+      "location": "Puchong, Selangor",
+      "price": 320000,
+      "type": "Apartment",
+      "rooms": 3,
+      "sizeSqft": 850,
+      "renId": "REN-002"
+    }
+  ],
+  "buyers": [
+    {
+      "id": "BYR-001",
+      "name": "Mohd Fikri bin Hassan",
+      "phone": "+60123456789",
+      "location": "Setia Alam, Shah Alam",
+      "budgetMax": 500000,
+      "preferredType": "Condo",
+      "renId": "REN-001",
+      "status": "Viewing Scheduled",
+      "commission": 6000,
+      "source": "Facebook Ads"
+    },
+    {
+      "id": "BYR-002",
+      "name": "Aina binti Kamal",
+      "phone": "+60198765432",
+      "location": "Bangi, Selangor",
+      "budgetMax": 800000,
+      "preferredType": "Terrace",
+      "renId": "REN-002",
+      "status": "Negotiation",
+      "commission": 12000,
+      "source": "Portal Listing"
+    },
+    {
+      "id": "BYR-003",
+      "name": "Lee Wei Jie",
+      "phone": "+60171234567",
+      "location": "Cyberjaya",
+      "budgetMax": 1000000,
+      "preferredType": "Semi-D",
+      "renId": "REN-001",
+      "status": "Booking Placed",
+      "commission": 18000,
+      "source": "Referral"
+    },
+    {
+      "id": "BYR-004",
+      "name": "Priya a/p Shankar",
+      "phone": "+60141122334",
+      "location": "Puchong, Selangor",
+      "budgetMax": 500000,
+      "preferredType": "Apartment",
+      "renId": "REN-002",
+      "status": "New Inquiry",
+      "commission": 5000,
+      "source": "WhatsApp Blast"
+    },
+    {
+      "id": "BYR-005",
+      "name": "Azman bin Yusof",
+      "phone": "+60169988776",
+      "location": "Damansara Heights",
+      "budgetMax": 3000000,
+      "preferredType": "Bungalow",
+      "renId": "REN-001",
+      "status": "Viewing Done",
+      "commission": 30000,
+      "source": "Google Ads"
+    }
+  ]
+}

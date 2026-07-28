@@ -1,0 +1,4263 @@
+{
+  "scanned_files": 265,
+  "scanned_md": 227,
+  "checked_links": 28,
+  "error_count": 103,
+  "warning_count": 428,
+  "category_counts": {
+    "ZNS-NC": 137,
+    "ZNS-OID": 165,
+    "ZNS-MD": 149,
+    "ZNS-STRUCT": 80
+  },
+  "issues": [
+    {
+      "file_path": "00_Command Center\\AI-START-HERE.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "00_Command Center\\Daily-Control-Loop.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Daily-Control-Loop.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\Dashboard-Legacy.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Dashboard-Legacy.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\Dashboard-Legacy.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "00_Command Center\\ID-Registry.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ID-Registry.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\Module-Health-Report.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Module-Health-Report.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\Workspace-Index.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Workspace-Index.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\ZK-Nexus-Guide.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-Nexus-Guide.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\ZK-Nexus-Guide.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "00_Command Center\\ZK-Nexus-Master-Index.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-Nexus-Master-Index.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\ZK-Nexus-Master-Index.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "01_Business\\Business-Registry.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Business-Registry.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\DAE-Ecosystem\\Strategy\\Asset_Strategy.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Asset_Strategy.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\DAE-Ecosystem\\Strategy\\Asset_Strategy.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "01_Business\\DAE-Ecosystem\\Strategy\\Business_Context.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Business_Context.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\DAE-Ecosystem\\Strategy\\Business_Context.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "01_Business\\DAE-Ecosystem\\Strategy\\Roadmap.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Roadmap.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\DAE-Ecosystem\\Strategy\\Roadmap.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "01_Business\\Strategy\\RDM-001-Roadmap-RM10k-Month.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'RDM-001-Roadmap-RM10k-Month.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\001_Vision.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.1 (Manglish & Bahasa Pasar Refined)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\004_Product-Overview.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.1 (Manglish & Bahasa Pasar Refined)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\005_Problem-Statement.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.1 (Manglish & Bahasa Pasar Refined)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\001_Business-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\002_Naming-Convention.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\003_Object-ID-Standard.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.1 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\004_Status-Standard.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\005_Priority-Standard.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\006_SLA-Standard.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\007_Permission-Matrix.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\008_Audit-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\009_Version-Control.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\010_Data-Governance.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\001_Entity-Dictionary.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\002_Entity-Relationships.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\003_Field-Dictionary.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\004_Status-Dictionary.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\005_Tag-Dictionary.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\006_Source-Dictionary.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\007_Validation-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\008_Data-Flow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\009_Data-Lifecycle.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\010_Ownership-Matrix.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\011_Folder-Architecture.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\012_Naming-Convention-Reference.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\013_Metadata-Standard.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\001_Master-Workflow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\002_Lead-Lifecycle.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\003_Client-Lifecycle.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\004_Appointment-Lifecycle.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\005_Follow-up-Lifecycle.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\006_Task-Lifecycle.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\007_Reporting-Workflow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\008_Exception-Workflow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\009_Escalation-Workflow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\010_State-Transition-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-001_Lead-Import.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-001_Lead-Import.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-001_Lead-Import.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-002_Lead-Cleaning.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-002_Lead-Cleaning.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-002_Lead-Cleaning.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-003_Duplicate-Checking.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-003_Duplicate-Checking.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-003_Duplicate-Checking.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-004_Lead-Segmentation.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-004_Lead-Segmentation.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-004_Lead-Segmentation.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-005_Lead-Assignment.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-005_Lead-Assignment.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-005_Lead-Assignment.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-006_Outreach.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-006_Outreach.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-006_Outreach.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-007_Follow-up.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-007_Follow-up.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-007_Follow-up.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-008_Appointment-Booking.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-008_Appointment-Booking.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-008_Appointment-Booking.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-009_CRM-Update.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-009_CRM-Update.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-009_CRM-Update.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-010_Reporting.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-010_Reporting.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-010_Reporting.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-011_Lead-Revival.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-011_Lead-Revival.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-011_Lead-Revival.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-012_Archive.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-012_Archive.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-012_Archive.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\02_Work_Instructions",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\02_Work_Instructions\\WI-001_Import-CSV.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'WI-001_Import-CSV.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\02_Work_Instructions\\WI-001_Import-CSV.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\03_Checklists",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\03_Checklists\\CHK-001_Lead-Cleaning-Checklist.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'CHK-001_Lead-Cleaning-Checklist.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\03_Checklists\\CHK-001_Lead-Cleaning-Checklist.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\04_Quality_Assurance",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\04_Quality_Assurance\\QA-001_Import-Audit.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'QA-001_Import-Audit.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\04_Quality_Assurance\\QA-001_Import-Audit.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\05_Templates",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\05_Templates\\TMP-001_WhatsApp-Greeting-DSR.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'TMP-001_WhatsApp-Greeting-DSR.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\05_Templates\\TMP-001_WhatsApp-Greeting-DSR.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\06_SLAs",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\06_SLAs\\SLA-001_Operational-SLA-Matrix.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SLA-001_Operational-SLA-Matrix.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\06_SLAs\\SLA-001_Operational-SLA-Matrix.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\07_Exceptions",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\07_Exceptions\\EXC-001_Exception-Execution-Guide.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'EXC-001_Exception-Execution-Guide.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\07_Exceptions\\EXC-001_Exception-Execution-Guide.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\08_Daily_Operations",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\08_Daily_Operations\\DOP-001_Daily-Operations-Manual.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'DOP-001_Daily-Operations-Manual.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\08_Daily_Operations\\DOP-001_Daily-Operations-Manual.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\09_Weekly_Operations",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\09_Weekly_Operations\\WOP-001_Weekly-Operations-Manual.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'WOP-001_Weekly-Operations-Manual.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\09_Weekly_Operations\\WOP-001_Weekly-Operations-Manual.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\10_Monthly_Operations",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\10_Monthly_Operations\\MOP-001_Monthly-Operations-Manual.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'MOP-001_Monthly-Operations-Manual.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\10_Monthly_Operations\\MOP-001_Monthly-Operations-Manual.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\01_Communication_Principles",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\01_Communication_Principles\\001_Communication-Principles.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\02_Communication_Channels",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\02_Communication_Channels\\002_Communication-Channels.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\03_Message_Library",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\03_Message_Library\\003_Message-Library.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\04_Call_Library",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\04_Call_Library\\004_Call-Library.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\05_Follow-up_Library",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\05_Follow-up_Library\\005_Follow-up-Library.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\06_Appointment_Communication",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\06_Appointment_Communication\\006_Appointment-Communication.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\07_Client_Communication",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\07_Client_Communication\\007_Client-Communication.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\08_Internal_Communication",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\08_Internal_Communication\\008_Internal-Communication.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\09_Notification_System",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\09_Notification_System\\009_Notification-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\10_Communication_QA",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\10_Communication_QA\\010_Communication-QA.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\11_Objection_Handling",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\11_Objection_Handling\\011_Objection-Handling.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\12_Compliance_Privacy",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\12_Compliance_Privacy\\012_Compliance-Privacy.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\01_Analytics_Framework",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\01_Analytics_Framework\\ZK-ANA-001_Analytics-Framework.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-001_Analytics-Framework.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\01_Analytics_Framework\\ZK-ANA-001_Analytics-Framework.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\02_Metric_Dictionary",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\02_Metric_Dictionary\\ZK-ANA-002_Metric-Dictionary.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-002_Metric-Dictionary.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\02_Metric_Dictionary\\ZK-ANA-002_Metric-Dictionary.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\03_KPI_System",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\03_KPI_System\\ZK-ANA-003_KPI-System.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-003_KPI-System.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\03_KPI_System\\ZK-ANA-003_KPI-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-001_Client-Dashboard-Spec.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-DASH-001_Client-Dashboard-Spec.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-001_Client-Dashboard-Spec.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-002_Operator-Dashboard-Spec.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-DASH-002_Operator-Dashboard-Spec.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-002_Operator-Dashboard-Spec.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-003_Admin-Dashboard-Spec.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-DASH-003_Admin-Dashboard-Spec.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-003_Admin-Dashboard-Spec.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\05_Report_Templates",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\05_Report_Templates\\ZK-RPT-001_Daily-Report-Template.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-RPT-001_Daily-Report-Template.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\05_Report_Templates\\ZK-RPT-001_Daily-Report-Template.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\06_Report_Workflow",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\06_Report_Workflow\\ZK-ANA-004_Report-Workflow.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-004_Report-Workflow.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\06_Report_Workflow\\ZK-ANA-004_Report-Workflow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\07_Performance_Analysis",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\07_Performance_Analysis\\ZK-ANA-005_Performance-Analysis.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-005_Performance-Analysis.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\07_Performance_Analysis\\ZK-ANA-005_Performance-Analysis.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\08_Client_Reporting",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\08_Client_Reporting\\ZK-RPT-007_Client-Reporting-Rules.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-RPT-007_Client-Reporting-Rules.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\08_Client_Reporting\\ZK-RPT-007_Client-Reporting-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\09_Internal_Reporting",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\09_Internal_Reporting\\ZK-RPT-008_Internal-Reporting-Rules.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-RPT-008_Internal-Reporting-Rules.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\09_Internal_Reporting\\ZK-RPT-008_Internal-Reporting-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\10_Data_Quality",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\10_Data_Quality\\ZK-ANA-006_Data-Quality-Checklist.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-006_Data-Quality-Checklist.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\10_Data_Quality\\ZK-ANA-006_Data-Quality-Checklist.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\11_Future_Analytics",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\11_Future_Analytics\\ZK-ANA-007_Future-Analytics.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ANA-007_Future-Analytics.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\11_Future_Analytics\\ZK-ANA-007_Future-Analytics.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\01_Automation_Strategy",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\01_Automation_Strategy\\ZK-AUT-001_Automation-Strategy.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-001_Automation-Strategy.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\01_Automation_Strategy\\ZK-AUT-001_Automation-Strategy.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\02_Automation_Map",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\02_Automation_Map\\ZK-AUT-002_Automation-Map.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-002_Automation-Map.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\02_Automation_Map\\ZK-AUT-002_Automation-Map.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\03_Process_Automation",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\03_Process_Automation\\ZK-AUT-003_Process-Automation.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-003_Process-Automation.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\03_Process_Automation\\ZK-AUT-003_Process-Automation.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\04_Data_Automation",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\04_Data_Automation\\ZK-AUT-004_Data-Automation.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-004_Data-Automation.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\04_Data_Automation\\ZK-AUT-004_Data-Automation.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\05_Communication_Automation",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\05_Communication_Automation\\ZK-AUT-005_Communication-Automation.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-005_Communication-Automation.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\05_Communication_Automation\\ZK-AUT-005_Communication-Automation.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\06_Task_Automation",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\06_Task_Automation\\ZK-AUT-006_Task-Automation.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-006_Task-Automation.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\06_Task_Automation\\ZK-AUT-006_Task-Automation.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\07_Report_Automation",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\07_Report_Automation\\ZK-AUT-007_Report-Automation.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-007_Report-Automation.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\07_Report_Automation\\ZK-AUT-007_Report-Automation.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\08_AI_Automation",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\08_AI_Automation\\ZK-AUT-008_AI-Automation-Design.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-008_AI-Automation-Design.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\08_AI_Automation\\ZK-AUT-008_AI-Automation-Design.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\09_Integration_Library",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\09_Integration_Library\\ZK-AUT-009_Integration-Library.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-009_Integration-Library.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\09_Integration_Library\\ZK-AUT-009_Integration-Library.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\10_Automation_QA",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\10_Automation_QA\\ZK-AUT-010_Automation-QA-Checklist.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-010_Automation-QA-Checklist.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\10_Automation_QA\\ZK-AUT-010_Automation-QA-Checklist.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\11_Automation_Backlog",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\11_Automation_Backlog\\ZK-AUT-011_Automation-Backlog.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AUT-011_Automation-Backlog.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\11_Automation_Backlog\\ZK-AUT-011_Automation-Backlog.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\01_Product_Requirements",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\01_Product_Requirements\\ZK-PRD-001_Product-Requirement-Document.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-PRD-001_Product-Requirement-Document.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\01_Product_Requirements\\ZK-PRD-001_Product-Requirement-Document.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\02_System_Architecture",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\02_System_Architecture\\ZK-ARCH-001_System-Architecture.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-ARCH-001_System-Architecture.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\02_System_Architecture\\ZK-ARCH-001_System-Architecture.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\03_User_Management",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\03_User_Management\\ZK-USER-001_User-Management-System.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-USER-001_User-Management-System.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\03_User_Management\\ZK-USER-001_User-Management-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\04_User_Roles_Permissions",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\04_User_Roles_Permissions\\ZK-USER-002_User-Roles-Permissions-Matrix.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-USER-002_User-Roles-Permissions-Matrix.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\04_User_Roles_Permissions\\ZK-USER-002_User-Roles-Permissions-Matrix.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-001_Lead-Management-Engine.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-FEAT-001_Lead-Management-Engine.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-001_Lead-Management-Engine.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-002_Operator-Task-Console.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-FEAT-002_Operator-Task-Console.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-002_Operator-Task-Console.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-003_Client-REN-Portal.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-FEAT-003_Client-REN-Portal.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-003_Client-REN-Portal.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\06_User_Flow",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\06_User_Flow\\ZK-FLOW-001_User-Flow-Diagrams.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-FLOW-001_User-Flow-Diagrams.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\06_User_Flow\\ZK-FLOW-001_User-Flow-Diagrams.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\07_UI_UX_Specification",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\07_UI_UX_Specification\\ZK-UI-001_UI-UX-Design-System.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-UI-001_UI-UX-Design-System.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\07_UI_UX_Specification\\ZK-UI-001_UI-UX-Design-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\08_Database_Specification",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\08_Database_Specification\\ZK-DB-001_Database-Relational-Schema.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-DB-001_Database-Relational-Schema.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\08_Database_Specification\\ZK-DB-001_Database-Relational-Schema.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\09_API_Integration",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\09_API_Integration\\ZK-API-001_API-Integration-Endpoints.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-API-001_API-Integration-Endpoints.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\09_API_Integration\\ZK-API-001_API-Integration-Endpoints.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\10_Notification_System",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\10_Notification_System\\ZK-NOTIF-001_Notification-Engine.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-NOTIF-001_Notification-Engine.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\10_Notification_System\\ZK-NOTIF-001_Notification-Engine.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\11_Search_Filter_System",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\11_Search_Filter_System\\ZK-FEAT-006_Search-Filter-System.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-FEAT-006_Search-Filter-System.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\11_Search_Filter_System\\ZK-FEAT-006_Search-Filter-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\12_Security",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\12_Security\\ZK-SEC-001_Security-and-RLS-Rules.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-SEC-001_Security-and-RLS-Rules.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\12_Security\\ZK-SEC-001_Security-and-RLS-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\13_QA_Testing",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\13_QA_Testing\\ZK-TEST-001_QA-Test-Cases.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-TEST-001_QA-Test-Cases.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\13_QA_Testing\\ZK-TEST-001_QA-Test-Cases.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\14_Release_Management",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\14_Release_Management\\ZK-REL-001_Cardless-Release-Management.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-REL-001_Cardless-Release-Management.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\14_Release_Management\\ZK-REL-001_Cardless-Release-Management.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\15_Product_Backlog",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\15_Product_Backlog\\ZK-BACK-001_Product-Backlog.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-BACK-001_Product-Backlog.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\15_Product_Backlog\\ZK-BACK-001_Product-Backlog.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\01_Workforce_Architecture",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\01_Workforce_Architecture\\ZK-AI-001_Workforce-Architecture.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-001_Workforce-Architecture.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\01_Workforce_Architecture\\ZK-AI-001_Workforce-Architecture.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\02_Agent_Catalog",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\02_Agent_Catalog\\ZK-AI-002_Agent-Catalog.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-002_Agent-Catalog.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\02_Agent_Catalog\\ZK-AI-002_Agent-Catalog.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\03_Agent_Specifications",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\03_Agent_Specifications\\ZK-AI-003_Agent-Specifications.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-003_Agent-Specifications.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\03_Agent_Specifications\\ZK-AI-003_Agent-Specifications.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\04_Agent_Workflows",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\04_Agent_Workflows\\ZK-AI-004_Agent-Workflows.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-004_Agent-Workflows.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\04_Agent_Workflows\\ZK-AI-004_Agent-Workflows.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\05_Agent_Knowledge",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\05_Agent_Knowledge\\ZK-AI-005_Agent-Knowledge-Architecture.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-005_Agent-Knowledge-Architecture.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\05_Agent_Knowledge\\ZK-AI-005_Agent-Knowledge-Architecture.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\06_Agent_Tools",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\06_Agent_Tools\\ZK-AI-006_Agent-Tools-Registry.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-006_Agent-Tools-Registry.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\06_Agent_Tools\\ZK-AI-006_Agent-Tools-Registry.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\07_Agent_Memory",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\07_Agent_Memory\\ZK-AI-007_Agent-Memory-System.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-007_Agent-Memory-System.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\07_Agent_Memory\\ZK-AI-007_Agent-Memory-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\08_Agent_Permissions",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\08_Agent_Permissions\\ZK-AI-008_Agent-Permissions-Matrix.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-008_Agent-Permissions-Matrix.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\08_Agent_Permissions\\ZK-AI-008_Agent-Permissions-Matrix.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\09_Human_AI_Handoff",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\09_Human_AI_Handoff\\ZK-AI-009_Human-AI-Handoff-Rules.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-009_Human-AI-Handoff-Rules.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\09_Human_AI_Handoff\\ZK-AI-009_Human-AI-Handoff-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\10_Agent_Monitoring",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\10_Agent_Monitoring\\ZK-AI-010_Agent-Monitoring-Framework.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-010_Agent-Monitoring-Framework.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\10_Agent_Monitoring\\ZK-AI-010_Agent-Monitoring-Framework.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\11_AI_QA",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\11_AI_QA\\ZK-AI-011_AI-QA-Audit-Checklist.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-011_AI-QA-Audit-Checklist.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\11_AI_QA\\ZK-AI-011_AI-QA-Audit-Checklist.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\12_AI_Security",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\12_AI_Security\\ZK-AI-012_AI-Security-Governance.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-012_AI-Security-Governance.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\12_AI_Security\\ZK-AI-012_AI-Security-Governance.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\13_AI_Training",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\13_AI_Training\\ZK-AI-013_AI-Training-Knowledge-Review.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-013_AI-Training-Knowledge-Review.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\13_AI_Training\\ZK-AI-013_AI-Training-Knowledge-Review.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\14_AI_Backlog",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\14_AI_Backlog\\ZK-AI-014_AI-Backlog.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-014_AI-Backlog.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\14_AI_Backlog\\ZK-AI-014_AI-Backlog.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\15_Future_Workforce",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\15_Future_Workforce\\ZK-AI-015_Future-Workforce-Vision.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-AI-015_Future-Workforce-Vision.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\15_Future_Workforce\\ZK-AI-015_Future-Workforce-Vision.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Client-Delivery\\client-folder-structure.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Client-Delivery\\Client-Lead-Tracker-Active.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Client-Lead-Tracker-Active.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Offers\\client-offers.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Operations\\SOP-OPS-002_Console-Operator-Manual.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-OPS-002_Console-Operator-Manual.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Pricing\\pricing-model.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\Listing-Based-Pitch-Matrix.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Listing-Based-Pitch-Matrix.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\Sales-Pitch-Deck.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Sales-Pitch-Deck.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\sales-process.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\SOP-004_Objection-Handling.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-004_Objection-Handling.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\Proposals",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '01_Business') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\Proposals\\Ahmad-PJ-Proposal.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Ahmad-PJ-Proposal.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Sales\\Proposals\\Ahmad-PJ-SOW.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Ahmad-PJ-SOW.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\business-context.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\client-profile.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\current-crm-audit.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\feature-map.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\Master-Execution-Roadmap-Framework.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Master-Execution-Roadmap-Framework.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\Master-Execution-Roadmap-Framework.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\REN-Client-Acquisition-Playbook-Tomorrow.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'REN-Client-Acquisition-Playbook-Tomorrow.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\REN-Client-Acquisition-Playbook-Tomorrow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-003",
+      "severity": "WARNING",
+      "message": "Non-standard Status 'Active Operational Blueprint'. Expected one of: Draft, Review, Active, Archived, Completed, In Development, Active Blueprint",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\REN-Client-Acquisition-Playbook-Tomorrow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\strategy-overview.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\system-architecture.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\Tomorrow-Operations-Launch-Checklist.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Tomorrow-Operations-Launch-Checklist.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\Tomorrow-Operations-Launch-Checklist.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-003",
+      "severity": "WARNING",
+      "message": "Non-standard Status 'Active Operational Blueprint'. Expected one of: Draft, Review, Active, Archived, Completed, In Development, Active Blueprint",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\Tomorrow-Operations-Launch-Checklist.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '1.0 (Manglish & Bahasa Pasar)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\zk-revenue-ops-dashboard.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-002",
+      "severity": "WARNING",
+      "message": "Document ID 'BUS-001 Asset' does not follow standard {PREFIX}-{NNN} pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\ZK-Revenue-Ops-Master-Product-Framework.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-Revenue-Ops-Master-Product-Framework.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active-Projects-List.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Active-Projects-List.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\ZKRO-Service-Catalog-Draft.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-001",
+      "severity": "ERROR",
+      "message": "Filename contains prohibited term 'draft'. Use metadata/versioning instead of filename tags.",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\ZKRO-Service-Catalog-Draft.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZKRO-Service-Catalog-Draft.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\PRJ-003_Business-Readiness\\project-report.md",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-004",
+      "severity": "ERROR",
+      "message": "Broken internal link: '[web-app-sandbox.html](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/02_Projects/Active/PRJ-003_Business-Readiness/sandbox/web-app-sandbox.html)' -> Target path 'c:\\Users\\Dell\\Documents\\Projects ZK Nexus\\02_Projects\\Active\\PRJ-003_Business-Readiness\\sandbox\\web-app-sandbox.html' does not exist.",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\PRJ-004_Sales-Engine\\project-report.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "02_Projects\\Active\\PRJ-004_Sales-Engine\\project-report.md",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-004",
+      "severity": "ERROR",
+      "message": "Broken internal link: '[gas-code-optimized.js](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/05_Systems/Scripts/gas-code-optimized.js)' -> Target path 'c:\\Users\\Dell\\Documents\\Projects ZK Nexus\\05_Systems\\Scripts\\gas-code-optimized.js' does not exist.",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\PRJ-008_Jarvis-Command-Center\\public",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '02_Projects') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Knowledge-Index.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Knowledge-Index.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Research-Backlog.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Research-Backlog.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Finance\\FINANCE_SYSTEM.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "03_Knowledge\\Legal\\LEGAL_SYSTEM.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "03_Knowledge\\Marketing\\MARKETING_SYSTEM.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "03_Knowledge\\Marketing\\PROJECT_TRACKER.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "03_Knowledge\\Sales\\SOP-SDR-001_WhatsApp-Outreach.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-SDR-001_WhatsApp-Outreach.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Sales\\SOP-SDR-002_Lead-Enrichment-Qualification.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-SDR-002_Lead-Enrichment-Qualification.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Sales\\SOP-SDR-003_Cadence-And-Follow-Up.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-SDR-003_Cadence-And-Follow-Up.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\SOPs\\SOP-001-Lead-Qualification.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-001-Lead-Qualification.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\SOPs\\SOP-002-Client-Onboarding.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-002-Client-Onboarding.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\SOPs\\SOP-003-Daily-Control-Loop.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'SOP-003-Daily-Control-Loop.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Agent-Schedules.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Agent-Schedules.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI-Onboarding-Protocol.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-Onboarding-Protocol.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI-Worker-Registry.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-Worker-Registry.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Department-Breakdown.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Department-Breakdown.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Role-Definitions.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Role-Definitions.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI\\AI-001_ZK-Architect.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-001_ZK-Architect.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI\\AI-002_ZK-Operator.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-002_ZK-Operator.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI\\AI-003_ZK-Knowledge.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-003_ZK-Knowledge.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI\\AI-004_ZK-Creator.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-004_ZK-Creator.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI\\AI-005_ZK-Developer.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-005_ZK-Developer.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI-OS\\AI-Operating-System.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-Operating-System.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\AI-OS\\AI-Operating-System.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "04_Workforce\\Constitution\\AI-Worker-Constitution.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-Worker-Constitution.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Constitution\\AI-Worker-Constitution.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "04_Workforce\\Constitution\\EMPIRE_OPERATING_SYSTEM.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "04_Workforce\\Rules\\AI-Worker-Rules.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-Worker-Rules.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Rules\\AI-Worker-Rules.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "04_Workforce\\Rules\\AI_WORKING_RULES.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "05_Systems\\Integration-Map.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Integration-Map.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Systems-Inventory.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Systems-Inventory.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Systems-Inventory.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-005",
+      "severity": "WARNING",
+      "message": "Non-standard Version format '2.0 (Cardless Stack & Digital Workforce Engine)'. Use '1.0' or 'v1.0'.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Automation\\ZK-Nexus-Workflow.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'ZK-Nexus-Workflow.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Automation\\ZK-Nexus-Workflow.md",
+      "category": "ZNS-MD",
+      "rule_id": "MD-001",
+      "severity": "ERROR",
+      "message": "Header block error: Missing frontmatter starting delimiter '---' at line 1.",
+      "line_no": 1
+    },
+    {
+      "file_path": "05_Systems\\Console-Portal\\public\\css",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '05_Systems') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Console-Portal\\public\\js",
+      "category": "ZNS-STRUCT",
+      "rule_id": "STR-002",
+      "severity": "ERROR",
+      "message": "Folder depth (3 levels below '05_Systems') exceeds max allowed depth of 2 levels.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Integrations\\Google-Drive-Workspace-Bridge.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Google-Drive-Workspace-Bridge.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "06_Resources\\Asset-Catalog.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Asset-Catalog.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "07_Templates\\Template-Index.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Template-Index.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "07_Templates\\Email\\TMP-002_Email_SDR-Outreach.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'TMP-002_Email_SDR-Outreach.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "07_Templates\\Prompt\\TMP-003_Prompt_CEO-Operating-Prompt.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'TMP-003_Prompt_CEO-Operating-Prompt.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "07_Templates\\Proposal\\TMP-001_Proposal_SDR-Pilot.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'TMP-001_Proposal_SDR-Pilot.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "07_Templates\\SOP\\TMP-004_Lead-Qualification-Checklist.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'TMP-004_Lead-Qualification-Checklist.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "07_Templates\\Spreadsheet\\TMP-005_Client-Lead-Database.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'TMP-005_Client-Lead-Database.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "08_Logs\\Log-Index.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'Log-Index.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "08_Logs\\AI-Logs\\AI-Log-2026-07-25.md",
+      "category": "ZNS-NC",
+      "rule_id": "NC-002",
+      "severity": "WARNING",
+      "message": "Filename 'AI-Log-2026-07-25.md' uses mixed case without matching standard ID or numbered prefix pattern.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Operations\\outreach-sop.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-003",
+      "severity": "ERROR",
+      "message": "Duplicate Object ID 'SOP-003' assigned to multiple active files: 01_Business\\ZK-Revenue-Ops\\Operations\\outreach-sop.md, 03_Knowledge\\SOPs\\SOP-003-Daily-Control-Loop.md",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Services\\service-catalog.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-003",
+      "severity": "ERROR",
+      "message": "Duplicate Object ID 'CAT-001' assigned to multiple active files: 01_Business\\ZK-Revenue-Ops\\Services\\service-catalog.md, 02_Projects\\Active\\ZKRO-Service-Catalog-Draft.md",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\PRJ-002_Workspace-Cleanup\\project-charter.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-003",
+      "severity": "ERROR",
+      "message": "Duplicate Object ID 'PRJ-002' assigned to multiple active files: 02_Projects\\Active\\PRJ-002_Workspace-Cleanup\\project-charter.md, 02_Projects\\Active\\PRJ-002_Workspace-Cleanup\\project-report.md",
+      "line_no": null
+    },
+    {
+      "file_path": "02_Projects\\Active\\PRJ-003_Business-Readiness\\project-charter.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-003",
+      "severity": "ERROR",
+      "message": "Duplicate Object ID 'PRJ-003' assigned to multiple active files: 02_Projects\\Active\\PRJ-003_Business-Readiness\\project-charter.md, 02_Projects\\Active\\PRJ-003_Business-Readiness\\project-report.md",
+      "line_no": null
+    },
+    {
+      "file_path": "00_Command Center\\Daily-Control-Loop.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'RUL-005' used in '00_Command Center\\Daily-Control-Loop.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\Strategy\\RDM-001-Roadmap-RM10k-Month.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'RDM-001' used in '01_Business\\Strategy\\RDM-001-Roadmap-RM10k-Month.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\001_Vision.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-001' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\001_Vision.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\002_Mission.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-002' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\002_Mission.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\003_Core-Values.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-003' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\003_Core-Values.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\004_Product-Overview.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-PS-001' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\004_Product-Overview.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\005_Problem-Statement.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-005' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\005_Problem-Statement.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\006_Solution.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-006' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\006_Solution.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\007_Scope.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-007' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\007_Scope.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\008_User-Roles.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-008' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\008_User-Roles.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\009_Terminology.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-009' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\009_Terminology.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\00_Foundation\\010_Success-Metrics.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FND-010' used in '01_Business\\ZK-Revenue-Ops\\00_Foundation\\010_Success-Metrics.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\001_Business-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-001' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\001_Business-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\002_Naming-Convention.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-002' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\002_Naming-Convention.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\003_Object-ID-Standard.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-003' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\003_Object-ID-Standard.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\004_Status-Standard.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-004' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\004_Status-Standard.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\005_Priority-Standard.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-005' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\005_Priority-Standard.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\006_SLA-Standard.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-006' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\006_SLA-Standard.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\007_Permission-Matrix.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-007' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\007_Permission-Matrix.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\008_Audit-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-008' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\008_Audit-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\009_Version-Control.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-009' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\009_Version-Control.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\02_Governance\\010_Data-Governance.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-GOV-010' used in '01_Business\\ZK-Revenue-Ops\\02_Governance\\010_Data-Governance.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\001_Entity-Dictionary.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-001' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\001_Entity-Dictionary.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\002_Entity-Relationships.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-002' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\002_Entity-Relationships.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\003_Field-Dictionary.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-003' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\003_Field-Dictionary.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\004_Status-Dictionary.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-004' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\004_Status-Dictionary.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\005_Tag-Dictionary.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-005' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\005_Tag-Dictionary.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\006_Source-Dictionary.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-006' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\006_Source-Dictionary.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\007_Validation-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-007' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\007_Validation-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\008_Data-Flow.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-008' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\008_Data-Flow.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\009_Data-Lifecycle.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-009' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\009_Data-Lifecycle.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\010_Ownership-Matrix.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-010' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\010_Ownership-Matrix.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\011_Folder-Architecture.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-011' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\011_Folder-Architecture.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\012_Naming-Convention-Reference.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-012' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\012_Naming-Convention-Reference.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\013_Metadata-Standard.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-IA-013' used in '01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\013_Metadata-Standard.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\001_Master-Workflow.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-001' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\001_Master-Workflow.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\002_Lead-Lifecycle.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-002' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\002_Lead-Lifecycle.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\003_Client-Lifecycle.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-003' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\003_Client-Lifecycle.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\004_Appointment-Lifecycle.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-004' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\004_Appointment-Lifecycle.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\005_Follow-up-Lifecycle.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-005' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\005_Follow-up-Lifecycle.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\006_Task-Lifecycle.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-006' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\006_Task-Lifecycle.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\007_Reporting-Workflow.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-007' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\007_Reporting-Workflow.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\008_Exception-Workflow.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-008' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\008_Exception-Workflow.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\009_Escalation-Workflow.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-009' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\009_Escalation-Workflow.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\010_State-Transition-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WF-010' used in '01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\010_State-Transition-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-001_Lead-Import.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-001_Lead-Import.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-002_Lead-Cleaning.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-002' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-002_Lead-Cleaning.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-003_Duplicate-Checking.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-003' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-003_Duplicate-Checking.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-004_Lead-Segmentation.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-004' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-004_Lead-Segmentation.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-005_Lead-Assignment.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-005' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-005_Lead-Assignment.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-006_Outreach.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-006' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-006_Outreach.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-007_Follow-up.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-007' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-007_Follow-up.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-008_Appointment-Booking.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-008' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-008_Appointment-Booking.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-009_CRM-Update.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-009' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-009_CRM-Update.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-010_Reporting.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-010' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-010_Reporting.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-011_Lead-Revival.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-011' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-011_Lead-Revival.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-012_Archive.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SOP-012' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-012_Archive.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\02_Work_Instructions\\WI-001_Import-CSV.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WI-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\02_Work_Instructions\\WI-001_Import-CSV.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\03_Checklists\\CHK-001_Lead-Cleaning-Checklist.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-CHK-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\03_Checklists\\CHK-001_Lead-Cleaning-Checklist.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\04_Quality_Assurance\\QA-001_Import-Audit.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-QA-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\04_Quality_Assurance\\QA-001_Import-Audit.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\05_Templates\\TMP-001_WhatsApp-Greeting-DSR.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-TMP-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\05_Templates\\TMP-001_WhatsApp-Greeting-DSR.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\06_SLAs\\SLA-001_Operational-SLA-Matrix.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SLA-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\06_SLAs\\SLA-001_Operational-SLA-Matrix.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\07_Exceptions\\EXC-001_Exception-Execution-Guide.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-EXC-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\07_Exceptions\\EXC-001_Exception-Execution-Guide.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\08_Daily_Operations\\DOP-001_Daily-Operations-Manual.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-DOP-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\08_Daily_Operations\\DOP-001_Daily-Operations-Manual.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\09_Weekly_Operations\\WOP-001_Weekly-Operations-Manual.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-WOP-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\09_Weekly_Operations\\WOP-001_Weekly-Operations-Manual.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\10_Monthly_Operations\\MOP-001_Monthly-Operations-Manual.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-MOP-001' used in '01_Business\\ZK-Revenue-Ops\\05_Execution_System\\10_Monthly_Operations\\MOP-001_Monthly-Operations-Manual.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\01_Communication_Principles\\001_Communication-Principles.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-001' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\01_Communication_Principles\\001_Communication-Principles.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\02_Communication_Channels\\002_Communication-Channels.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-002' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\02_Communication_Channels\\002_Communication-Channels.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\03_Message_Library\\003_Message-Library.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-003' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\03_Message_Library\\003_Message-Library.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\04_Call_Library\\004_Call-Library.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-004' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\04_Call_Library\\004_Call-Library.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\05_Follow-up_Library\\005_Follow-up-Library.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-005' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\05_Follow-up_Library\\005_Follow-up-Library.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\06_Appointment_Communication\\006_Appointment-Communication.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-006' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\06_Appointment_Communication\\006_Appointment-Communication.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\07_Client_Communication\\007_Client-Communication.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-007' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\07_Client_Communication\\007_Client-Communication.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\08_Internal_Communication\\008_Internal-Communication.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-008' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\08_Internal_Communication\\008_Internal-Communication.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\09_Notification_System\\009_Notification-System.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-009' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\09_Notification_System\\009_Notification-System.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\10_Communication_QA\\010_Communication-QA.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-010' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\10_Communication_QA\\010_Communication-QA.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\11_Objection_Handling\\011_Objection-Handling.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-011' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\11_Objection_Handling\\011_Objection-Handling.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\12_Compliance_Privacy\\012_Compliance-Privacy.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-COM-012' used in '01_Business\\ZK-Revenue-Ops\\06_Communication_System\\12_Compliance_Privacy\\012_Compliance-Privacy.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\01_Analytics_Framework\\ZK-ANA-001_Analytics-Framework.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-001' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\01_Analytics_Framework\\ZK-ANA-001_Analytics-Framework.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\02_Metric_Dictionary\\ZK-ANA-002_Metric-Dictionary.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-002' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\02_Metric_Dictionary\\ZK-ANA-002_Metric-Dictionary.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\03_KPI_System\\ZK-ANA-003_KPI-System.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-003' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\03_KPI_System\\ZK-ANA-003_KPI-System.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-001_Client-Dashboard-Spec.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-DASH-001' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-001_Client-Dashboard-Spec.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-002_Operator-Dashboard-Spec.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-DASH-002' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-002_Operator-Dashboard-Spec.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-003_Admin-Dashboard-Spec.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-DASH-003' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-003_Admin-Dashboard-Spec.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\05_Report_Templates\\ZK-RPT-001_Daily-Report-Template.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-RPT-001' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\05_Report_Templates\\ZK-RPT-001_Daily-Report-Template.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\06_Report_Workflow\\ZK-ANA-004_Report-Workflow.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-004' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\06_Report_Workflow\\ZK-ANA-004_Report-Workflow.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\07_Performance_Analysis\\ZK-ANA-005_Performance-Analysis.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-005' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\07_Performance_Analysis\\ZK-ANA-005_Performance-Analysis.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\08_Client_Reporting\\ZK-RPT-007_Client-Reporting-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-RPT-007' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\08_Client_Reporting\\ZK-RPT-007_Client-Reporting-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\09_Internal_Reporting\\ZK-RPT-008_Internal-Reporting-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-RPT-008' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\09_Internal_Reporting\\ZK-RPT-008_Internal-Reporting-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\10_Data_Quality\\ZK-ANA-006_Data-Quality-Checklist.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-006' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\10_Data_Quality\\ZK-ANA-006_Data-Quality-Checklist.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\11_Future_Analytics\\ZK-ANA-007_Future-Analytics.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ANA-007' used in '01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\11_Future_Analytics\\ZK-ANA-007_Future-Analytics.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\01_Automation_Strategy\\ZK-AUT-001_Automation-Strategy.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-001' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\01_Automation_Strategy\\ZK-AUT-001_Automation-Strategy.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\02_Automation_Map\\ZK-AUT-002_Automation-Map.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-002' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\02_Automation_Map\\ZK-AUT-002_Automation-Map.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\03_Process_Automation\\ZK-AUT-003_Process-Automation.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-003' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\03_Process_Automation\\ZK-AUT-003_Process-Automation.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\04_Data_Automation\\ZK-AUT-004_Data-Automation.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-004' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\04_Data_Automation\\ZK-AUT-004_Data-Automation.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\05_Communication_Automation\\ZK-AUT-005_Communication-Automation.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-005' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\05_Communication_Automation\\ZK-AUT-005_Communication-Automation.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\06_Task_Automation\\ZK-AUT-006_Task-Automation.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-006' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\06_Task_Automation\\ZK-AUT-006_Task-Automation.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\07_Report_Automation\\ZK-AUT-007_Report-Automation.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-007' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\07_Report_Automation\\ZK-AUT-007_Report-Automation.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\08_AI_Automation\\ZK-AUT-008_AI-Automation-Design.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-008' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\08_AI_Automation\\ZK-AUT-008_AI-Automation-Design.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\09_Integration_Library\\ZK-AUT-009_Integration-Library.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-009' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\09_Integration_Library\\ZK-AUT-009_Integration-Library.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\10_Automation_QA\\ZK-AUT-010_Automation-QA-Checklist.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-010' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\10_Automation_QA\\ZK-AUT-010_Automation-QA-Checklist.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\11_Automation_Backlog\\ZK-AUT-011_Automation-Backlog.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AUT-011' used in '01_Business\\ZK-Revenue-Ops\\08_Automation_System\\11_Automation_Backlog\\ZK-AUT-011_Automation-Backlog.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\01_Product_Requirements\\ZK-PRD-001_Product-Requirement-Document.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-PRD-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\01_Product_Requirements\\ZK-PRD-001_Product-Requirement-Document.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\02_System_Architecture\\ZK-ARCH-001_System-Architecture.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-ARCH-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\02_System_Architecture\\ZK-ARCH-001_System-Architecture.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\03_User_Management\\ZK-USER-001_User-Management-System.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-USER-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\03_User_Management\\ZK-USER-001_User-Management-System.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\04_User_Roles_Permissions\\ZK-USER-002_User-Roles-Permissions-Matrix.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-USER-002' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\04_User_Roles_Permissions\\ZK-USER-002_User-Roles-Permissions-Matrix.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-001_Lead-Management-Engine.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FEAT-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-001_Lead-Management-Engine.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-002_Operator-Task-Console.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FEAT-002' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-002_Operator-Task-Console.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-003_Client-REN-Portal.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FEAT-003' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-003_Client-REN-Portal.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\06_User_Flow\\ZK-FLOW-001_User-Flow-Diagrams.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FLOW-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\06_User_Flow\\ZK-FLOW-001_User-Flow-Diagrams.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\07_UI_UX_Specification\\ZK-UI-001_UI-UX-Design-System.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-UI-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\07_UI_UX_Specification\\ZK-UI-001_UI-UX-Design-System.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\08_Database_Specification\\ZK-DB-001_Database-Relational-Schema.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-DB-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\08_Database_Specification\\ZK-DB-001_Database-Relational-Schema.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\09_API_Integration\\ZK-API-001_API-Integration-Endpoints.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-API-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\09_API_Integration\\ZK-API-001_API-Integration-Endpoints.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\10_Notification_System\\ZK-NOTIF-001_Notification-Engine.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-NOTIF-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\10_Notification_System\\ZK-NOTIF-001_Notification-Engine.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\11_Search_Filter_System\\ZK-FEAT-006_Search-Filter-System.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-FEAT-006' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\11_Search_Filter_System\\ZK-FEAT-006_Search-Filter-System.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\12_Security\\ZK-SEC-001_Security-and-RLS-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-SEC-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\12_Security\\ZK-SEC-001_Security-and-RLS-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\13_QA_Testing\\ZK-TEST-001_QA-Test-Cases.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-TEST-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\13_QA_Testing\\ZK-TEST-001_QA-Test-Cases.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\14_Release_Management\\ZK-REL-001_Cardless-Release-Management.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-REL-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\14_Release_Management\\ZK-REL-001_Cardless-Release-Management.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\15_Product_Backlog\\ZK-BACK-001_Product-Backlog.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-BACK-001' used in '01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\15_Product_Backlog\\ZK-BACK-001_Product-Backlog.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\01_Workforce_Architecture\\ZK-AI-001_Workforce-Architecture.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-001' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\01_Workforce_Architecture\\ZK-AI-001_Workforce-Architecture.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\02_Agent_Catalog\\ZK-AI-002_Agent-Catalog.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-002' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\02_Agent_Catalog\\ZK-AI-002_Agent-Catalog.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\03_Agent_Specifications\\ZK-AI-003_Agent-Specifications.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-003' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\03_Agent_Specifications\\ZK-AI-003_Agent-Specifications.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\04_Agent_Workflows\\ZK-AI-004_Agent-Workflows.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-004' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\04_Agent_Workflows\\ZK-AI-004_Agent-Workflows.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\05_Agent_Knowledge\\ZK-AI-005_Agent-Knowledge-Architecture.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-005' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\05_Agent_Knowledge\\ZK-AI-005_Agent-Knowledge-Architecture.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\06_Agent_Tools\\ZK-AI-006_Agent-Tools-Registry.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-006' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\06_Agent_Tools\\ZK-AI-006_Agent-Tools-Registry.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\07_Agent_Memory\\ZK-AI-007_Agent-Memory-System.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-007' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\07_Agent_Memory\\ZK-AI-007_Agent-Memory-System.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\08_Agent_Permissions\\ZK-AI-008_Agent-Permissions-Matrix.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-008' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\08_Agent_Permissions\\ZK-AI-008_Agent-Permissions-Matrix.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\09_Human_AI_Handoff\\ZK-AI-009_Human-AI-Handoff-Rules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-009' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\09_Human_AI_Handoff\\ZK-AI-009_Human-AI-Handoff-Rules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\10_Agent_Monitoring\\ZK-AI-010_Agent-Monitoring-Framework.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-010' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\10_Agent_Monitoring\\ZK-AI-010_Agent-Monitoring-Framework.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\11_AI_QA\\ZK-AI-011_AI-QA-Audit-Checklist.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-011' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\11_AI_QA\\ZK-AI-011_AI-QA-Audit-Checklist.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\12_AI_Security\\ZK-AI-012_AI-Security-Governance.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-012' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\12_AI_Security\\ZK-AI-012_AI-Security-Governance.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\13_AI_Training\\ZK-AI-013_AI-Training-Knowledge-Review.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-013' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\13_AI_Training\\ZK-AI-013_AI-Training-Knowledge-Review.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\14_AI_Backlog\\ZK-AI-014_AI-Backlog.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-014' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\14_AI_Backlog\\ZK-AI-014_AI-Backlog.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\15_Future_Workforce\\ZK-AI-015_Future-Workforce-Vision.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-AI-015' used in '01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\15_Future_Workforce\\ZK-AI-015_Future-Workforce-Vision.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Client-Delivery\\client-folder-structure.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'BUS-001 Asset' used in '01_Business\\ZK-Revenue-Ops\\Client-Delivery\\client-folder-structure.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Client-Delivery\\Client-Lead-Tracker-Active.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'DAT-001' used in '01_Business\\ZK-Revenue-Ops\\Client-Delivery\\Client-Lead-Tracker-Active.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Operations\\SOP-OPS-002_Console-Operator-Manual.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'SOP-OPS-002' used in '01_Business\\ZK-Revenue-Ops\\Operations\\SOP-OPS-002_Console-Operator-Manual.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Services\\service-catalog.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'CAT-001' used in '01_Business\\ZK-Revenue-Ops\\Services\\service-catalog.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "01_Business\\ZK-Revenue-Ops\\Strategy\\ZK-Revenue-Ops-Master-Product-Framework.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ZK-REVOPS-MASTER-001' used in '01_Business\\ZK-Revenue-Ops\\Strategy\\ZK-Revenue-Ops-Master-Product-Framework.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Sales\\SOP-SDR-001_WhatsApp-Outreach.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'SOP-SDR-001' used in '03_Knowledge\\Sales\\SOP-SDR-001_WhatsApp-Outreach.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Sales\\SOP-SDR-002_Lead-Enrichment-Qualification.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'SOP-SDR-002' used in '03_Knowledge\\Sales\\SOP-SDR-002_Lead-Enrichment-Qualification.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "03_Knowledge\\Sales\\SOP-SDR-003_Cadence-And-Follow-Up.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'SOP-SDR-003' used in '03_Knowledge\\Sales\\SOP-SDR-003_Cadence-And-Follow-Up.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Agent-Schedules.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'SCH-001' used in '04_Workforce\\Agent-Schedules.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Department-Breakdown.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'WRK-001' used in '04_Workforce\\Department-Breakdown.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Roles\\ROL-001-COO.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ROL-001' used in '04_Workforce\\Roles\\ROL-001-COO.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Roles\\ROL-002-CMO.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ROL-002' used in '04_Workforce\\Roles\\ROL-002-CMO.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Roles\\ROL-003-CTO.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ROL-003' used in '04_Workforce\\Roles\\ROL-003-CTO.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "04_Workforce\\Roles\\ROL-004-CPO.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'ROL-004' used in '04_Workforce\\Roles\\ROL-004-CPO.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "05_Systems\\Integrations\\Google-Drive-Workspace-Bridge.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'INT-001' used in '05_Systems\\Integrations\\Google-Drive-Workspace-Bridge.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    },
+    {
+      "file_path": "08_Logs\\AI-Logs\\AI-Log-2026-07-25.md",
+      "category": "ZNS-OID",
+      "rule_id": "OID-004",
+      "severity": "WARNING",
+      "message": "Object ID 'LOG-001' used in '08_Logs\\AI-Logs\\AI-Log-2026-07-25.md' is not registered in 00_Command Center/ID-Registry.md.",
+      "line_no": null
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ms" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZK Revenue Ops — Top 10% SDR Operator Workstation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Outfit & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        platinum: {
+                            950: '#050505',
+                            900: '#111111',
+                            850: '#161616',
+                            800: '#222222',
+                            700: '#333333'
+                        },
+                        gold: {
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#b89628',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #ffffff; font-family: 'Outfit', sans-serif; }
+        .card-surface { background-color: #111111; border: 1px solid #222222; }
+        .card-surface:hover { border-color: #333333; }
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #222222; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col bg-platinum-950 text-white">
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 space-y-3 pointer-events-none"></div>
+
+    <!-- HEADER -->
+    <header class="border-b border-platinum-800 bg-platinum-900/90 backdrop-blur-md sticky top-0 z-40 px-8 py-3.5 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-gold-500 text-platinum-950 font-bold flex items-center justify-center text-xs">SDR</div>
+            <div>
+                <h1 class="font-bold text-sm text-white tracking-tight flex items-center gap-2">
+                    TOP 10% SDR OPERATOR WORKSTATION
+                    <span class="text-[10px] font-mono bg-gold-500/10 text-gold-400 px-2 py-0.5 rounded border border-gold-500/20">SPEED-TO-LEAD &lt; 5M SLA</span>
+                </h1>
+                <p class="text-[11px] text-zinc-400 font-mono">High-Ticket Sales Leverage Console</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4 text-xs font-mono">
+            <div class="bg-platinum-950 px-3 py-1.5 rounded-lg border border-platinum-800 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-zinc-300">Live Ingestion Active</span>
+            </div>
+            <button onclick="toggleCheatsheet()" class="bg-gold-500 hover:bg-gold-400 text-platinum-950 font-bold px-3.5 py-1.5 rounded-lg transition-all">
+                Property Fast-Facts Cheatsheet
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN SDR WORKSPACE -->
+    <main class="flex-1 p-6 max-w-[1750px] w-full mx-auto space-y-6">
+
+        <!-- WORKSTATION UTILITY GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            <!-- LEFT: QUEUE & CADENCE DUE (3 COLS) -->
+            <div class="lg:col-span-3 space-y-4">
+                
+                <!-- CADENCE FILTER TABS -->
+                <div class="card-surface p-1 rounded-xl flex text-xs font-mono">
+                    <button onclick="filterQueue('all')" id="qtab-all" class="flex-1 py-1.5 rounded-lg font-semibold bg-gold-500 text-platinum-950">Active Queue</button>
+                    <button onclick="filterQueue('cadence')" id="qtab-cadence" class="flex-1 py-1.5 rounded-lg text-zinc-400 hover:text-white">Cadence Due</button>
+                </div>
+
+                <!-- QUEUE LIST -->
+                <div id="queue-list" class="space-y-2.5"></div>
+            </div>
+
+            <!-- CENTER: SDR ACTION CONSOLE & SCRIPT DISPATCH (6 COLS) -->
+            <div class="lg:col-span-6 space-y-4">
+                <div class="card-surface p-6 rounded-xl space-y-5">
+                    
+                    <!-- ACTIVE BUYER HEADER -->
+                    <div class="flex justify-between items-start pb-4 border-b border-platinum-800">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] font-mono uppercase bg-gold-500/10 text-gold-400 px-2 py-0.5 rounded border border-gold-500/20" id="lead-id">LEAD-005</span>
+                                <span class="text-[10px] font-mono text-zinc-400" id="lead-time">Ingested 12m ago</span>
+                            </div>
+                            <h2 id="lead-name" class="font-bold text-xl text-white mt-1">Ridzuan Shah</h2>
+                            <p id="lead-details" class="text-xs text-zinc-400 font-mono mt-0.5">+6012-9876543 | Project: Mont Kiara Subsale (SEAT-001)</p>
+                        </div>
+                        <span id="lead-badge" class="text-xs font-mono font-semibold px-3 py-1 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20">TIER 1 QUALIFIED</span>
+                    </div>
+
+                    <!-- FINANCIAL DSR AUDIT CARD -->
+                    <div class="bg-platinum-950 p-4 rounded-xl border border-platinum-800 space-y-3">
+                        <div class="flex justify-between items-center border-b border-platinum-800 pb-2 text-xs font-mono">
+                            <span class="font-semibold text-zinc-300">DSR Pre-Approval Audit</span>
+                            <span id="dsr-score" class="text-emerald-400 font-bold">DSR 42.0% (PASSED &lt; 60%)</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3 text-xs font-mono">
+                            <div><span class="text-zinc-500 block text-[10px]">Net Salary:</span><strong class="text-white">RM 6,675/mo</strong></div>
+                            <div><span class="text-zinc-500 block text-[10px]">Bank Debts:</span><strong class="text-white">RM 1,800/mo</strong></div>
+                            <div><span class="text-zinc-500 block text-[10px]">Max Loan Budget:</span><strong class="text-gold-400">RM 680,000</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- SCRIPT SELECTOR ENGINE -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-semibold text-zinc-300">Contextual Script Engine:</span>
+                            <select id="script-type" onchange="changeScript(this.value)" class="bg-platinum-950 border border-platinum-800 text-xs font-mono text-gold-400 rounded-lg px-3 py-1 focus:outline-none focus:border-gold-500">
+                                <option value="TMP-01">TMP-01 | Speed-to-lead DSR Qualification</option>
+                                <option value="TMP-02">TMP-02 | Follow-Up Day 3 Cadence Revival</option>
+                                <option value="TMP-03">TMP-03 | Viewing Invite & Time Slot Lock</option>
+                                <option value="TMP-04">TMP-04 | Viewing Confirmation & Waze Dispatch</option>
+                                <option value="TMP-05">TMP-05 | Objection Handling (Price / Loan)</option>
+                            </select>
+                        </div>
+                        <textarea id="script-editor" rows="6" class="w-full bg-platinum-950 border border-platinum-800 rounded-xl p-4 text-xs text-zinc-200 font-sans focus:outline-none focus:border-gold-500 leading-relaxed"></textarea>
+                    </div>
+
+                    <!-- DISPOSITION & DISPATCH ACTIONS -->
+                    <div class="flex flex-wrap gap-2.5 pt-1">
+                        <button onclick="copyScript()" class="flex-1 bg-gold-500 hover:bg-gold-400 text-platinum-950 font-bold text-xs py-2.5 px-4 rounded-xl transition-all shadow-md shadow-gold-500/10">
+                            Copy WhatsApp Script
+                        </button>
+                        <button onclick="directWhatsApp()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs py-2.5 px-4 rounded-xl border border-emerald-500/30 transition-all">
+                            Direct WhatsApp Chat
+                        </button>
+                        <button onclick="dispatchWaze()" class="bg-platinum-850 hover:bg-platinum-800 text-zinc-200 font-semibold text-xs py-2.5 px-4 rounded-xl border border-platinum-700 transition-all">
+                            Dispatch Waze Card
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT: DSR QUICK CALCULATOR & ACTIVITY LOGGER (3 COLS) -->
+            <div class="lg:col-span-3 space-y-4">
+                
+                <!-- DSR CALCULATOR WIDGET -->
+                <div class="card-surface p-5 rounded-xl space-y-3">
+                    <span class="text-xs font-semibold text-zinc-300 uppercase tracking-wider block border-b border-platinum-800 pb-2">Quick DSR Calculator</span>
+                    
+                    <div class="space-y-2 text-xs">
+                        <label class="text-zinc-400 block">Gross Income (RM):</label>
+                        <input type="number" id="calc-income" value="7500" oninput="calcDSR()" class="w-full bg-platinum-950 border border-platinum-800 rounded-lg px-3 py-1.5 text-white font-mono focus:outline-none focus:border-gold-500">
+                    </div>
+
+                    <div class="space-y-2 text-xs">
+                        <label class="text-zinc-400 block">Monthly Commitments (RM):</label>
+                        <input type="number" id="calc-debt" value="1800" oninput="calcDSR()" class="w-full bg-platinum-950 border border-platinum-800 rounded-lg px-3 py-1.5 text-white font-mono focus:outline-none focus:border-gold-500">
+                    </div>
+
+                    <div class="bg-platinum-950 p-3 rounded-lg border border-platinum-800 text-center font-mono text-xs">
+                        <span class="text-zinc-500 text-[10px] block">DSR Ratio:</span>
+                        <strong id="calc-result" class="text-emerald-400 text-base font-bold">42.0% (PASSED)</strong>
+                    </div>
+                </div>
+
+                <!-- CALL LOG & NOTE LOGGER -->
+                <div class="card-surface p-5 rounded-xl space-y-3">
+                    <span class="text-xs font-semibold text-zinc-300 uppercase tracking-wider block border-b border-platinum-800 pb-2">SDR Call Logger</span>
+                    
+                    <select id="call-outcome" class="w-full bg-platinum-950 border border-platinum-800 rounded-lg px-3 py-1.5 text-xs text-zinc-200 focus:outline-none focus:border-gold-500 font-mono">
+                        <option value="ANSWERED">Call Answered — Qualified</option>
+                        <option value="NO_ANSWER">No Answer — Sent WhatsApp</option>
+                        <option value="CALLBACK">Requested Callback</option>
+                        <option value="DISQUALIFIED">Failed DSR / Unqualified</option>
+                    </select>
+
+                    <textarea id="call-note" rows="3" placeholder="Log buyer note..." class="w-full bg-platinum-950 border border-platinum-800 rounded-lg p-3 text-xs text-zinc-200 focus:outline-none focus:border-gold-500"></textarea>
+
+                    <button onclick="logNote()" class="w-full bg-platinum-850 hover:bg-platinum-800 text-gold-400 font-semibold text-xs py-2 rounded-lg border border-platinum-700 transition-all font-mono">
+                        Save Activity Note
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- PROPERTY FAST-FACTS CHEATSHEET MODAL -->
+    <div id="cheatsheet-modal" class="fixed inset-0 bg-platinum-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="card-surface p-6 rounded-2xl border border-gold-500/30 max-w-lg w-full space-y-4 font-mono text-xs">
+            <div class="flex justify-between items-center border-b border-platinum-800 pb-3">
+                <h3 class="font-bold text-sm text-gold-400">PROPERTY FAST-FACTS CHEATSHEET (SEAT-001)</h3>
+                <button onclick="toggleCheatsheet()" class="text-zinc-400 hover:text-white">Close [X]</button>
+            </div>
+            <div class="space-y-2 text-zinc-300 leading-relaxed">
+                <p>• <strong>Project Name:</strong> Mont Kiara Subsale Luxury Suites</p>
+                <p>• <strong>Avg Price PSF:</strong> RM 720 / sqft (Subsale Below Market Value 8%)</p>
+                <p>• <strong>Maintenance Fee:</strong> RM 0.35 / sqft</p>
+                <p>• <strong>Bank Panels Available:</strong> Maybank, CIMB, RHB, Public Bank, Hong Leong</p>
+                <p>• <strong>SPA Package:</strong> Free Legal SPA & Valuation Subsidy RM 2,000</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT STATE ENGINE -->
+    <script>
+        let leads = [
+            { id: 'LEAD-005', name: 'Ridzuan Shah', phone: '+60129876543', project: 'Mont Kiara Subsale', status: 'hot', tier: 'Tier 1 Qualified', dsr: '42.0%', net: 'RM 6,675', debt: 'RM 1,800', max: 'RM 680,000', time: '12m ago', cadence: false },
+            { id: 'LEAD-001', name: 'Muhammad Khairul', phone: '+60123456789', project: 'Mont Kiara Subsale', status: 'new', tier: 'Tier 2 Warm', dsr: '48.5%', net: 'RM 5,500', debt: 'RM 1,200', max: 'RM 520,000', time: '5m ago', cadence: false },
+            { id: 'LEAD-003', name: 'Farhan Azman', phone: '+60134455667', project: 'Mont Kiara Subsale', status: 'screening', tier: 'Tier 2 Warm', dsr: '52.1%', net: 'RM 6,000', debt: 'RM 1,500', max: 'RM 550,000', time: 'Day 3 Due', cadence: true },
+            { id: 'LEAD-006', name: 'Tan Wei Ming', phone: '+60161122334', project: 'Mont Kiara Subsale', status: 'hot', tier: 'Tier 1 Qualified', dsr: '38.2%', net: 'RM 9,000', debt: 'RM 2,100', max: 'RM 850,000', time: 'Day 7 Due', cadence: true }
+        ];
+
+        let activeId = 'LEAD-005';
+        let currentFilter = 'all';
+
+        const scripts = {
+            'TMP-01': (n, p) => `Salam ${n},\n\nSaya perunding hartanah untuk projek ${p}. Terima kasih atas minat anda!\n\nBagi membantu saya mengesyorkan unit yang paling padan dengan bajet anda, mohon maklum balas ringkas:\n1. Pembelian ini untuk kediaman sendiri atau pelaburan?\n2. Anggaran pendapatan kasar bulanan anda?\n3. Adakah anda pernah membuat semakan pra-kelayakan pinjaman bank sebelum ini?\n\nTerima kasih!`,
+            'TMP-02': (n, p) => `Salam ${n},\n\nSaya buat susulan mengenai projek ${p}. Kami baru terima 2 unit subsale harga di bawah pasaran (below market value 8%).\n\nAdakah anda masih aktif mencari unit hartanah minggu ini?`,
+            'TMP-03': (n, p) => `Salam ${n},\n\nKhabar baik! Berdasarkan semakan DSR kewangan anda, anda LAYAK 100% untuk permohonan pinjaman bank bagi projek ${p}.\n\nSaya ingin menjemput anda untuk sesi viewing fizikal. Adakah Sabtu (11am) atau Ahad (2pm) lebih sesuai?`,
+            'TMP-04': (n, p) => `Salam ${n},\n\nTemujanji viewing anda bagi projek ${p} telah DISAHKAN bagi Sabtu jam 11:00 AM.\n\nPautan Lokasi Waze: https://waze.com/ul?q=${encodeURIComponent(p)}\n\nMohon hadir 10 minit awal. Terima kasih!`,
+            'TMP-05': (n, p) => `Salam ${n},\n\nMengenai pakej diskaun/SPA percuma bagi ${p}, kami mempunyai tawaran khas untuk pembeli pre-approved minggu ini. Boleh saya buat panggilan ringkas 2 minit?`
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQueue();
+            selectLead(activeId);
+        });
+
+        function renderQueue() {
+            const list = document.getElementById('queue-list');
+            const filtered = currentFilter === 'cadence' ? leads.filter(l => l.cadence) : leads;
+            list.innerHTML = filtered.map(l => `
+                <div class="card-surface p-3.5 rounded-xl flex justify-between items-center cursor-pointer transition-all ${l.id === activeId ? 'border-gold-500/60 bg-platinum-850' : ''}" onclick="selectLead('${l.id}')">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <h4 class="font-bold text-xs text-white">${l.name}</h4>
+                            <span class="text-[9px] font-mono ${l.cadence?'text-rose-400 font-bold':'text-zinc-500'}">${l.time}</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 font-mono">${l.phone}</p>
+                    </div>
+                    <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded ${l.status==='hot'?'bg-gold-500/10 text-gold-400 border border-gold-500/20':'bg-platinum-950 text-zinc-400 border border-platinum-800'}">${l.status.toUpperCase()}</span>
+                </div>
+            `).join('');
+        }
+
+        function selectLead(id) {
+            activeId = id;
+            const l = leads.find(item => item.id === id);
+            if (!l) return;
+
+            document.getElementById('lead-id').innerText = l.id;
+            document.getElementById('lead-time').innerText = `Ingested ${l.time}`;
+            document.getElementById('lead-name').innerText = l.name;
+            document.getElementById('lead-details').innerText = `${l.phone} | Project: ${l.project} (SEAT-001)`;
+            document.getElementById('lead-badge').innerText = l.tier.toUpperCase();
+            document.getElementById('dsr-score').innerText = `DSR ${l.dsr} (PASSED < 60%)`;
+
+            const key = document.getElementById('script-type').value;
+            document.getElementById('script-editor').value = scripts[key](l.name, l.project);
+            renderQueue();
+        }
+
+        function filterQueue(type) {
+            currentFilter = type;
+            document.getElementById('qtab-all').className = type==='all'?'flex-1 py-1.5 rounded-lg font-semibold bg-gold-500 text-platinum-950':'flex-1 py-1.5 rounded-lg text-zinc-400 hover:text-white';
+            document.getElementById('qtab-cadence').className = type==='cadence'?'flex-1 py-1.5 rounded-lg font-semibold bg-gold-500 text-platinum-950':'flex-1 py-1.5 rounded-lg text-zinc-400 hover:text-white';
+            renderQueue();
+        }
+
+        function changeScript(k) {
+            const l = leads.find(item => item.id === activeId);
+            if (l && scripts[k]) document.getElementById('script-editor').value = scripts[k](l.name, l.project);
+        }
+
+        function copyScript() {
+            navigator.clipboard.writeText(document.getElementById('script-editor').value);
+            showToast('Copied script to clipboard.');
+        }
+
+        function directWhatsApp() {
+            const l = leads.find(item => item.id === activeId);
+            if (!l) return;
+            const text = encodeURIComponent(document.getElementById('script-editor').value);
+            const wa = `https://api.whatsapp.com/send?phone=${l.phone.replace(/[^0-9]/g, '')}&text=${text}`;
+            window.open(wa, '_blank');
+            showToast(`Opened WhatsApp chat for ${l.name}`);
+        }
+
+        function dispatchWaze() {
+            const l = leads.find(item => item.id === activeId);
+            showToast(`Dispatched Waze location card to ${l.name}`);
+        }
+
+        function calcDSR() {
+            const inc = parseFloat(document.getElementById('calc-income').value) || 0;
+            const debt = parseFloat(document.getElementById('calc-debt').value) || 0;
+            const net = inc * 0.89; // EPF/SOCSO approx
+            const dsr = ((debt + 1000) / net) * 100;
+            const res = document.getElementById('calc-result');
+            res.innerText = `${dsr.toFixed(1)}% (${dsr<=60?'PASSED':'FAILED'})`;
+            res.className = dsr<=60?'text-emerald-400 text-base font-bold':'text-rose-500 text-base font-bold';
+        }
+
+        function logNote() {
+            showToast('Activity Note Saved Successfully.');
+        }
+
+        function toggleCheatsheet() {
+            document.getElementById('cheatsheet-modal').classList.toggle('hidden');
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'card-surface border border-gold-500/40 text-white font-mono text-xs px-4 py-3 rounded-xl shadow-2xl transition-all duration-300 pointer-events-auto flex items-center gap-2';
+            toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span> ${msg}`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3000);
+        }
+    </script>
+</body>
+</html>

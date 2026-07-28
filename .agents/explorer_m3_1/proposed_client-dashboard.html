@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZK Revenue Ops — Custom Tailored Client Dashboard (ZK-DASH)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #0d1117;
+            --bg-card: #161b22;
+            --bg-subtle: #21262d;
+            --border: #30363d;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
+            --accent-green: #238636;
+            --accent-green-bright: #3fb950;
+            --accent-yellow: #d29922;
+            --accent-red: #f85149;
+            --accent-blue: #58a6ff;
+            --accent-purple: #bc8cff;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-size: 13px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .container {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 24px 32px;
+        }
+
+        /* Top Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-green);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            border: 1px solid var(--accent-green-bright);
+        }
+
+        .header-title h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-bright);
+            letter-spacing: -0.3px;
+        }
+
+        .header-title p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(35, 134, 54, 0.15);
+            border: 1px solid rgba(63, 185, 80, 0.4);
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent-green-bright);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green-bright);
+            box-shadow: 0 0 6px var(--accent-green-bright);
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-muted);
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-bright);
+            border-bottom-color: var(--border);
+        }
+
+        .tab-btn.active {
+            color: var(--text-bright);
+            border-bottom-color: var(--accent-green-bright);
+            background: rgba(22, 27, 34, 0.6);
+        }
+
+        .tab-badge {
+            background: var(--bg-subtle);
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-family: var(--font-mono);
+        }
+
+        .tab-btn.active .tab-badge {
+            background: rgba(35, 134, 54, 0.2);
+            color: var(--accent-green-bright);
+        }
+
+        /* Tab Content Panes */
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Overview Metric Cards Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .card-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .card-value {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-bright);
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .card-subtext {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Tables & High Density Data Grids */
+        .table-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .table-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: #12161f;
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Badges & Pills */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+
+        .badge-green {
+            background: rgba(35, 134, 54, 0.15);
+            color: var(--accent-green-bright);
+            border-color: rgba(63, 185, 80, 0.3);
+        }
+
+        .badge-yellow {
+            background: rgba(210, 153, 34, 0.15);
+            color: var(--accent-yellow);
+            border-color: rgba(210, 153, 34, 0.3);
+        }
+
+        .badge-red {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+            border-color: rgba(248, 81, 73, 0.3);
+        }
+
+        .badge-blue {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+            border-color: rgba(88, 166, 255, 0.3);
+        }
+
+        .badge-muted {
+            background: var(--bg-subtle);
+            color: var(--text-muted);
+            border-color: var(--border);
+        }
+
+        /* Form Controls */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"], input[type="number"], select {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-bright);
+            padding: 8px 12px;
+            font-size: 13px;
+            font-family: var(--font-sans);
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .btn {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-bright);
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: #2d333b;
+            border-color: #444c56;
+        }
+
+        .btn-primary {
+            background: var(--accent-green);
+            border-color: var(--accent-green-bright);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #2ea043;
+        }
+
+        /* Matcher Grid */
+        .matcher-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 20px;
+        }
+
+        .match-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .match-score-bar-bg {
+            height: 6px;
+            background: var(--bg-subtle);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .match-score-bar-fill {
+            height: 100%;
+            background: var(--accent-green-bright);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .reason-tag {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .reason-tag::before {
+            content: "✓";
+            color: var(--accent-green-bright);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-bar-bg {
+            height: 4px;
+            background: var(--bg-subtle);
+            border-radius: 2px;
+            overflow: hidden;
+            width: 100px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--accent-blue);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 1024px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .matcher-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Header -->
+        <header>
+            <div class="header-brand">
+                <div class="brand-icon">ZK</div>
+                <div class="header-title">
+                    <h1>ZK Revenue Ops — Tailored Client Dashboard</h1>
+                    <p>Milestone 3 (ZK-DASH) · Real-Time Lead & Commission Intelligence Engine</p>
+                </div>
+            </div>
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                SQLite Node Engine Connected
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" onclick="switchTab('overview')">
+                📊 Executive Overview
+            </button>
+            <button class="tab-btn" onclick="switchTab('buyers')">
+                👥 Buyer Pipeline <span class="tab-badge" id="buyerCountBadge">0</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab('matcher')">
+                ⚡ Listing Matcher
+            </button>
+            <button class="tab-btn" onclick="switchTab('rens')">
+                🏆 REN Leaderboard <span class="tab-badge" id="renCountBadge">0</span>
+            </button>
+        </nav>
+
+        <!-- TAB 1: EXECUTIVE OVERVIEW -->
+        <div id="tab-overview" class="tab-pane active">
+            <div class="metrics-grid">
+                <div class="card">
+                    <div class="card-label">Total Pipeline Value</div>
+                    <div class="card-value mono" id="mPipelineVal">RM 0.00</div>
+                    <div class="card-subtext">Sum of active deal valuations</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">RM Commission Earned</div>
+                    <div class="card-value mono" id="mCommissionVal" style="color: var(--accent-green-bright);">RM 0.00</div>
+                    <div class="card-subtext">Total commission generated</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Active REN Agents</div>
+                    <div class="card-value mono" id="mActiveRens" style="color: var(--accent-blue);">0</div>
+                    <div class="card-subtext">Registered REN agency partners</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Deal Conversion Rate</div>
+                    <div class="card-value mono" id="mConversionRate" style="color: var(--accent-yellow);">0.0%</div>
+                    <div class="card-subtext">Closed Won / Active Buyers ratio</div>
+                </div>
+            </div>
+
+            <!-- Recent Deals Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <span class="table-title">Recent Commission Deals & Activity</span>
+                    <button class="btn" onclick="loadOverview()">🔄 Refresh Live Data</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deal ID</th>
+                            <th>Property Listing</th>
+                            <th>Buyer Prospect</th>
+                            <th>REN Agent</th>
+                            <th>Deal Amount</th>
+                            <th>Commission</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="overviewDealsTable">
+                        <tr><td colspan="7" style="text-align:center; color: var(--text-muted);">Loading deals from SQLite...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 2: BUYER PIPELINE -->
+        <div id="tab-buyers" class="tab-pane">
+            <div class="toolbar">
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <input type="text" id="buyerSearchInput" placeholder="Filter buyer name, location, property..." style="width: 280px;" oninput="renderBuyersTable()">
+                    <select id="buyerStatusFilter" onchange="renderBuyersTable()">
+                        <option value="">All Statuses</option>
+                        <option value="Viewing Scheduled">Viewing Scheduled</option>
+                        <option value="Negotiation">Negotiation</option>
+                        <option value="Booking Placed">Booking Placed</option>
+                        <option value="New Inquiry">New Inquiry</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="loadBuyers()">🔄 Refresh Buyers</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Buyer Prospect</th>
+                            <th>Lead Score</th>
+                            <th>Preferred Location</th>
+                            <th>Property Preference</th>
+                            <th>Max Budget</th>
+                            <th>Min Beds</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="buyersTableBody">
+                        <tr><td colspan="8" style="text-align:center; color: var(--text-muted);">Loading buyer prospects...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: LISTING MATCHER -->
+        <div id="tab-matcher" class="tab-pane">
+            <div class="matcher-grid">
+                <!-- Input Panel -->
+                <div class="card">
+                    <div class="table-title" style="margin-bottom: 16px;">Match Parameters</div>
+                    
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label class="form-label">Select Active Buyer</label>
+                        <select id="matcherBuyerSelect" onchange="onMatcherBuyerSelected()">
+                            <option value="">-- Choose Buyer Prospect --</option>
+                        </select>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border); margin: 14px 0; padding-top: 14px; text-align: center; color: var(--text-muted); font-size: 11px;">
+                        OR CUSTOM MATCH CRITERIA
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label class="form-label">Max Budget (RM)</label>
+                        <input type="number" id="matchBudget" placeholder="e.g. 600000" step="50000">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label class="form-label">Preferred Location</label>
+                        <input type="text" id="matchLocation" placeholder="e.g. Shah Alam, Bangi">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label class="form-label">Property Type</label>
+                        <select id="matchPropertyType">
+                            <option value="">Any Type</option>
+                            <option value="Condo">Condo</option>
+                            <option value="Terrace">Terrace</option>
+                            <option value="Semi-D">Semi-D</option>
+                            <option value="Bungalow">Bungalow</option>
+                            <option value="Apartment">Apartment</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 18px;">
+                        <label class="form-label">Min Bedrooms</label>
+                        <input type="number" id="matchBeds" value="1" min="1" max="10">
+                    </div>
+
+                    <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="runMatchAlgorithm()">
+                        ⚡ Run Match Algorithm
+                    </button>
+                </div>
+
+                <!-- Results Panel -->
+                <div>
+                    <div class="table-container">
+                        <div class="table-header">
+                            <span class="table-title">Ranked Scored Matches</span>
+                            <span class="mono" id="matchResultsCount" style="color: var(--accent-green-bright); font-weight: 600;">0 Matches Found</span>
+                        </div>
+                        <div id="matcherResultsContainer" style="padding: 16px;">
+                            <div style="text-align: center; padding: 40px; color: var(--text-muted);">
+                                Select a buyer prospect or specify criteria to compute property matches.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: REN PERFORMANCE -->
+        <div id="tab-rens" class="tab-pane">
+            <div class="table-container">
+                <div class="table-header">
+                    <span class="table-title">REN Performance Leaderboard</span>
+                    <button class="btn" onclick="loadRens()">🔄 Refresh Leaderboard</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>REN Agent</th>
+                            <th>Contact Info</th>
+                            <th>Comm Rate</th>
+                            <th>Active Listings</th>
+                            <th>Closed Deals</th>
+                            <th>Total Commission Earned</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rensTableBody">
+                        <tr><td colspan="7" style="text-align:center; color: var(--text-muted);">Loading REN performance data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            ZK Revenue Ops R&D Phase — Custom Tailored Client Dashboard UI (ZK-DASH) © 2026
+        </footer>
+    </div>
+
+    <!-- Dashboard JavaScript Logic -->
+    <script>
+        const API_BASE = window.location.origin;
+        let globalBuyers = [];
+        let globalListings = [];
+
+        function formatRM(val) {
+            const num = parseFloat(val || 0);
+            return 'RM ' + num.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            const targetPane = document.getElementById(`tab-${tabId}`);
+            if (targetPane) targetPane.classList.add('active');
+
+            // Find tab button matching onclick
+            const targetBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick')?.includes(tabId));
+            if (targetBtn) targetBtn.classList.add('active');
+
+            if (tabId === 'overview') loadOverview();
+            if (tabId === 'buyers') loadBuyers();
+            if (tabId === 'matcher') initMatcherTab();
+            if (tabId === 'rens') loadRens();
+        }
+
+        async function loadOverview() {
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/overview`);
+                const json = await res.json();
+                if (!json.success) return;
+
+                const data = json.data;
+                document.getElementById('mPipelineVal').textContent = formatRM(data.totalPipelineRM);
+                document.getElementById('mCommissionVal').textContent = formatRM(data.totalCommissionRM);
+                document.getElementById('mActiveRens').textContent = data.totalRens;
+                document.getElementById('mConversionRate').textContent = `${data.conversionRatePercent}%`;
+
+                // Render Recent Deals Table
+                const tbody = document.getElementById('overviewDealsTable');
+                if (!data.recentDeals || data.recentDeals.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-muted);">No deals recorded.</td></tr>`;
+                    return;
+                }
+
+                tbody.innerHTML = data.recentDeals.map(d => {
+                    const badgeCls = d.status === 'Closed Won' ? 'badge-green' : 'badge-yellow';
+                    return `
+                        <tr>
+                            <td class="mono" style="font-weight:600;">${d.deal_id}</td>
+                            <td style="font-weight:500;">${d.listing_title || 'N/A'}</td>
+                            <td>${d.buyer_name || 'N/A'}</td>
+                            <td style="color:var(--text-muted);">${d.ren_name || 'N/A'}</td>
+                            <td class="mono">${formatRM(d.deal_amount)}</td>
+                            <td class="mono" style="color:var(--accent-green-bright); font-weight:600;">${formatRM(d.commission_earned)}</td>
+                            <td><span class="badge ${badgeCls}">${d.status}</span></td>
+                        </tr>
+                    `;
+                }).join('');
+
+            } catch (err) {
+                console.error('Failed to load overview:', err);
+            }
+        }
+
+        async function loadBuyers() {
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/buyers`);
+                const json = await res.json();
+                if (!json.success) return;
+
+                globalBuyers = json.data;
+                document.getElementById('buyerCountBadge').textContent = json.count;
+                renderBuyersTable();
+            } catch (err) {
+                console.error('Failed to load buyers:', err);
+            }
+        }
+
+        function renderBuyersTable() {
+            const search = (document.getElementById('buyerSearchInput').value || '').toLowerCase();
+            const statusFilter = document.getElementById('buyerStatusFilter').value;
+
+            const filtered = globalBuyers.filter(b => {
+                const matchesSearch = b.name.toLowerCase().includes(search) ||
+                                     b.preferred_location.toLowerCase().includes(search) ||
+                                     b.property_type.toLowerCase().includes(search);
+                const matchesStatus = !statusFilter || b.status === statusFilter;
+                return matchesSearch && matchesStatus;
+            });
+
+            const tbody = document.getElementById('buyersTableBody');
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-muted);">No matching buyers found.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(b => {
+                const scoreCls = b.lead_score >= 85 ? 'badge-green' : (b.lead_score >= 70 ? 'badge-yellow' : 'badge-red');
+                const statusCls = b.status === 'Booking Placed' || b.status === 'Negotiation' ? 'badge-green' : 'badge-blue';
+                return `
+                    <tr>
+                        <td>
+                            <div style="font-weight:600; color:var(--text-bright);">${b.name}</div>
+                            <div class="mono" style="font-size:11px; color:var(--text-muted);">${b.buyer_id} · ${b.phone}</div>
+                        </td>
+                        <td>
+                            <span class="badge ${scoreCls} mono">${b.lead_score} / 100</span>
+                        </td>
+                        <td><span class="badge badge-muted">${b.preferred_location}</span></td>
+                        <td style="font-weight:500;">${b.property_type}</td>
+                        <td class="mono" style="font-weight:600;">${formatRM(b.max_budget)}</td>
+                        <td class="mono" style="text-align:center;">${b.min_bedrooms}</td>
+                        <td><span class="badge ${statusCls}">${b.status}</span></td>
+                        <td>
+                            <button class="btn" style="padding: 4px 8px; font-size:11px;" onclick="triggerBuyerMatch('${b.buyer_id}')">
+                                ⚡ Match
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        async function initMatcherTab() {
+            if (globalBuyers.length === 0) {
+                await loadBuyers();
+            }
+
+            const select = document.getElementById('matcherBuyerSelect');
+            select.innerHTML = `<option value="">-- Choose Buyer Prospect --</option>` +
+                globalBuyers.map(b => `<option value="${b.buyer_id}">${b.name} (${b.buyer_id} - ${b.preferred_location})</option>`).join('');
+        }
+
+        function onMatcherBuyerSelected() {
+            const buyerId = document.getElementById('matcherBuyerSelect').value;
+            if (!buyerId) return;
+
+            const buyer = globalBuyers.find(b => b.buyer_id === buyerId);
+            if (buyer) {
+                document.getElementById('matchBudget').value = buyer.max_budget;
+                document.getElementById('matchLocation').value = buyer.preferred_location;
+                document.getElementById('matchPropertyType').value = buyer.property_type;
+                document.getElementById('matchBeds').value = buyer.min_bedrooms;
+                runMatchAlgorithm();
+            }
+        }
+
+        function triggerBuyerMatch(buyerId) {
+            switchTab('matcher');
+            setTimeout(() => {
+                document.getElementById('matcherBuyerSelect').value = buyerId;
+                onMatcherBuyerSelected();
+            }, 100);
+        }
+
+        async function runMatchAlgorithm() {
+            const buyerId = document.getElementById('matcherBuyerSelect').value;
+            const budget = document.getElementById('matchBudget').value;
+            const location = document.getElementById('matchLocation').value;
+            const propType = document.getElementById('matchPropertyType').value;
+            const beds = document.getElementById('matchBeds').value;
+
+            const payload = buyerId ? { buyerId } : {
+                max_budget: budget,
+                preferred_location: location,
+                property_type: propType,
+                min_bedrooms: beds
+            };
+
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/match`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const json = await res.json();
+                if (!json.success) return;
+
+                renderMatchResults(json.matches);
+            } catch (err) {
+                console.error('Match failed:', err);
+            }
+        }
+
+        function renderMatchResults(matches) {
+            const container = document.getElementById('matcherResultsContainer');
+            const countLabel = document.getElementById('matchResultsCount');
+
+            countLabel.textContent = `${matches.length} Matches Found`;
+
+            if (!matches || matches.length === 0) {
+                container.innerHTML = `<div style="text-align: center; padding: 40px; color: var(--text-muted);">No property listings match the specified criteria.</div>`;
+                return;
+            }
+
+            container.innerHTML = matches.map(m => {
+                const lst = m.listing;
+                const scoreColor = m.matchScore >= 80 ? 'var(--accent-green-bright)' : (m.matchScore >= 50 ? 'var(--accent-yellow)' : 'var(--text-muted)');
+                return `
+                    <div class="match-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <div style="font-size: 15px; font-weight: 700; color: var(--text-bright);">${lst.title}</div>
+                                <div style="color: var(--text-muted); font-size: 12px; margin-top: 2px;">
+                                    📍 ${lst.location} · ${lst.property_type} · 🛏️ ${lst.bedrooms} Beds / 🚿 ${lst.bathrooms} Baths
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div class="mono" style="font-size: 18px; font-weight: 700; color: var(--text-bright);">${formatRM(lst.price)}</div>
+                                <div class="mono" style="font-weight: 700; color: ${scoreColor}; font-size: 13px;">${m.matchScore}% Match Score</div>
+                            </div>
+                        </div>
+
+                        <div class="match-score-bar-bg">
+                            <div class="match-score-bar-fill" style="width: ${m.matchScore}%; background: ${scoreColor};"></div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 4px; background: var(--bg-base); padding: 10px; border-radius: 4px; border: 1px solid var(--border);">
+                            ${m.reasons.map(r => `<div class="reason-tag">${r}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function loadRens() {
+            try {
+                const res = await fetch(`${API_BASE}/api/v1/rens`);
+                const json = await res.json();
+                if (!json.success) return;
+
+                document.getElementById('renCountBadge').textContent = json.count;
+
+                const tbody = document.getElementById('rensTableBody');
+                if (!json.data || json.data.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-muted);">No REN records found.</td></tr>`;
+                    return;
+                }
+
+                tbody.innerHTML = json.data.map(r => {
+                    const commRatePct = (r.commission_rate * 100).toFixed(1) + '%';
+                    return `
+                        <tr>
+                            <td>
+                                <div style="font-weight: 700; color: var(--text-bright);">${r.name}</div>
+                                <div class="mono" style="font-size: 11px; color: var(--text-muted);">${r.ren_id}</div>
+                            </td>
+                            <td>
+                                <div>${r.email}</div>
+                                <div class="mono" style="font-size: 11px; color: var(--text-muted);">${r.phone}</div>
+                            </td>
+                            <td class="mono" style="font-weight: 600;">${commRatePct}</td>
+                            <td><span class="badge badge-muted mono">${r.active_listings} Listings</span></td>
+                            <td><span class="badge badge-blue mono">${r.closed_deals} Deals</span></td>
+                            <td class="mono" style="color: var(--accent-green-bright); font-weight: 700; font-size: 14px;">
+                                ${formatRM(r.total_commission)}
+                            </td>
+                            <td><span class="badge badge-green">${r.status}</span></td>
+                        </tr>
+                    `;
+                }).join('');
+            } catch (err) {
+                console.error('Failed to load RENs:', err);
+            }
+        }
+
+        // Initialize dashboard
+        loadOverview();
+        loadBuyers();
+        loadRens();
+
+        // Auto-refresh every 30 seconds
+        setInterval(() => {
+            loadOverview();
+        }, 30000);
+    </script>
+</body>
+</html>

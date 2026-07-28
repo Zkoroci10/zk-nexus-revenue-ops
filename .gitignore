@@ -1,0 +1,112 @@
+# ZK Nexus .gitignore
+# Excludes sensitive data, temporary files, and large media from version control
+
+# ============================================================
+# CREDENTIALS & SECRETS
+# ============================================================
+*.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+secrets/
+credentials/
+config/secrets/
+
+# API keys and tokens
+*api-key*
+*apikey*
+*api_token*
+*secret*
+*password*
+*passwd*
+
+# ============================================================
+# TEMPORARY & CACHE FILES
+# ============================================================
+*.tmp
+*.temp
+*.cache
+.cache/
+tmp/
+temp/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# LARGE MEDIA FILES (store in 06_Resources/ but not in Git)
+# ============================================================
+# Videos
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+
+# Large images (keep small images, exclude large ones)
+*.psd
+*.ai
+*.indd
+
+# Audio
+*.mp3
+*.wav
+*.aac
+*.flac
+
+# Archives
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# ============================================================
+# DOCUMENT OUTPUTS (source of truth is .md, not these)
+# ============================================================
+# Rendered PDFs (keep source .md, exclude rendered PDFs)
+# Uncomment if you want to exclude all PDFs:
+# *.pdf
+
+# Rendered DOCX (keep source .md, exclude rendered DOCX)
+# Uncomment if you want to exclude all DOCX:
+# *.docx
+
+# Excel temp files
+~$*.xlsx
+~$*.xlsm
+
+# ============================================================
+# SYSTEM-SPECIFIC
+# ============================================================
+# Node modules (if any JS projects)
+node_modules/
+
+# Python virtual environments
+venv/
+.env/
+.venv/
+
+# ============================================================
+# WORKSPACE-SPECIFIC
+# ============================================================
+# Scripts used only for setup
+_create_dirs.py
+
+# Any local-only notes or scratch files
+scratch/
+local/
+personal/

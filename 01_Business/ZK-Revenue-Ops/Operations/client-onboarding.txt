@@ -1,0 +1,25 @@
+---
+Title: Client Onboarding
+ID: BUS-001 Asset
+Type: Document
+Module: 01_Business
+BU: ZK Revenue Ops
+Status: Active
+Version: 1
+Created: 2026-07-17
+Updated: 2026-07-17
+Owner: Human Founder
+Related: PRJ-001
+---
+
+Client Onboarding.
+
+1) Invois : https://canva.link/66x1i7gond3rvrb
+
+2) Service Disclaimer : https://canva.link/p0o67i9ttljp0q9
+
+3) Service Agreement : https://canva.link/0ywwis0thb2wyai
+
+4) Statement of Work : https://canva.link/oat9rb6g2ctspgx
+
+5) Data Confidentiality Agreement : https://canva.link/22fks9thj8dqxry

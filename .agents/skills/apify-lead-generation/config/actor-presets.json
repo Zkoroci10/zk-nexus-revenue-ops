@@ -1,0 +1,45 @@
+{
+  "presets": {
+    "googleMapsB2B": {
+      "actorId": "apify/google-maps-scraper",
+      "description": "Scrapes local B2B listings, websites, phones, and email addresses.",
+      "defaultParameters": {
+        "searchStringsArray": ["cybersecurity firm", "blockchain development agency"],
+        "locationQuery": "San Francisco, CA",
+        "maxCrawledPlacesPerSearch": 100,
+        "language": "en",
+        "scrapeWebsite": true,
+        "extractEmailsFromWebsite": true,
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": ["BUYPROXIES"]
+        }
+      }
+    },
+    "contactDetailsScraper": {
+      "actorId": "apify/contact-details-scraper",
+      "description": "Extracts emails, social links, and phone numbers from given company website URLs.",
+      "defaultParameters": {
+        "startUrls": [],
+        "maxDepth": 2,
+        "maxRequests": 200,
+        "sameOrigin": true,
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": ["DATACENTER"]
+        }
+      }
+    },
+    "linkedInCompanyScraper": {
+      "actorId": "curious_coder/linkedin-company-scraper",
+      "description": "Scrapes detailed company profiles, employee headcount, industry, and HQ locations.",
+      "defaultParameters": {
+        "urls": [],
+        "proxyConfiguration": {
+          "useApifyProxy": true,
+          "apifyProxyGroups": ["RESIDENTIAL"]
+        }
+      }
+    }
+  }
+}
