@@ -1,160 +1,89 @@
 /**
- * ZK Revenue Ops — Multi-Channel Lead Ingestion: WhatsApp Web Message Parser
- * ID: SYS-004
- * Module: 05_Systems/Ingestion/whatsapp_parser.js
- * 
- * Extracts Name, Phone, Location, Budget, Property Type, Min Bedrooms from raw message text using NLP Regex rules.
+ * ZK Revenue Ops — WhatsApp Auto-Outreach & Inbound Lead Qualification Engine
+ * Features:
+ * 1. REN Cold Outreach Generator (Custom personalized pitch per 6 Zone)
+ * 2. Inbound Buyer Lead DSR Parser (Extracts Net Income, Commitments & calculates DSR %)
  */
 
-const { ZKDatabaseEngine } = require('../Database/db_engine');
+const fs = require('fs');
+const path = require('path');
 
-class WhatsAppParser {
-    constructor(dbEngine) {
-        this.dbEngine = dbEngine || new ZKDatabaseEngine();
+const PROSPECTS_FILE = path.join(__dirname, '../../01_Business/ZK-Revenue-Ops/Leads/ren_prospects_100.json');
+
+/**
+ * Generates personalized WhatsApp Outreach message for REN Prospect
+ */
+function generateRenWhatsAppPitch(ren) {
+    return `Salam & Hi ${ren.name} (${ren.ren_tag} - ${ren.agency}),
+
+Saya perhatikan anda aktif menguruskan listing hartanah di zon ${ren.primary_location} (${ren.zone_name}).
+
+Kami di ZK Revenue Ops menyediakan *AI-Powered REN Infrastructure & Client Portal* khas untuk ejen top performer macam anda:
+
+✅ *Zero Manual Data Entry*: Automasi tapisan DSR & kelayakan pinjaman pembeli.
+✅ *White-Label Client Portal*: Dashboard khas atas nama ${ren.name} (${ren.agency}).
+✅ *5,000 Lead Database R&D Engine*: Kelolakan beribu lead serentak tanpa hang.
+✅ *Perkhidmatan Eksklusif*: Kami mengehadkan *maksimum 5 REN sahaja per zon* (${ren.zone_name}).
+
+Boleh saya kongsikan Live Demo Client Portal (Piksel Kemas Stripe-Style) untuk anda pandu uji percuma?
+
+Boleh tengok contoh Client Portal live di sini:
+👉 https://zkoroci10.github.io/zk-nexus-revenue-ops/
+
+Terima kasih,
+*ZK Revenue Ops Team*`;
+}
+
+/**
+ * Parses inbound WhatsApp text from a buyer prospect to calculate DSR
+ */
+function parseInboundBuyerMessage(rawText) {
+    // Example format: "Gaji net RM 7500, komitmen bank RM 2100. budget RM 480000"
+    const incomeMatch = rawText.match(/gaji[^\d]*(\d+)/i) || rawText.match(/income[^\d]*(\d+)/i);
+    const commitMatch = rawText.match(/komitmen[^\d]*(\d+)/i) || rawText.match(/commitment[^\d]*(\d+)/i);
+    const budgetMatch = rawText.match(/budget[^\d]*(\d+)/i);
+
+    const netIncome = incomeMatch ? parseInt(incomeMatch[1]) : 0;
+    const commitments = commitMatch ? parseInt(commitMatch[1]) : 0;
+    const maxBudget = budgetMatch ? parseInt(budgetMatch[1]) : 500000;
+
+    const estNewLoanInstallment = Math.round((maxBudget * 0.9 * 0.045) / 12);
+    const totalCommitments = commitments + estNewLoanInstallment;
+    const dsrPercent = netIncome > 0 ? Math.round((totalCommitments / netIncome) * 100) : 0;
+
+    let grade = 'C';
+    let status = 'DSR Exceeded (>75%)';
+    if (dsrPercent > 0 && dsrPercent <= 65) {
+        grade = 'A';
+        status = 'Highly Eligible (DSR ≤ 65%)';
+    } else if (dsrPercent > 65 && dsrPercent <= 75) {
+        grade = 'B';
+        status = 'Moderate Risk (DSR 66-75%)';
     }
 
-    parseMessageText(rawText, senderPhone = '') {
-        const text = (rawText || '').trim();
-        if (!text) throw new Error('Message text cannot be empty');
+    return {
+        netIncome,
+        commitments,
+        maxBudget,
+        estLoanInstallment: estNewLoanInstallment,
+        dsrPercent,
+        grade,
+        status
+    };
+}
 
-        // 1. Extract Name
-        let name = 'WhatsApp Prospect';
-        const namePatterns = [
-            /(?:hi|hello|hey|salam|assalam)?\s*(?:i am|i'm|saya|nama saya|my name is)\s+([a-z\s]+?)(?:,|\.|\s+searching|\s+looking|\s+want|\s+under|\s+budget|\s+di|\s+in|$)/i,
-            /^([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\s+here/i
-        ];
-        for (const pattern of namePatterns) {
-            const match = text.match(pattern);
-            if (match && match[1] && match[1].trim().length > 1) {
-                name = match[1].trim();
-                break;
-            }
-        }
-
-        // 2. Extract Phone
-        let phone = senderPhone;
-        const phoneMatch = text.match(/(?:\+?60|0)1[0-9]-?[0-9]{7,8}/);
-        if (phoneMatch) {
-            phone = phoneMatch[0];
-        }
-        phone = this.normalizePhone(phone || '+60100000000');
-
-        // 3. Extract Budget
-        let max_budget = 0;
-        const budgetPatterns = [
-            /(?:under|below|budget|bajet|harga|max|around)?\s*(?:rm)\s*(\d+(?:,\d+)*(?:\.\d+)?)\s*(k|lakh|mil|million|000)?\b/i,
-            /(?:under|below|budget|bajet|harga|max|around)\s*(\d+(?:,\d+)*(?:\.\d+)?)\s*(k|lakh|mil|million|000)?\b/i,
-            /\b(\d+(?:\.\d+)?)\s*(k|lakh|mil|million)\b/i
-        ];
-        for (const pattern of budgetPatterns) {
-            const match = text.match(pattern);
-            if (match) {
-                let numStr = match[1].replace(/,/g, '');
-                let num = parseFloat(numStr);
-                const unit = (match[2] || '').toLowerCase();
-                if (unit === 'k' || unit === '000') num *= 1000;
-                else if (unit === 'mil' || unit === 'million') num *= 1000000;
-                else if (unit === 'lakh') num *= 100000;
-                else if (num < 1000) num *= 1000;
-                max_budget = num;
-                break;
-            }
-        }
-
-        // 4. Extract Preferred Location
-        let preferred_location = 'Unspecified';
-        const locations = ['Shah Alam', 'Bangi', 'Cyberjaya', 'Puchong', 'Damansara Heights', 'Damansara', 'Petaling Jaya', 'PJ', 'Subang', 'KL', 'Kuala Lumpur', 'Cheras', 'Kepong', 'Setia Alam'];
-        for (const loc of locations) {
-            if (new RegExp(`\\b${loc}\\b`, 'i').test(text)) {
-                preferred_location = loc;
-                break;
-            }
-        }
-        if (preferred_location === 'Unspecified') {
-            const locMatch = text.match(/(?:in|di|around|area|dekat)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/i);
-            if (locMatch && locMatch[1]) {
-                preferred_location = locMatch[1].trim();
-            }
-        }
-
-        // 5. Extract Property Type
-        let property_type = 'Condo';
-        const propTypes = [
-            { key: 'Condo', pattern: /condo|condominium|apartment|apt|flat|studio/i },
-            { key: 'Terrace', pattern: /terrace|landed|house|rumah|2-storey|link/i },
-            { key: 'Semi-D', pattern: /semi-d|semi d|semid/i },
-            { key: 'Bungalow', pattern: /bungalow|villa/i },
-            { key: 'Townhouse', pattern: /townhouse/i }
-        ];
-        for (const prop of propTypes) {
-            if (prop.pattern.test(text)) {
-                property_type = prop.key;
-                break;
-            }
-        }
-
-        // 6. Extract Min Bedrooms
-        let min_bedrooms = 1;
-        const bedMatch = text.match(/(\d+)\s*(?:bedroom|bedrooms|room|rooms|bed|br|bilik)/i);
-        if (bedMatch) {
-            min_bedrooms = parseInt(bedMatch[1], 10);
-        }
-
-        return {
-            name,
-            phone,
-            preferred_location,
-            max_budget,
-            property_type,
-            min_bedrooms
-        };
-    }
-
-    normalizePhone(phone) {
-        if (!phone) return '+60100000000';
-        let cleaned = String(phone).replace(/[^0-9+]/g, '');
-        if (cleaned.startsWith('0')) {
-            cleaned = '+60' + cleaned.substring(1);
-        } else if (!cleaned.startsWith('+')) {
-            cleaned = '+' + cleaned;
-        }
-        return cleaned;
-    }
-
-    ingestWhatsAppMessage(rawText, senderPhone = '') {
-        const parsed = this.parseMessageText(rawText, senderPhone);
-        
-        let buyer_id;
-        const existing = this.dbEngine.db.prepare(`SELECT buyer_id FROM buyer_prospects WHERE phone = ?`).get(parsed.phone);
-        if (existing) {
-            buyer_id = existing.buyer_id;
-        } else {
-            buyer_id = `BYR-WA-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-        }
-
-        const lead_score = this.dbEngine.calculateLeadScore({
-            max_budget: parsed.max_budget,
-            phone: parsed.phone,
-            email: null,
-            preferred_location: parsed.preferred_location,
-            status: 'New Inquiry'
-        });
-
-        const stmt = this.dbEngine.db.prepare(`
-            INSERT OR REPLACE INTO buyer_prospects 
-            (buyer_id, name, phone, email, preferred_location, max_budget, property_type, min_bedrooms, lead_score, status, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'New Inquiry', CURRENT_TIMESTAMP)
-        `);
-
-        stmt.run(buyer_id, parsed.name, parsed.phone, null, parsed.preferred_location, parsed.max_budget, parsed.property_type, parsed.min_bedrooms, lead_score);
-
-        return {
-            buyer_id,
-            ...parsed,
-            lead_score,
-            status: 'New Inquiry'
-        };
+// Quick Test Execution
+if (require.main === module) {
+    if (fs.existsSync(PROSPECTS_FILE)) {
+        const prospects = JSON.parse(fs.readFileSync(PROSPECTS_FILE, 'utf8'));
+        const sampleRen = prospects[0];
+        console.log("================ SAMPLE WHATSAPP PITCH ================");
+        console.log(generateRenWhatsAppPitch(sampleRen));
+        console.log("\n================ SAMPLE INBOUND DSR PARSER ================");
+        const sampleBuyerText = "Salam Bang, saya Ali. Gaji net RM 7500, komitmen bank RM 2100. Cari kondo kat Setia Alam budget RM 480000.";
+        console.log("Raw Input:", sampleBuyerText);
+        console.log("Parsed Result:", parseInboundBuyerMessage(sampleBuyerText));
     }
 }
 
-module.exports = { WhatsAppParser };
+module.exports = { generateRenWhatsAppPitch, parseInboundBuyerMessage };
