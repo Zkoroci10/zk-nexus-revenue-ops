@@ -5,62 +5,28 @@ Type: Blueprint Report
 Module: ZK Revenue Ops
 BU: Real Estate AI Infrastructure
 Status: Approved
-Version: 1.0.0
+Version: 2.0.0
 Created: 2026-07-29
 Updated: 2026-07-29
 Owner: CEO / ZK Nexus Team
 Related: STR-006, SYS-003, OP-010, OP-011
 ---
 
-# 🎨 BLUEPRINT & STRATEGI REKA BENTUK COVER PHOTO & KATALOG WHATSAPP BUSINESS
+# 🎨 MASTER REKA BENTUK COVER PHOTO & KATALOG WHATSAPP BUSINESS
 
 > **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  
+> **Status**: 4 Grafik Visual Siap Dijana (1 Cover Photo 16:9 + 3 Catalog Banners 1:1)  
 > **Fokus Utama**: Menaik taraf akaun WhatsApp Business Founder Ariff ke tahap **B2B SaaS High-Trust & Enterprise Authority** menerusi gabungan Master SOP ZK Revenue, Perlindungan Data PDPA 2010 Malaysia, dan Bahasa Pemasaran B2B yang Tajam.
 
 ---
 
-## 📑 ISI KANDUNGAN BLUEPRINT
+## 🖼️ 1. REKA BENTUK 1: COVER PHOTO WHATSAPP BUSINESS (STANDARD HEADER 16:9)
 
-1. **Hasil Kajian Pemasaran Agensi B2B SDR & Perlindungan Data PDPA 2010**
-2. **Spesifikasi Reka Bentuk 1: Cover Photo WhatsApp Business (Standard Header 16:9)**
-3. **Spesifikasi Reka Bentuk 2: Catalog Banner 1 — White-Label Client Portal (Stripe-Style UI)**
-4. **Spesifikasi Reka Bentuk 3: Catalog Banner 2 — Enjin Auto-Tapis DSR & PDPA Compliance**
-5. **Spesifikasi Reka Bentuk 4: Catalog Banner 3 — Infrastruktur 5,000+ Lead Database R&D**
-6. **Perbandingan Bahasa Pemasaran (Sebelum vs Selepas Revisi B2B)**
+Cover photo ini diletakkan di bahagian atas (*header background*) akaun WhatsApp Business Founder Ariff:
 
----
+![WhatsApp Business Cover Photo Header 16:9](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/whatsapp_cover_header_16_9_1785313447975.jpg)
 
-## 1. 🔍 HASIL KAJIAN PEMASARAN B2B SDR & PDPA COMPLIANCE MALAYSIA
-
-Berdasarkan analisa dokumen pangkalan *Master SOP ZK Revenue Ops*, *Data Confidentiality Agreement*, dan kajian agensi jualan B2B terkemuka:
-
-### 🛡️ Mengapa Isu PDPA 2010 & Keselamatan Data Paling Penting Untuk REN?
-- **Ketakutan Utama REN**: Ejen hartanah risau pangkalan data pembeli (*buyer database*) mereka **dijual, dibocorkan, atau dicuri** oleh pihak ketiga / agensi pesaing.
-- **Nilai PDPA Act 2010 Malaysia**: Menekankan kebenaran (*consent tracking*), penyulitan data (*data encryption*), dan akses single-tenant (1 REN 1 pangkalan data terasing).
-- **Mesej Utama B2B**: *"Kami menapis kelayakan pembeli anda; data prospek anda kekal 100% milik anda di bawah perlindungan akta PDPA."*
-
----
-
-## 2. 🖼️ SPESIFIKASI DESIGN 1: COVER PHOTO WHATSAPP BUSINESS (HEADER 16:9)
-
-Cover photo ini diletakkan di bahagian atas akaun WhatsApp Business untuk menghapuskan imej "kedai photostat" dan menggantikannya dengan **Syarikat Infrastruktur Sales AI Profesional**.
-
-```
-┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│                                COVER PHOTO HEADER (16:9)                                 │
-├──────────────────────────────────────────────────────────────────────────────────────────┤
-│  [LOGOS & BADGES]                  [TAJUK UTAMA B2B]               [VISUAL SAAS MOCKUP]  │
-│  • ZK Revenue Ops                  ZK REVENUE OPS                  Gambar Laptop Dark UI │
-│  • PDPA 2010 Certified             AI Sales Infrastructure &       menayangkan Client    │
-│  • 256-Bit Encrypted               Client Portal for Top RENs      Portal Ahmad Razif    │
-│                                                                                          │
-│  [TAGLINE UTAMA]                                                                         │
-│  "Memperkasakan REN Top Performer: Tapisan DSR Automatik,                                │
-│   Perlindungan Data PDPA 2010 & Exclusivity 1 REN 1 Sub-Market."                         │
-└──────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 📋 Salinan Teks Bahasa Pemasaran B2B (Cover Photo):
+### 📋 Salinan Teks Pemasaran B2B (Cover Photo):
 - **Tajuk Utama**: `ZK REVENUE OPS`
 - **Sub-Tajuk**: `AI Sales Infrastructure & Client Portal for Malaysian RENs`
 - **Poin Keunggulan**:
@@ -71,12 +37,10 @@ Cover photo ini diletakkan di bahagian atas akaun WhatsApp Business untuk mengha
 
 ---
 
-## 3. 📦 SPESIFIKASI DESIGN 2: CATALOG BANNER 1 — WHITE-LABEL CLIENT PORTAL
+## 📦 2. REKA BENTUK 2: CATALOG BANNER 1 — WHITE-LABEL CLIENT PORTAL
 
-### 🎯 Matlamat Produk:
-Menunjukkan keupayaan portal pelanggan berjenama persendirian di atas nama REN sendiri dengan paparan Stripe/Linear Dark Theme.
+![Catalog Banner 1 Client Portal PDPA](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/catalog_client_portal_pdpa_1785313462722.jpg)
 
-### 📋 Salinan Teks Pemasaran & PDPA (Catalog 1):
 - **Nama Produk**: `White-Label Client Portal (Stripe-Style UI)`
 - **Harga**: `RM 500 / bulan`
 - **Bahasa Pemasaran B2B**:
@@ -86,12 +50,10 @@ Menunjukkan keupayaan portal pelanggan berjenama persendirian di atas nama REN s
 
 ---
 
-## 4. 📦 SPESIFIKASI DESIGN 3: CATALOG BANNER 2 — ENJIN AUTO-TAPIS DSR BANK
+## 📦 3. REKA BENTUK 3: CATALOG BANNER 2 — ENJIN AUTO-TAPIS DSR BANK
 
-### 🎯 Matlamat Produk:
-Menjelaskan sistem penapisan kelayakan loan pembeli secara automatik tanpa perlu REN mengira manual.
+![Catalog Banner 2 DSR Engine PDPA](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/catalog_dsr_engine_pdpa_1785313477380.jpg)
 
-### 📋 Salinan Teks Pemasaran & PDPA (Catalog 2):
 - **Nama Produk**: `Enjin Auto-Tapis DSR & Kelayakan Bank`
 - **Harga**: `Termasuk Dalam Pakej`
 - **Bahasa Pemasaran B2B**:
@@ -101,12 +63,10 @@ Menjelaskan sistem penapisan kelayakan loan pembeli secara automatik tanpa perlu
 
 ---
 
-## 5. 📦 SPESIFIKASI DESIGN 4: CATALOG BANNER 3 — 5,000 LEAD DATABASE R&D ENGINE
+## 📦 4. REKA BENTUK 4: CATALOG BANNER 3 — 5,000 LEAD DATABASE R&D ENGINE
 
-### 🎯 Matlamat Produk:
-Menawarkan enjin pangkalan data berasaskan SQLite tempatan yang mampu memuatkan 5,000+ lead lama REN tanpa telefon hang.
+![Catalog Banner 3 Database 5k PDPA](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/catalog_database_5k_pdpa_1785313488970.jpg)
 
-### 📋 Salinan Teks Pemasaran & PDPA (Catalog 3):
 - **Nama Produk**: `Infrastruktur 5,000+ Lead Database Engine`
 - **Harga**: `Termasuk Dalam Pakej`
 - **Bahasa Pemasaran B2B**:
@@ -116,17 +76,8 @@ Menawarkan enjin pangkalan data berasaskan SQLite tempatan yang mampu memuatkan 
 
 ---
 
-## 📊 PERBANDINGAN BAHASA PEMASARAN (SEBELUM VS SELEPAS REVISI B2B)
-
-| Komponen | Sebelum (Asas) | Selepas (B2B Enterprise & PDPA Focus) |
-|---|---|---|
-| **Cover Photo** | Tiada | **Cover Photo Header 16:9** (Professional Tech Founder & PDPA Certified Badge) |
-| **Profil Bio** | *"Bina sistem khas..."* | *"Infrastruktur AI Sales & Client Portal khas untuk REN Top Performer. Tapisan DSR Automatik & Perlindungan Data PDPA 2010."* |
-| **Keamanan Data** | Tidak disebutkan | **Terbukti PDPA 2010 Compliant, Single-Tenant Architecture & 256-Bit Encrypted Token Access** |
-| **Design Aesthetics** | Banner generic | **Stripe/Linear Dark Theme Mockup + Official PDPA Security Seal** |
-
----
-
-> [!IMPORTANT]
-> **Status**: Blueprint ini memerlukan **Pengesahan (Approval) daripada Brader Ariff**.  
-> Sebaik sahaja anda mengesahkan pelan ini, saya akan terus menjana **4 keping Reka Bentuk Grafik Visual (1 Cover Photo 16:9 + 3 Catalog Banners)** mengikut spesifikasi di atas! 🚀
+> [!TIP]
+> **Langkah Pemasangan (5 Minit)**:  
+> 1. Simpan **4 Gambar Grafik** di atas ke galeri telefon anda.  
+> 2. Muat naik **Design 1 (16:9)** sebagai **Cover Photo Header** WhatsApp Business.  
+> 3. Muat naik **Design 2, 3, & 4 (1:1)** sebagai **Item Katalog** beserta teks penerangan B2B & PDPA di atas!
