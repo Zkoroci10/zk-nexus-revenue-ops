@@ -10,20 +10,22 @@
         :root {
             --bg: #09090b;
             --surface: #121217;
-            --surface-hover: #171720;
+            --surface-hover: #181822;
             --border: #1c1c24;
-            --border-hover: #272733;
+            --border-hover: #2e2e3e;
             --text-main: #f4f4f5;
             --text-muted: #71717a;
             --text-subtle: #52525b;
             --accent-green: #22c55e;
-            --accent-green-bg: rgba(34,197,94,0.1);
+            --accent-green-bg: rgba(34,197,94,0.12);
             --accent-amber: #f59e0b;
-            --accent-amber-bg: rgba(245,158,11,0.1);
+            --accent-amber-bg: rgba(245,158,11,0.12);
             --accent-rose: #f43f5e;
-            --accent-rose-bg: rgba(244,63,94,0.1);
+            --accent-rose-bg: rgba(244,63,94,0.12);
             --accent-blue: #3b82f6;
-            --accent-blue-bg: rgba(59,130,246,0.1);
+            --accent-blue-bg: rgba(59,130,246,0.12);
+            --accent-purple: #a855f7;
+            --accent-purple-bg: rgba(168,85,247,0.12);
         }
 
         body {
@@ -38,11 +40,11 @@
         .mono { font-family: 'JetBrains Mono', monospace; }
 
         /* Layout */
-        .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+        .layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
 
         /* Sidebar */
         aside {
-            background: #0d0d12;
+            background: #0b0b10;
             border-right: 1px solid var(--border);
             padding: 24px 16px;
             display: flex;
@@ -59,13 +61,13 @@
         }
 
         .brand-badge {
-            width: 32px; height: 32px;
-            border-radius: 6px;
+            width: 34px; height: 34px;
+            border-radius: 8px;
             background: var(--surface);
             border: 1px solid var(--border-hover);
             display: grid; place-items: center;
-            font-weight: 700; font-size: 12px;
-            color: var(--text-main);
+            font-weight: 700; font-size: 13px;
+            color: var(--accent-green);
         }
 
         .brand-name { font-weight: 600; font-size: 13px; color: var(--text-main); }
@@ -75,25 +77,28 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 12px;
+            padding: 14px;
             margin-top: 16px;
         }
 
         .agent-label { font-size: 10px; font-weight: 600; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.8px; }
-        .agent-name { font-size: 13px; font-weight: 600; color: var(--text-main); margin-top: 2px; }
-        .agent-agency { font-size: 11px; color: var(--text-muted); }
+        .agent-name { font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 2px; }
+        .agent-agency { font-size: 11px; color: var(--accent-blue); font-weight: 500; }
 
         .nav-group { margin-top: 24px; }
         .nav-title { font-size: 10px; font-weight: 600; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.8px; padding: 0 8px 8px; }
+        
         .nav-item {
             display: flex; align-items: center; justify-content: space-between;
-            padding: 8px 10px; border-radius: 6px;
+            padding: 10px 12px; border-radius: 6px;
             color: var(--text-muted); font-weight: 500; font-size: 12px;
-            cursor: pointer; transition: all 0.15s; margin-bottom: 2px;
+            cursor: pointer; transition: all 0.15s; margin-bottom: 3px;
+            border: 1px solid transparent;
         }
-        .nav-item:hover, .nav-item.active { background: var(--surface); color: var(--text-main); }
-        .nav-item.active { border: 1px solid var(--border-hover); font-weight: 600; }
+        .nav-item:hover { background: var(--surface); color: var(--text-main); border-color: var(--border); }
+        .nav-item.active { background: var(--surface); color: var(--text-main); font-weight: 600; border-color: var(--border-hover); }
         .nav-count { font-size: 11px; color: var(--text-subtle); font-family: 'JetBrains Mono', monospace; }
+        .nav-item.active .nav-count { color: var(--accent-green); }
 
         /* Main Workspace */
         main { padding: 32px 40px; }
@@ -101,23 +106,36 @@
         /* Header */
         header {
             display: flex; justify-content: space-between; align-items: flex-start;
-            margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+            margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
         }
 
-        .h-title { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; color: var(--text-main); }
-        .h-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .h-title { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; color: var(--text-main); }
+        .h-sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
 
         .portal-status {
             display: flex; align-items: center; gap: 8px;
-            padding: 6px 12px; border-radius: 6px;
+            padding: 6px 14px; border-radius: 6px;
             background: var(--surface); border: 1px solid var(--border);
             font-size: 11px; font-weight: 500; color: var(--text-muted);
         }
-        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); }
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
 
-        /* Metrics */
+        /* Action Buttons Header */
+        .header-actions { display: flex; gap: 10px; }
+        
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 500;
+            cursor: pointer; transition: all 0.15s; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text-main);
+        }
+        .btn:hover { background: var(--surface-hover); border-color: var(--border-hover); }
+        .btn-primary { background: var(--accent-green); color: #000; font-weight: 600; border: none; }
+        .btn-primary:hover { background: #1ea34d; }
+
+        /* Metrics Grid */
         .metrics-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px;
         }
 
         .metric-card {
@@ -125,21 +143,27 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 18px 20px;
+            transition: border-color 0.15s;
         }
+        .metric-card:hover { border-color: var(--border-hover); }
 
         .metric-label { font-size: 11px; font-weight: 500; color: var(--text-muted); margin-bottom: 6px; }
         .metric-val { font-size: 26px; font-weight: 600; letter-spacing: -0.8px; line-height: 1; color: var(--text-main); }
         .metric-sub { font-size: 11px; color: var(--text-subtle); margin-top: 6px; }
 
+        /* Views Container */
+        .view-pane { display: none; }
+        .view-pane.active { display: block; }
+
         /* Filter Controls */
         .controls {
             display: flex; justify-content: space-between; align-items: center;
-            gap: 12px; margin-bottom: 16px;
+            gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
         }
 
         .filter-group { display: flex; gap: 4px; background: #0d0d12; padding: 3px; border-radius: 6px; border: 1px solid var(--border); }
         .f-tab {
-            padding: 5px 12px; border-radius: 4px; border: none;
+            padding: 6px 12px; border-radius: 4px; border: none;
             background: transparent; color: var(--text-muted);
             font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s;
         }
@@ -147,21 +171,13 @@
         .f-tab.active { background: var(--surface); color: var(--text-main); font-weight: 600; border: 1px solid var(--border-hover); }
 
         .search-field {
-            padding: 6px 12px; background: var(--surface);
+            padding: 7px 14px; background: var(--surface);
             border: 1px solid var(--border); border-radius: 6px;
-            color: var(--text-main); font-size: 12px; outline: none; width: 240px;
+            color: var(--text-main); font-size: 12px; outline: none; width: 260px;
         }
         .search-field:focus { border-color: var(--border-hover); }
 
-        .export-link {
-            padding: 6px 12px; background: var(--surface);
-            border: 1px solid var(--border); border-radius: 6px;
-            color: var(--text-main); font-size: 12px; font-weight: 500;
-            cursor: pointer; transition: background 0.15s;
-        }
-        .export-link:hover { background: var(--surface-hover); }
-
-        /* Data Table */
+        /* Data Tables */
         .table-container {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -172,62 +188,79 @@
         table { width: 100%; border-collapse: collapse; text-align: left; }
 
         th {
-            padding: 10px 16px; font-size: 11px; font-weight: 500;
+            padding: 12px 16px; font-size: 11px; font-weight: 500;
             color: var(--text-muted); border-bottom: 1px solid var(--border);
-            background: #0f0f14;
+            background: #0e0e13;
         }
 
-        td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+        td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
         tr:last-child td { border-bottom: none; }
         tr:hover td { background: var(--surface-hover); cursor: pointer; }
 
-        .lead-name { font-weight: 500; color: var(--text-main); }
-        .lead-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+        .lead-name { font-weight: 500; color: var(--text-main); font-size: 13px; }
+        .lead-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
         .badge {
-            display: inline-block; padding: 2px 6px; border-radius: 4px;
-            font-size: 11px; font-weight: 500;
+            display: inline-block; padding: 3px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
         }
         .badge-a { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(34,197,94,0.2); }
         .badge-b { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.2); }
         .badge-c { background: var(--accent-rose-bg); color: var(--accent-rose); border: 1px solid rgba(244,63,94,0.2); }
 
-        .dsr-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; }
+        .dsr-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; }
         .dsr-pass { color: var(--accent-green); }
         .dsr-warn { color: var(--accent-amber); }
         .dsr-fail { color: var(--accent-rose); }
 
+        /* Calculator Form */
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .calc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+        .form-group { margin-bottom: 18px; }
+        .form-label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-input { width: 100%; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 14px; outline: none; }
+        .form-input:focus { border-color: var(--accent-green); }
+
+        .verdict-box {
+            padding: 20px; border-radius: 8px; border: 1px solid var(--border);
+            text-align: center; margin-top: 20px; background: var(--bg);
+        }
+        .verdict-val { font-size: 36px; font-weight: 700; margin: 8px 0; }
+
         /* Modal Drawer */
         .drawer-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-            display: none; place-items: center; z-index: 100;
+            position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+            display: none; place-items: center; z-index: 100; backdrop-filter: blur(4px);
         }
         .drawer-content {
-            width: 480px; background: var(--surface);
-            border: 1px solid var(--border-hover); border-radius: 8px;
-            padding: 24px; position: relative;
+            width: 520px; background: var(--surface);
+            border: 1px solid var(--border-hover); border-radius: 12px;
+            padding: 28px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
         .drawer-close {
-            position: absolute; top: 16px; right: 16px;
+            position: absolute; top: 20px; right: 20px;
             background: transparent; border: none; color: var(--text-muted);
-            font-size: 16px; cursor: pointer;
+            font-size: 18px; cursor: pointer; transition: color 0.15s;
         }
+        .drawer-close:hover { color: var(--text-main); }
 
-        .drawer-title { font-size: 16px; font-weight: 600; color: var(--text-main); }
-        .drawer-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; margin-bottom: 20px; }
+        .drawer-title { font-size: 18px; font-weight: 600; color: var(--text-main); }
+        .drawer-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; margin-bottom: 24px; }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-        .info-box { background: var(--bg); border: 1px solid var(--border); padding: 10px 12px; border-radius: 6px; }
-        .info-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 500; }
-        .info-val { font-size: 13px; font-weight: 600; color: var(--text-main); margin-top: 2px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .info-box { background: var(--bg); border: 1px solid var(--border); padding: 12px 14px; border-radius: 8px; }
+        .info-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+        .info-val { font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px; }
 
-        .drawer-notes { font-size: 12px; color: var(--text-muted); padding: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; }
+        .drawer-actions { display: flex; gap: 10px; margin-top: 24px; }
+        .drawer-actions .btn { flex: 1; text-align: center; justify-content: center; }
 
         @media(max-width: 900px) {
             .layout { grid-template-columns: 1fr; }
             aside { display: none; }
             main { padding: 20px; }
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .calc-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -241,44 +274,48 @@
                 <div class="brand-badge">ZK</div>
                 <div>
                     <div class="brand-name">ZK Revenue Ops</div>
-                    <div class="brand-sub">Client Portal</div>
+                    <div class="brand-sub">Client Portal v2.0</div>
                 </div>
             </div>
 
             <!-- Single REN Profile Focus -->
             <div class="agent-card">
-                <div class="agent-label">Client Portal</div>
+                <div class="agent-label">Assigned Client Portal</div>
                 <div class="agent-name" id="portalAgentName">Ahmad Razif</div>
-                <div class="agent-agency" id="portalAgentAgency">IQI Realty</div>
+                <div class="agent-agency" id="portalAgentAgency">IQI Realty • REN 23096</div>
             </div>
 
             <div class="nav-group">
-                <div class="nav-title">Delegated Leads</div>
-                <div class="nav-item active">
+                <div class="nav-title">Delegated Pipeline</div>
+                <div class="nav-item active" onclick="switchNav('buyers', this)">
                     <span>Buyer Pipeline</span>
                     <span class="nav-count" id="navBuyerCount">2,500</span>
                 </div>
-                <div class="nav-item">
-                    <span>Loan Pre-qualification</span>
-                    <span class="nav-count">DSR Engine</span>
+                <div class="nav-item" onclick="switchNav('dsr', this)">
+                    <span>DSR Loan Calculator</span>
+                    <span class="nav-count">Engine</span>
                 </div>
             </div>
 
             <div class="nav-group">
                 <div class="nav-title">Listings & Deals</div>
-                <div class="nav-item">
+                <div class="nav-item" onclick="switchNav('listings', this)">
                     <span>Property Listings</span>
-                    <span class="nav-count">3</span>
+                    <span class="nav-count" id="navListingCount">6</span>
                 </div>
-                <div class="nav-item">
+                <div class="nav-item" onclick="switchNav('appointments', this)">
+                    <span>Viewing Schedule</span>
+                    <span class="nav-count" id="navApptCount">4</span>
+                </div>
+                <div class="nav-item" onclick="switchNav('deals', this)">
                     <span>Commission Ledger</span>
-                    <span class="nav-count">RM 54K</span>
+                    <span class="nav-count">RM 89K</span>
                 </div>
             </div>
         </div>
 
         <div style="font-size:11px; color:var(--text-subtle); padding: 0 8px;">
-            Single-Client Mode • Synced
+            Single-Tenant • Sync Active
         </div>
     </aside>
 
@@ -286,12 +323,15 @@
     <main>
         <header>
             <div>
-                <h1 class="h-title" id="headAgentTitle">Ahmad Razif — Client Lead Portal</h1>
+                <h1 class="h-title" id="headTitle">Buyer Lead Pipeline — Ahmad Razif</h1>
                 <div class="h-sub">Personalized Lead Database & DSR Loan Qualification Engine</div>
             </div>
-            <div class="portal-status">
-                <span class="status-dot"></span>
-                <span>Active Connection</span>
+            <div class="header-actions">
+                <div class="portal-status">
+                    <span class="status-dot"></span>
+                    <span>Live Database Sync</span>
+                </div>
+                <button class="btn btn-primary" onclick="openAddLeadModal()">+ Add New Lead</button>
             </div>
         </header>
 
@@ -305,12 +345,12 @@
             <div class="metric-card">
                 <div class="metric-label">Grade A (Loan Eligible)</div>
                 <div class="metric-val mono" id="mGradeA" style="color: var(--accent-green);">—</div>
-                <div class="metric-sub">DSR ≤ 65% + Ready to view</div>
+                <div class="metric-sub">DSR ≤ 65% + Ready to View</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Grade B (Warm Nurture)</div>
                 <div class="metric-val mono" id="mGradeB" style="color: var(--accent-amber);">—</div>
-                <div class="metric-sub">Follow-up 3–6 months</div>
+                <div class="metric-sub">Follow-up 3–6 Months</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Est. Grade A Commission</div>
@@ -319,43 +359,150 @@
             </div>
         </section>
 
-        <!-- Controls -->
-        <div class="controls">
-            <div class="filter-group">
-                <button class="f-tab active" onclick="setGrade('', this)">All Leads</button>
-                <button class="f-tab" onclick="setGrade('A', this)">Grade A (Eligible)</button>
-                <button class="f-tab" onclick="setGrade('B', this)">Grade B (Nurture)</button>
-                <button class="f-tab" onclick="setGrade('C', this)">Grade C (Cold/Fail DSR)</button>
+        <!-- PANE 1: BUYER PIPELINE -->
+        <div class="view-pane active" id="paneBuyers">
+            <div class="controls">
+                <div class="filter-group">
+                    <button class="f-tab active" onclick="setGrade('', this)">All Leads</button>
+                    <button class="f-tab" onclick="setGrade('A', this)">Grade A (Eligible)</button>
+                    <button class="f-tab" onclick="setGrade('B', this)">Grade B (Nurture)</button>
+                    <button class="f-tab" onclick="setGrade('C', this)">Grade C (Cold/Fail)</button>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <input type="text" class="search-field" id="searchInput" placeholder="Search buyer name, phone, area..." oninput="onSearch()">
+                    <button class="btn" onclick="exportCSV()">Export CSV</button>
+                </div>
             </div>
-            <div style="display:flex; gap:8px;">
-                <input type="text" class="search-field" id="searchInput" placeholder="Search buyer name, phone, area..." oninput="onSearch()">
-                <button class="export-link" onclick="exportCSV()">Export CSV</button>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Buyer Prospect</th>
+                            <th>Grade</th>
+                            <th>Target Area & Budget</th>
+                            <th>Net Income</th>
+                            <th>Commitments</th>
+                            <th>DSR Loan %</th>
+                            <th>Est. Commission</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">Loading client leads...</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
-        <!-- Table -->
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Buyer Prospect</th>
-                        <th>Grade</th>
-                        <th>Target Area & Budget</th>
-                        <th>Net Income</th>
-                        <th>Commitments</th>
-                        <th>DSR Loan %</th>
-                        <th>Est. Commission</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">Loading client leads...</td></tr>
-                </tbody>
-            </table>
+        <!-- PANE 2: DSR LOAN CALCULATOR -->
+        <div class="view-pane" id="paneDsr">
+            <div class="calc-grid">
+                <div class="calc-card">
+                    <h2 style="font-size:16px; font-weight:600; margin-bottom:16px;">Calculated Bank DSR Eligibility</h2>
+                    <div class="form-group">
+                        <label class="form-label">Gaji Bersih (Net Monthly Income)</label>
+                        <input type="number" class="form-input" id="cIncome" value="8500" oninput="runDsrCalc()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Komitmen Bank Sedia Ada (Existing Debts)</label>
+                        <input type="number" class="form-input" id="cCommit" value="2100" oninput="runDsrCalc()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Harga Hartanah Sasaran (Property Price Target)</label>
+                        <input type="number" class="form-input" id="cPrice" value="500000" oninput="runDsrCalc()">
+                    </div>
+                </div>
+
+                <div class="calc-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                    <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600;">DSR Ratio Score</div>
+                    <div class="verdict-val mono" id="cDsrVal" style="color:var(--accent-green);">53%</div>
+                    <div class="badge badge-a" id="cBadge" style="font-size:13px; padding:6px 14px;">Grade A (PASS / HIGHLY ELIGIBLE)</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin-top:16px; text-align:center;" id="cSub">
+                        Anggaran Ansuran Bulanan: <span class="mono" id="cInstallment" style="color:var(--text-main); font-weight:600;">RM 2,400</span>
+                    </div>
+                    <button class="btn btn-primary" style="margin-top:20px; width:100%;" onclick="sendDsrWhatsAppReport()">Send WhatsApp Loan Pre-Approval Report</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANE 3: PROPERTY LISTINGS -->
+        <div class="view-pane" id="paneListings">
+            <div class="controls">
+                <div style="font-weight:600; font-size:14px;">Active Exclusive Listings (Ahmad Razif)</div>
+                <button class="btn btn-primary" onclick="alert('Opening Listing Submission Form...')">+ Add New Listing</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property Title</th>
+                            <th>Location Area</th>
+                            <th>Property Type</th>
+                            <th>Asking Price</th>
+                            <th>Specs</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listingsBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PANE 4: VIEWING SCHEDULE -->
+        <div class="view-pane" id="paneAppointments">
+            <div class="controls">
+                <div style="font-weight:600; font-size:14px;">Scheduled Viewing Appointments</div>
+                <button class="btn btn-primary" onclick="alert('Opening Viewing Scheduler...')">+ Schedule Viewing</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Buyer</th>
+                            <th>Property Listing</th>
+                            <th>Viewing Date & Time</th>
+                            <th>Status / Outcome</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="apptsBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PANE 5: COMMISSION LEDGER -->
+        <div class="view-pane" id="paneDeals">
+            <div class="controls">
+                <div style="font-weight:600; font-size:14px;">Closed Deals & Commission Ledger</div>
+                <div class="mono" style="font-weight:600; color:var(--accent-green); font-size:14px;">Total Cleared: RM 89,200</div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deal Ref</th>
+                            <th>Buyer</th>
+                            <th>Listing</th>
+                            <th>Deal Amount</th>
+                            <th>Gross Commission (2%)</th>
+                            <th>Agent Split (80%)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dealsBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 </div>
 
-<!-- Modal Drawer -->
+<!-- Modal Drawer for Lead Details -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
     <div class="drawer-content">
         <button class="drawer-close" onclick="hideDrawer()">✕</button>
@@ -369,8 +516,13 @@
             <div class="info-box"><div class="info-label">Est. Commission</div><div class="info-val mono" style="color:var(--accent-green);" id="dComm">RM 0</div></div>
         </div>
 
-        <div class="drawer-notes" id="dNotes">
+        <div class="drawer-notes" id="dNotes" style="font-size:12px; color:var(--text-muted); padding:12px; background:var(--bg); border:1px solid var(--border); border-radius:6px; margin-bottom:16px;">
             Lead has passed DSR eligibility criteria. Automated viewing schedule reminder sent.
+        </div>
+
+        <div class="drawer-actions">
+            <button class="btn btn-primary" onclick="triggerWhatsAppLead()">Send WhatsApp Report</button>
+            <button class="btn" onclick="scheduleViewingLead()">Schedule Viewing</button>
         </div>
     </div>
 </div>
@@ -380,7 +532,7 @@ const API = window.location.origin;
 let currentGrade = '';
 let searchTimer = null;
 let currentLeads = [];
-const AGENT_ID = 'REN-001';
+let activeNav = 'buyers';
 
 function rm(n) { return 'RM ' + (n || 0).toLocaleString(); }
 
@@ -393,13 +545,52 @@ const seedLeads = [
     { name: "Azman bin Yusof", phone: "+60169988776", source: "Google Ads", grade: "A", location: "Damansara Heights", propertyType: "Bungalow", maxBudget: 2400000, netIncome: 28000, existingCommitments: 7500, dsrPercent: 62, estCommission: 48000 }
 ];
 
+const seedListings = [
+    { title: "Suria Jelutong Residences", location: "Setia Alam", type: "Condo", price: 480000, specs: "3 Bed, 2 Bath", status: "Available" },
+    { title: "Eco Grandeur Terrace", location: "Puncak Alam", type: "Terrace", price: 650000, specs: "4 Bed, 3 Bath", status: "Available" },
+    { title: "Cyberjaya Tech Park Suite", location: "Cyberjaya", type: "Serviced Apt", price: 380000, specs: "2 Bed, 2 Bath", status: "Reserved" }
+];
+
+const seedAppts = [
+    { buyer: "Mohd Fikri bin Hassan", listing: "Suria Jelutong Residences", date: "2026-07-30 11:00 AM", status: "Confirmed" },
+    { buyer: "Lee Wei Jie", listing: "Cyberjaya Tech Park Suite", date: "2026-07-31 03:00 PM", status: "Pending" }
+];
+
+const seedDeals = [
+    { ref: "DEAL-2026-001", buyer: "Azman bin Yusof", listing: "Damansara Luxury Bungalow", amount: 2400000, gross: 48000, net: 38400, status: "SPA Signed" },
+    { ref: "DEAL-2026-002", buyer: "Aina binti Kamal", listing: "Bangi Hill Terrace", amount: 680000, gross: 13600, net: 10880, status: "Completed" }
+];
+
+function switchNav(paneId, el) {
+    activeNav = paneId;
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+
+    document.querySelectorAll('.view-pane').forEach(p => p.classList.remove('active'));
+    const pane = document.getElementById('pane' + paneId.charAt(0).toUpperCase() + paneId.slice(1));
+    if (pane) pane.classList.add('active');
+
+    const titles = {
+        buyers: "Buyer Lead Pipeline — Ahmad Razif",
+        dsr: "DSR Loan Eligibility Calculator Engine",
+        listings: "Exclusive Property Listings — Ahmad Razif",
+        appointments: "Viewing Schedule & Appointments",
+        deals: "Commission & Deals Ledger"
+    };
+    document.getElementById('headTitle').textContent = titles[paneId] || "Client Portal";
+
+    if (paneId === 'listings') renderListings();
+    if (paneId === 'appointments') renderAppts();
+    if (paneId === 'deals') renderDeals();
+}
+
 async function loadPortal() {
     try {
         let leads = seedLeads;
         try {
             const res = await fetch(`${API}/api/v1/buyers`);
             const data = await res.json();
-            if (data.data) {
+            if (data.data && data.data.length > 0) {
                 leads = data.data.map(b => ({
                     name: b.name, phone: b.phone || '', source: 'Direct Inflow',
                     grade: b.lead_score >= 80 ? 'A' : (b.lead_score >= 50 ? 'B' : 'C'),
@@ -409,7 +600,7 @@ async function loadPortal() {
                 }));
             }
         } catch(err) {
-            console.log('Using static fallback for cloud static deployment');
+            console.log('Using static fallback for cloud deployment');
         }
 
         if (currentGrade) leads = leads.filter(l => l.grade === currentGrade);
@@ -472,6 +663,85 @@ function renderTable(leads) {
     document.getElementById('tableBody').innerHTML = rows;
 }
 
+function renderListings() {
+    let rows = '';
+    seedListings.forEach(item => {
+        rows += `<tr>
+            <td style="font-weight:600; color:var(--text-main);">${item.title}</td>
+            <td>${item.location}</td>
+            <td>${item.type}</td>
+            <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(item.price)}</td>
+            <td class="mono" style="font-size:11px; color:var(--text-muted);">${item.specs}</td>
+            <td><span class="badge badge-a">${item.status}</span></td>
+        </tr>`;
+    });
+    document.getElementById('listingsBody').innerHTML = rows;
+}
+
+function renderAppts() {
+    let rows = '';
+    seedAppts.forEach(item => {
+        rows += `<tr>
+            <td style="font-weight:600;">${item.buyer}</td>
+            <td>${item.listing}</td>
+            <td class="mono">${item.date}</td>
+            <td><span class="badge badge-a">${item.status}</span></td>
+            <td><button class="btn" style="padding:4px 8px; font-size:11px;" onclick="alert('Viewing confirmed!')">Confirm</button></td>
+        </tr>`;
+    });
+    document.getElementById('apptsBody').innerHTML = rows;
+}
+
+function renderDeals() {
+    let rows = '';
+    seedDeals.forEach(item => {
+        rows += `<tr>
+            <td class="mono" style="font-weight:600; color:var(--accent-blue);">${item.ref}</td>
+            <td>${item.buyer}</td>
+            <td>${item.listing}</td>
+            <td class="mono">${rm(item.amount)}</td>
+            <td class="mono" style="color:var(--text-muted);">${rm(item.gross)}</td>
+            <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(item.net)}</td>
+            <td><span class="badge badge-a">${item.status}</span></td>
+        </tr>`;
+    });
+    document.getElementById('dealsBody').innerHTML = rows;
+}
+
+function runDsrCalc() {
+    const inc = parseFloat(document.getElementById('cIncome').value) || 0;
+    const com = parseFloat(document.getElementById('cCommit').value) || 0;
+    const prc = parseFloat(document.getElementById('cPrice').value) || 0;
+
+    const inst = Math.round(prc * 0.0048);
+    const dsr = inc > 0 ? Math.round(((com + inst) / inc) * 100) : 0;
+
+    document.getElementById('cDsrVal').textContent = `${dsr}%`;
+    document.getElementById('cInstallment').textContent = rm(inst);
+
+    const b = document.getElementById('cBadge');
+    if (dsr <= 65) {
+        b.className = 'badge badge-a';
+        b.textContent = 'Grade A (PASS / HIGHLY ELIGIBLE)';
+        document.getElementById('cDsrVal').style.color = 'var(--accent-green)';
+    } else if (dsr <= 75) {
+        b.className = 'badge badge-b';
+        b.textContent = 'Grade B (MODERATE RISK / NURTURE)';
+        document.getElementById('cDsrVal').style.color = 'var(--accent-amber)';
+    } else {
+        b.className = 'badge badge-c';
+        b.textContent = 'Grade C (HIGH DSR / UNQUALIFIED)';
+        document.getElementById('cDsrVal').style.color = 'var(--accent-rose)';
+    }
+}
+
+function sendDsrWhatsAppReport() {
+    const inc = document.getElementById('cIncome').value;
+    const prc = document.getElementById('cPrice').value;
+    const dsr = document.getElementById('cDsrVal').textContent;
+    alert(`Generating WhatsApp Report:\n\nGaji: RM ${inc}\nTarget Price: RM ${prc}\nDSR Result: ${dsr}\n\nReport copied to clipboard!`);
+}
+
 function setGrade(g, btn) {
     currentGrade = g;
     document.querySelectorAll('.f-tab').forEach(b => b.classList.remove('active'));
@@ -484,9 +754,11 @@ function onSearch() {
     searchTimer = setTimeout(loadPortal, 250);
 }
 
+let selectedLead = null;
 function openDrawer(idx) {
     const l = currentLeads[idx];
     if (!l) return;
+    selectedLead = l;
     document.getElementById('dName').textContent = `${l.name} (Grade ${l.grade})`;
     document.getElementById('dMeta').textContent = `${l.phone} · ${l.location} · ${l.propertyType}`;
     document.getElementById('dIncome').textContent = rm(l.netIncome);
@@ -498,6 +770,20 @@ function openDrawer(idx) {
 
 function hideDrawer() { document.getElementById('drawerOverlay').style.display = 'none'; }
 function closeDrawer(e) { if (e.target.id === 'drawerOverlay') hideDrawer(); }
+
+function triggerWhatsAppLead() {
+    if (!selectedLead) return;
+    alert(`Sending WhatsApp Pre-Approval Report to ${selectedLead.name} (${selectedLead.phone})...`);
+}
+
+function scheduleViewingLead() {
+    if (!selectedLead) return;
+    alert(`Opening Calendar to schedule viewing for ${selectedLead.name}...`);
+}
+
+function openAddLeadModal() {
+    alert('Opening New Lead Entry Form...');
+}
 
 function exportCSV() {
     if (!currentLeads || currentLeads.length === 0) return alert('No data to export.');
