@@ -1,6 +1,6 @@
 /**
  * ZK Revenue Ops — WhatsApp Auto-Outreach & Inbound Lead Qualification Engine
- * Humanized Malaysian REN Conversational Outreach & DSR Qualification
+ * Professional, High-Converting Malaysian REN Outreach (Zero Cringe, Zero Emoji Overload)
  */
 
 const fs = require('fs');
@@ -9,31 +9,31 @@ const path = require('path');
 const PROSPECTS_FILE = path.join(__dirname, '../../01_Business/ZK-Revenue-Ops/Leads/ren_prospects_100.json');
 
 /**
- * Generates an Ultra-Humanized Conversational WhatsApp Pitch for Malaysian RENs
+ * Generates a Clean, Professional & Respectful Outreach Message for Malaysian RENs
  */
-function generateHumanizedWhatsAppPitch(ren) {
+function generateProfessionalWhatsAppPitch(ren) {
     const isFemale = /siti|nur|ain|puan|akak|nabilah|kavitha|devi|amira|zainab/i.test(ren.name);
-    const salutation = isFemale ? 'Akak' : 'Bro';
     const honorific = isFemale ? 'Puan' : 'Tuan';
 
-    return `Salam & Hi ${honorific} ${ren.name} 👋
+    return `Salam ${honorific} ${ren.name},
 
-Lama juga duk perhati listing ${ren.propertyType || 'hartanah'} ${salutation} kat area ${ren.primary_location}... mantap betul pergerakan listing bawah ${ren.agency} 👍
+Saya menghubungi anda berhubung aktiviti listing hartanah anda di sekitar kawasan ${ren.primary_location} di bawah agensi ${ren.agency}.
 
-Nak tanya sikit ${salutation}, selalu mesti ramai giler buyer dok WhatsApp masuk kan? Tapi bila dah penat melayan, rupanya komitmen bank DSR ke laut... penat kan layan buyer tak lepas loan ni 😅
+Salah satu cabaran utama yang sering dihadapi oleh ejen terbilang seperti anda adalah menguruskan pangkalan data pembeli yang besar, di mana sebahagian besar pembeli tidak melepasi nisbah kelayakan pinjaman (DSR) bank selepas sesi perbincangan.
 
-Sebab tu team kami ada terbina satu *tool portal simple* khas untuk ejen top kat ${ren.primary_location}. 
+Pihak ZK Revenue Ops telah membangunkan infrastruktur *Client Portal & DSR Qualification Engine* khusus untuk REN top-performer:
 
-Dia tolong auto-tapis DSR gaji & komitmen bank buyer siap-siap, lepas tu susun terus pembeli mana yang Grade A (betul-betul layak loan & sedia nak viewing). Ejen tak payah buat data entry manual dah.
+- **Tapisan DSR Automatik**: Menapis kelayakan gaji bersih dan komitmen bank pembeli sebelum jadual viewing disahkan.
+- **Portal Pelanggan Khas**: Dashboard berjenama persendirian di atas nama ${ren.name} (${ren.agency}).
+- **Perkhidmatan Eksklusif**: Setiap daerah/sub-pasaran di ${ren.primary_location} dihadkan secara eksklusif kepada 1 REN sahaja bagi mengelakkan pertindihan kawasan pengiklanan (*ad targeting*).
 
-Saya ada tolong bukakan satu link contoh portal atas nama ${salutation} (*${ren.name} — ${ren.agency}*). 
+Saya telah menyediakan satu pautan demonstrasi Client Portal di bawah profil anda untuk pandu uji:
+https://zkoroci10.github.io/zk-nexus-revenue-ops/
 
-Kalau ${salutation} free 1 minit, cer try klik tengok sesuai tak dengan workflow ${salutation}:
-👉 https://zkoroci10.github.io/zk-nexus-revenue-ops/
+Sekiranya kelapangan, dipersilakan untuk meneliti pautan tersebut. Terima kasih.
 
-Kita pun memang hadkan *5 ejen sahaja per zon* kat area ${ren.primary_location} ni supaya tak bertindih. 
-
-Kalau rasa mantap, bagitahu tau! Thanks ${salutation} 🙏`;
+Yang benar,
+**Pasukan ZK Revenue Ops**`;
 }
 
 /**
@@ -76,11 +76,9 @@ function parseInboundBuyerMessage(rawText) {
 if (require.main === module) {
     if (fs.existsSync(PROSPECTS_FILE)) {
         const prospects = JSON.parse(fs.readFileSync(PROSPECTS_FILE, 'utf8'));
-        console.log("================ HUMANIZED WHATSAPP PITCH (SAMPLE 1) ================");
-        console.log(generateHumanizedWhatsAppPitch(prospects[0]));
-        console.log("\n================ HUMANIZED WHATSAPP PITCH (SAMPLE 2 - FEMALE) ================");
-        console.log(generateHumanizedWhatsAppPitch(prospects[3] || prospects[1]));
+        console.log("================ PROFESSIONAL CLEAN WHATSAPP PITCH ================");
+        console.log(generateProfessionalWhatsAppPitch(prospects[0]));
     }
 }
 
-module.exports = { generateHumanizedWhatsAppPitch, parseInboundBuyerMessage };
+module.exports = { generateProfessionalWhatsAppPitch, parseInboundBuyerMessage };
