@@ -1,6 +1,6 @@
 /**
  * ZK Revenue Ops — WhatsApp Auto-Outreach & Inbound Lead Qualification Engine
- * Professional, High-Converting Malaysian REN Outreach (Zero Cringe, Zero Emoji Overload)
+ * Elite Malaysian B2B Founder-to-Founder Cold Outreach Sequence (3-Message Flow)
  */
 
 const fs = require('fs');
@@ -9,31 +9,20 @@ const path = require('path');
 const PROSPECTS_FILE = path.join(__dirname, '../../01_Business/ZK-Revenue-Ops/Leads/ren_prospects_100.json');
 
 /**
- * Generates a Clean, Professional & Respectful Outreach Message for Malaysian RENs
+ * Generates the 3-Message Conversational Flow for a REN Prospect
+ * Strictly follows Founder-to-Founder Rules (Zero Buzzwords, Zero Brochure Tone)
  */
-function generateProfessionalWhatsAppPitch(ren) {
+function generateFounderWhatsAppSequence(ren) {
     const isFemale = /siti|nur|ain|puan|akak|nabilah|kavitha|devi|amira|zainab/i.test(ren.name);
     const honorific = isFemale ? 'Puan' : 'Tuan';
 
-    return `Salam ${honorific} ${ren.name},
+    return {
+        message1: `Hi ${honorific} ${ren.name}. Saya Ariff.\nSaya ternampak listing ${honorific} dekat area ${ren.primary_location} tadi.\nNak tanya sikit, boleh?`,
 
-Saya menghubungi anda berhubung aktiviti listing hartanah anda di sekitar kawasan ${ren.primary_location} di bawah agensi ${ren.agency}.
+        message2: `Biasa sebelum bawa buyer pergi viewing, ${honorific} tapis dulu tak kelayakan DSR diorang?\nSaja tanya sebab ramai ejen saya borak mengadu banyak masa habis bawak buyer viewing, tapi bila nak submit loan rupanya DSR ke laut.`,
 
-Salah satu cabaran utama yang sering dihadapi oleh ejen terbilang seperti anda adalah menguruskan pangkalan data pembeli yang besar, di mana sebahagian besar pembeli tidak melepasi nisbah kelayakan pinjaman (DSR) bank selepas sesi perbincangan.
-
-Pihak ZK Revenue Ops telah membangunkan infrastruktur *Client Portal & DSR Qualification Engine* khusus untuk REN top-performer:
-
-- **Tapisan DSR Automatik**: Menapis kelayakan gaji bersih dan komitmen bank pembeli sebelum jadual viewing disahkan.
-- **Portal Pelanggan Khas**: Dashboard berjenama persendirian di atas nama ${ren.name} (${ren.agency}).
-- **Perkhidmatan Eksklusif**: Setiap daerah/sub-pasaran di ${ren.primary_location} dihadkan secara eksklusif kepada 1 REN sahaja bagi mengelakkan pertindihan kawasan pengiklanan (*ad targeting*).
-
-Saya telah menyediakan satu pautan demonstrasi Client Portal di bawah profil anda untuk pandu uji:
-https://zkoroci10.github.io/zk-nexus-revenue-ops/
-
-Sekiranya kelapangan, dipersilakan untuk meneliti pautan tersebut. Terima kasih.
-
-Yang benar,
-**Pasukan ZK Revenue Ops**`;
+        message3: `Sebab tu saya ada terbina satu tool simple.\nDia tolong auto-tapis DSR gaji & komitmen buyer sebelum ${honorific} set masa viewing. So ${honorific} cuma layan buyer yang betul-betul confirm lepas loan je.\nSaya ada buat contoh demo 1 minit atas nama ${ren.name} (${ren.agency}). Kalau ${honorific} nak tengok, saya boleh hantar link.`
+    };
 }
 
 /**
@@ -76,9 +65,15 @@ function parseInboundBuyerMessage(rawText) {
 if (require.main === module) {
     if (fs.existsSync(PROSPECTS_FILE)) {
         const prospects = JSON.parse(fs.readFileSync(PROSPECTS_FILE, 'utf8'));
-        console.log("================ PROFESSIONAL CLEAN WHATSAPP PITCH ================");
-        console.log(generateProfessionalWhatsAppPitch(prospects[0]));
+        const seq = generateFounderWhatsAppSequence(prospects[0]);
+        console.log("================ FOUNDER B2B WHATSAPP SEQUENCE (SAMPLE 1) ================");
+        console.log("--- MESSAGE 1 ---");
+        console.log(seq.message1);
+        console.log("\n--- MESSAGE 2 ---");
+        console.log(seq.message2);
+        console.log("\n--- MESSAGE 3 ---");
+        console.log(seq.message3);
     }
 }
 
-module.exports = { generateProfessionalWhatsAppPitch, parseInboundBuyerMessage };
+module.exports = { generateFounderWhatsAppSequence, parseInboundBuyerMessage };
