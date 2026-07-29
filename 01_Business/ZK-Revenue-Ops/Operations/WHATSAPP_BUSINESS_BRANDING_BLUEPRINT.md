@@ -5,34 +5,34 @@ Type: Blueprint
 Module: ZK Revenue Ops
 BU: Real Estate AI Infrastructure
 Status: Approved
-Version: 1.0.0
+Version: 3.0.0
 Created: 2026-07-29
 Updated: 2026-07-29
 Owner: CEO / ZK Nexus Team
 Related: STR-006, SYS-003, TMP-006
 ---
 
-# 📱 BLUEPRINT SETUP WHATSAPP BUSINESS — FOUNDER ARIFF
+# 📱 BLUEPRINT SETUP WHATSAPP BUSINESS — FOUNDER ARIFF (100% AUTHENTIC REAL FACE)
 
-> **Tujuan**: Membina akaun WhatsApp Business yang berwibawa (*high trust & authority*) di mata REN hartanah top-performer di Malaysia.
+> **Tujuan**: Membina akaun WhatsApp Business yang berwibawa (*high trust & authority*) menggunakan **muka asli 100% Founder Ariff** tanpa sebarang gangguan AI!
 
 ---
 
-## 1. 📸 Gambar Profil (Profile Picture - MUKA ASLI FOUNDER)
+## 1. 📸 Gambar Profil (Profile Picture - FOTO MUKA ASLI ARIFF 100%)
 
-> ⚠️ **Prinsip Utama**: REN tidak beli daripada syarikat atau bot, REN beli daripada **FOUNDER MANUSIA ASLI**.
+Kami menggunakan **foto muka asli anda 100% tulen**:
 
-### Panduan Tangkapan Gambar Muka Asli Ariff:
-1. **Gaya Pakaian**: Kemeja gelap / Blazer casual tanpa tali leher (gaya tech founder moden).
-2. **Pencahayaan & Latar**: Ambil di kawasan terang (cahaya matahari berdekatan tingkap) dengan latar belakang bersih/ringkas.
-3. **Muka & Senyuman**: Senyuman mesra, pandang terus ke lensa kamera (*eye-contact* terbina kepercayaan).
-4. **Mod Kamera**: Guna *Portrait Mode* pada telefon pintar anda.
+![Founder Ariff Authentic Real Face](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/ariff_original_face.jpg)
+
+### Kenapa Foto Asli Ini 100x Lebih Berkesan?
+1. **100% Real & Authentic**: REN di Malaysia menyukai founder yang realistik, jujur, dan tidak berlakon (*no fake AI filter*).
+2. **High Trust Factor**: Gambar asli anda memberikan keyakinan (*trust factor*) yang tinggi bahawa anda adalah pengasas tempatan yang betul-betul wujud!
 
 ---
 
 ## 2. 📝 Profil Info & Bio WhatsApp Business
 
-Sila salin dan letakkan maklumat ini dalam tetapan profil WhatsApp Business anda:
+Sila salin dan masukkan maklumat ini dalam tetapan profil WhatsApp Business anda:
 
 - **Nama Perniagaan**: `Ariff | ZK Revenue Ops`
 - **Kategori**: `Real Estate Service` / `Business Consultant`
@@ -40,18 +40,17 @@ Sila salin dan letakkan maklumat ini dalam tetapan profil WhatsApp Business anda
   > *Bantu ejen hartanah (REN) top performer menapis kelayakan DSR pembeli & mengurus pangkalan data 5,000+ lead secara automatik.*  
   > 
   > 🌐 *Client Portal Demo*: https://zkoroci10.github.io/zk-nexus-revenue-ops/
-- **Alamat Emel**: `ariff@zkrevenueops.com` (atau emel perniagaan anda)
 - **Waktu Perniagaan**: `Isnin - Jumaat (09:00 AM - 06:00 PM)`
 
 ---
 
-## 3. 🛍️ Reka Bentuk & Struktur Katalog WhatsApp Business (3 Produk Utama)
+## 3. 🛍️ Reka Bentuk & Struktur Katalog WhatsApp Business
 
-Dalam fungsi **Catalog** WhatsApp Business, cipta 3 item katalog ini untuk ditunjukkan kepada REN yang melawat profil anda:
+Cipta 3 item katalog ini dalam fungsi **Catalog** WhatsApp Business anda:
 
 ### Item Katalog 1: White-Label Client Portal REN
 - **Nama Item**: `White-Label Client Portal (Stripe-Style UI)`
-- **Harga**: `RM 500 / bulan` (atau biarkan kosong)
+- **Harga**: `RM 500 / bulan`
 - **Penerangan**:
   > *Portal berjenama khas di atas nama anda sendiri. Paparan Stripe/Linear Dark Aesthetics tanpa emoji, dilengkapi papan pemuka kelayakan DSR, pengurusan listing, dan eksport CSV.*
 - **Pautan**: `https://zkoroci10.github.io/zk-nexus-revenue-ops/`
@@ -72,21 +71,7 @@ Dalam fungsi **Catalog** WhatsApp Business, cipta 3 item katalog ini untuk ditun
 
 ---
 
-## ⚡ 4. Tetapan Mesej Balasan Pantas (Quick Replies)
-
-Tetapkan **Quick Replies** dalam WhatsApp Business untuk memudahkan anda membalas chat REN:
-
-- **Shortcut**: `/demo`
-  - **Mesej**:
-    > *Ini pautan demonstrasi Client Portal yang dah siap di bawah profil contoh: https://zkoroci10.github.io/zk-nexus-revenue-ops/ . Tuan/Puan boleh cuba tekan dan lihat paparan interaktifnya.*
-
-- **Shortcut**: `/dsr`
-  - **Mesej**:
-    > *Enjin DSR kami menggunakan formula standard bank Malaysia: ((Komitmen Bank + Ansuran Baharu) / Gaji Bersih) * 100. Pembeli DSR ≤ 65% dikategorikan sebagai Grade A (Pass).*
-
----
-
 > [!TIP]
-> **Tindakan Anda Sekarang**:  
-> 1. Tukar gambar profil WhatsApp Business dengan **foto muka asli anda**.  
-> 2. Copy-paste teks Bio & Katalog di atas ke dalam akaun WhatsApp Business anda!
+> **Tindakan Seterusnya**:  
+> 1. Setkan gambar profil WhatsApp Business dengan **foto muka asli Ariff** di atas.  
+> 2. Salin teks Bio & Katalog ke dalam WhatsApp Business anda!
