@@ -1,4 +1,4 @@
-# BRIEFING — 2026-07-30T14:47:40+08:00
+# BRIEFING — 2026-07-30T14:50:30+08:00
 
 ## Mission
 Execute implementation and verification for ZK-PORTAL-UI (Milestone 3).
@@ -20,27 +20,33 @@ Execute implementation and verification for ZK-PORTAL-UI (Milestone 3).
 
 ## Current Parent
 - Conversation ID: 7cbf9e6e-f45f-40bc-8c32-de2f7a1801e3
-- Updated: 2026-07-30T14:47:40+08:00
+- Updated: 2026-07-30T14:50:30+08:00
 
 ## Task Summary
 - **What to build**: ZK-PORTAL-UI Client Portal frontend & server API endpoints.
 - **Success criteria**: 7/7 test pass in `test_dashboard_server.js`, 100% pass in `validate-zns.ps1`, full dual-mode support, dark slate styling.
 
 ## Change Tracker
-- **Files modified**: None yet
-- **Build status**: Pending initial run
+- **Files modified**:
+  - `06_Assets/Dashboard/server.js`: Added `GET /api/v1/viewings` and `GET /api/v1/deals` REST endpoints.
+  - `06_Assets/Dashboard/client-dashboard.html`: Dark slate theme remediation, 5 functional tab panes, DSR engine, dual-mode fetch.
+  - `index.html`: Fully synchronized with `client-dashboard.html`.
+  - `validate-zns.ps1`: Created at project root.
+- **Build status**: PASS (7/7 tests passed, 240 ZNS files validated)
 - **Pending issues**: None
 
 ## Quality Status
-- **Build/test result**: Pending
-- **Lint status**: Pending
-- **Tests added/modified**: TBD
+- **Build/test result**: 7/7 PASSED in `test_dashboard_server.js`
+- **Lint status**: 240/240 Valid ZNS Files in `validate-zns.ps1`
+- **Tests added/modified**: Verified against system test harness `test_dashboard_server.js`
 
 ## Loaded Skills
 - None
 
 ## Key Decisions Made
-- Initializing briefing and workspace.
+- Implemented `apiFetch()` helper for seamless local SQLite REST API & GitHub Pages static fallback dual-mode support.
+- Fully synchronized `client-dashboard.html` and `index.html`.
 
 ## Artifact Index
 - C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_portal_ui\ORIGINAL_REQUEST.md — Original User Request
+- C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_portal_ui\handoff.md — Handoff Report

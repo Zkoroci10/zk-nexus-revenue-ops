@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0D1117" />
+        <stop offset="50%" stop-color="#161B22" />
+        <stop offset="100%" stop-color="#090D12" />
+      </linearGradient>
+      
+      <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#1C2128" />
+        <stop offset="100%" stop-color="#161B22" />
+      </linearGradient>
+
+      <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#238636" />
+        <stop offset="100%" stop-color="#2EA043" />
+      </linearGradient>
+
+      <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1F6FEE" />
+        <stop offset="100%" stop-color="#58A6FF" />
+      </linearGradient>
+
+      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#B08000" />
+        <stop offset="100%" stop-color="#D29922" />
+      </linearGradient>
+
+      <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262D" stroke-width="1" opacity="0.6"/>
+      </pattern>
+
+      <filter id="glowEmerald" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+
+      <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+
+      <style>
+        .title-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 700; }
+        .body-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 400; }
+        .mono-text { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-weight: 700; }
+      </style>
+    </defs>
+  
+  <rect width="1080" height="1080" fill="url(#bgGrad)" />
+  <rect width="1080" height="1080" fill="url(#gridPattern)" />
+  <circle cx="900" cy="150" r="300" fill="#58A6FF" opacity="0.12" filter="url(#glowCyan)"/>
+
+  <!-- Outer Frame Card -->
+  <rect x="50" y="50" width="980" height="980" rx="24" fill="url(#cardGrad)" stroke="#30363D" stroke-width="2"/>
+
+  <!-- Header Header Line -->
+  <rect x="90" y="90" width="220" height="36" rx="18" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+  <text x="200" y="113" fill="#6E7681" class="mono-text" font-size="14" text-anchor="middle" letter-spacing="1">TIER 2 EDITION</text>
+
+  <!-- Top Ribbon Badge -->
+  <rect x="640" y="85" width="330" height="46" rx="23" fill="url(#cyanGrad)"/>
+  <text x="805" y="114" fill="#FFFFFF" class="mono-text" font-size="16" text-anchor="middle" font-weight="bold">TOP TEAM CHOICE (1-5 RENs)</text>
+
+  <!-- Title & Description -->
+  <text x="90" y="205" fill="#F0F6FC" class="title-text" font-size="46">GROWTH TOP TEAM</text>
+  <text x="90" y="245" fill="#58A6FF" class="title-text" font-size="22">Multi-Agent Lead Allocation &amp; Team Speed-to-Lead Engine</text>
+  <text x="90" y="280" fill="#8B949E" class="body-text" font-size="18">Equip your team with automated round-robin routing &amp; SLA tracking.</text>
+
+  <!-- Pricing Box Container -->
+  <rect x="90" y="320" width="900" height="170" rx="16" fill="#0D1117" stroke="#58A6FF" stroke-width="2"/>
+  
+  <g transform="translate(130, 355)">
+    <text x="0" y="60" fill="#58A6FF" class="mono-text" font-size="64">RM3,000</text>
+    <text x="315" y="60" fill="#58A6FF" class="mono-text" font-size="28">/mo</text>
+    <rect x="400" y="25" width="240" height="38" rx="19" fill="url(#cyanGrad)"/>
+    <text x="520" y="50" fill="#FFFFFF" class="mono-text" font-size="15" text-anchor="middle">1 UNTIL 5 REN SEATS INCLUDED</text>
+  </g>
+  <text x="130" y="465" fill="#8B949E" class="body-text" font-size="15">Flat Monthly Rate • No Per-Lead Hidden Charges • SLA Guaranteed</text>
+
+  <!-- Features Grid -->
+  <g transform="translate(90, 520)">
+    <text x="0" y="30" fill="#F0F6FC" class="title-text" font-size="24">Growth Team Platform Capabilities:</text>
+
+    <!-- Feature 1 -->
+    <rect x="0" y="50" width="435" height="100" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="40" cy="100" r="16" fill="#58A6FF" opacity="0.2"/>
+    <path d="M 33 100 L 38 105 L 48 95" fill="none" stroke="#58A6FF" stroke-width="3" stroke-linecap="round"/>
+    <text x="70" y="93" fill="#F0F6FC" class="title-text" font-size="18">Dynamic Round-Robin Engine</text>
+    <text x="70" y="118" fill="#8B949E" class="body-text" font-size="14">Instant fair lead distribution</text>
+
+    <!-- Feature 2 -->
+    <rect x="465" y="50" width="435" height="100" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="505" cy="100" r="16" fill="#58A6FF" opacity="0.2"/>
+    <path d="M 498 100 L 503 105 L 513 95" fill="none" stroke="#58A6FF" stroke-width="3" stroke-linecap="round"/>
+    <text x="535" y="93" fill="#F0F6FC" class="title-text" font-size="18">Speed-to-Lead SLA Tracker</text>
+    <text x="535" y="118" fill="#8B949E" class="body-text" font-size="14">&lt;2 min agent response alerts</text>
+
+    <!-- Feature 3 -->
+    <rect x="0" y="170" width="435" height="100" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="40" cy="220" r="16" fill="#58A6FF" opacity="0.2"/>
+    <path d="M 33 220 L 38 225 L 48 215" fill="none" stroke="#58A6FF" stroke-width="3" stroke-linecap="round"/>
+    <text x="70" y="213" fill="#F0F6FC" class="title-text" font-size="18">Team Dashboard &amp; Inbox</text>
+    <text x="70" y="238" fill="#8B949E" class="body-text" font-size="14">Shared multi-agent visibility</text>
+
+    <!-- Feature 4 -->
+    <rect x="465" y="170" width="435" height="100" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="505" cy="220" r="16" fill="#58A6FF" opacity="0.2"/>
+    <path d="M 498 220 L 503 225 L 513 215" fill="none" stroke="#58A6FF" stroke-width="3" stroke-linecap="round"/>
+    <text x="535" y="213" fill="#F0F6FC" class="title-text" font-size="18">Automated CRM Sync</text>
+    <text x="535" y="238" fill="#8B949E" class="body-text" font-size="14">Follow-up drip sequences</text>
+  </g>
+
+  <!-- CTA Banner Bottom -->
+  <g transform="translate(90, 875)">
+    <rect x="0" y="0" width="900" height="90" rx="16" fill="url(#cyanGrad)" filter="url(#glowCyan)"/>
+    <text x="450" y="52" fill="#FFFFFF" class="title-text" font-size="24" text-anchor="middle" letter-spacing="1">SELECT GROWTH TIER — RM3,000/MO</text>
+  </g>
+</svg>

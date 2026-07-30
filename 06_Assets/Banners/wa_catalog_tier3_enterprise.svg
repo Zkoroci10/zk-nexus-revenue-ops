@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0D1117" />
+        <stop offset="50%" stop-color="#161B22" />
+        <stop offset="100%" stop-color="#090D12" />
+      </linearGradient>
+      
+      <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#1C2128" />
+        <stop offset="100%" stop-color="#161B22" />
+      </linearGradient>
+
+      <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#238636" />
+        <stop offset="100%" stop-color="#2EA043" />
+      </linearGradient>
+
+      <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1F6FEE" />
+        <stop offset="100%" stop-color="#58A6FF" />
+      </linearGradient>
+
+      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#B08000" />
+        <stop offset="100%" stop-color="#D29922" />
+      </linearGradient>
+
+      <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262D" stroke-width="1" opacity="0.6"/>
+      </pattern>
+
+      <filter id="glowEmerald" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+
+      <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+
+      <style>
+        .title-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 700; }
+        .body-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 400; }
+        .mono-text { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-weight: 700; }
+      </style>
+    </defs>
+  
+  <rect width="1080" height="1080" fill="url(#bgGrad)" />
+  <rect width="1080" height="1080" fill="url(#gridPattern)" />
+  <circle cx="900" cy="150" r="300" fill="#D29922" opacity="0.12" filter="url(#glowEmerald)"/>
+
+  <!-- Outer Frame Card -->
+  <rect x="50" y="50" width="980" height="980" rx="24" fill="url(#cardGrad)" stroke="#30363D" stroke-width="2"/>
+
+  <!-- Header Header Line -->
+  <rect x="90" y="90" width="220" height="36" rx="18" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+  <text x="200" y="113" fill="#6E7681" class="mono-text" font-size="14" text-anchor="middle" letter-spacing="1">TIER 3 EDITION</text>
+
+  <!-- Top Ribbon Badge -->
+  <rect x="640" y="85" width="330" height="46" rx="23" fill="url(#goldGrad)"/>
+  <text x="805" y="114" fill="#000000" class="mono-text" font-size="16" text-anchor="middle" font-weight="bold">100,000+ LEAD INFRASTRUCTURE</text>
+
+  <!-- Title & Description -->
+  <text x="90" y="205" fill="#F0F6FC" class="title-text" font-size="46">ENTERPRISE AGENCY</text>
+  <text x="90" y="245" fill="#D29922" class="title-text" font-size="22">Dedicated High-Concurrency Infrastructure &amp; API Integration</text>
+  <text x="90" y="280" fill="#8B949E" class="body-text" font-size="18">Tailored for large real estate agencies, brokerages, &amp; property developers.</text>
+
+  <!-- Pricing Box Container -->
+  <rect x="90" y="320" width="900" height="170" rx="16" fill="#0D1117" stroke="#D29922" stroke-width="2"/>
+  
+  <g transform="translate(130, 360)">
+    <text x="0" y="55" fill="#D29922" class="mono-text" font-size="52">CUSTOM QUOTE</text>
+    <rect x="420" y="18" width="240" height="40" rx="20" fill="url(#goldGrad)"/>
+    <text x="540" y="44" fill="#000000" class="mono-text" font-size="15" text-anchor="middle" font-weight="bold">OPEN TO DISCUSSION</text>
+  </g>
+  <text x="130" y="465" fill="#8B949E" class="body-text" font-size="15">Custom SLA • Unlimited REN Accounts • Dedicated Server Architecture</text>
+
+  <!-- Enterprise Specs Counters -->
+  <g transform="translate(90, 515)">
+    <rect x="0" y="0" width="435" height="110" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+    <text x="30" y="55" fill="#D29922" class="mono-text" font-size="38">100,000+</text>
+    <text x="30" y="88" fill="#F0F6FC" class="title-text" font-size="16">Lead Database Capacity</text>
+
+    <rect x="465" y="0" width="435" height="110" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+    <text x="495" y="55" fill="#2EA043" class="mono-text" font-size="38">&lt;50ms</text>
+    <text x="495" y="88" fill="#F0F6FC" class="title-text" font-size="16">Query Response Latency</text>
+  </g>
+
+  <!-- Features Grid -->
+  <g transform="translate(90, 650)">
+    <!-- Feature 1 -->
+    <rect x="0" y="0" width="435" height="90" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="40" cy="45" r="16" fill="#D29922" opacity="0.2"/>
+    <path d="M 33 45 L 38 50 L 48 40" fill="none" stroke="#D29922" stroke-width="3" stroke-linecap="round"/>
+    <text x="70" y="42" fill="#F0F6FC" class="title-text" font-size="17">Dedicated Cloud API Node</text>
+    <text x="70" y="65" fill="#8B949E" class="body-text" font-size="14">Isolated infrastructure &amp; custom webhooks</text>
+
+    <!-- Feature 2 -->
+    <rect x="465" y="0" width="435" height="90" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="505" cy="45" r="16" fill="#D29922" opacity="0.2"/>
+    <path d="M 498 45 L 503 50 L 513 40" fill="none" stroke="#D29922" stroke-width="3" stroke-linecap="round"/>
+    <text x="535" y="42" fill="#F0F6FC" class="title-text" font-size="17">Custom CRM &amp; ERP Connectors</text>
+    <text x="535" y="65" fill="#8B949E" class="body-text" font-size="14">Direct sync with enterprise databases</text>
+
+    <!-- Feature 3 -->
+    <rect x="0" y="105" width="435" height="90" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="40" cy="150" r="16" fill="#D29922" opacity="0.2"/>
+    <path d="M 33 150 L 38 155 L 48 145" fill="none" stroke="#D29922" stroke-width="3" stroke-linecap="round"/>
+    <text x="70" y="147" fill="#F0F6FC" class="title-text" font-size="17">Unlimited REN Seat Licenses</text>
+    <text x="70" y="170" fill="#8B949E" class="body-text" font-size="14">Role-based access for 100+ agents</text>
+
+    <!-- Feature 4 -->
+    <rect x="465" y="105" width="435" height="90" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <circle cx="505" cy="150" r="16" fill="#D29922" opacity="0.2"/>
+    <path d="M 498 150 L 503 155 L 513 145" fill="none" stroke="#D29922" stroke-width="3" stroke-linecap="round"/>
+    <text x="535" y="147" fill="#F0F6FC" class="title-text" font-size="17">24/7 Dedicated Account Lead</text>
+    <text x="535" y="170" fill="#8B949E" class="body-text" font-size="14">Priority engineering &amp; SLA support</text>
+  </g>
+
+  <!-- CTA Banner Bottom -->
+  <g transform="translate(90, 875)">
+    <rect x="0" y="0" width="900" height="90" rx="16" fill="url(#goldGrad)"/>
+    <text x="450" y="52" fill="#000000" class="title-text" font-size="24" text-anchor="middle" font-weight="bold" letter-spacing="1">REQUEST CUSTOM ENTERPRISE PROPOSAL</text>
+  </g>
+</svg>

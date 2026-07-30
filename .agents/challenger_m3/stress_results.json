@@ -1,0 +1,211 @@
+{
+  "total": 34,
+  "passed": 29,
+  "failed": 5,
+  "details": [
+    {
+      "status": "PASS",
+      "category": "DSR",
+      "testName": "Normal DSR Calculation (Income RM8.5k, Price RM500k)",
+      "details": "DSR: 49.8%, Badge: Grade A (PASS / HIGHLY ELIGIBLE)"
+    },
+    {
+      "status": "FAIL",
+      "category": "DSR",
+      "testName": "Zero Income should produce FAIL/Grade C (BUG: Currently gives 0% Grade A)",
+      "details": "Actual: DSR=0%, Badge=\"Grade A (PASS / HIGHLY ELIGIBLE)\""
+    },
+    {
+      "status": "FAIL",
+      "category": "DSR",
+      "testName": "Negative commitments should be sanitized to non-negative",
+      "details": "Actual commitments used: -5000, DSR=-33.8%"
+    },
+    {
+      "status": "PASS",
+      "category": "DSR",
+      "testName": "Property Price RM15M correctly flags high DSR without NaN",
+      "details": "Installment: RM 63890, DSR: 776.4%"
+    },
+    {
+      "status": "PASS",
+      "category": "DSR",
+      "testName": "RM 1 Billion property price does not cause NaN or Infinity overflow",
+      "details": "Installment: RM 4259311, DSR: 42593.1%"
+    },
+    {
+      "status": "PASS",
+      "category": "DSR",
+      "testName": "Zero interest rate does not crash calculation",
+      "details": "Installment: RM 1368, DSR: 47.4%"
+    },
+    {
+      "status": "PASS",
+      "category": "DSR",
+      "testName": "Zero tenure does not cause division by zero",
+      "details": "Installment: RM 1278, DSR: 45.6%"
+    },
+    {
+      "status": "PASS",
+      "category": "DSR",
+      "testName": "Non-numeric NaN inputs handled gracefully without throwing",
+      "details": "DSR: 0, Inst: 0, MaxPrice: 0"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "Pane element #paneBuyers exists in HTML",
+      "details": "Found in HTML: true"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "Pane element #paneDsr exists in HTML",
+      "details": "Found in HTML: true"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "Pane element #paneListings exists in HTML",
+      "details": "Found in HTML: true"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "Pane element #paneAppointments exists in HTML",
+      "details": "Found in HTML: true"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "Pane element #paneDeals exists in HTML",
+      "details": "Found in HTML: true"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "All 5 nav tab triggers exist in HTML markup",
+      "details": "Found tabs: buyers, dsr, listings, appointments, deals"
+    },
+    {
+      "status": "PASS",
+      "category": "TabSwitching",
+      "testName": "10,000 tab state transitions executed in 4ms (sub-100ms threshold)",
+      "details": "Time: 4ms"
+    },
+    {
+      "status": "PASS",
+      "category": "SearchFilter",
+      "testName": "Search input should filter active tab (BUG: currently only filters buyers table regardless of active tab)",
+      "details": "Search filtering bound only to loadPortal()"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "GET /api/v1/overview returns 200 JSON with metrics",
+      "details": "Status: 200"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "GET /api/v1/buyers returns 200 JSON array",
+      "details": "Count: 20"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "GET /api/v1/listings returns 200 JSON array",
+      "details": "Count: 5"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "GET /api/v1/rens returns 200 JSON array",
+      "details": "Count: 6"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "POST /api/v1/match (valid buyerId) returns 200 with matches",
+      "details": "Matches count: 5"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "POST /api/v1/match with malformed JSON returns 400 Bad Request",
+      "details": "Status: 400, Error: Invalid or malformed JSON payload"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerAPI",
+      "testName": "POST /api/v1/match with empty object returns 400 Bad Request",
+      "details": "Status: 400"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerSecurity",
+      "testName": "POST /api/v1/match with SQL Injection string handled safely by prepared statements",
+      "details": "Status: 200"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerRouting",
+      "testName": "GET /api/v1/nonexistent_route returns JSON 404",
+      "details": "Status: 404"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerRouting",
+      "testName": "GET /unknown_client_route falls back to static client-dashboard.html (200 OK)",
+      "details": "Status: 200, HTML returned: true"
+    },
+    {
+      "status": "PASS",
+      "category": "ServerLoad",
+      "testName": "100 concurrent requests completed in 168ms with 100% 200 OK responses",
+      "details": "Time: 168ms, All 200: true"
+    },
+    {
+      "status": "PASS",
+      "category": "Modals",
+      "testName": "Modal element #modalAddLead exists in HTML",
+      "details": "Found: true"
+    },
+    {
+      "status": "PASS",
+      "category": "Modals",
+      "testName": "Modal element #modalAddListing exists in HTML",
+      "details": "Found: true"
+    },
+    {
+      "status": "PASS",
+      "category": "Modals",
+      "testName": "Modal element #modalScheduleViewing exists in HTML",
+      "details": "Found: true"
+    },
+    {
+      "status": "PASS",
+      "category": "Modals",
+      "testName": "Modal element #drawerOverlay exists in HTML",
+      "details": "Found: true"
+    },
+    {
+      "status": "FAIL",
+      "category": "SecurityXSS",
+      "testName": "Lead name should be HTML-escaped before insertion into DOM (VULNERABILITY: Stored XSS)",
+      "details": "Unescaped ${l.name} inserted directly into innerHTML string"
+    },
+    {
+      "status": "FAIL",
+      "category": "SecurityXSS",
+      "testName": "Listing title should be HTML-escaped before insertion into DOM (VULNERABILITY: Stored XSS)",
+      "details": "Unescaped ${item.title} inserted directly into innerHTML string"
+    },
+    {
+      "status": "FAIL",
+      "category": "FormValidation",
+      "testName": "Form submission with empty numbers should default gracefully without NaN",
+      "details": "maxBudget: NaN, estCommission: NaN"
+    }
+  ]
+}

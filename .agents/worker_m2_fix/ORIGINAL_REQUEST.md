@@ -1,36 +1,32 @@
-## 2026-07-29T04:29:31Z
-You are teamwork_preview_worker for Milestone 2 (ZK-INGEST) bug fixes and vulnerabilities remediation.
-Working directory: C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2_fix
-Project root: C:\Users\Dell\Documents\Projects ZK Nexus
+## 2026-07-30T14:51:58Z
+
+You are a Worker subagent for Project ZK Nexus Milestone 2 Remediation (ZK-DB-ENGINE).
+Working Directory: C:\Users\Dell\Documents\Projects ZK Nexus
+Your Agent Directory: C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2_fix
 
 MANDATORY INTEGRITY WARNING:
 DO NOT CHEAT. All implementations must be genuine. DO NOT hardcode test results, create dummy/facade implementations, or circumvent the intended task. A Forensic Auditor will independently verify your work. Integrity violations WILL be detected and your work WILL be rejected.
 
-TASK OBJECTIVE:
-Remediate all 6 vulnerabilities discovered by Challenger and Reviewer in `05_Systems/Ingestion/`.
+Your Mission:
+Remediate the 5 vulnerabilities identified in `C:\Users\Dell\Documents\Projects ZK Nexus\.agents\challenger_m2\handoff.md` inside `05_Systems/Database/db_engine.js`:
 
-REMEDIATION STEPS:
+1. Fix `DSR-VULN-01` (Negative Commitments):
+   Clamp `existingCommitments` to `Math.max(0, Number(leadData.existing_commitments ?? leadData.existingCommitments ?? 0))` so negative commitments cannot bypass qualification.
 
-1. In `05_Systems/Ingestion/webhook_listener.js`:
-   - Fix `NaN` storage when invalid strings are passed for budget or bedrooms:
-     `const max_budget = parseFloat(payload.max_budget || payload.budget || payload.Budget || 0) || 0;`
-     `const min_bedrooms = parseInt(payload.min_bedrooms || payload.minBedrooms || payload.bedrooms || 1, 10) || 1;`
-   - Add idempotency check for webhooks: Before generating a new `buyer_id`, query `buyer_prospects` by `phone`. If an existing buyer exists, reuse their `buyer_id` and update their record instead of inserting a duplicate!
+2. Fix `SLA-VULN-01` (Multi-Breach Scanner):
+   Update `checkSLAEscalations` query to `WHERE sla_status IN ('PENDING', 'BREACHED_REALLOCATED') AND sla_deadline IS NOT NULL AND sla_deadline < ?` so 2nd-level SLA deadline breaches are reallocated properly.
 
-2. In `05_Systems/Ingestion/whatsapp_parser.js`:
-   - Expand minimum bedrooms regex to include "room" and "rooms":
-     `const bedMatch = text.match(/(\d+)\s*(?:bedroom|bedrooms|room|rooms|bed|br|bilik)/i);`
-   - Add idempotency check in `ingestWhatsAppMessage`: Query `buyer_prospects` by `phone`. If existing buyer exists, update their record instead of creating duplicate `BYR-WA-...`.
+3. Fix `TXN-VULN-01` (Bulk Ingestion Transaction Safety):
+   Wrap `seed100kLeads` bulk insert loop in `try { ... } catch (err) { this.db.exec('ROLLBACK;'); throw err; } finally { ... rebuild indexes ... }` to ensure indexes are ALWAYS restored even if bulk insertion encounters an exception.
 
-3. In `05_Systems/Ingestion/csv_excel_parser.js`:
-   - Add phone number normalization (`normalizePhone`) stripping non-digit formatting characters (`+6012-345 6789` -> `+60123456789`).
-   - Fix `buyer_id` collisions across multiple CSV files: Generate `buyer_id` using a file timestamp or unique hash (e.g. `BYR-CSV-${Date.now()}-${i}`) or check existing buyer by `phone` to update instead of overwriting existing records.
+4. Fix `TXN-VULN-02` (Non-Atomic Allocation):
+   Wrap `allocateLead` in `this.db.exec('BEGIN IMMEDIATE;')` ... `COMMIT;` (with ROLLBACK on error) so `ren_clients.active_leads_count` and `buyer_prospects` updates remain strictly atomic.
 
-VERIFICATION STEPS:
-1. Run `node 05_Systems/Ingestion/test_ingestion_engine.js` using `run_command`. Ensure 4/4 tests pass.
-2. Run `node .agents/challenger_m2_1/stress_ingestion_test.js` using `run_command`. Ensure all 27/27 stress tests pass!
-3. Run `powershell -ExecutionPolicy Bypass -File 05_Systems/Scripts/validate-zns.ps1` using `run_command`. Ensure 100% ZNS compliance.
+5. Fix `SEC-VULN-01` (SQL OrderBy Whitelist):
+   Add whitelist validation for `filters.orderBy` (e.g. `const ALLOWED_ORDER_BY = new Set(['lead_score DESC', 'created_at ASC', 'created_at DESC', 'max_budget DESC', 'dsr_percent ASC']);`). Reject or sanitize invalid values.
 
-DOCUMENTATION:
-Record changes in `C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2_fix\changes.md` and handoff report in `C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2_fix\handoff.md`.
-Send a completion message back to orchestrator.
+Verification:
+- Run `node 05_Systems/Database/test_db_engine.js` (must pass 7/7).
+- Run `node 05_Systems/Database/benchmark_100k_db_engine.js` (must pass 5/5).
+- Run `node .agents/challenger_m2/adversarial_stress_test.js` (must pass all tests).
+- Write handoff report to `C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2_fix\handoff.md` and send a message to parent.

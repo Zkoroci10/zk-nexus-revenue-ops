@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Portal — ZK Revenue Ops</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         :root {
-            --bg: #09090b;
-            --surface: #121217;
-            --surface-hover: #181822;
-            --border: #1c1c24;
-            --border-hover: #2e2e3e;
-            --text-main: #f4f4f5;
-            --text-muted: #71717a;
-            --text-subtle: #52525b;
-            --accent-green: #22c55e;
-            --accent-green-bg: rgba(34,197,94,0.12);
-            --accent-amber: #f59e0b;
-            --accent-amber-bg: rgba(245,158,11,0.12);
-            --accent-rose: #f43f5e;
-            --accent-rose-bg: rgba(244,63,94,0.12);
-            --accent-blue: #3b82f6;
-            --accent-blue-bg: rgba(59,130,246,0.12);
+            --bg: #0d1117;
+            --surface: #161b22;
+            --surface-hover: #21262d;
+            --border: #30363d;
+            --border-hover: #8b949e;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --text-subtle: #6e7681;
+            --accent-green: #238636;
+            --accent-green-bg: rgba(35,134,54,0.15);
+            --accent-amber: #d29922;
+            --accent-amber-bg: rgba(210,153,34,0.15);
+            --accent-rose: #f85149;
+            --accent-rose-bg: rgba(248,81,73,0.15);
+            --accent-blue: #58a6ff;
+            --accent-blue-bg: rgba(88,166,255,0.15);
             --accent-purple: #a855f7;
-            --accent-purple-bg: rgba(168,85,247,0.12);
+            --accent-purple-bg: rgba(168,85,247,0.15);
         }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text-main);
             font-size: 13px;
@@ -37,14 +37,17 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .mono { font-family: 'JetBrains Mono', monospace; }
+        .mono {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-feature-settings: "tnum";
+        }
 
         /* Layout */
         .layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
 
         /* Sidebar */
         aside {
-            background: #0b0b10;
+            background: #0d1117;
             border-right: 1px solid var(--border);
             padding: 24px 16px;
             display: flex;
@@ -97,7 +100,7 @@
         }
         .nav-item:hover { background: var(--surface); color: var(--text-main); border-color: var(--border); }
         .nav-item.active { background: var(--surface); color: var(--text-main); font-weight: 600; border-color: var(--border-hover); }
-        .nav-count { font-size: 11px; color: var(--text-subtle); font-family: 'JetBrains Mono', monospace; }
+        .nav-count { font-size: 11px; color: var(--text-subtle); font-family: 'JetBrains Mono', 'Fira Code', monospace; }
         .nav-item.active .nav-count { color: var(--accent-green); }
 
         /* Main Workspace */
@@ -118,7 +121,7 @@
             background: var(--surface); border: 1px solid var(--border);
             font-size: 11px; font-weight: 500; color: var(--text-muted);
         }
-        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-green); }
 
         /* Action Buttons Header */
         .header-actions { display: flex; gap: 10px; }
@@ -130,8 +133,8 @@
             background: var(--surface); color: var(--text-main);
         }
         .btn:hover { background: var(--surface-hover); border-color: var(--border-hover); }
-        .btn-primary { background: var(--accent-green); color: #000; font-weight: 600; border: none; }
-        .btn-primary:hover { background: #1ea34d; }
+        .btn-primary { background: var(--accent-green); color: #ffffff; font-weight: 600; border: none; }
+        .btn-primary:hover { background: #2ea043; }
 
         /* Metrics Grid */
         .metrics-grid {
@@ -161,14 +164,14 @@
             gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
         }
 
-        .filter-group { display: flex; gap: 4px; background: #0d0d12; padding: 3px; border-radius: 6px; border: 1px solid var(--border); }
+        .filter-group { display: flex; gap: 4px; background: var(--surface); padding: 3px; border-radius: 6px; border: 1px solid var(--border); }
         .f-tab {
             padding: 6px 12px; border-radius: 4px; border: none;
             background: transparent; color: var(--text-muted);
             font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s;
         }
         .f-tab:hover { color: var(--text-main); }
-        .f-tab.active { background: var(--surface); color: var(--text-main); font-weight: 600; border: 1px solid var(--border-hover); }
+        .f-tab.active { background: var(--surface-hover); color: var(--text-main); font-weight: 600; border: 1px solid var(--border-hover); }
 
         .search-field {
             padding: 7px 14px; background: var(--surface);
@@ -190,7 +193,7 @@
         th {
             padding: 12px 16px; font-size: 11px; font-weight: 500;
             color: var(--text-muted); border-bottom: 1px solid var(--border);
-            background: #0e0e13;
+            background: #161b22;
         }
 
         td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
@@ -204,11 +207,11 @@
             display: inline-block; padding: 3px 8px; border-radius: 4px;
             font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
         }
-        .badge-a { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(34,197,94,0.2); }
-        .badge-b { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.2); }
-        .badge-c { background: var(--accent-rose-bg); color: var(--accent-rose); border: 1px solid rgba(244,63,94,0.2); }
+        .badge-a { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(35,134,54,0.3); }
+        .badge-b { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(210,153,34,0.3); }
+        .badge-c { background: var(--accent-rose-bg); color: var(--accent-rose); border: 1px solid rgba(248,81,73,0.3); }
 
-        .dsr-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; }
+        .dsr-tag { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; font-weight: 600; }
         .dsr-pass { color: var(--accent-green); }
         .dsr-warn { color: var(--accent-amber); }
         .dsr-fail { color: var(--accent-rose); }
@@ -216,44 +219,44 @@
         /* Calculator Form */
         .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .calc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
-        .form-group { margin-bottom: 18px; }
+        .form-group { margin-bottom: 16px; }
         .form-label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-input { width: 100%; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 14px; outline: none; }
+        .form-input { width: 100%; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text-main); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 14px; outline: none; }
         .form-input:focus { border-color: var(--accent-green); }
 
         .verdict-box {
             padding: 20px; border-radius: 8px; border: 1px solid var(--border);
-            text-align: center; margin-top: 20px; background: var(--bg);
+            text-align: center; margin-top: 16px; background: var(--bg);
         }
         .verdict-val { font-size: 36px; font-weight: 700; margin: 8px 0; }
 
-        /* Modal Drawer */
-        .drawer-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+        /* Modal Overlay & Content */
+        .modal-overlay, .drawer-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.75);
             display: none; place-items: center; z-index: 100; backdrop-filter: blur(4px);
         }
-        .drawer-content {
-            width: 520px; background: var(--surface);
+        .modal-content, .drawer-content {
+            width: 520px; max-width: 90vw; background: var(--surface);
             border: 1px solid var(--border-hover); border-radius: 12px;
             padding: 28px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
-        .drawer-close {
+        .modal-close, .drawer-close {
             position: absolute; top: 20px; right: 20px;
             background: transparent; border: none; color: var(--text-muted);
             font-size: 18px; cursor: pointer; transition: color 0.15s;
         }
-        .drawer-close:hover { color: var(--text-main); }
+        .modal-close:hover, .drawer-close:hover { color: var(--text-main); }
 
-        .drawer-title { font-size: 18px; font-weight: 600; color: var(--text-main); }
-        .drawer-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; margin-bottom: 24px; }
+        .modal-title, .drawer-title { font-size: 18px; font-weight: 600; color: var(--text-main); }
+        .modal-sub, .drawer-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; margin-bottom: 20px; }
 
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
         .info-box { background: var(--bg); border: 1px solid var(--border); padding: 12px 14px; border-radius: 8px; }
         .info-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
         .info-val { font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px; }
 
-        .drawer-actions { display: flex; gap: 10px; margin-top: 24px; }
-        .drawer-actions .btn { flex: 1; text-align: center; justify-content: center; }
+        .modal-actions, .drawer-actions { display: flex; gap: 10px; margin-top: 20px; }
+        .modal-actions .btn, .drawer-actions .btn { flex: 1; text-align: center; justify-content: center; }
 
         @media(max-width: 900px) {
             .layout { grid-template-columns: 1fr; }
@@ -267,7 +270,7 @@
 <body>
 
 <div class="layout">
-    <!-- Sidebar -->
+    <!-- Sidebar Navigation -->
     <aside>
         <div>
             <div class="portal-brand">
@@ -278,7 +281,7 @@
                 </div>
             </div>
 
-            <!-- Single REN Profile Focus -->
+            <!-- Agent Focus Card -->
             <div class="agent-card">
                 <div class="agent-label">Assigned Client Portal</div>
                 <div class="agent-name" id="portalAgentName">Ahmad Razif</div>
@@ -289,7 +292,7 @@
                 <div class="nav-title">Delegated Pipeline</div>
                 <div class="nav-item active" onclick="switchNav('buyers', this)">
                     <span>Buyer Pipeline</span>
-                    <span class="nav-count" id="navBuyerCount">2,500</span>
+                    <span class="nav-count" id="navBuyerCount">0</span>
                 </div>
                 <div class="nav-item" onclick="switchNav('dsr', this)">
                     <span>DSR Loan Calculator</span>
@@ -301,25 +304,25 @@
                 <div class="nav-title">Listings & Deals</div>
                 <div class="nav-item" onclick="switchNav('listings', this)">
                     <span>Property Listings</span>
-                    <span class="nav-count" id="navListingCount">6</span>
+                    <span class="nav-count" id="navListingCount">0</span>
                 </div>
                 <div class="nav-item" onclick="switchNav('appointments', this)">
                     <span>Viewing Schedule</span>
-                    <span class="nav-count" id="navApptCount">4</span>
+                    <span class="nav-count" id="navApptCount">0</span>
                 </div>
                 <div class="nav-item" onclick="switchNav('deals', this)">
                     <span>Commission Ledger</span>
-                    <span class="nav-count">RM 89K</span>
+                    <span class="nav-count" id="navDealCount">RM 0</span>
                 </div>
             </div>
         </div>
 
         <div style="font-size:11px; color:var(--text-subtle); padding: 0 8px;">
-            Single-Tenant • Sync Active
+            Single-Tenant • Live Sync Active
         </div>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Main Workspace -->
     <main>
         <header>
             <div>
@@ -331,31 +334,31 @@
                     <span class="status-dot"></span>
                     <span>Live Database Sync</span>
                 </div>
-                <button class="btn btn-primary" onclick="openAddLeadModal()">+ Add New Lead</button>
+                <button class="btn btn-primary" onclick="openModal('modalAddLead')">+ Add New Lead</button>
             </div>
         </header>
 
-        <!-- Personal Metrics -->
+        <!-- Personal Metrics Summary -->
         <section class="metrics-grid">
             <div class="metric-card">
                 <div class="metric-label">Delegated Leads</div>
-                <div class="metric-val mono" id="mTotalLeads">2,500</div>
+                <div class="metric-val mono" id="mTotalLeads">0</div>
                 <div class="metric-sub">Assigned to Ahmad Razif</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Grade A (Loan Eligible)</div>
-                <div class="metric-val mono" id="mGradeA" style="color: var(--accent-green);">—</div>
+                <div class="metric-val mono" id="mGradeA" style="color: var(--accent-green);">0</div>
                 <div class="metric-sub">DSR ≤ 65% + Ready to View</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Grade B (Warm Nurture)</div>
-                <div class="metric-val mono" id="mGradeB" style="color: var(--accent-amber);">—</div>
+                <div class="metric-val mono" id="mGradeB" style="color: var(--accent-amber);">0</div>
                 <div class="metric-sub">Follow-up 3–6 Months</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Est. Grade A Commission</div>
-                <div class="metric-val mono" id="mEstComm" style="color: var(--accent-blue);">—</div>
-                <div class="metric-sub" id="mDsrRate">DSR Pass Rate: —</div>
+                <div class="metric-val mono" id="mEstComm" style="color: var(--accent-blue);">RM 0</div>
+                <div class="metric-sub" id="mDsrRate">DSR Pass Rate: 0%</div>
             </div>
         </section>
 
@@ -394,33 +397,54 @@
             </div>
         </div>
 
-        <!-- PANE 2: DSR LOAN CALCULATOR -->
+        <!-- PANE 2: DSR LOAN CALCULATOR ENGINE -->
         <div class="view-pane" id="paneDsr">
             <div class="calc-grid">
                 <div class="calc-card">
-                    <h2 style="font-size:16px; font-weight:600; margin-bottom:16px;">Calculated Bank DSR Eligibility</h2>
+                    <h2 style="font-size:15px; font-weight:600; margin-bottom:16px; color:var(--text-main);">Banking DSR Loan Eligibility Engine</h2>
                     <div class="form-group">
-                        <label class="form-label">Gaji Bersih (Net Monthly Income)</label>
+                        <label class="form-label">Gaji Bersih (Net Monthly Income - RM)</label>
                         <input type="number" class="form-input" id="cIncome" value="8500" oninput="runDsrCalc()">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Komitmen Bank Sedia Ada (Existing Debts)</label>
+                        <label class="form-label">Komitmen Bank Sedia Ada (Existing Debts - RM)</label>
                         <input type="number" class="form-input" id="cCommit" value="2100" oninput="runDsrCalc()">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Harga Hartanah Sasaran (Property Price Target)</label>
+                        <label class="form-label">Harga Hartanah Sasaran (Property Price - RM)</label>
                         <input type="number" class="form-input" id="cPrice" value="500000" oninput="runDsrCalc()">
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                        <div class="form-group">
+                            <label class="form-label">Kadar Faedah (Interest %)</label>
+                            <input type="number" step="0.1" class="form-input" id="cRate" value="4.5" oninput="runDsrCalc()">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tempoh (Tenure Yrs)</label>
+                            <input type="number" class="form-input" id="cTenure" value="35" oninput="runDsrCalc()">
+                        </div>
                     </div>
                 </div>
 
-                <div class="calc-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
-                    <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; font-weight:600;">DSR Ratio Score</div>
-                    <div class="verdict-val mono" id="cDsrVal" style="color:var(--accent-green);">53%</div>
-                    <div class="badge badge-a" id="cBadge" style="font-size:13px; padding:6px 14px;">Grade A (PASS / HIGHLY ELIGIBLE)</div>
-                    <div style="font-size:12px; color:var(--text-muted); margin-top:16px; text-align:center;" id="cSub">
-                        Anggaran Ansuran Bulanan: <span class="mono" id="cInstallment" style="color:var(--text-main); font-weight:600;">RM 2,400</span>
+                <div class="calc-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+                    <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">DSR Ratio Assessment</div>
+                    <div class="verdict-val mono" id="cDsrVal" style="color:var(--accent-green);">52.6%</div>
+                    <div class="badge badge-a" id="cBadge" style="font-size:12px; padding:6px 14px;">Grade A (PASS / HIGHLY ELIGIBLE)</div>
+                    
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; width:100%; margin-top:20px;">
+                        <div class="info-box">
+                            <div class="info-label">Anggaran Installment</div>
+                            <div class="info-val mono" id="cInstallment">RM 2,368</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">Max Affordable Price</div>
+                            <div class="info-val mono" style="color:var(--accent-green);" id="cMaxPrice">RM 618,000</div>
+                        </div>
                     </div>
-                    <button class="btn btn-primary" style="margin-top:20px; width:100%;" onclick="sendDsrWhatsAppReport()">Send WhatsApp Loan Pre-Approval Report</button>
+
+                    <button class="btn btn-primary" style="margin-top:20px; width:100%; padding:10px;" onclick="sendDsrWhatsAppReport()">
+                        📱 Send WhatsApp Loan Pre-Approval Report
+                    </button>
                 </div>
             </div>
         </div>
@@ -428,8 +452,8 @@
         <!-- PANE 3: PROPERTY LISTINGS -->
         <div class="view-pane" id="paneListings">
             <div class="controls">
-                <div style="font-weight:600; font-size:14px;">Active Exclusive Listings (Ahmad Razif)</div>
-                <button class="btn btn-primary" onclick="alert('Opening Listing Submission Form...')">+ Add New Listing</button>
+                <div style="font-weight:600; font-size:14px; color:var(--text-main);">Exclusive Property Listings</div>
+                <button class="btn btn-primary" onclick="openModal('modalAddListing')">+ Add New Listing</button>
             </div>
             <div class="table-container">
                 <table>
@@ -453,17 +477,18 @@
         <!-- PANE 4: VIEWING SCHEDULE -->
         <div class="view-pane" id="paneAppointments">
             <div class="controls">
-                <div style="font-weight:600; font-size:14px;">Scheduled Viewing Appointments</div>
-                <button class="btn btn-primary" onclick="alert('Opening Viewing Scheduler...')">+ Schedule Viewing</button>
+                <div style="font-weight:600; font-size:14px; color:var(--text-main);">Scheduled Viewing Appointments</div>
+                <button class="btn btn-primary" onclick="openModal('modalScheduleViewing')">+ Schedule Viewing</button>
             </div>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Buyer</th>
+                            <th>Buyer Prospect</th>
                             <th>Property Listing</th>
                             <th>Viewing Date & Time</th>
-                            <th>Status / Outcome</th>
+                            <th>Feedback / Rating</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -477,18 +502,24 @@
         <!-- PANE 5: COMMISSION LEDGER -->
         <div class="view-pane" id="paneDeals">
             <div class="controls">
-                <div style="font-weight:600; font-size:14px;">Closed Deals & Commission Ledger</div>
-                <div class="mono" style="font-weight:600; color:var(--accent-green); font-size:14px;">Total Cleared: RM 89,200</div>
+                <div>
+                    <span style="font-weight:600; font-size:14px; color:var(--text-main);">Commission & Deals Ledger</span>
+                    <span class="lead-meta" style="margin-left:10px;">Gross Commission 3% · REN Split 80%</span>
+                </div>
+                <div style="display:flex; gap:16px; align-items:center;">
+                    <div class="mono" style="font-weight:600; color:var(--text-muted); font-size:13px;">Pipeline: <span id="mTotalPipeline" style="color:var(--text-main);">RM 0</span></div>
+                    <div class="mono" style="font-weight:600; color:var(--accent-green); font-size:13px;">Total Cleared: <span id="mTotalCleared">RM 0</span></div>
+                </div>
             </div>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>Deal Ref</th>
-                            <th>Buyer</th>
-                            <th>Listing</th>
+                            <th>Buyer Prospect</th>
+                            <th>Property Listing</th>
                             <th>Deal Amount</th>
-                            <th>Gross Commission (2%)</th>
+                            <th>Gross Comm (3%)</th>
                             <th>Agent Split (80%)</th>
                             <th>Status</th>
                         </tr>
@@ -502,10 +533,10 @@
     </main>
 </div>
 
-<!-- Modal Drawer for Lead Details -->
+<!-- Drawer Overlay for Lead Details -->
 <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
     <div class="drawer-content">
-        <button class="drawer-close" onclick="hideDrawer()">✕</button>
+        <button class="drawer-close" onclick="closeModal('drawerOverlay')">✕</button>
         <div class="drawer-title" id="dName">Buyer Lead Details</div>
         <div class="drawer-sub" id="dMeta">Contact Info</div>
 
@@ -517,13 +548,134 @@
         </div>
 
         <div class="drawer-notes" id="dNotes" style="font-size:12px; color:var(--text-muted); padding:12px; background:var(--bg); border:1px solid var(--border); border-radius:6px; margin-bottom:16px;">
-            Lead has passed DSR eligibility criteria. Automated viewing schedule reminder sent.
+            Lead passed initial qualification metrics. Ready for property viewing match.
         </div>
 
         <div class="drawer-actions">
             <button class="btn btn-primary" onclick="triggerWhatsAppLead()">Send WhatsApp Report</button>
-            <button class="btn" onclick="scheduleViewingLead()">Schedule Viewing</button>
+            <button class="btn" onclick="scheduleViewingForLead()">Schedule Viewing</button>
         </div>
+    </div>
+</div>
+
+<!-- Modal: Add New Lead -->
+<div class="modal-overlay" id="modalAddLead" onclick="closeModalOnOverlay(event, 'modalAddLead')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modalAddLead')">✕</button>
+        <div class="modal-title">+ Add New Buyer Lead</div>
+        <div class="modal-sub">Register prospect for automated DSR qualification</div>
+        <form onsubmit="handleAddLead(event)">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" id="addName" class="form-input" placeholder="e.g. Mohd Khairul" required>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="text" id="addPhone" class="form-input" placeholder="+60123456789" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Preferred Location</label>
+                    <input type="text" id="addLocation" class="form-input" placeholder="Setia Alam / Bangi" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Net Monthly Income (RM)</label>
+                    <input type="number" id="addIncome" class="form-input" value="8000" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Existing Commitments (RM)</label>
+                    <input type="number" id="addCommit" class="form-input" value="2200" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Property Type</label>
+                    <input type="text" id="addType" class="form-input" value="Condo" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Max Budget (RM)</label>
+                    <input type="number" id="addBudget" class="form-input" value="500000" required>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn" onclick="closeModal('modalAddLead')">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Prospect</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal: Add New Listing -->
+<div class="modal-overlay" id="modalAddListing" onclick="closeModalOnOverlay(event, 'modalAddListing')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modalAddListing')">✕</button>
+        <div class="modal-title">+ Add Exclusive Listing</div>
+        <div class="modal-sub">Create new property listing record</div>
+        <form onsubmit="handleAddListing(event)">
+            <div class="form-group">
+                <label class="form-label">Property Title</label>
+                <input type="text" id="lstTitle" class="form-input" placeholder="e.g. Clover Haven Residence" required>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Location Area</label>
+                    <input type="text" id="lstLocation" class="form-input" placeholder="Shah Alam / Cyberjaya" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Property Type</label>
+                    <input type="text" id="lstType" class="form-input" placeholder="Condo / Terrace / Semi-D" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Asking Price (RM)</label>
+                    <input type="number" id="lstPrice" class="form-input" placeholder="550000" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Bedrooms / Bathrooms</label>
+                    <input type="text" id="lstSpecs" class="form-input" placeholder="3 Bed, 2 Bath" required>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn" onclick="closeModal('modalAddListing')">Cancel</button>
+                <button type="submit" class="btn btn-primary">Add Listing</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal: Schedule Viewing -->
+<div class="modal-overlay" id="modalScheduleViewing" onclick="closeModalOnOverlay(event, 'modalScheduleViewing')">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('modalScheduleViewing')">✕</button>
+        <div class="modal-title">+ Schedule Viewing Appointment</div>
+        <div class="modal-sub">Set date and time for buyer site visit</div>
+        <form onsubmit="handleScheduleViewing(event)">
+            <div class="form-group">
+                <label class="form-label">Buyer Name</label>
+                <input type="text" id="schBuyer" class="form-input" placeholder="Buyer Prospect Name" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Property Listing</label>
+                <input type="text" id="schListing" class="form-input" placeholder="Property Listing Title" required>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label class="form-label">Date & Time</label>
+                    <input type="text" id="schDate" class="form-input" placeholder="2026-08-02 10:00 AM" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Initial Status</label>
+                    <input type="text" id="schStatus" class="form-input" value="Scheduled" required>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn" onclick="closeModal('modalScheduleViewing')">Cancel</button>
+                <button type="submit" class="btn btn-primary">Confirm Appointment</button>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -534,31 +686,65 @@ let searchTimer = null;
 let currentLeads = [];
 let activeNav = 'buyers';
 
+function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 function rm(n) { return 'RM ' + (n || 0).toLocaleString(); }
 
-// Fallback seed data if API is static on GitHub Pages
-const seedLeads = [
+// Dual-Mode Architecture Fetch Handler
+async function apiFetch(endpoint, fallbackData) {
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000);
+        const res = await fetch(`${API}${endpoint}`, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        if (json && json.success && Array.isArray(json.data)) {
+            return json.data;
+        }
+    } catch(err) {
+        console.log(`[Dual-Mode] Falling back to embedded seed data for ${endpoint}`);
+    }
+    return fallbackData;
+}
+
+// Embedded Fallback Seed Data for GitHub Pages Static Deployment
+let seedBuyers = [
     { name: "Mohd Fikri bin Hassan", phone: "+60123456789", source: "FB Ads", grade: "A", location: "Setia Alam, Shah Alam", propertyType: "Condo", maxBudget: 500000, netIncome: 8500, existingCommitments: 2100, dsrPercent: 53, estCommission: 10000 },
     { name: "Aina binti Kamal", phone: "+60198765432", source: "Portal Listing", grade: "A", location: "Bangi, Selangor", propertyType: "Terrace", maxBudget: 680000, netIncome: 12000, existingCommitments: 3400, dsrPercent: 55, estCommission: 13600 },
     { name: "Lee Wei Jie", phone: "+60171234567", source: "Referral", grade: "A", location: "Cyberjaya", propertyType: "Semi-D", maxBudget: 850000, netIncome: 15000, existingCommitments: 4100, dsrPercent: 54, estCommission: 17000 },
     { name: "Priya a/p Shankar", phone: "+60141122334", source: "WhatsApp", grade: "B", location: "Puchong, Selangor", propertyType: "Apartment", maxBudget: 350000, netIncome: 4500, existingCommitments: 1800, dsrPercent: 70, estCommission: 7000 },
-    { name: "Azman bin Yusof", phone: "+60169988776", source: "Google Ads", grade: "A", location: "Damansara Heights", propertyType: "Bungalow", maxBudget: 2400000, netIncome: 28000, existingCommitments: 7500, dsrPercent: 62, estCommission: 48000 }
+    { name: "Azman bin Yusof", phone: "+60169988776", source: "Google Ads", grade: "A", location: "Damansara Heights", propertyType: "Bungalow", maxBudget: 2400000, netIncome: 2800, existingCommitments: 7500, dsrPercent: 62, estCommission: 48000 },
+    { name: "Siti Nurhaliza bin Ariff", phone: "+60133445566", source: "FB Ads", grade: "C", location: "Kajang", propertyType: "Condo", maxBudget: 400000, netIncome: 4000, existingCommitments: 2800, dsrPercent: 82, estCommission: 8000 }
 ];
 
-const seedListings = [
+let seedListings = [
     { title: "Suria Jelutong Residences", location: "Setia Alam", type: "Condo", price: 480000, specs: "3 Bed, 2 Bath", status: "Available" },
     { title: "Eco Grandeur Terrace", location: "Puncak Alam", type: "Terrace", price: 650000, specs: "4 Bed, 3 Bath", status: "Available" },
-    { title: "Cyberjaya Tech Park Suite", location: "Cyberjaya", type: "Serviced Apt", price: 380000, specs: "2 Bed, 2 Bath", status: "Reserved" }
+    { title: "Cyberjaya Tech Park Suite", location: "Cyberjaya", type: "Serviced Apt", price: 380000, specs: "2 Bed, 2 Bath", status: "Reserved" },
+    { title: "Bangi Hillview Residence", location: "Bangi", type: "Terrace", price: 580000, specs: "4 Bed, 3 Bath", status: "Available" },
+    { title: "Damansara Heights Villa", location: "Damansara", type: "Bungalow", price: 2400000, specs: "5 Bed, 6 Bath", status: "Sold" }
 ];
 
-const seedAppts = [
-    { buyer: "Mohd Fikri bin Hassan", listing: "Suria Jelutong Residences", date: "2026-07-30 11:00 AM", status: "Confirmed" },
-    { buyer: "Lee Wei Jie", listing: "Cyberjaya Tech Park Suite", date: "2026-07-31 03:00 PM", status: "Pending" }
+let seedAppts = [
+    { buyer: "Mohd Fikri bin Hassan", listing: "Suria Jelutong Residences", date: "2026-07-30 11:00 AM", rating: "★★★★★", status: "Confirmed" },
+    { buyer: "Aina binti Kamal", listing: "Bangi Hillview Residence", date: "2026-07-30 02:30 PM", rating: "★★★★☆", status: "Completed" },
+    { buyer: "Lee Wei Jie", listing: "Cyberjaya Tech Park Suite", date: "2026-07-31 03:00 PM", rating: "Pending", status: "Scheduled" },
+    { buyer: "Priya a/p Shankar", listing: "Eco Grandeur Terrace", date: "2026-08-01 10:00 AM", rating: "Pending", status: "Scheduled" }
 ];
 
-const seedDeals = [
-    { ref: "DEAL-2026-001", buyer: "Azman bin Yusof", listing: "Damansara Luxury Bungalow", amount: 2400000, gross: 48000, net: 38400, status: "SPA Signed" },
-    { ref: "DEAL-2026-002", buyer: "Aina binti Kamal", listing: "Bangi Hill Terrace", amount: 680000, gross: 13600, net: 10880, status: "Completed" }
+let seedDeals = [
+    { ref: "DEAL-2026-001", buyer: "Azman bin Yusof", listing: "Damansara Luxury Bungalow", amount: 2400000, gross: 72000, net: 57600, status: "Closed Won" },
+    { ref: "DEAL-2026-002", buyer: "Aina binti Kamal", listing: "Bangi Hill Terrace", amount: 680000, gross: 20400, net: 16320, status: "Closed Won" },
+    { ref: "DEAL-2026-003", buyer: "Mohd Fikri bin Hassan", listing: "Suria Jelutong Condo", amount: 480000, gross: 14400, net: 11520, status: "Pending" }
 ];
 
 function switchNav(paneId, el) {
@@ -579,6 +765,7 @@ function switchNav(paneId, el) {
     };
     document.getElementById('headTitle').textContent = titles[paneId] || "Client Portal";
 
+    if (paneId === 'buyers') loadPortal();
     if (paneId === 'listings') renderListings();
     if (paneId === 'appointments') renderAppts();
     if (paneId === 'deals') renderDeals();
@@ -586,28 +773,36 @@ function switchNav(paneId, el) {
 
 async function loadPortal() {
     try {
-        let leads = seedLeads;
-        try {
-            const res = await fetch(`${API}/api/v1/buyers`);
-            const data = await res.json();
-            if (data.data && data.data.length > 0) {
-                leads = data.data.map(b => ({
-                    name: b.name, phone: b.phone || '', source: 'Direct Inflow',
-                    grade: b.lead_score >= 80 ? 'A' : (b.lead_score >= 50 ? 'B' : 'C'),
-                    location: b.preferred_location || 'Selangor', propertyType: b.property_type || 'Condo',
-                    maxBudget: b.max_budget || 500000, netIncome: 8000, existingCommitments: 2500,
-                    dsrPercent: 58, estCommission: Math.round((b.max_budget || 500000) * 0.02)
-                }));
-            }
-        } catch(err) {
-            console.log('Using static fallback for cloud deployment');
-        }
+        const rawBuyers = await apiFetch('/api/v1/buyers', seedBuyers);
+        let leads = rawBuyers.map(b => {
+            if (b.grade && b.netIncome !== undefined) return b;
+            const inc = b.net_income || 8500;
+            const com = b.existing_commitments || 2100;
+            const bg = b.max_budget || 500000;
+            const inst = Math.round(bg * 0.9 * (0.00375 * Math.pow(1.00375, 420)) / (Math.pow(1.00375, 420) - 1));
+            const dsr = inc > 0 ? Math.round(((com + inst) / inc) * 100) : 100;
+            const score = b.lead_score || 75;
+            const g = inc > 0 ? (dsr <= 65 ? 'A' : (dsr <= 75 ? 'B' : 'C')) : 'C';
+            return {
+                name: b.name,
+                phone: b.phone || '+60120000000',
+                source: b.status || 'Direct Inflow',
+                grade: g,
+                location: b.preferred_location || 'Selangor',
+                propertyType: b.property_type || 'Condo',
+                maxBudget: bg,
+                netIncome: inc,
+                existingCommitments: com,
+                dsrPercent: dsr,
+                estCommission: Math.round(bg * 0.02)
+            };
+        });
 
         if (currentGrade) leads = leads.filter(l => l.grade === currentGrade);
-        const search = document.getElementById('searchInput').value.trim();
+        const search = (document.getElementById('searchInput')?.value || '').trim();
         if (search) {
             const s = search.toLowerCase();
-            leads = leads.filter(l => l.name.toLowerCase().includes(s) || l.location.toLowerCase().includes(s));
+            leads = leads.filter(l => l.name.toLowerCase().includes(s) || l.location.toLowerCase().includes(s) || l.propertyType.toLowerCase().includes(s));
         }
 
         currentLeads = leads;
@@ -628,7 +823,7 @@ async function loadPortal() {
 
         renderTable(currentLeads);
     } catch(e) {
-        renderTable(seedLeads);
+        renderTable(seedBuyers);
     }
 }
 
@@ -645,13 +840,13 @@ function renderTable(leads) {
 
         rows += `<tr onclick="openDrawer(${idx})">
             <td>
-                <div class="lead-name">${l.name}</div>
-                <div class="lead-meta">${l.phone} · ${l.source}</div>
+                <div class="lead-name">${escapeHtml(l.name)}</div>
+                <div class="lead-meta">${escapeHtml(l.phone)} · ${escapeHtml(l.source)}</div>
             </td>
-            <td><span class="badge ${bCls}">Grade ${l.grade}</span></td>
+            <td><span class="badge ${bCls}">Grade ${escapeHtml(l.grade)}</span></td>
             <td>
-                <div style="font-weight:500;">${l.location}</div>
-                <div class="lead-meta">${l.propertyType} (Max ${rm(l.maxBudget)})</div>
+                <div style="font-weight:500;">${escapeHtml(l.location)}</div>
+                <div class="lead-meta">${escapeHtml(l.propertyType)} (Max ${rm(l.maxBudget)})</div>
             </td>
             <td class="mono">${rm(l.netIncome)}</td>
             <td class="mono" style="color:var(--text-muted);">${rm(l.existingCommitments)}</td>
@@ -663,46 +858,120 @@ function renderTable(leads) {
     document.getElementById('tableBody').innerHTML = rows;
 }
 
-function renderListings() {
+async function renderListings() {
+    const raw = await apiFetch('/api/v1/listings', seedListings);
+    let listings = raw.map(item => ({
+        title: item.title,
+        location: item.location,
+        type: item.property_type || item.type || 'Condo',
+        price: item.price,
+        specs: item.specs || `${item.bedrooms || 3} Bed, ${item.bathrooms || 2} Bath`,
+        status: item.status || 'Available'
+    }));
+
+    const search = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+    if (search) {
+        listings = listings.filter(item =>
+            item.title.toLowerCase().includes(search) ||
+            item.location.toLowerCase().includes(search) ||
+            item.type.toLowerCase().includes(search)
+        );
+    }
+
+    document.getElementById('navListingCount').textContent = listings.length;
     let rows = '';
-    seedListings.forEach(item => {
+    listings.forEach(item => {
+        const badgeCls = item.status === 'Available' ? 'badge-a' : (item.status === 'Reserved' ? 'badge-b' : 'badge-c');
         rows += `<tr>
-            <td style="font-weight:600; color:var(--text-main);">${item.title}</td>
-            <td>${item.location}</td>
-            <td>${item.type}</td>
+            <td style="font-weight:600; color:var(--text-main);">${escapeHtml(item.title)}</td>
+            <td>${escapeHtml(item.location)}</td>
+            <td>${escapeHtml(item.type)}</td>
             <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(item.price)}</td>
-            <td class="mono" style="font-size:11px; color:var(--text-muted);">${item.specs}</td>
-            <td><span class="badge badge-a">${item.status}</span></td>
+            <td class="mono" style="font-size:11px; color:var(--text-muted);">${escapeHtml(item.specs)}</td>
+            <td><span class="badge ${badgeCls}">${escapeHtml(item.status)}</span></td>
         </tr>`;
     });
     document.getElementById('listingsBody').innerHTML = rows;
 }
 
-function renderAppts() {
+async function renderAppts() {
+    const raw = await apiFetch('/api/v1/viewings', seedAppts);
+    let appts = raw.map(item => ({
+        buyer: item.buyer_name || item.buyer || 'Buyer Prospect',
+        listing: item.listing_title || item.listing || 'Property Listing',
+        date: item.viewing_date || item.date || '2026-08-01',
+        rating: item.rating ? (typeof item.rating === 'number' ? '★'.repeat(item.rating) + '☆'.repeat(5-item.rating) : item.rating) : 'Pending',
+        status: item.status || 'Scheduled'
+    }));
+
+    const search = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+    if (search) {
+        appts = appts.filter(item =>
+            item.buyer.toLowerCase().includes(search) ||
+            item.listing.toLowerCase().includes(search)
+        );
+    }
+
+    document.getElementById('navApptCount').textContent = appts.length;
     let rows = '';
-    seedAppts.forEach(item => {
+    appts.forEach((item, idx) => {
+        const badgeCls = item.status === 'Completed' || item.status === 'Confirmed' ? 'badge-a' : 'badge-b';
         rows += `<tr>
-            <td style="font-weight:600;">${item.buyer}</td>
-            <td>${item.listing}</td>
-            <td class="mono">${item.date}</td>
-            <td><span class="badge badge-a">${item.status}</span></td>
-            <td><button class="btn" style="padding:4px 8px; font-size:11px;" onclick="alert('Viewing confirmed!')">Confirm</button></td>
+            <td style="font-weight:600;">${escapeHtml(item.buyer)}</td>
+            <td>${escapeHtml(item.listing)}</td>
+            <td class="mono">${escapeHtml(item.date)}</td>
+            <td style="color:var(--accent-amber);">${escapeHtml(item.rating)}</td>
+            <td><span class="badge ${badgeCls}">${escapeHtml(item.status)}</span></td>
+            <td><button class="btn" style="padding:4px 8px; font-size:11px;" onclick="confirmAppt(${idx})">Confirm</button></td>
         </tr>`;
     });
     document.getElementById('apptsBody').innerHTML = rows;
 }
 
-function renderDeals() {
+async function renderDeals() {
+    const raw = await apiFetch('/api/v1/deals', seedDeals);
+    let deals = raw.map(item => {
+        const amt = item.deal_amount || item.amount || 0;
+        const gross = item.commission_earned || item.gross || Math.round(amt * 0.03);
+        const net = item.net || Math.round(gross * 0.8);
+        return {
+            ref: item.deal_id || item.ref || 'DEAL-2026',
+            buyer: item.buyer_name || item.buyer || 'Buyer',
+            listing: item.listing_title || item.listing || 'Property',
+            amount: amt,
+            gross: gross,
+            net: net,
+            status: item.status || 'Closed Won'
+        };
+    });
+
+    const search = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+    if (search) {
+        deals = deals.filter(item =>
+            item.ref.toLowerCase().includes(search) ||
+            item.buyer.toLowerCase().includes(search) ||
+            item.listing.toLowerCase().includes(search)
+        );
+    }
+
+    const totalCleared = deals.filter(d => d.status === 'Closed Won' || d.status === 'SPA Signed' || d.status === 'Completed').reduce((s, d) => s + d.net, 0);
+    const totalPipeline = deals.reduce((s, d) => s + d.amount, 0);
+
+    document.getElementById('mTotalCleared').textContent = rm(totalCleared);
+    document.getElementById('mTotalPipeline').textContent = rm(totalPipeline);
+    document.getElementById('navDealCount').textContent = 'RM ' + Math.round(totalCleared/1000) + 'K';
+
     let rows = '';
-    seedDeals.forEach(item => {
+    deals.forEach(item => {
+        const badgeCls = item.status === 'Closed Won' || item.status === 'Completed' || item.status === 'SPA Signed' ? 'badge-a' : 'badge-b';
         rows += `<tr>
-            <td class="mono" style="font-weight:600; color:var(--accent-blue);">${item.ref}</td>
-            <td>${item.buyer}</td>
-            <td>${item.listing}</td>
+            <td class="mono" style="font-weight:600; color:var(--accent-blue);">${escapeHtml(item.ref)}</td>
+            <td>${escapeHtml(item.buyer)}</td>
+            <td>${escapeHtml(item.listing)}</td>
             <td class="mono">${rm(item.amount)}</td>
             <td class="mono" style="color:var(--text-muted);">${rm(item.gross)}</td>
             <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(item.net)}</td>
-            <td><span class="badge badge-a">${item.status}</span></td>
+            <td><span class="badge ${badgeCls}">${escapeHtml(item.status)}</span></td>
         </tr>`;
     });
     document.getElementById('dealsBody').innerHTML = rows;
@@ -710,36 +979,76 @@ function renderDeals() {
 
 function runDsrCalc() {
     const inc = parseFloat(document.getElementById('cIncome').value) || 0;
-    const com = parseFloat(document.getElementById('cCommit').value) || 0;
+    const com = Math.max(0, parseFloat(document.getElementById('cCommit').value) || 0);
     const prc = parseFloat(document.getElementById('cPrice').value) || 0;
+    const rate = parseFloat(document.getElementById('cRate').value) || 4.5;
+    const tenure = parseFloat(document.getElementById('cTenure').value) || 35;
 
-    const inst = Math.round(prc * 0.0048);
-    const dsr = inc > 0 ? Math.round(((com + inst) / inc) * 100) : 0;
+    const r = rate / 1200;
+    const n = tenure * 12;
+    const principal = prc * 0.9;
+    
+    let pmt = 0;
+    if (r > 0 && n > 0) {
+        pmt = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    } else if (n > 0) {
+        pmt = principal / n;
+    }
+    const inst = Math.round(pmt);
+
+    const totalCommit = com + inst;
+    const dsr = inc > 0 ? parseFloat(((totalCommit / inc) * 100).toFixed(1)) : 100;
+
+    // Max affordable loan calculation (at 65% max DSR threshold)
+    const maxCommitment = (inc * 0.65) - com;
+    let maxLoan = 0;
+    if (maxCommitment > 0 && r > 0) {
+        maxLoan = maxCommitment * (Math.pow(1 + r, n) - 1) / (r * Math.pow(1 + r, n));
+    }
+    const maxPrice = maxLoan > 0 ? Math.round(maxLoan / 0.9) : 0;
 
     document.getElementById('cDsrVal').textContent = `${dsr}%`;
     document.getElementById('cInstallment').textContent = rm(inst);
+    document.getElementById('cMaxPrice').textContent = rm(maxPrice);
 
     const b = document.getElementById('cBadge');
-    if (dsr <= 65) {
+    if (inc <= 0 || dsr > 75) {
+        b.className = 'badge badge-c';
+        b.textContent = 'Grade C (HIGH DSR / UNQUALIFIED)';
+        document.getElementById('cDsrVal').style.color = '#f85149';
+    } else if (dsr <= 65) {
         b.className = 'badge badge-a';
         b.textContent = 'Grade A (PASS / HIGHLY ELIGIBLE)';
         document.getElementById('cDsrVal').style.color = 'var(--accent-green)';
-    } else if (dsr <= 75) {
+    } else {
         b.className = 'badge badge-b';
         b.textContent = 'Grade B (MODERATE RISK / NURTURE)';
         document.getElementById('cDsrVal').style.color = 'var(--accent-amber)';
-    } else {
-        b.className = 'badge badge-c';
-        b.textContent = 'Grade C (HIGH DSR / UNQUALIFIED)';
-        document.getElementById('cDsrVal').style.color = 'var(--accent-rose)';
     }
 }
+const calculateDsr = runDsrCalc;
 
 function sendDsrWhatsAppReport() {
     const inc = document.getElementById('cIncome').value;
+    const com = document.getElementById('cCommit').value;
     const prc = document.getElementById('cPrice').value;
+    const inst = document.getElementById('cInstallment').textContent;
     const dsr = document.getElementById('cDsrVal').textContent;
-    alert(`Generating WhatsApp Report:\n\nGaji: RM ${inc}\nTarget Price: RM ${prc}\nDSR Result: ${dsr}\n\nReport copied to clipboard!`);
+    const maxPrc = document.getElementById('cMaxPrice').textContent;
+    const badge = document.getElementById('cBadge').textContent;
+
+    const reportText = `📋 ZK REVENUE OPS — DSR LOAN PRE-APPROVAL REPORT\n` +
+        `Client Net Income: RM ${parseFloat(inc).toLocaleString()}\n` +
+        `Existing Commitments: RM ${parseFloat(com).toLocaleString()}\n` +
+        `Target Property Price: RM ${parseFloat(prc).toLocaleString()}\n` +
+        `Est. Monthly Installment: ${inst}\n` +
+        `Calculated DSR Ratio: ${dsr} (${badge})\n` +
+        `Max Affordable Property Price: ${maxPrc}`;
+
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(reportText);
+    }
+    alert(`Pre-Approval Report copied to clipboard!\n\n${reportText}`);
 }
 
 function setGrade(g, btn) {
@@ -751,7 +1060,13 @@ function setGrade(g, btn) {
 
 function onSearch() {
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(loadPortal, 250);
+    searchTimer = setTimeout(() => {
+        if (activeNav === 'buyers') loadPortal();
+        else if (activeNav === 'listings') renderListings();
+        else if (activeNav === 'appointments') renderAppts();
+        else if (activeNav === 'deals') renderDeals();
+        else loadPortal();
+    }, 250);
 }
 
 let selectedLead = null;
@@ -768,21 +1083,98 @@ function openDrawer(idx) {
     document.getElementById('drawerOverlay').style.display = 'grid';
 }
 
-function hideDrawer() { document.getElementById('drawerOverlay').style.display = 'none'; }
-function closeDrawer(e) { if (e.target.id === 'drawerOverlay') hideDrawer(); }
+function openModal(id) {
+    document.getElementById(id).style.display = 'grid';
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+function closeModalOnOverlay(e, id) {
+    if (e.target.id === id) closeModal(id);
+}
+
+function closeDrawer(e) {
+    if (e.target.id === 'drawerOverlay') closeModal('drawerOverlay');
+}
 
 function triggerWhatsAppLead() {
     if (!selectedLead) return;
     alert(`Sending WhatsApp Pre-Approval Report to ${selectedLead.name} (${selectedLead.phone})...`);
 }
 
-function scheduleViewingLead() {
+function scheduleViewingForLead() {
     if (!selectedLead) return;
-    alert(`Opening Calendar to schedule viewing for ${selectedLead.name}...`);
+    closeModal('drawerOverlay');
+    document.getElementById('schBuyer').value = selectedLead.name;
+    document.getElementById('schListing').value = `${selectedLead.location} ${selectedLead.propertyType}`;
+    openModal('modalScheduleViewing');
 }
 
-function openAddLeadModal() {
-    alert('Opening New Lead Entry Form...');
+function handleAddLead(e) {
+    e.preventDefault();
+    const budget = parseFloat(document.getElementById('addBudget').value) || 0;
+    const income = parseFloat(document.getElementById('addIncome').value) || 0;
+    const commit = parseFloat(document.getElementById('addCommit').value) || 0;
+
+    const newLead = {
+        name: document.getElementById('addName').value,
+        phone: document.getElementById('addPhone').value,
+        source: "Manual Entry",
+        grade: "A",
+        location: document.getElementById('addLocation').value,
+        propertyType: document.getElementById('addType').value,
+        maxBudget: budget,
+        netIncome: income,
+        existingCommitments: commit,
+        dsrPercent: 52,
+        estCommission: Math.round(budget * 0.02)
+    };
+    seedBuyers.unshift(newLead);
+    closeModal('modalAddLead');
+    loadPortal();
+    alert(`Lead ${newLead.name} successfully added!`);
+}
+
+function handleAddListing(e) {
+    e.preventDefault();
+    const price = parseFloat(document.getElementById('lstPrice').value) || 0;
+    const newListing = {
+        title: document.getElementById('lstTitle').value,
+        location: document.getElementById('lstLocation').value,
+        type: document.getElementById('lstType').value,
+        price: price,
+        specs: document.getElementById('lstSpecs').value,
+        status: "Available"
+    };
+    seedListings.unshift(newListing);
+    closeModal('modalAddListing');
+    renderListings();
+    alert(`Listing ${newListing.title} successfully added!`);
+}
+
+function handleScheduleViewing(e) {
+    e.preventDefault();
+    const newAppt = {
+        buyer: document.getElementById('schBuyer').value,
+        listing: document.getElementById('schListing').value,
+        date: document.getElementById('schDate').value,
+        rating: "Pending",
+        status: document.getElementById('schStatus').value
+    };
+    seedAppts.unshift(newAppt);
+    closeModal('modalScheduleViewing');
+    renderAppts();
+    alert(`Viewing for ${newAppt.buyer} successfully scheduled!`);
+}
+
+function confirmAppt(idx) {
+    if (seedAppts[idx]) {
+        seedAppts[idx].status = 'Confirmed';
+        renderAppts();
+        alert('Viewing appointment confirmed!');
+    }
 }
 
 function exportCSV() {
@@ -798,6 +1190,8 @@ function exportCSV() {
     a.click();
 }
 
+// Initial Run
+runDsrCalc();
 loadPortal();
 </script>
 </body>

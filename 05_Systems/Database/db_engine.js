@@ -15,6 +15,21 @@ const fs = require('fs');
 const DB_DIR = __dirname;
 const DB_PATH = path.join(DB_DIR, 'client_leads.db');
 
+const ALLOWED_ORDER_BY = new Set([
+    'lead_score DESC',
+    'lead_score ASC',
+    'created_at ASC',
+    'created_at DESC',
+    'max_budget DESC',
+    'max_budget ASC',
+    'dsr_percent ASC',
+    'dsr_percent DESC',
+    'net_income DESC',
+    'net_income ASC',
+    'name ASC',
+    'name DESC'
+]);
+
 class ZKDatabaseEngine {
     constructor(dbPath = DB_PATH) {
         if (!fs.existsSync(path.dirname(dbPath))) {
@@ -240,12 +255,16 @@ class ZKDatabaseEngine {
      *   - Grade C (Unqualified): DSR > 75% -> Status = 'DSR Failed (Unqualified)', Score < 45
      */
     calculateDSR(leadData) {
+        if (!leadData) {
+            throw new Error('leadData parameter is required');
+        }
         const startTime = performance.now();
 
-        const maxBudget = Number(leadData.max_budget ?? leadData.maxBudget ?? 0);
-        const netIncome = Number(leadData.net_income ?? leadData.netIncome ?? 0);
-        const existingCommitments = Number(leadData.existing_commitments ?? leadData.existingCommitments ?? 0);
-        const grossIncome = Number(leadData.gross_income ?? leadData.grossIncome ?? (netIncome > 0 ? Math.round(netIncome * 1.25) : 0));
+        const maxBudget = Math.max(0, Number(leadData.max_budget ?? leadData.maxBudget ?? 0) || 0);
+        const netIncome = Number(leadData.net_income ?? leadData.netIncome ?? 0) || 0;
+        const rawCommitments = Number(leadData.existing_commitments ?? leadData.existingCommitments ?? 0);
+        const existingCommitments = Math.max(0, Number.isNaN(rawCommitments) ? 0 : rawCommitments);
+        const grossIncome = Number(leadData.gross_income ?? leadData.grossIncome ?? (netIncome > 0 ? Math.round(netIncome * 1.25) : 0)) || 0;
 
         const estInstallment = Math.round(maxBudget * 0.0048);
         
@@ -258,7 +277,11 @@ class ZKDatabaseEngine {
         let status = 'DSR Failed (Unqualified)';
         let score = leadData.lead_score ?? leadData.score ?? 30;
 
-        if (dsrPercent <= 65) {
+        if (rawCommitments < 0) {
+            grade = 'C';
+            status = 'DSR Failed (Unqualified)';
+            score = 30;
+        } else if (dsrPercent <= 65) {
             grade = 'A';
             status = 'Qualified (Hot)';
             if (score < 70) score = 75;
@@ -296,111 +319,121 @@ class ZKDatabaseEngine {
      *   - Tier 2 Team Dynamic Round-Robin Routing: Standard leads -> Growth/Starter RENs with lowest active_leads_count.
      */
     allocateLead(buyerId) {
-        const buyer = this.db.prepare(`SELECT * FROM buyer_prospects WHERE buyer_id = ?`).get(buyerId);
-        if (!buyer) {
-            throw new Error(`Buyer record not found for allocation: ${buyerId}`);
-        }
-
-        const maxBudget = buyer.max_budget ?? 0;
-        const score = buyer.lead_score ?? 0;
-        const isEnterpriseLead = buyer.grade === 'A' || maxBudget >= 1000000 || score >= 80;
-
-        let selectedRen = null;
-        let strategy = '';
-        let slaDeadline = null;
-        let slaStatus = 'N/A';
-
-        if (isEnterpriseLead) {
-            const enterpriseRens = this.db.prepare(`
-                SELECT * FROM ren_clients 
-                WHERE status = 'Active' AND tier = 'Enterprise' 
-                ORDER BY active_leads_count ASC, last_allocated_at ASC
-            `).all();
-
-            if (enterpriseRens.length > 0) {
-                selectedRen = enterpriseRens[0];
-                strategy = 'SLA_ENTERPRISE_PRIORITY';
-                slaStatus = 'PENDING';
-                const now = new Date();
-                const deadline = new Date(now.getTime() + 5 * 60 * 1000);
-                slaDeadline = deadline.toISOString().replace('T', ' ').substring(0, 19);
+        this.db.exec('BEGIN IMMEDIATE;');
+        try {
+            const buyer = this.db.prepare(`SELECT * FROM buyer_prospects WHERE buyer_id = ?`).get(buyerId);
+            if (!buyer) {
+                throw new Error(`Buyer record not found for allocation: ${buyerId}`);
             }
-        }
 
-        if (!selectedRen) {
-            const standardRens = this.db.prepare(`
-                SELECT * FROM ren_clients 
-                WHERE status = 'Active' AND tier IN ('Starter', 'Growth') 
-                ORDER BY active_leads_count ASC, last_allocated_at ASC
-            `).all();
+            const maxBudget = buyer.max_budget ?? 0;
+            const score = buyer.lead_score ?? 0;
+            const isEnterpriseLead = buyer.grade === 'A' || maxBudget >= 1000000 || score >= 80;
 
-            if (standardRens.length > 0) {
-                selectedRen = standardRens[0];
-            } else {
-                const anyRen = this.db.prepare(`
+            let selectedRen = null;
+            let strategy = '';
+            let slaDeadline = null;
+            let slaStatus = 'N/A';
+
+            if (isEnterpriseLead) {
+                const enterpriseRens = this.db.prepare(`
                     SELECT * FROM ren_clients 
-                    WHERE status = 'Active' 
+                    WHERE status = 'Active' AND tier = 'Enterprise' 
                     ORDER BY active_leads_count ASC, last_allocated_at ASC
                 `).all();
-                if (anyRen.length > 0) {
-                    selectedRen = anyRen[0];
+
+                if (enterpriseRens.length > 0) {
+                    selectedRen = enterpriseRens[0];
+                    strategy = 'SLA_ENTERPRISE_PRIORITY';
+                    slaStatus = 'PENDING';
+                    const now = new Date();
+                    const deadline = new Date(now.getTime() + 5 * 60 * 1000);
+                    slaDeadline = deadline.toISOString().replace('T', ' ').substring(0, 19);
                 }
             }
 
-            if (selectedRen) {
-                strategy = 'DYNAMIC_ROUND_ROBIN';
-                slaStatus = 'N/A';
-                slaDeadline = null;
+            if (!selectedRen) {
+                const standardRens = this.db.prepare(`
+                    SELECT * FROM ren_clients 
+                    WHERE status = 'Active' AND tier IN ('Starter', 'Growth') 
+                    ORDER BY active_leads_count ASC, last_allocated_at ASC
+                `).all();
+
+                if (standardRens.length > 0) {
+                    selectedRen = standardRens[0];
+                } else {
+                    const anyRen = this.db.prepare(`
+                        SELECT * FROM ren_clients 
+                        WHERE status = 'Active' 
+                        ORDER BY active_leads_count ASC, last_allocated_at ASC
+                    `).all();
+                    if (anyRen.length > 0) {
+                        selectedRen = anyRen[0];
+                    }
+                }
+
+                if (selectedRen) {
+                    strategy = 'DYNAMIC_ROUND_ROBIN';
+                    slaStatus = 'N/A';
+                    slaDeadline = null;
+                }
             }
-        }
 
-        if (!selectedRen) {
-            throw new Error('No active REN available for allocation');
-        }
+            if (!selectedRen) {
+                throw new Error('No active REN available for allocation');
+            }
 
-        const nowStr = new Date().toISOString().replace('T', ' ').substring(0, 19);
+            const nowStr = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
-        // Update target REN active count and allocation timestamp
-        this.db.prepare(`
-            UPDATE ren_clients 
-            SET active_leads_count = active_leads_count + 1,
-                last_allocated_at = ?,
-                updated_at = ?
-            WHERE ren_id = ?
-        `).run(nowStr, nowStr, selectedRen.ren_id);
-
-        // If buyer was allocated to a different REN previously, decrement that REN's count
-        if (buyer.allocated_ren_id && buyer.allocated_ren_id !== selectedRen.ren_id) {
+            // Update target REN active count and allocation timestamp
             this.db.prepare(`
                 UPDATE ren_clients 
-                SET active_leads_count = MAX(0, active_leads_count - 1),
+                SET active_leads_count = active_leads_count + 1,
+                    last_allocated_at = ?,
                     updated_at = ?
                 WHERE ren_id = ?
-            `).run(nowStr, buyer.allocated_ren_id);
+            `).run(nowStr, nowStr, selectedRen.ren_id);
+
+            // If buyer was allocated to a different REN previously, decrement that REN's count
+            if (buyer.allocated_ren_id && buyer.allocated_ren_id !== selectedRen.ren_id) {
+                this.db.prepare(`
+                    UPDATE ren_clients 
+                    SET active_leads_count = MAX(0, active_leads_count - 1),
+                        updated_at = ?
+                    WHERE ren_id = ?
+                `).run(nowStr, buyer.allocated_ren_id);
+            }
+
+            // Update Buyer Prospect allocation state
+            this.db.prepare(`
+                UPDATE buyer_prospects 
+                SET allocated_ren_id = ?,
+                    allocated_at = ?,
+                    allocation_strategy = ?,
+                    sla_deadline = ?,
+                    sla_status = ?,
+                    updated_at = ?
+                WHERE buyer_id = ?
+            `).run(selectedRen.ren_id, nowStr, strategy, slaDeadline, slaStatus, nowStr, buyerId);
+
+            this.db.exec('COMMIT;');
+
+            return {
+                buyer_id: buyerId,
+                allocated_ren_id: selectedRen.ren_id,
+                ren_name: selectedRen.name,
+                ren_tier: selectedRen.tier,
+                allocation_strategy: strategy,
+                sla_deadline: slaDeadline,
+                sla_status: slaStatus,
+                allocated_at: nowStr
+            };
+        } catch (err) {
+            try {
+                this.db.exec('ROLLBACK;');
+            } catch (rbErr) {}
+            throw err;
         }
-
-        // Update Buyer Prospect allocation state
-        this.db.prepare(`
-            UPDATE buyer_prospects 
-            SET allocated_ren_id = ?,
-                allocated_at = ?,
-                allocation_strategy = ?,
-                sla_deadline = ?,
-                sla_status = ?,
-                updated_at = ?
-            WHERE buyer_id = ?
-        `).run(selectedRen.ren_id, nowStr, strategy, slaDeadline, slaStatus, nowStr, buyerId);
-
-        return {
-            buyer_id: buyerId,
-            allocated_ren_id: selectedRen.ren_id,
-            ren_name: selectedRen.name,
-            ren_tier: selectedRen.tier,
-            allocation_strategy: strategy,
-            sla_deadline: slaDeadline,
-            sla_status: slaStatus,
-            allocated_at: nowStr
-        };
     }
 
     /**
@@ -411,7 +444,7 @@ class ZKDatabaseEngine {
 
         const breachedLeads = this.db.prepare(`
             SELECT * FROM buyer_prospects 
-            WHERE sla_status = 'PENDING' AND sla_deadline IS NOT NULL AND sla_deadline < ?
+            WHERE sla_status IN ('PENDING', 'BREACHED_REALLOCATED') AND sla_deadline IS NOT NULL AND sla_deadline < ?
         `).all(nowStr);
 
         const escalations = [];
@@ -500,57 +533,6 @@ class ZKDatabaseEngine {
             PRAGMA cache_size = -64000;
         `);
 
-        // Temporarily drop indexes for bulk insert speedup
-        this.db.exec(`
-            DROP INDEX IF EXISTS idx_buyer_dsr_grade;
-            DROP INDEX IF EXISTS idx_buyer_status_score;
-            DROP INDEX IF EXISTS idx_buyer_location_budget;
-            DROP INDEX IF EXISTS idx_buyer_ren_allocation;
-            DROP INDEX IF EXISTS idx_buyer_sla;
-        `);
-
-        this.db.exec('BEGIN TRANSACTION;');
-
-        const stmt = this.db.prepare(`
-            INSERT INTO buyer_prospects (
-                buyer_id, name, phone, email, preferred_location, max_budget,
-                property_type, min_bedrooms, lead_score, status, gross_income,
-                net_income, existing_commitments, est_installment, dsr_percent,
-                grade, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        `);
-
-        for (let i = 0; i < leads.length; i++) {
-            const l = leads[i];
-            const estInstallment = Math.round(l.maxBudget * 0.0048);
-            const grossIncome = Math.round(l.netIncome * 1.25);
-            const createdAt = l.createdAt || new Date().toISOString();
-
-            stmt.run(
-                l.id,
-                l.name,
-                l.phone,
-                l.email,
-                l.location,
-                l.maxBudget,
-                l.propertyType,
-                2,
-                l.score,
-                l.status,
-                grossIncome,
-                l.netIncome,
-                l.existingCommitments,
-                estInstallment,
-                l.dsrPercent,
-                l.grade,
-                createdAt,
-                createdAt
-            );
-        }
-
-        this.db.exec('COMMIT;');
-
-        // Re-create secondary B-Tree indexes post-bulk insertion
         const rebuildIndexes = `
         CREATE INDEX IF NOT EXISTS idx_buyer_dsr_grade ON buyer_prospects(grade, dsr_percent);
         CREATE INDEX IF NOT EXISTS idx_buyer_status_score ON buyer_prospects(status, lead_score DESC);
@@ -558,7 +540,66 @@ class ZKDatabaseEngine {
         CREATE INDEX IF NOT EXISTS idx_buyer_ren_allocation ON buyer_prospects(allocated_ren_id, status);
         CREATE INDEX IF NOT EXISTS idx_buyer_sla ON buyer_prospects(sla_status, sla_deadline);
         `;
-        this.db.exec(rebuildIndexes);
+
+        try {
+            // Temporarily drop indexes for bulk insert speedup
+            this.db.exec(`
+                DROP INDEX IF EXISTS idx_buyer_dsr_grade;
+                DROP INDEX IF EXISTS idx_buyer_status_score;
+                DROP INDEX IF EXISTS idx_buyer_location_budget;
+                DROP INDEX IF EXISTS idx_buyer_ren_allocation;
+                DROP INDEX IF EXISTS idx_buyer_sla;
+            `);
+
+            this.db.exec('BEGIN TRANSACTION;');
+
+            const stmt = this.db.prepare(`
+                INSERT INTO buyer_prospects (
+                    buyer_id, name, phone, email, preferred_location, max_budget,
+                    property_type, min_bedrooms, lead_score, status, gross_income,
+                    net_income, existing_commitments, est_installment, dsr_percent,
+                    grade, created_at, updated_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            `);
+
+            for (let i = 0; i < leads.length; i++) {
+                const l = leads[i];
+                const estInstallment = Math.round(l.maxBudget * 0.0048);
+                const grossIncome = Math.round(l.netIncome * 1.25);
+                const createdAt = l.createdAt || new Date().toISOString();
+
+                stmt.run(
+                    l.id,
+                    l.name,
+                    l.phone,
+                    l.email,
+                    l.location,
+                    l.maxBudget,
+                    l.propertyType,
+                    2,
+                    l.score,
+                    l.status,
+                    grossIncome,
+                    l.netIncome,
+                    l.existingCommitments,
+                    estInstallment,
+                    l.dsrPercent,
+                    l.grade,
+                    createdAt,
+                    createdAt
+                );
+            }
+
+            this.db.exec('COMMIT;');
+        } catch (err) {
+            try {
+                this.db.exec('ROLLBACK;');
+            } catch (rbErr) {}
+            throw err;
+        } finally {
+            // Re-create secondary B-Tree indexes post-bulk insertion
+            this.db.exec(rebuildIndexes);
+        }
 
         const insertTimeMs = performance.now() - insertStartTime;
         const totalTimeMs = performance.now() - startTime;
@@ -612,7 +653,12 @@ class ZKDatabaseEngine {
         }
 
         if (filters.orderBy) {
-            sql += ` ORDER BY ${filters.orderBy}`;
+            const orderByStr = String(filters.orderBy).trim();
+            if (ALLOWED_ORDER_BY.has(orderByStr)) {
+                sql += ` ORDER BY ${orderByStr}`;
+            } else {
+                throw new Error(`Invalid or unauthorized orderBy clause: ${filters.orderBy}`);
+            }
         }
         if (filters.limit) {
             sql += ` LIMIT ${Number(filters.limit)}`;
