@@ -41,7 +41,7 @@ function testDsrCalculator() {
     // DSR Calculation Implementation copied directly from client-dashboard.html lines 943-991
     function runDsrCalcPure(incVal, comVal, prcVal, rateVal, tenureVal) {
         const inc = parseFloat(incVal) || 0;
-        const com = parseFloat(comVal) || 0;
+        const com = Math.max(0, parseFloat(comVal) || 0);
         const prc = parseFloat(prcVal) || 0;
         const rate = parseFloat(rateVal) || 4.5;
         const tenure = parseFloat(tenureVal) || 35;
@@ -59,7 +59,7 @@ function testDsrCalculator() {
         const inst = Math.round(pmt);
 
         const totalCommit = com + inst;
-        const dsr = inc > 0 ? parseFloat(((totalCommit / inc) * 100).toFixed(1)) : 0;
+        const dsr = inc > 0 ? parseFloat(((totalCommit / inc) * 100).toFixed(1)) : 100;
 
         const maxCommitment = (inc * 0.65) - com;
         let maxLoan = 0;
@@ -69,12 +69,12 @@ function testDsrCalculator() {
         const maxPrice = maxLoan > 0 ? Math.round(maxLoan / 0.9) : 0;
 
         let badge = '';
-        if (dsr <= 65) {
-            badge = 'Grade A (PASS / HIGHLY ELIGIBLE)';
-        } else if (dsr <= 75) {
-            badge = 'Grade B (MODERATE RISK / NURTURE)';
-        } else {
+        if (inc <= 0 || dsr > 75) {
             badge = 'Grade C (HIGH DSR / UNQUALIFIED)';
+        } else if (dsr <= 65) {
+            badge = 'Grade A (PASS / HIGHLY ELIGIBLE)';
+        } else {
+            badge = 'Grade B (MODERATE RISK / NURTURE)';
         }
 
         return { inc, com, prc, inst, dsr, maxPrice, badge };
@@ -338,9 +338,9 @@ function testModalsAndFormValidation() {
 
     // 4. Check form submission NaN handling (handleAddLead)
     function handleAddLeadPure(name, phone, location, type, budgetStr, incomeStr, commitStr) {
-        const budget = parseFloat(budgetStr);
-        const income = parseFloat(incomeStr);
-        const commit = parseFloat(commitStr);
+        const budget = parseFloat(budgetStr) || 0;
+        const income = parseFloat(incomeStr) || 0;
+        const commit = parseFloat(commitStr) || 0;
 
         return {
             name, phone, location, propertyType: type,

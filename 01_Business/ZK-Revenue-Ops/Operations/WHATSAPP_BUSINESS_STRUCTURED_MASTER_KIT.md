@@ -5,106 +5,83 @@ Type: Master Kit
 Module: ZK Revenue Ops
 BU: Real Estate AI Infrastructure
 Status: Approved
-Version: 3.0.0
+Version: 4.0.0
 Created: 2026-07-30
 Updated: 2026-07-30
 Owner: CEO / ZK Nexus Team
 Related: STR-006, STR-007, SYS-003, OP-010, OP-012
 ---
 
-# 📱 MASTER BRANDING & GRAPHIC KIT WHATSAPP BUSINESS v3.0
+# 📱 MINIMALIST LUXURY CATALOG CARDS — WHATSAPP BUSINESS v4.0
 
 > **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  
-> **Hasil Utama**: 5 Reka Bentuk Grafik Visual High-End (1 Cover Photo Header 16:9 Memanjang + 4 Catalog Product Banners 1:1) yang aligned 100% dengan fungsi sistem ZK Revenue Ops, PDPA 2010, & Pricing Tiers!
+> **Gaya Reka Bentuk**: Minimalist Luxury Service Cards (Navy Slate, Forest Green, Warm Bronze, & Platinum Charcoal) mengikut sampel rujukan tepat CEO Ariff!
 
 ---
 
-## 🗺️ SUSUNAN AKAUN WHATSAPP BUSINESS (5 ASET VISUAL COMPLETE)
+## 🖼️ 1. PACKAGE 01: FOLLOW-UP SHIELD (ENTRY / PILOT TRIAL)
 
-```
-┌──────────────────────────────────────────────────────────────────────────────────────────┐
-│                           [1] COVER PHOTO HEADER (16:9 MEMANJANG)                        │
-│  ZK REVENUE OPS — AI Sales Infrastructure for Malaysian RENs                             │
-│  • Built to PDPA 2010 Privacy Standards  • 100,000+ Lead Scale Engine  • Single Tenant   │
-└──────────────────────────────────────────────────────────────────────────────────────────┘
+![Catalog Card 01 Pilot](file:///C:/Users/Dell/Documents/Projects%20ZK%20Nexus/06_Assets/Banners/catalog_card_01_pilot.jpg)
 
-  [FOTO PROFIL]
-  Muka Asli Founder Ariff (100% Authentic)
-
-  [2] KATALOG ITEM 1          [3] KATALOG ITEM 2          [4] KATALOG ITEM 3          [5] KATALOG ITEM 4
-  Client Portal UI            Enjin Auto-Tapis DSR        100,000+ Lead Database      30-Day Free Pilot
-  Promosi Launch RM500/bln    Tier 2 Growth RM3,000/bln   Tier 3 Enterprise           RM 0 Risk-Free Trial
-  (Tier 1 Starter Solo REN)   (1-5 REN Top Teams)         (Open to Discussion)        (1,000 Lead Trial)
-```
+- **Tema**: Deep Navy Slate (`#09101C`) + Gold Accent (`#C5A059`)
+- **Tajuk**: `Follow-Up Shield` (Package 01 · Entry)
+- **Ciri-ciri Utama**:
+  - ✓ Daily follow-up on all active inquiries
+  - ✓ Reply handling via approved scripts
+  - ✓ Lead tracking sheet updated daily
+  - ✓ Weekly performance report included
+- **Harga**: `MONTHLY RETAINER` / **RM800** (atau **RM0 30-Day Free Pilot**)
 
 ---
 
-## 🖼️ 1. COVER PHOTO HEADER MEMANJANG (16:9 LANDSCAPE FORMAT)
+## 🖼️ 2. PACKAGE 02: OUTREACH + FOLLOW-UP SYSTEM (GROWTH / STARTER PROMO)
 
-Banner ini diletakkan di bahagian atas (*header background*) profil WhatsApp Business & FB Cover Page:
+![Catalog Card 02 Starter Promo](file:///C:/Users/Dell/Documents/Projects%20ZK%20Nexus/06_Assets/Banners/catalog_card_02_starter.jpg)
 
-![WhatsApp Business Cover Photo Header 16:9](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/master_cover_photo_header_16_9_1785394476833.jpg)
-
-- **Tajuk Header**: `ZK REVENUE OPS — AI Sales Infrastructure for Malaysian RENs`
-- **Pemeriksaan Fungsi**: Menampilkan paparan sebenar Client Portal Dark Mode, 5 Tab Interaktif, Lencana Perlindungan Data **Patuh Syarat PDPA 2010**, & **Skala 100,000+ Lead Database Engine**.
-
----
-
-## 📦 2. KATALOG ITEM 1: CLIENT PORTAL UI & TIER 1 STARTER (1:1 FORMAT)
-
-![Catalog Banner 1 Client Portal UI](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/master_catalog_client_portal_1_1_1785394489765.jpg)
-
-- **Nama Produk**: `Tier 1: Starter Solo REN (White-Label Portal)`
-- **Harga Display**: `RM 500 / bulan` *(Harga Asal Standard ~RM 1,500/bulan~)*
-- **Aligment Tool & Service**:
-  > *Portal pengurusan pembeli berjenama di atas nama anda sendiri (Stripe-Style UI). Pembeli klik link, sistem tolong susunkan senarai buyer mana yang Grade A (layak loan & sedia nak viewing). Boleh muat turun data CSV bila-bila masa.*
-- **Jaminan PDPA**: 🛡️ *Disokong kawalan akses token penyulitan 256-bit. Pangkalan data pembeli anda diasingkan secara single-tenant di bawah perlindungan Akta Perlindungan Data Peribadi (PDPA 2010).*
-- **Deal Commission Fee**: *10% perkongsian komisen closed deal daripada pembeli Grade A.*
+- **Tema**: Deep Forest Green (`#06120B`) + Emerald Green Accent (`#3FB950`)
+- **Badge**: `MOST POPULAR` / `LAUNCH PROMO`
+- **Tajuk**: `Outreach + Follow-Up System` (Package 02 · Growth)
+- **Ciri-ciri Utama**:
+  - ✓ Everything in Follow-Up Shield
+  - ✓ Daily first-contact outreach to new prospects
+  - ✓ Structured 7-day follow-up sequence
+  - ✓ Prospect list management included
+- **Harga**: `MONTHLY RETAINER` / **RM1,500** (atau **RM500 Launch Promo**)
 
 ---
 
-## 📦 3. KATALOG ITEM 2: ENJIN AUTO-TAPIS DSR BANK & TIER 2 GROWTH (1:1 FORMAT)
+## 🖼️ 3. PACKAGE 03: FULL PIPELINE OPERATOR (PREMIUM / GROWTH TEAM)
 
-![Catalog Banner 2 DSR Calculator Engine](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/master_catalog_dsr_engine_1_1_1785394501436.jpg)
+![Catalog Card 03 Growth Team](file:///C:/Users/Dell/Documents/Projects%20ZK%20Nexus/06_Assets/Banners/catalog_card_03_growth.jpg)
 
-- **Nama Produk**: `Tier 2: Growth Top Team (Enjin Auto-DSR)`
-- **Harga Display**: `RM 3,000 / bulan` *(1-5 REN Teams)*
-- **Aligment Tool & Service**:
-  > *Infrastruktur jualan khas untuk Team Leader & Kumpulan Top Producer (1-5 REN). Termasuk pengagihan pembeli secara Dynamic Round-Robin automatik, enjin kira DSR gaji net & komitmen bank, 2 sub-market eksklusif, dan integrasi Cal.com Viewing Scheduler.*
-- **Jaminan PDPA**: 🔒 *Semua maklumat gaji & komitmen pembeli diproses secara sulit tanpa menyimpan fail dokumen bank sensitif.*
-- **Deal Commission Fee**: *5% perkongsian komisen closed deal daripada pembeli Grade A.*
-
----
-
-## 📦 4. KATALOG ITEM 3: 100,000+ LEAD DATABASE & TIER 3 ENTERPRISE (1:1 FORMAT)
-
-![Catalog Banner 3 100k Database Engine](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/master_catalog_database_100k_1_1_1785394512890.jpg)
-
-- **Nama Produk**: `Tier 3: Enterprise Agency (100k+ Database)`
-- **Harga Display**: `Open to Discussion / Custom Quote` *(Agency Owners & Mega Teams)*
-- **Aligment Tool & Service**:
-  > *Infrastruktur pangkalan data skala besar 100,000+ lead untuk Pemilik Agensi & Pasukan Mega (10-30+ REN). Termasuk mod SLA Speed-to-Lead ("Shark Tank Mode"), integrasi API Webhook khas, dan Dedicated NDA.*
-- **Jaminan PDPA**: 🔐 *Perjanjian Kerahsiaan Data (Custom NDA) dengan kawalan akses peranan RBAC mematuhi Akta PDPA 2010.*
+- **Tema**: Dark Warm Bronze (`#160E0A`) + Amber Gold Accent (`#F59E0B`)
+- **Badge**: `PREMIUM`
+- **Tajuk**: `Full Pipeline Operator` (Package 03 · Premium)
+- **Ciri-ciri Utama**:
+  - ✓ Everything in Packages 1 and 2
+  - ✓ CRM setup and full maintenance
+  - ✓ Multi-platform management
+  - ✓ Bi-weekly pipeline strategy report
+- **Harga**: `MONTHLY RETAINER` / **RM2,500** (atau **RM3,000 Team Tier**)
 
 ---
 
-## 📦 5. KATALOG ITEM 4: PROGRAM 30-DAY FREE PILOT TRIAL (1:1 FORMAT)
+## 🖼️ 4. PACKAGE 04: 100K+ DATABASE INFRASTRUCTURE (ENTERPRISE AGENCY)
 
-![Catalog Banner 4 30-Day Free Pilot Trial](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/master_catalog_pilot_trial_1_1_1785394524696.jpg)
+![Catalog Card 04 Enterprise Agency](file:///C:/Users/Dell/Documents/Projects%20ZK%20Nexus/06_Assets/Banners/catalog_card_04_enterprise.jpg)
 
-- **Nama Produk**: `Program 30-Day Free Pilot Trial`
-- **Harga Display**: `RM 0 (Percuma 30 Hari)`
-- **Aligment Tool & Service**:
-  > *Pandu uji portal pelanggan & enjin DSR secara 100% PERCUMA selama 30 Hari. Tapis kelayakan 1,000 pembeli pertama anda tanpa sebarang yuran pendahuluan atau kos setup.*
+- **Tema**: Dark Charcoal Graphite (`#0E1117`) + Platinum Blue Accent (`#58A6FF`)
+- **Badge**: `ENTERPRISE`
+- **Tajuk**: `100k+ Database Infrastructure` (Package 04 · Enterprise)
+- **Ciri-ciri Utama**:
+  - ✓ 100,000+ lead database capacity & sub-50ms engine
+  - ✓ SLA speed-to-lead broadcast engine ("Shark Tank")
+  - ✓ Custom API webhooks & ERP connectors
+  - ✓ Dedicated NDA & 24/7 priority account support
+- **Harga**: `MONTHLY RETAINER` / **OPEN FOR DISCUSSION**
 
 ---
 
-## 📊 REKAPITULASI 5 ASET VISUAL (ALIGNMENT CHECKLIST)
-
-| # | Format Banner | Tajuk Visual | Alignment Tool & Pricing |
-|---|---|---|---|
-| 1 | **16:9 Landscape Header** | Cover Photo Header | Overview SaaS RevOps, PDPA Aligned, 100k+ Lead Scale |
-| 2 | **1:1 Square Catalog/Ad** | Client Portal UI | Tier 1 Starter Promo (RM500/bln), Single-Tenant UI |
-| 3 | **1:1 Square Catalog/Ad** | Enjin Auto-Tapis DSR | Tier 2 Growth Team (RM3,000/bln), DSR 53% Score, Cal.com |
-| 4 | **1:1 Square Catalog/Ad** | 100k+ Database Engine | Tier 3 Enterprise (Open to Discussion), SLA Speed-to-Lead |
-| 5 | **1:1 Square Catalog/Ad** | 30-Day Free Pilot Trial | Risk-Free Trial (RM0 Onboarding), 1,000 Lead Trial |
+> [!TIP]
+> **Aset Gambar Pemasaran Simpanan**:  
+> Semua gambar grafik pemasaran sosial media terdahulu (`master_cover_photo_header_16_9`, `fb_ig_ad1_hero_hook`, `fb_ig_ad2_tier1_starter`, dan lain-lain) disimpan dengan selamat di `06_Assets/Banners/` untuk kegunaan posting iklan FB Ads & IG Ads akan datang!
