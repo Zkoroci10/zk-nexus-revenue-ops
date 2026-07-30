@@ -1,34 +1,37 @@
-# ZK Revenue Ops R&D Phase — Master Implementation Plan
+# ZK Revenue Ops R&D & Production Rollout — Master Implementation Plan
 
 ## Architecture & Strategy
-ZK Revenue Ops R&D Phase has successfully delivered:
-1. **R1: Database Management Engine & Schema R&D (ZK-DB-RND)**
-   - Local SQLite database engine (`05_Systems/Database/client_leads.db`).
-   - Notion API & Google Sheets asynchronous bi-directional Cloud Sync Bridge.
-   - Relational schema covering `REN Clients`, `Buyer Prospects`, `Property Listings`, `Viewing Logs`, and `Commission Deals` with foreign key constraints (`PRAGMA foreign_keys = ON;`).
-   - Lead scoring & automated buyer-property matching engine logic.
+ZK Revenue Ops Production Rollout Milestones:
 
-2. **R2: Automated Multi-Channel Lead Ingestion Engine (ZK-INGEST)**
-   - Webhook/API listener for web form submissions.
-   - Puppeteer / WhatsApp Web message parser (extracting Name, Phone, Location, Budget, Property Type, Bedrooms).
-   - CSV / Excel bulk import parser for legacy REN contacts with bilingual header normalization.
+1. **Milestone 1: WhatsApp Business Assets & Catalog Restructure (ZK-WA-BRAND)**
+   - Generate 1x Cover Photo Header Banner (16:9 Landscape) with Founder Ariff's authentic face, PDPA 2010 compliance alignment, 100k+ Lead Scale messaging.
+   - Generate 3x Tiered Catalog Product Banners (1:1 Square): Tier 1 Starter Solo REN (RM1500->RM500/mo), Tier 2 Growth Top Team (RM3000/mo), Tier 3 Enterprise Agency (Custom quote).
+   - Generate 1x Free Trial Offer Catalog Banner (1:1 Square): 30-Day Free Pilot Program.
+   - Target directory: `06_Assets/` & `.agents/` master reports.
 
-3. **R3: Custom Tailored Client Dashboard UI (ZK-DASH)**
-   - Custom dashboard (`06_Assets/Dashboard/client-dashboard.html`) designed with dark slate/graphite theme (`#0d1117` base, `#161b22` cards, `#238636` positive metrics, subtle borders, avoiding 'AI slop glows' and 'plain basic tables').
-   - Monospace figures for financial metrics (RM Commission, Conversion Rates).
-   - Interactive tabbed layout (Overview, Buyer Pipeline, Listing Matcher, REN Performance).
-   - Live HTTP connection to local database server at `http://localhost:3777`.
+2. **Milestone 2: Dual-Layer Database & Qualification Engine (ZK-DB-ENGINE)**
+   - Benchmark sub-50ms query latency for 100,000+ lead records in `zk_crm_engine.js` / `db_engine.js`.
+   - Automated DSR loan qualification (DSR <= 65% for Grade A pass, <10ms execution).
+   - Multi-agent lead allocation (Dynamic Round-Robin for Tier 2, SLA Speed-to-Lead for Tier 3).
+   - Target directory: `05_Systems/Database/`.
 
-4. **M4: Final Verification & ZNS Compliance Audit**
-   - 100% pass on `validate-zns.ps1` for all created/edited files (228 valid ZNS files, 0 issues).
-   - Verified foreign key constraints, lead matching engine, live dashboard server data rendering.
-   - Forensic integrity audit verified CLEAN.
+3. **Milestone 3: Interactive Client Portal UI & Deployment (ZK-PORTAL-UI)**
+   - Maintain 100% working interactive Client Portal (`client-dashboard.html` & `index.html`).
+   - 5 Functional Tab Panes (Buyer Pipeline, DSR Calculator Engine, Property Listings, Viewing Schedule, Commission Ledger).
+   - Live deployment alignment at `https://zkoroci10.github.io/zk-nexus-revenue-ops/` and local server port 3777.
+   - Target directory: `06_Assets/Dashboard/` & root repository files.
+
+4. **Milestone 4: Final Victory Verification & ZNS Audit (ZK-AUDIT-PROD)**
+   - 100% pass on `validate-zns.ps1` across all workspace files.
+   - Forensic integrity audit verified CLEAN across all code & assets.
+   - Final victory claim and parent report.
 
 ## Milestone Status Summary
 
 | Milestone | ID | Scope | Target Directory | Status | Verification Verdict |
 |-----------|----|-------|------------------|--------|---------------------|
-| **M1** | ZK-DB-RND | Database Management Engine & Schema R&D | `05_Systems/Database/` | DONE | PASSED / CLEAN |
-| **M2** | ZK-INGEST | Automated Multi-Channel Lead Ingestion Engine | `05_Systems/Ingestion/` | DONE | PASSED / CLEAN |
-| **M3** | ZK-DASH | Custom Tailored Client Dashboard UI & Server | `06_Assets/Dashboard/` | DONE | PASSED / CLEAN |
-| **M4** | ZK-AUDIT | Final Victory Verification & ZNS Audit | Workspace-wide | DONE | PASSED / CLEAN |
+| **M1** | ZK-WA-BRAND | WhatsApp Business Assets & Catalog Restructure | `06_Assets/` | PLANNED | PENDING |
+| **M2** | ZK-DB-ENGINE | Dual-Layer Database & Qualification Engine | `05_Systems/Database/` | PLANNED | PENDING |
+| **M3** | ZK-PORTAL-UI | Interactive Client Portal UI & Deployment | `06_Assets/Dashboard/` | PLANNED | PENDING |
+| **M4** | ZK-AUDIT-PROD | Final Victory Verification & ZNS Audit | Workspace-wide | PLANNED | PENDING |
+

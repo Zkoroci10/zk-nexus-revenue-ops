@@ -227,6 +227,42 @@ const server = http.createServer(async (req, res) => {
             return;
         }
 
+        // API Route 6: Viewing Schedule (GET)
+        if (pathname === '/api/v1/viewings' && req.method === 'GET') {
+            const stmt = dbEngine.db.prepare(`
+                SELECT v.viewing_id, v.buyer_id, b.name as buyer_name, b.phone as buyer_phone,
+                       v.listing_id, l.title as listing_title, l.location as listing_location,
+                       v.viewing_date, v.feedback, v.rating, v.status
+                FROM viewing_logs v
+                LEFT JOIN buyer_prospects b ON v.buyer_id = b.buyer_id
+                LEFT JOIN property_listings l ON v.listing_id = l.listing_id
+                ORDER BY v.viewing_date ASC
+            `);
+            const viewings = stmt.all();
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true, count: viewings.length, data: viewings }));
+            return;
+        }
+
+        // API Route 7: Commission Deals Ledger (GET)
+        if (pathname === '/api/v1/deals' && req.method === 'GET') {
+            const stmt = dbEngine.db.prepare(`
+                SELECT d.deal_id, d.listing_id, l.title as listing_title,
+                       d.buyer_id, b.name as buyer_name,
+                       d.ren_id, r.name as ren_name,
+                       d.deal_amount, d.commission_earned, d.deal_date, d.status
+                FROM commission_deals d
+                LEFT JOIN property_listings l ON d.listing_id = l.listing_id
+                LEFT JOIN buyer_prospects b ON d.buyer_id = b.buyer_id
+                LEFT JOIN ren_clients r ON d.ren_id = r.ren_id
+                ORDER BY d.deal_date DESC
+            `);
+            const deals = stmt.all();
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true, count: deals.length, data: deals }));
+            return;
+        }
+
         // API 404 Handler: Return 404 JSON for unhandled /api/ endpoints
         if (pathname.startsWith('/api/')) {
             res.writeHead(404, { 'Content-Type': 'application/json' });
