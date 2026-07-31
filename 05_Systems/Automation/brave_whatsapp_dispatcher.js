@@ -21,6 +21,8 @@ function launchBraveWhatsApp() {
 
     const braveProcess = spawn(BRAVE_PATH, [
         '--remote-debugging-port=9222',
+        '--start-maximized',
+        '--new-window',
         'https://web.whatsapp.com/'
     ], {
         detached: true,
@@ -28,7 +30,7 @@ function launchBraveWhatsApp() {
     });
 
     braveProcess.unref();
-    console.log("SUCCESS: Brave Browser launched with WhatsApp Web on port 9222!");
+    console.log("SUCCESS: Brave Browser launched in foreground with WhatsApp Web on port 9222!");
 }
 
 launchBraveWhatsApp();

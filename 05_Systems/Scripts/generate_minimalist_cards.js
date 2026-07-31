@@ -7,7 +7,7 @@ if (!fs.existsSync(targetDir)) {
   fs.mkdirSync(targetDir, { recursive: true });
 }
 
-// 1. Package 01 - Entry / Pilot Trial (Navy Slate Theme)
+// 1. Package 01 - Entry / Pilot Trial (Navy Slate Theme - Dormant Lead Revival & Follow-Up Shield)
 function buildCard01() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ function buildCard01() {
   <text x="750" y="320" fill="#132138" class="serif-title" font-size="280" opacity="0.7">01</text>
 
   <!-- Header Text Line -->
-  <text x="80" y="110" fill="#7D93B5" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA SERVICES</text>
+  <text x="80" y="110" fill="#7D93B5" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA REVOPS</text>
   
   <!-- Pill Tag -->
   <g transform="translate(80, 138)">
@@ -41,17 +41,17 @@ function buildCard01() {
   </g>
 
   <!-- Main Title & Subtitle -->
-  <text x="80" y="280" fill="#FFFFFF" class="serif-title" font-size="82">Follow-Up</text>
-  <text x="80" y="335" fill="#7D93B5" class="serif-title" font-size="38" opacity="0.8">Shield</text>
+  <text x="80" y="280" fill="#FFFFFF" class="serif-title" font-size="82">Follow-Up Shield</text>
+  <text x="80" y="335" fill="#7D93B5" class="serif-title" font-size="38" opacity="0.8">&amp; Dead Lead Revival</text>
 
   <!-- Accent Line -->
   <rect x="80" y="375" width="60" height="4" fill="#C5A059"/>
 
   <!-- Body Description -->
   <text x="80" y="430" fill="#B0C4DE" class="sans-body" font-size="21" width="800">
-    <tspan x="80" dy="0">Leads are coming in but going cold. I follow up daily,</tspan>
-    <tspan x="80" dy="32">manage replies, and move serious prospects toward your</tspan>
-    <tspan x="80" dy="32">booking link.</tspan>
+    <tspan x="80" dy="0">Leads going cold or dormant? We revive old dead leads,</tspan>
+    <tspan x="80" dy="32">manage daily follow-ups, and move pre-qualified DSR buyers</tspan>
+    <tspan x="80" dy="32">directly to your client portal.</tspan>
   </text>
 
   <!-- Checklist Section -->
@@ -60,25 +60,25 @@ function buildCard01() {
     <g transform="translate(0, 0)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#C5A059" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Daily follow-up on all active inquiries</text>
+      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Dormant &amp; dead lead revival (1,000+ lead batch)</text>
     </g>
     <!-- Checklist 2 -->
     <g transform="translate(0, 52)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#C5A059" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Reply handling via approved scripts</text>
+      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Daily VA follow-up on all active buyer inquiries</text>
     </g>
     <!-- Checklist 3 -->
     <g transform="translate(0, 104)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#C5A059" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Lead tracking sheet updated daily</text>
+      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Auto-DSR bank loan pre-qualification calculator</text>
     </g>
     <!-- Checklist 4 -->
     <g transform="translate(0, 156)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#C5A059" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#C5A059" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Weekly performance report included</text>
+      <text x="45" y="19" fill="#D0E1F9" class="sans-body" font-size="20">Single-tenant client portal access &amp; weekly reports</text>
     </g>
   </g>
 
@@ -104,7 +104,7 @@ function buildCard01() {
 </svg>`;
 }
 
-// 2. Package 02 - Growth / Starter Promo (Forest Green Theme)
+// 2. Package 02 - Growth / Starter Promo (Forest Green Theme - VA Sales Outreach & Lead Revival)
 function buildCard02() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +134,7 @@ function buildCard02() {
   </g>
 
   <!-- Header Text Line -->
-  <text x="80" y="110" fill="#6EA582" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA SERVICES</text>
+  <text x="80" y="110" fill="#6EA582" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA REVOPS</text>
   
   <!-- Pill Tag -->
   <g transform="translate(80, 138)">
@@ -144,7 +144,7 @@ function buildCard02() {
   </g>
 
   <!-- Main Title & Subtitle -->
-  <text x="80" y="280" fill="#FFFFFF" class="serif-title" font-size="82">Outreach + Follow-Up</text>
+  <text x="80" y="280" fill="#FFFFFF" class="serif-title" font-size="82">Outreach + Revival</text>
   <text x="80" y="335" fill="#6EA582" class="serif-title" font-size="38" opacity="0.8">System</text>
 
   <!-- Accent Line -->
@@ -152,9 +152,9 @@ function buildCard02() {
 
   <!-- Body Description -->
   <text x="80" y="430" fill="#B3D8C1" class="sans-body" font-size="21" width="800">
-    <tspan x="80" dy="0">Everything in Package 1, plus daily first-contact outreach to</tspan>
-    <tspan x="80" dy="32">new prospects. More conversations started. More</tspan>
-    <tspan x="80" dy="32">appointments booked.</tspan>
+    <tspan x="80" dy="0">Everything in Package 1, plus daily first-contact VA outreach to</tspan>
+    <tspan x="80" dy="32">new REN prospects. More revived leads, more conversations,</tspan>
+    <tspan x="80" dy="32">and more viewing appointments booked.</tspan>
   </text>
 
   <!-- Checklist Section -->
@@ -163,25 +163,25 @@ function buildCard02() {
     <g transform="translate(0, 0)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Everything in Follow-Up Shield</text>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Everything in Follow-Up Shield &amp; Lead Revival</text>
     </g>
     <!-- Checklist 2 -->
     <g transform="translate(0, 52)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Daily first-contact outreach to new prospects</text>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Daily first-contact VA sales outreach to new buyers</text>
     </g>
     <!-- Checklist 3 -->
     <g transform="translate(0, 104)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Structured 7-day follow-up sequence</text>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Automated 7-day lead reactivation sequence</text>
     </g>
     <!-- Checklist 4 -->
     <g transform="translate(0, 156)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Prospect list management included</text>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">1 exclusive sub-market protection (3km radius)</text>
     </g>
   </g>
 
@@ -197,7 +197,7 @@ function buildCard02() {
 
     <!-- Target & CTA Button (Right Aligned) -->
     <g transform="translate(680, 0)">
-      <text x="240" y="28" fill="#6EA582" class="mono-text" font-size="14" letter-spacing="2" text-anchor="end">PROPERTY AGENTS</text>
+      <text x="240" y="28" fill="#6EA582" class="mono-text" font-size="14" letter-spacing="2" text-anchor="end">SOLO NEGOTIATORS</text>
       <g transform="translate(40, 42)">
         <rect width="200" height="52" fill="none" stroke="#3FB950" stroke-width="1.5"/>
         <text x="100" y="32" fill="#3FB950" class="mono-text" font-size="15" letter-spacing="2" text-anchor="middle">DM TO START</text>
@@ -207,7 +207,7 @@ function buildCard02() {
 </svg>`;
 }
 
-// 3. Package 03 - Premium / Growth Team (Warm Bronze Theme)
+// 3. Package 03 - Premium / Growth Team (Warm Bronze Theme - Full Pipeline & Multi-Agent Operator)
 function buildCard03() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +237,7 @@ function buildCard03() {
   </g>
 
   <!-- Header Text Line -->
-  <text x="80" y="110" fill="#B88A75" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA SERVICES</text>
+  <text x="80" y="110" fill="#B88A75" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA REVOPS</text>
   
   <!-- Pill Tag -->
   <g transform="translate(80, 138)">
@@ -255,8 +255,9 @@ function buildCard03() {
 
   <!-- Body Description -->
   <text x="80" y="430" fill="#E6C8BC" class="sans-body" font-size="21" width="800">
-    <tspan x="80" dy="0">For high-volume agents who need full pipeline coverage.</tspan>
-    <tspan x="80" dy="32">You close. I run everything before that.</tspan>
+    <tspan x="80" dy="0">For top producers and team leaders who need full pipeline coverage.</tspan>
+    <tspan x="80" dy="32">You close SPA deals. We run lead revival and SDR outreach</tspan>
+    <tspan x="80" dy="32">for your entire team.</tspan>
   </text>
 
   <!-- Checklist Section -->
@@ -271,19 +272,19 @@ function buildCard03() {
     <g transform="translate(0, 52)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#F5E3DA" class="sans-body" font-size="20">CRM setup and full maintenance</text>
+      <text x="45" y="19" fill="#F5E3DA" class="sans-body" font-size="20">Multi-agent round-robin lead allocation (1-5 RENs)</text>
     </g>
     <!-- Checklist 3 -->
     <g transform="translate(0, 104)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#F5E3DA" class="sans-body" font-size="20">Multi-platform management</text>
+      <text x="45" y="19" fill="#F5E3DA" class="sans-body" font-size="20">Cal.com viewing scheduler &amp; CRM maintenance</text>
     </g>
     <!-- Checklist 4 -->
     <g transform="translate(0, 156)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#F5E3DA" class="sans-body" font-size="20">Bi-weekly pipeline strategy report</text>
+      <text x="45" y="19" fill="#F5E3DA" class="sans-body" font-size="20">2 exclusive sub-markets &amp; bi-weekly strategy report</text>
     </g>
   </g>
 
@@ -299,7 +300,7 @@ function buildCard03() {
 
     <!-- Target & CTA Button (Right Aligned) -->
     <g transform="translate(680, 0)">
-      <text x="240" y="28" fill="#B88A75" class="mono-text" font-size="14" letter-spacing="2" text-anchor="end">HIGH-VOLUME AGENTS</text>
+      <text x="240" y="28" fill="#B88A75" class="mono-text" font-size="14" letter-spacing="2" text-anchor="end">TEAM LEADERS (1-5 REN)</text>
       <g transform="translate(40, 42)">
         <rect width="200" height="52" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
         <text x="100" y="32" fill="#F59E0B" class="mono-text" font-size="15" letter-spacing="2" text-anchor="middle">DM TO START</text>
@@ -309,7 +310,7 @@ function buildCard03() {
 </svg>`;
 }
 
-// 4. Package 04 - Enterprise Agency (Charcoal Platinum Theme)
+// 4. Package 04 - Enterprise Agency (Charcoal Platinum Theme - 100k+ Database Lead Revival Infrastructure)
 function buildCard04() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
@@ -339,7 +340,7 @@ function buildCard04() {
   </g>
 
   <!-- Header Text Line -->
-  <text x="80" y="110" fill="#8B949E" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA SERVICES</text>
+  <text x="80" y="110" fill="#8B949E" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA REVOPS</text>
   
   <!-- Pill Tag -->
   <g transform="translate(80, 138)">
@@ -357,7 +358,7 @@ function buildCard04() {
 
   <!-- Body Description -->
   <text x="80" y="430" fill="#C9D1D9" class="sans-body" font-size="21" width="800">
-    <tspan x="80" dy="0">High-volume 100,000+ lead database coverage for agency owners</tspan>
+    <tspan x="80" dy="0">High-volume 100,000+ lead revival engine for agency owners</tspan>
     <tspan x="80" dy="32">and mega teams. Built to PDPA 2010 Privacy Standards</tspan>
     <tspan x="80" dy="32">and dedicated NDA alignment.</tspan>
   </text>
@@ -368,7 +369,7 @@ function buildCard04() {
     <g transform="translate(0, 0)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#58A6FF" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#E6EDF3" class="sans-body" font-size="20">100,000+ lead database capacity &amp; sub-50ms engine</text>
+      <text x="45" y="19" fill="#E6EDF3" class="sans-body" font-size="20">100,000+ lead database revival &amp; sub-50ms engine</text>
     </g>
     <!-- Checklist 2 -->
     <g transform="translate(0, 52)">
@@ -380,7 +381,7 @@ function buildCard04() {
     <g transform="translate(0, 104)">
       <circle cx="14" cy="14" r="13" fill="none" stroke="#58A6FF" stroke-width="1.5"/>
       <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round"/>
-      <text x="45" y="19" fill="#E6EDF3" class="sans-body" font-size="20">Custom API webhooks &amp; ERP connectors</text>
+      <text x="45" y="19" fill="#E6EDF3" class="sans-body" font-size="20">Custom API webhooks &amp; enterprise CRM connectors</text>
     </g>
     <!-- Checklist 4 -->
     <g transform="translate(0, 156)">
@@ -419,7 +420,7 @@ const cards = [
   { name: 'catalog_card_04_enterprise', generator: buildCard04 }
 ];
 
-console.log("Generating 4 Minimalist Luxury Catalog SVG Cards...");
+console.log("Rendering 4 Minimalist Luxury Catalog SVG Cards (100% Apple-to-Apple Aligned)...");
 
 const edgePath = `C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe`;
 
@@ -430,7 +431,6 @@ cards.forEach(card => {
 
   const svgContent = card.generator();
   fs.writeFileSync(svgPath, svgContent);
-  console.log(`Saved SVG: ${svgPath} (${fs.statSync(svgPath).size} bytes)`);
 
   const htmlContent = `
 <!DOCTYPE html>
@@ -462,4 +462,4 @@ cards.forEach(card => {
   }
 });
 
-console.log("✅ All 4 Luxury Minimalist Catalog Cards Rendered Successfully!");
+console.log("✅ All 4 Apple-to-Apple Aligned Catalog Cards Rendered Successfully!");

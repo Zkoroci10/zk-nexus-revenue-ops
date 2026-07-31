@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .serif-title { font-family: 'Georgia', 'Times New Roman', serif; font-weight: 700; }
+      .sans-body { font-family: 'Segoe UI', -apple-system, system-ui, sans-serif; font-weight: 400; }
+      .sans-bold { font-family: 'Segoe UI', -apple-system, system-ui, sans-serif; font-weight: 600; }
+      .mono-text { font-family: 'SFMono-Regular', Consolas, monospace; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1080" height="1080" fill="#06120B"/>
+  
+  <!-- Subtle Circular Line Art in Background -->
+  <circle cx="850" cy="220" r="450" fill="none" stroke="#0E2919" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="850" cy="220" r="600" fill="none" stroke="#0B2114" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Huge Faint Background Number -->
+  <text x="750" y="320" fill="#0C2416" class="serif-title" font-size="280" opacity="0.7">02</text>
+
+  <!-- Top Right Ribbon Badge -->
+  <g transform="translate(860, 0)">
+    <rect width="140" height="38" fill="#2EA043"/>
+    <text x="70" y="24" fill="#FFFFFF" class="mono-text" font-size="12" letter-spacing="2" text-anchor="middle">MOST POPULAR</text>
+  </g>
+
+  <!-- Header Text Line -->
+  <text x="80" y="110" fill="#6EA582" class="mono-text" font-size="16" letter-spacing="3">ZK ARIFF CAPITAL · VA REVOPS</text>
+  
+  <!-- Pill Tag -->
+  <g transform="translate(80, 138)">
+    <rect width="290" height="38" rx="6" fill="#0C2114" stroke="#1B4D2E" stroke-width="1"/>
+    <circle cx="22" cy="19" r="4" fill="#3FB950"/>
+    <text x="36" y="24" fill="#3FB950" class="mono-text" font-size="13" letter-spacing="2">PACKAGE 02 · GROWTH</text>
+  </g>
+
+  <!-- Main Title & Subtitle -->
+  <text x="80" y="280" fill="#FFFFFF" class="serif-title" font-size="82">Outreach + Revival</text>
+  <text x="80" y="335" fill="#6EA582" class="serif-title" font-size="38" opacity="0.8">System</text>
+
+  <!-- Accent Line -->
+  <rect x="80" y="375" width="60" height="4" fill="#3FB950"/>
+
+  <!-- Body Description -->
+  <text x="80" y="430" fill="#B3D8C1" class="sans-body" font-size="21" width="800">
+    <tspan x="80" dy="0">Everything in Package 1, plus daily first-contact VA outreach to</tspan>
+    <tspan x="80" dy="32">new REN prospects. More revived leads, more conversations,</tspan>
+    <tspan x="80" dy="32">and more viewing appointments booked.</tspan>
+  </text>
+
+  <!-- Checklist Section -->
+  <g transform="translate(80, 560)">
+    <!-- Checklist 1 -->
+    <g transform="translate(0, 0)">
+      <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
+      <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Everything in Follow-Up Shield &amp; Lead Revival</text>
+    </g>
+    <!-- Checklist 2 -->
+    <g transform="translate(0, 52)">
+      <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
+      <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Daily first-contact VA sales outreach to new buyers</text>
+    </g>
+    <!-- Checklist 3 -->
+    <g transform="translate(0, 104)">
+      <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
+      <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">Automated 7-day lead reactivation sequence</text>
+    </g>
+    <!-- Checklist 4 -->
+    <g transform="translate(0, 156)">
+      <circle cx="14" cy="14" r="13" fill="none" stroke="#3FB950" stroke-width="1.5"/>
+      <path d="M 9 14 L 13 18 L 20 10" fill="none" stroke="#3FB950" stroke-width="2" stroke-linecap="round"/>
+      <text x="45" y="19" fill="#D2EBDC" class="sans-body" font-size="20">1 exclusive sub-market protection (3km radius)</text>
+    </g>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="80" y1="840" x2="1000" y2="840" stroke="#12331F" stroke-width="1.5"/>
+
+  <!-- Footer Section -->
+  <g transform="translate(80, 880)">
+    <!-- Price Area -->
+    <text x="0" y="15" fill="#6EA582" class="mono-text" font-size="14" letter-spacing="3">MONTHLY RETAINER</text>
+    <text x="0" y="70" fill="#3FB950" class="serif-title" font-size="62">RM1,500</text>
+    <text x="0" y="98" fill="#6EA582" class="sans-body" font-size="15">per month (or RM500 Launch Promo)</text>
+
+    <!-- Target & CTA Button (Right Aligned) -->
+    <g transform="translate(680, 0)">
+      <text x="240" y="28" fill="#6EA582" class="mono-text" font-size="14" letter-spacing="2" text-anchor="end">SOLO NEGOTIATORS</text>
+      <g transform="translate(40, 42)">
+        <rect width="200" height="52" fill="none" stroke="#3FB950" stroke-width="1.5"/>
+        <text x="100" y="32" fill="#3FB950" class="mono-text" font-size="15" letter-spacing="2" text-anchor="middle">DM TO START</text>
+      </g>
+    </g>
+  </g>
+</svg>
