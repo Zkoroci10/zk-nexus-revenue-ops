@@ -304,15 +304,8 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-const origListen = server.listen;
-server.listen = function (...args) {
-    const port = typeof args[0] === 'number' ? args[0] : PORT;
-    const cb = typeof args[args.length - 1] === 'function' ? args[args.length - 1] : undefined;
-    return origListen.call(this, port, '0.0.0.0', 512, cb);
-};
-
 if (require.main === module) {
-    server.listen(PORT, () => {
+    server.listen(PORT, '0.0.0.0', () => {
         console.log(`\n  ╔══════════════════════════════════════════════════════════╗`);
         console.log(`  ║  ZK Revenue Ops — Tailored Client Dashboard Server       ║`);
         console.log(`  ║  URL: http://localhost:${PORT}                            ║`);
