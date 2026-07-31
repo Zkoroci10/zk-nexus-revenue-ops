@@ -10,7 +10,17 @@ const path = require('path');
 const http = require('http');
 
 const CRM_DB_FILE = path.join(__dirname, 'ren_100k_leads_rnd.json');
-const PORT = 3777;
+
+// Auto DSR Calculation Helper
+function calculateDSR(netIncome, existingCommitments, estInstallment = 0) {
+    if (!netIncome || netIncome <= 0) return { dsrPercent: 0, status: 'Invalid Income' };
+    const totalCommitments = (existingCommitments || 0) + (estInstallment || 0);
+    const dsrPercent = Math.round((totalCommitments / netIncome) * 100);
+    let status = 'Grade A Pass';
+    if (dsrPercent > 75) status = 'Grade C Fail';
+    else if (dsrPercent > 65) status = 'Grade B Watch';
+    return { dsrPercent, totalCommitments, status };
+}
 
 // Generate 100,000 Realistic Sample Leads for Enterprise Agency Load Testing
 function generate100kLeads() {
@@ -32,28 +42,28 @@ function generate100kLeads() {
         const maxBudget = Math.floor(250000 + Math.random() * 3000000);
         
         const estInstallment = Math.round(maxBudget * 0.0048);
-        const dsrPercent = Math.round(((existingCommitments + estInstallment) / netIncome) * 100);
+        const dsrResult = calculateDSR(netIncome, existingCommitments, estInstallment);
         
         let grade = "C";
         let status = "Dormant (Needs Follow-up)";
         let score = 0;
 
-        if (dsrPercent <= 65) score += 40;
-        else if (dsrPercent <= 75) score += 20;
+        if (dsrResult.dsrPercent <= 65) score += 40;
+        else if (dsrResult.dsrPercent <= 75) score += 20;
 
         if (maxBudget >= 500000) score += 20;
         if (i % 7 === 0) score += 25;
         if (i % 3 === 0) score += 15;
 
-        if (score >= 70 && dsrPercent <= 65) {
+        if (score >= 70 && dsrResult.dsrPercent <= 65) {
             grade = "A";
             status = i % 2 === 0 ? "Qualified (Hot)" : "Viewing Scheduled";
-        } else if (score >= 45 && dsrPercent <= 75) {
+        } else if (score >= 45 && dsrResult.dsrPercent <= 75) {
             grade = "B";
             status = "Nurturing (Warm)";
         } else {
             grade = "C";
-            status = dsrPercent > 80 ? "DSR Failed (Unqualified)" : "Dormant (Cold)";
+            status = dsrResult.dsrPercent > 80 ? "DSR Failed (Unqualified)" : "Dormant (Cold)";
         }
 
         const estCommission = Math.round(maxBudget * 0.02);
@@ -68,7 +78,7 @@ function generate100kLeads() {
             maxBudget,
             netIncome,
             existingCommitments,
-            dsrPercent,
+            dsrPercent: dsrResult.dsrPercent,
             grade,
             status,
             score,
@@ -84,4 +94,4 @@ function generate100kLeads() {
     return leads;
 }
 
-module.exports = { generate100kLeads };
+module.exports = { generate100kLeads, calculateDSR };
