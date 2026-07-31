@@ -308,7 +308,7 @@ const origListen = server.listen;
 server.listen = function (...args) {
     const port = typeof args[0] === 'number' ? args[0] : PORT;
     const cb = typeof args[args.length - 1] === 'function' ? args[args.length - 1] : undefined;
-    return origListen.call(this, port, '::', 2048, cb);
+    return origListen.call(this, port, '0.0.0.0', 512, cb);
 };
 
 if (require.main === module) {
