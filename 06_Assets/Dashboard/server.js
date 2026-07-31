@@ -304,6 +304,14 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.log(`Port ${PORT} is already in use. Server active on http://localhost:${PORT}`);
+    } else {
+        console.error('Server socket error:', err);
+    }
+});
+
 if (require.main === module) {
     server.listen(PORT, '0.0.0.0', () => {
         console.log(`\n  ╔══════════════════════════════════════════════════════════╗`);
@@ -312,6 +320,7 @@ if (require.main === module) {
         console.log(`  ║  Database: 05_Systems/Database/client_leads.db           ║`);
         console.log(`  ╚══════════════════════════════════════════════════════════╝\n`);
     });
+    setInterval(() => {}, 3600000);
 }
 
 module.exports = server;
