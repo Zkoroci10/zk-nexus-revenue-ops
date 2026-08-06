@@ -1,0 +1,14 @@
+{
+    "version": "1.0.0",
+    "name": "zk-nexus-crm-engine",
+    "description": "ZK Revenue Ops CRM Engine",
+    "scripts": {
+        "sync-notion": "node 05_Systems/Scripts/notion-crm-sync-engine.js",
+        "run-webhook": "python 05_Systems/Scripts/fastapi-lead-webhook-server.py"
+    },
+    "dependencies": {
+        "@notionhq/client": "^2.3.0",
+        "dotenv": "^16.6.1"
+    },
+    "main": "05_Systems/Scripts/notion-crm-sync-engine.js"
+}
