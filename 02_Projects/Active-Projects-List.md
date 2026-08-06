@@ -7,7 +7,7 @@ BU: All
 Status: Active
 Version: 1
 Created: 2025-07-16
-Updated: 2025-07-16
+Updated: 2026-08-03
 Owner: Human Founder
 Related: RUL-001, IDX-001
 ---
@@ -32,9 +32,8 @@ Related: RUL-001, IDX-001
 
 | Project ID | Name | Type | Owner | Status | Start Date | Target End | BU |
 |------------|------|------|-------|--------|------------|------------|-----|
-| (none) | — | — | — | — | — | — | — |
+| PRJ-998 | [Idea Catcher](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/02_Projects/Idea-Catcher.md) | Brainstorming | Human Founder | Active | 2026-08-02 | Ongoing | All |
 
-*No internal projects at this time.*
 
 ---
 
@@ -53,9 +52,9 @@ Related: RUL-001, IDX-001
 | Project ID | Name | Completed Date | Archive Location |
 |------------|------|----------------|------------------|
 | PRJ-001 | ZK RevOps Migration | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-001_ZK-RevOps-Migration/` |
-| PRJ-002 | Workspace Cleanup | 2026-07-18 | `02_Projects/Active/PRJ-002_Workspace-Cleanup/` |
-| PRJ-003 | Business Readiness | 2026-07-18 | `02_Projects/Active/PRJ-003_Business-Readiness/` |
-| PRJ-004 | Sales Engine | 2026-07-18 | `02_Projects/Active/PRJ-004_Sales-Engine/` |
+| PRJ-002 | Workspace Cleanup | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-002_Workspace-Cleanup/` |
+| PRJ-003 | Business Readiness | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-003_Business-Readiness/` |
+| PRJ-004 | Sales Engine | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-004_Sales-Engine/` |
 
 ---
 
@@ -93,3 +92,4 @@ Related: RUL-001, IDX-001
 | 2026-07-18 | AI-005 | Registered PRJ-008 Jarvis Command Center in Active Projects List |
 | 2026-07-18 | AI-002 | Registered PRJ-004 Sales Engine as Active Project |
 | 2026-07-18 | AI-002 | PRJ-004 Sales Engine — marked Completed, moved to Recently Completed |
+| 2026-08-03 | worker_m2 | Updated Archive Location for PRJ-002, PRJ-003, and PRJ-004 to 99_Archive/Completed-Projects/ |

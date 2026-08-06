@@ -1,3 +1,16 @@
+---
+Title: AI Start Here & Operational Rules
+ID: RUL-000
+Type: Guideline
+Module: 00_Command Center
+BU: All
+Status: Active
+Version: 1
+Created: 2026-08-03
+Updated: 2026-08-03
+Owner: Human Founder
+---
+
 # AI START HERE
 
 **If you are an AI (ChatGPT, Claude, Kimi, Codex, or any future agent), read this file first.**

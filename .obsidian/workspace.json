@@ -1,0 +1,239 @@
+{
+  "main": {
+    "id": "93463b64a02ab5a2",
+    "type": "split",
+    "children": [
+      {
+        "id": "83106dac492f762d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a5500e26de1dff4f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_Command Center/AI-START-HERE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "AI-START-HERE"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "72ad8bed9e92f30e",
+    "type": "split",
+    "children": [
+      {
+        "id": "c10025cc88de88d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "35195b3326db19e9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c4561a38cf4c91d8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "09ee649bf53e6a61",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b86869378dcdc1f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "9e4c9ae8eecddbaa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8bc9c911a0f93559",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "00_Command Center/AI-START-HERE.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "d1f561f5b95c2b17",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "00_Command Center/AI-START-HERE.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "a32026ecd0f3b276",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0d8a18b63e537c73",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4b10a3a586e3f5c5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "00_Command Center/AI-START-HERE.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "a5500e26de1dff4f",
+  "lastOpenFiles": [
+    "05_Systems/Scripts/package-lock.json",
+    "05_Systems/Scripts/package.json",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/webp_codec.wasm",
+    "05_Systems/Scripts/node_modules/playwright-core/ThirdPartyNotices.txt",
+    "05_Systems/Scripts/node_modules/playwright-core/types/structs.d.ts",
+    "05_Systems/Scripts/node_modules/playwright-core/types/types.d.ts",
+    "05_Systems/Scripts/node_modules/playwright-core/types/protocol.d.ts",
+    "05_Systems/Scripts/node_modules/playwright-core/types",
+    "05_Systems/Scripts/node_modules/playwright-core/index.d.ts",
+    "05_Systems/Scripts/node_modules/playwright-core/bin/reinstall_msedge_stable_win.ps1",
+    "05_Systems/Scripts/node_modules/playwright-core/bin/reinstall_msedge_stable_linux.sh",
+    "05_Systems/Scripts/node_modules/playwright-core/README.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-planner.agent.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-plan.prompt.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-healer.agent.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-heal.prompt.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-generate.prompt.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-generator.agent.md",
+    "05_Systems/Scripts/node_modules/playwright/lib/agents/playwright-test-coverage.prompt.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/vue.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/react.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/migration.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/references/gallery-spec.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/video-recording.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/tracing.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/storage-state.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/test-generation.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/session-management.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/running-code.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/request-mocking.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/element-attributes.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/references/playwright-tests.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-component-testing/SKILL.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-trace/SKILL.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/skills/playwright-cli/SKILL.md",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-nightly-Cp5nfeDT.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/dashboard/assets/safari-na3_-uQk.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-1bWoP6pv.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/dashboard/assets/firefox-beta-k3eOH_eK.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/tools/dashboard/appIcon.png",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/vite/dashboard/playwright-logo.svg",
+    "05_Systems/Scripts/node_modules/playwright-core/lib/server/chromium/appIcon.png",
+    "06_Resources/console-portal-preview-three.png"
+  ]
+}

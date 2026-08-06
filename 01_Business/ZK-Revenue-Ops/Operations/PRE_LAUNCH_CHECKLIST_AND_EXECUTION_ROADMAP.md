@@ -28,8 +28,8 @@ Related: STR-006, STR-007, SYS-003, OP-010, OP-013
 | **Formula Cold Outreach 3 Mesej** | ✅ Ready (No Buzzwords) | `05_Systems/Ingestion/whatsapp_parser.js` |
 | **Brave Browser Standard** | ✅ Ready (Port 9222) | `05_Systems/Automation/brave_whatsapp_dispatcher.js` |
 | **Gambar Profil Founder** | ✅ Ready (Real Face) | `file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/ariff_original_face.jpg` |
-| **Cover Photo Header 16:9** | ✅ Ready (Corporate Teal) | `06_Assets/Banners/cover_banner_16_9_landscape.jpg` |
-| **4 Kad Katalog Minimalist** | ✅ Ready (Luxury Cards) | `06_Assets/Banners/catalog_card_01_pilot.jpg` - `04` |
+| **Cover Photo Header 16:9** | ✅ Ready (Corporate Teal) | `06_Resources/Assets/Banners/cover_banner_16_9_landscape.jpg` |
+| **4 Kad Katalog Minimalist** | ✅ Ready (Luxury Cards) | `06_Resources/Assets/Banners/catalog_card_01_pilot.jpg` - `04` |
 
 ---
 

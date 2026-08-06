@@ -1,3 +1,19 @@
+﻿<#
+---
+Title: Full System Audit Runner
+ID: SYS-006
+Type: Script (PowerShell)
+Module: 05_Systems
+BU: ZK Revenue Ops
+Status: Active
+Version: 1.0
+Created: 2026-08-05
+Updated: 2026-08-05
+Owner: Zubair (zubairisa10@gmail.com)
+Related: PRJ-009
+---
+#>
+
 # System Audit Script for ZK Revenue Ops Single Unified WebApp
 
 $appPath = "05_Systems\App\index.html"

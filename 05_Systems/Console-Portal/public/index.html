@@ -1,190 +1,555 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZK Revenue Ops — Dual Interface Hub</title>
+    <meta name="description" content="ZK Revenue Ops — Multi-Tenant Enterprise Command Center & REN Client Portal Engine.">
+    <meta name="author" content="Zubair, ZK Revenue Ops">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- ZNS: SYS-CON-001 | Console-Portal Web App v3.1 Enterprise -->
+    <title>ZK Revenue Ops — Enterprise Command Center</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="theme-dark">
-    <div class="app-container">
-        <!-- Top Bar Navigation & Mode Switcher -->
-        <header class="top-bar">
-            <div class="brand">
-                <div class="logo-badge">ZK</div>
-                <div class="brand-text">
-                    <span class="brand-name">ZK REVENUE OPS</span>
-                    <span class="brand-sub">Dual-Interface Control System</span>
+    <div class="app-layout">
+
+        <!-- ── SIDEBAR NAVIGATION ──────────────────────────────────────── -->
+        <aside class="app-sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="brand-block">
+                <div class="brand-logo" aria-label="ZK Revenue Ops Logo">ZK</div>
+                <div class="brand-info">
+                    <span class="brand-title">ZK REVENUE OPS</span>
+                    <span class="brand-subtitle">Enterprise Operating System</span>
                 </div>
             </div>
 
-            <!-- Mode Switcher Tabs -->
-            <div class="mode-switcher">
-                <button id="btn-operator-mode" class="mode-btn active" onclick="switchMode('operator')">
-                    Console Operator Hub <span class="badge-tag internal">INTERNAL</span>
+            <nav class="nav-menu">
+                <button id="btn-dashboard-mode" class="nav-item active" onclick="switchMode('dashboard')" aria-pressed="true">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Command Dashboard</span>
                 </button>
-                <button id="btn-client-mode" class="mode-btn" onclick="switchMode('client')">
-                    REN Client Desk <span class="badge-tag client">CLIENT FACING</span>
+                <button id="btn-operator-mode" class="nav-item" onclick="switchMode('operator')" aria-pressed="false">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Operator Hub</span>
+                    <span id="badge-raw-count" class="nav-badge">0</span>
                 </button>
-            </div>
+                <button id="btn-client-mode" class="nav-item" onclick="switchMode('client')" aria-pressed="false">
+                    <span class="nav-icon">🏢</span>
+                    <span class="nav-text">REN Client Desk</span>
+                    <span id="badge-client-seats" class="nav-badge green">3 Seats</span>
+                </button>
+                <button id="btn-manager-mode" class="nav-item" onclick="switchMode('manager')" aria-pressed="false">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Client Manager</span>
+                </button>
+                <button id="btn-sync-mode" class="nav-item" onclick="openSyncModal()" aria-pressed="false">
+                    <span class="nav-icon">🔄</span>
+                    <span class="nav-text">Live Sync &amp; Backup</span>
+                </button>
+            </nav>
 
-            <div class="status-indicator">
-                <span class="dot live"></span> SYSTEM ACTIVE
-            </div>
-        </header>
-
-        <!-- VIEW 1: CONSOLE OPERATOR HUB (Internal Operator View) -->
-        <main id="view-operator" class="view-panel active">
-            <div class="view-header">
-                <h2>Console Operator Hub</h2>
-                <p>Private lead triage, DSR qualification, 1-click WhatsApp outreach, and raw lead management.</p>
-            </div>
-
-            <!-- Quick Add Lead Bar -->
-            <div class="card glass-card new-lead-bar">
-                <h3>Direct Lead Ingestion</h3>
-                <form id="add-lead-form" onsubmit="handleNewLead(event)" class="inline-form">
-                    <input type="text" id="lead-name" placeholder="Full Name" required class="input-field">
-                    <input type="text" id="lead-phone" placeholder="WhatsApp Number (+601...)" required class="input-field">
-                    <input type="text" id="lead-project" placeholder="Project Name" required class="input-field">
-                    <input type="number" id="lead-income" placeholder="Est. Income (RM)" class="input-field">
-                    <button type="submit" class="btn btn-primary">+ Add Lead</button>
-                </form>
-            </div>
-
-            <!-- Operator Metrics Grid -->
-            <div class="metrics-grid">
-                <div class="metric-card glass-card">
-                    <span class="metric-label">RAW INGESTED LEADS</span>
-                    <span id="metric-raw" class="metric-value">0</span>
-                </div>
-                <div class="metric-card glass-card">
-                    <span class="metric-label">TIER 1 HOT LEADS</span>
-                    <span id="metric-hot" class="metric-value hot-color">0</span>
-                </div>
-                <div class="metric-card glass-card">
-                    <span class="metric-label">TIER 2 WARM LEADS</span>
-                    <span id="metric-warm" class="metric-value warm-color">0</span>
-                </div>
-                <div class="metric-card glass-card">
-                    <span class="metric-label">PUBLISHED TO CLIENT DESK</span>
-                    <span id="metric-published" class="metric-value client-color">0</span>
-                </div>
-            </div>
-
-            <!-- Triage Kanban Board -->
-            <div class="kanban-grid">
-                <!-- Column 1: New / Screening -->
-                <div class="kanban-column glass-card">
-                    <div class="column-header">
-                        <span class="column-title">NEW & SCREENING QUEUE</span>
-                        <span id="count-new" class="column-count">0</span>
+            <div class="sidebar-footer">
+                <div class="system-status-card">
+                    <div class="status-indicator">
+                        <span class="dot live"></span>
+                        <span class="status-text">SYSTEM ONLINE</span>
                     </div>
-                    <div id="container-new" class="kanban-list"></div>
+                    <div class="sync-status" id="live-sync-indicator">GAS &amp; Notion Bridge Active</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ── MAIN CONTENT AREA ────────────────────────────────────────── -->
+        <div class="main-wrapper">
+
+            <!-- Top Header Bar -->
+            <header class="top-header" role="banner">
+                <div class="header-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="global-search" placeholder="Search leads, REN agents, projects, dossiers..." oninput="handleGlobalSearch(event)" aria-label="Global search">
                 </div>
 
-                <!-- Column 2: Tier 1 Hot -->
-                <div class="kanban-column glass-card border-hot">
-                    <div class="column-header">
-                        <span class="column-title">TIER 1 HOT (PRE-APPROVED)</span>
-                        <span id="count-hot" class="column-count">0</span>
+                <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="exportDataCsv('leads')">📥 Export CSV</button>
+                    <button class="btn btn-secondary btn-sm" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
+                    <button class="btn btn-secondary btn-sm" onclick="openAddClientModal()">+ Add REN Client</button>
+                    <button class="btn btn-primary btn-sm" onclick="openLeadModal()">+ Add New Lead</button>
+                </div>
+            </header>
+
+            <!-- ── VIEW 0: COMMAND DASHBOARD ───────────────────────────── -->
+            <main id="view-dashboard" class="view-panel active" role="main" aria-label="Command Dashboard">
+                <div class="view-header">
+                    <div>
+                        <h1>Executive Command Center</h1>
+                        <p class="view-sub">Unified telemetry — Revenue metrics, active lead queues, project roadmaps &amp; system health.</p>
                     </div>
-                    <div id="container-hot" class="kanban-list"></div>
+                    <div class="pulse-date-badge" id="dash-pulse-date">TODAY</div>
                 </div>
 
-                <!-- Column 3: Tier 2 Warm -->
-                <div class="kanban-column glass-card border-warm">
-                    <div class="column-header">
-                        <span class="column-title">TIER 2 WARM (CADENCE)</span>
-                        <span id="count-warm" class="column-count">0</span>
+                <!-- KPI Metric Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card glass-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">TOTAL LEADS INGESTED</span>
+                            <span class="kpi-icon">📥</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-raw-cnt" class="kpi-value">0</span>
+                            <span class="kpi-sub">Raw Inflow Stream</span>
+                        </div>
                     </div>
-                    <div id="container-warm" class="kanban-list"></div>
-                </div>
 
-                <!-- Column 4: Disqualified / Invalid -->
-                <div class="kanban-column glass-card opacity-muted">
-                    <div class="column-header">
-                        <span class="column-title">DISQUALIFIED / ARCHIVE</span>
-                        <span id="count-disqualified" class="column-count">0</span>
+                    <div class="kpi-card glass-card border-hot">
+                        <div class="kpi-header">
+                            <span class="kpi-label">TIER 1 HOT BUYERS</span>
+                            <span class="kpi-icon">🔥</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-hot-cnt" class="kpi-value hot-color">0</span>
+                            <span class="kpi-sub">Pre-Approved LPPSA / High DSR</span>
+                        </div>
                     </div>
-                    <div id="container-disqualified" class="kanban-list"></div>
+
+                    <div class="kpi-card glass-card border-client">
+                        <div class="kpi-header">
+                            <span class="kpi-label">PUBLISHED DOSSIERS</span>
+                            <span class="kpi-icon">📑</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-client-cnt" class="kpi-value client-color">0</span>
+                            <span class="kpi-sub">Live on REN Client Desk</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card glass-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">ACTIVE REN SEATS</span>
+                            <span class="kpi-icon">🏢</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-ren-cnt" class="kpi-value">3</span>
+                            <span class="kpi-sub">Subang &amp; Shah Alam Lock</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </main>
 
-        <!-- VIEW 2: REN CLIENT DESK (Client-Facing View) -->
-        <main id="view-client" class="view-panel">
-            <div class="view-header">
-                <h2>REN Client Desk</h2>
-                <p>Executive dashboard for Real Estate Negotiators. Verified buyer dossiers and confirmed viewing bookings.</p>
-            </div>
+                <!-- 2-Column Main Dashboard Content -->
+                <div class="dash-columns">
+                    <!-- Column 1: Live Lead Inflow Feed & Priorities -->
+                    <div class="dash-col space-y-6">
+                        <section class="glass-card" aria-labelledby="inflow-heading">
+                            <div class="card-header-bar">
+                                <h3 id="inflow-heading" class="card-title">RECENT LEAD INFLOW FEED</h3>
+                                <button class="btn btn-text btn-sm" onclick="switchMode('operator')">View All Queue &rarr;</button>
+                            </div>
+                            <div id="dash-recent-leads" class="recent-leads-list"></div>
+                        </section>
 
-            <div class="client-banner glass-card">
-                <div class="client-info">
-                    <h3>Agent Ahmad (REN 45102)</h3>
-                    <p>Subang & Shah Alam Territory Lock • Seat SEAT-001</p>
+                        <section class="glass-card" aria-labelledby="projects-heading">
+                            <div class="card-header-bar">
+                                <h3 id="projects-heading" class="card-title">ACTIVE REVOPS ROADMAP</h3>
+                                <span class="badge-tag primary-tag">02_PROJECTS</span>
+                            </div>
+                            <div class="projects-roadmap-list">
+                                <div class="roadmap-item">
+                                    <div class="roadmap-head">
+                                        <span class="proj-code">PRJ-008</span>
+                                        <span class="proj-title">Jarvis Command Center</span>
+                                        <span class="badge-status active">Active</span>
+                                    </div>
+                                    <p class="proj-sub">Local PowerShell server API &amp; telemetry monitoring hub.</p>
+                                </div>
+                                <div class="roadmap-item">
+                                    <div class="roadmap-head">
+                                        <span class="proj-code">PRJ-009</span>
+                                        <span class="proj-title">Tools &amp; CRM Standardization</span>
+                                        <span class="badge-status done">Completed</span>
+                                    </div>
+                                    <p class="proj-sub">ZNS header compliance, gas-crm-engine.js refactor &amp; GDrive sync.</p>
+                                </div>
+                                <div class="roadmap-item">
+                                    <div class="roadmap-head">
+                                        <span class="proj-code">PRJ-010</span>
+                                        <span class="proj-title">Console-Portal Enterprise Overhaul</span>
+                                        <span class="badge-status active">Active</span>
+                                    </div>
+                                    <p class="proj-sub">Multi-tenant REN Client Manager, Bulk CSV Batch Engine &amp; Live Sync Bridge.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Column 2: Idea Catcher & Quick Actions -->
+                    <div class="dash-col space-y-6">
+                        <section class="glass-card" aria-labelledby="ideas-heading">
+                            <div class="card-header-bar">
+                                <h3 id="ideas-heading" class="card-title">IDEA CATCHER VAULT</h3>
+                                <span class="badge-tag primary-tag">PRJ-998</span>
+                            </div>
+                            <form id="dash-idea-form" onsubmit="handleDashIdea(event)" class="idea-input-row">
+                                <input type="text" id="dash-idea-text" placeholder="Dump a quick idea here..." required class="input-field">
+                                <button type="submit" class="btn btn-primary">Capture</button>
+                            </form>
+                            <div id="dash-ideas-container" class="ideas-feed"></div>
+                        </section>
+
+                        <section class="glass-card" aria-labelledby="quick-actions-heading">
+                            <h3 id="quick-actions-heading" class="card-title mb-4">QUICK SYSTEM ACTIONS</h3>
+                            <div class="quick-buttons-grid">
+                                <button class="btn btn-secondary" onclick="openLeadModal()">+ Ingest Lead</button>
+                                <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk Import CSV</button>
+                                <button class="btn btn-secondary" onclick="openAddClientModal()">+ Onboard REN Agent</button>
+                                <button class="btn btn-secondary" onclick="openSyncModal()">🔄 Live Sync Settings</button>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <div class="client-stat-badge">
-                    <span class="stat-num" id="client-dossier-count">0</span>
-                    <span class="stat-lbl">Verified Buyer Dossiers</span>
+            </main>
+
+            <!-- ── VIEW 1: CONSOLE OPERATOR HUB ───────────────────────────── -->
+            <main id="view-operator" class="view-panel" role="main" aria-label="Console Operator Hub" hidden>
+                <div class="view-header">
+                    <div>
+                        <h2>Console Operator Hub</h2>
+                        <p class="view-sub">Private lead triage queue, DSR qualification, 1-click WhatsApp outreach, and buyer dossier publishing.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
+                        <button class="btn btn-primary" onclick="openLeadModal()">+ Ingest New Lead</button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Client Dossiers Grid -->
-            <div class="section-title">
-                <h3>Verified Buyer Dossiers & Viewings</h3>
-            </div>
-            <div id="client-dossier-container" class="dossiers-grid">
-                <!-- Injected via JavaScript -->
-            </div>
-        </main>
-    </div>
+                <!-- Operator Metrics Row -->
+                <div class="metrics-grid">
+                    <div class="metric-card glass-card">
+                        <span class="metric-label">RAW QUEUE</span>
+                        <span id="metric-raw" class="metric-value">0</span>
+                    </div>
+                    <div class="metric-card glass-card border-hot">
+                        <span class="metric-label">TIER 1 HOT</span>
+                        <span id="metric-hot" class="metric-value hot-color">0</span>
+                    </div>
+                    <div class="metric-card glass-card border-warm">
+                        <span class="metric-label">TIER 2 WARM</span>
+                        <span id="metric-warm" class="metric-value warm-color">0</span>
+                    </div>
+                    <div class="metric-card glass-card border-client">
+                        <span class="metric-label">PUBLISHED TO REN</span>
+                        <span id="metric-published" class="metric-value client-color">0</span>
+                    </div>
+                </div>
 
-    <!-- Triage Modal -->
-    <div id="triage-modal" class="modal-overlay">
+                <!-- Filter Pills -->
+                <div class="filter-bar">
+                    <span class="filter-title">FILTER TIER:</span>
+                    <button id="filter-all" class="filter-pill active" onclick="filterLeads('All')">All Leads</button>
+                    <button id="filter-hot" class="filter-pill hot-pill" onclick="filterLeads('Hot')">🔥 Tier 1 Hot</button>
+                    <button id="filter-warm" class="filter-pill warm-pill" onclick="filterLeads('Warm')">⚡ Tier 2 Warm</button>
+                    <button id="filter-new" class="filter-pill" onclick="filterLeads('New')">🆕 New Queue</button>
+                    <button id="filter-disqualified" class="filter-pill" onclick="filterLeads('Disqualified')">✗ Disqualified</button>
+                </div>
+
+                <!-- Kanban Board -->
+                <div class="kanban-grid">
+                    <section class="kanban-column glass-card">
+                        <div class="column-header">
+                            <span class="column-title">NEW &amp; SCREENING QUEUE</span>
+                            <span id="count-new" class="column-count">0</span>
+                        </div>
+                        <div id="container-new" class="kanban-list"></div>
+                    </section>
+
+                    <section class="kanban-column glass-card border-hot">
+                        <div class="column-header">
+                            <span class="column-title">TIER 1 HOT (PRE-APPROVED)</span>
+                            <span id="count-hot" class="column-count">0</span>
+                        </div>
+                        <div id="container-hot" class="kanban-list"></div>
+                    </section>
+
+                    <section class="kanban-column glass-card border-warm">
+                        <div class="column-header">
+                            <span class="column-title">TIER 2 WARM (CADENCE)</span>
+                            <span id="count-warm" class="column-count">0</span>
+                        </div>
+                        <div id="container-warm" class="kanban-list"></div>
+                    </section>
+
+                    <section class="kanban-column glass-card opacity-muted">
+                        <div class="column-header">
+                            <span class="column-title">DISQUALIFIED / ARCHIVE</span>
+                            <span id="count-disqualified" class="column-count">0</span>
+                        </div>
+                        <div id="container-disqualified" class="kanban-list"></div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- ── VIEW 2: REN CLIENT DESK ─────────────────────────────────── -->
+            <main id="view-client" class="view-panel" role="main" aria-label="REN Client Desk" hidden>
+                <div class="view-header">
+                    <div>
+                        <h2>REN Client Desk</h2>
+                        <p class="view-sub">Executive dashboard for Real Estate Negotiators. Verified buyer dossiers and confirmed viewing bookings.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="copyShareableAgentLink()">🔗 Copy Agent Shareable URL</button>
+                        <button class="btn btn-secondary" onclick="exportDossiersPdf()">📄 Export Dossiers (PDF / Print)</button>
+                    </div>
+                </div>
+
+                <!-- Dynamic REN Client Selection Banner -->
+                <div class="client-banner glass-card">
+                    <div class="client-select-wrapper">
+                        <label for="ren-client-select" class="select-label">SELECT ACTIVE REN CLIENT DESK:</label>
+                        <select id="ren-client-select" class="input-field select-lg" onchange="handleClientDeskSwitch(event)">
+                            <!-- Injected dynamically via JS -->
+                        </select>
+                    </div>
+                    <div class="client-meta-badge" id="client-meta-display">
+                        <!-- Injected dynamically via JS -->
+                    </div>
+                </div>
+
+                <div class="section-title flex-between">
+                    <h3>Verified Buyer Dossiers &amp; Confirmed Viewings</h3>
+                    <div id="shareable-url-display" class="shareable-url-badge"></div>
+                </div>
+                <div id="client-dossier-container" class="dossiers-grid"></div>
+            </main>
+
+            <!-- ── VIEW 3: REN CLIENT MANAGER (MULT-TENANT MANAGEMENT) ──────── -->
+            <main id="view-manager" class="view-panel" role="main" aria-label="REN Client Manager" hidden>
+                <div class="view-header">
+                    <div>
+                        <h2>REN Client Manager</h2>
+                        <p class="view-sub">Multi-tenant client seat management. Onboard new REN agents, set territory locks, and manage subscription tiers.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="openImportModal('clients')">📤 Bulk Import Agents CSV</button>
+                        <button class="btn btn-primary" onclick="openAddClientModal()">+ Onboard New REN Client</button>
+                    </div>
+                </div>
+
+                <!-- Client Table / Card Grid -->
+                <div class="client-manager-grid" id="ren-clients-manager-container">
+                    <!-- Injected via JavaScript -->
+                </div>
+            </main>
+
+        </div><!-- /.main-wrapper -->
+    </div><!-- /.app-layout -->
+
+    <!-- ── MODAL: LEAD INGESTION / EDIT ────────────────────────────────── -->
+    <div id="lead-modal" class="modal-overlay" role="dialog" aria-modal="true">
         <div class="modal-content glass-card">
             <div class="modal-header">
-                <h3 id="modal-lead-name">Lead Qualification</h3>
-                <button class="btn-close" onclick="closeTriageModal()">CLOSE</button>
+                <h3>Direct Lead Ingestion</h3>
+                <button class="btn-close" onclick="closeLeadModal()">✕</button>
             </div>
-            <div class="modal-body">
+            <form id="add-lead-form" onsubmit="handleNewLead(event)">
+                <div class="modal-body space-y-4">
+                    <div class="form-group">
+                        <label for="lead-name">Full Name</label>
+                        <input type="text" id="lead-name" placeholder="e.g. Muhammad Hariz" required class="input-field">
+                    </div>
+                    <div class="form-group">
+                        <label for="lead-phone">WhatsApp Contact (+601...)</label>
+                        <input type="tel" id="lead-phone" placeholder="+60123456789" required class="input-field">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="lead-project">Project Interest</label>
+                            <input type="text" id="lead-project" placeholder="e.g. SkyResidence Subang" required class="input-field">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="lead-income">Est. Income (RM/mo)</label>
+                            <input type="number" id="lead-income" placeholder="6500" class="input-field" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeLeadModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">+ Save Lead to Queue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── MODAL: TRIAGE & QUALIFICATION ──────────────────────────────── -->
+    <div id="triage-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card modal-lg">
+            <div class="modal-header">
+                <h3 id="modal-lead-name">Lead Triage &amp; DSR Qualification</h3>
+                <button class="btn-close" onclick="closeTriageModal()">✕</button>
+            </div>
+            <div class="modal-body space-y-4">
                 <p id="modal-lead-info" class="lead-subtitle"></p>
-                
-                <div class="form-group">
-                    <label>Qualification Tier</label>
-                    <select id="modal-tier-select" class="input-field">
-                        <option value="Hot">Tier 1 Hot (Pre-approved / High DSR)</option>
-                        <option value="Warm">Tier 2 Warm (In Cadence)</option>
-                        <option value="Disqualified">Disqualified (Out of Budget / Invalid)</option>
-                    </select>
+
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="modal-tier-select">Qualification Tier</label>
+                        <select id="modal-tier-select" class="input-field">
+                            <option value="Hot">🔥 Tier 1 Hot (Pre-approved / High DSR)</option>
+                            <option value="Warm">⚡ Tier 2 Warm (In Cadence)</option>
+                            <option value="New">🆕 New / Screening</option>
+                            <option value="Disqualified">✗ Disqualified (Out of Budget / Invalid)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group flex-1">
+                        <label for="modal-assign-client">Assign to REN Client</label>
+                        <select id="modal-assign-client" class="input-field">
+                            <!-- Injected dynamically via JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="modal-loan-status">Loan Pre-Approval Status</label>
+                        <select id="modal-loan-status" class="input-field">
+                            <option value="Pre-Approved">Pre-Approved Loan (Bank/LPPSA)</option>
+                            <option value="Documents Collected">Documents Collected</option>
+                            <option value="Self-Employed / Cash">Cash / Self-Employed</option>
+                            <option value="Pending Submission">Pending Submission</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group flex-1">
+                        <label for="modal-viewing-time">Confirmed Viewing Date &amp; Time</label>
+                        <input type="text" id="modal-viewing-time" placeholder="e.g. Sabtu 11:00 AM @ Sales Gallery" class="input-field">
+                    </div>
+                </div>
+
+                <!-- DSR Interactive Calculator Box -->
+                <div class="dsr-calculator-box">
+                    <div class="dsr-header">
+                        <span>⚡ DSR LOAN ELIGIBILITY CALCULATOR</span>
+                        <span id="dsr-ratio-badge" class="dsr-badge green">DSR: 42% (Eligible)</span>
+                    </div>
+                    <div class="dsr-inputs">
+                        <input type="number" id="dsr-income-input" placeholder="Monthly Income (RM)" class="input-field input-sm" oninput="calculateDsr()">
+                        <input type="number" id="dsr-commitment-input" placeholder="Existing Commitments (RM)" class="input-field input-sm" oninput="calculateDsr()">
+                    </div>
+                    <div id="dsr-calc-output" class="dsr-output-text">Est. Max Installment Capacity: RM 2,730/mo &bull; Max Loan: RM 550,000</div>
                 </div>
 
                 <div class="form-group">
-                    <label>Loan Pre-Approval Status</label>
-                    <select id="modal-loan-status" class="input-field">
-                        <option value="Pre-Approved">Pre-Approved Loan</option>
-                        <option value="Documents Collected">Documents Collected</option>
-                        <option value="Self-Employed / Cash">Cash / Self-Employed</option>
-                        <option value="Pending Submission">Pending Submission</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Confirmed Viewing Date & Time</label>
-                    <input type="text" id="modal-viewing-time" placeholder="e.g. Saturday 11:00 AM @ Sales Gallery" class="input-field">
-                </div>
-
-                <div class="form-group">
-                    <label>Operator Notes (Private)</label>
-                    <textarea id="modal-notes" rows="3" placeholder="DSR check, income, preferred floor unit..." class="input-field"></textarea>
+                    <label for="modal-notes">Operator Notes (Private)</label>
+                    <textarea id="modal-notes" rows="3" placeholder="DSR check details, preferred unit layout, loan eligibility notes..." class="input-field"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" onclick="closeTriageModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="saveTriageData()">Save & Update Lead</button>
+                <button class="btn btn-wa-triage" onclick="triageLeadToWa()">📱 1-Click WA Outreach</button>
+                <button class="btn btn-primary" onclick="saveTriageData()">Save &amp; Dispatch to REN Desk</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MODAL: ONBOARD NEW REN CLIENT ──────────────────────────────── -->
+    <div id="client-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Onboard New REN Client</h3>
+                <button class="btn-close" onclick="closeAddClientModal()">✕</button>
+            </div>
+            <form id="add-client-form" onsubmit="handleNewClientSubmit(event)">
+                <div class="modal-body space-y-4">
+                    <div class="form-group">
+                        <label for="client-name">Agent Full Name</label>
+                        <input type="text" id="client-name" placeholder="e.g. Agent Sarah" required class="input-field">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="client-ren-no">REN Tag Number</label>
+                            <input type="text" id="client-ren-no" placeholder="REN 52109" required class="input-field">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="client-agency">Agency Name</label>
+                            <input type="text" id="client-agency" placeholder="IQI Realty / Renstar" required class="input-field">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="client-territory">Territory Lock</label>
+                            <input type="text" id="client-territory" placeholder="Subang Jaya &amp; Shah Alam" required class="input-field">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="client-tier">Service Tier</label>
+                            <select id="client-tier" class="input-field">
+                                <option value="Starter">Starter (RM 800/mo)</option>
+                                <option value="Growth" selected>Growth (RM 1,500/mo)</option>
+                                <option value="Enterprise">Enterprise (RM 3,000/mo)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddClientModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">+ Activate REN Client Seat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── MODAL: BULK CSV DATA IMPORT ────────────────────────────────── -->
+    <div id="import-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="import-modal-title">Bulk CSV Data Import</h3>
+                <button class="btn-close" onclick="closeImportModal()">✕</button>
+            </div>
+            <div class="modal-body space-y-4">
+                <p class="view-sub">Upload or paste CSV batch data to import multiple records at once.</p>
+                <div class="form-group">
+                    <label for="csv-file-input">Select CSV File</label>
+                    <input type="file" id="csv-file-input" accept=".csv, .txt" class="input-field" onchange="handleCsvFileSelected(event)">
+                </div>
+                <div class="form-group">
+                    <label for="csv-text-area">Or Paste Raw CSV Content</label>
+                    <textarea id="csv-text-area" rows="6" placeholder="name,phone,project,income,tier&#10;Muhammad Hariz,+60123456789,SkyResidence,6500,Hot" class="input-field font-mono"></textarea>
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="downloadCsvTemplate()">📥 Download CSV Format Template</button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeImportModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="executeBatchCsvImport()">🚀 Process &amp; Ingest Batch</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MODAL: LIVE SYNC & BACKUP CONFIG ───────────────────────────── -->
+    <div id="sync-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Live Sync &amp; Database Backup Settings</h3>
+                <button class="btn-close" onclick="closeSyncModal()">✕</button>
+            </div>
+            <div class="modal-body space-y-4">
+                <div class="form-group">
+                    <label for="gas-url-input">Google Apps Script CRM Engine Web App URL (/exec)</label>
+                    <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="input-field font-mono">
+                </div>
+                <div class="form-group">
+                    <label for="notion-key-input">Notion API Integration Token</label>
+                    <input type="password" id="notion-key-input" placeholder="ntn_4027..." class="input-field font-mono">
+                </div>
+                <div class="status-box glass-card border-client">
+                    <div style="font-weight:700;color:var(--client-color);">Bi-Directional Backup Status: ACTIVE</div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">
+                        Data automatically replicates across Local Storage, Google Sheets (`gas-crm-engine.js`), and Notion Sales CRM Databases.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="triggerManualSync()">🔄 Trigger Instant Full Sync</button>
+                <button class="btn btn-primary" onclick="saveSyncSettings()">Save Sync Credentials</button>
             </div>
         </div>
     </div>

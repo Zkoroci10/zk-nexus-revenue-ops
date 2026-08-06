@@ -69,6 +69,6 @@ Related: STR-006, STR-007, SYS-003, OP-013, OP-015
 ## 🌐 STATUS DEPLOYMENT & CLOUD SYNC
 
 - **Live Client Portal Cloud**: `https://zkoroci10.github.io/zk-nexus-revenue-ops/`
-- **Local Server Dashboard**: `http://localhost:3777/06_Assets/Dashboard/client-dashboard.html`
+- **Local Server Dashboard**: `http://localhost:3777/06_Resources/Assets/Dashboard/client-dashboard.html`
 - **ZNS Validation**: 241 Fail Lulus 100% via `validate-zns.ps1`.
 - **GitHub Repository**: Synced & Pushed (`b9a0691`).

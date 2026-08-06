@@ -1,0 +1,4490 @@
+﻿[
+    {
+        "File":  "PROJECT.md",
+        "Scope":  "Root",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "README.md",
+        "Scope":  "Root",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_1\\audit.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_1\\audit_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_gen2\\audit.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_gen2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_gen2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_gen2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m1_gen2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2_1\\audit.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2_1\\audit_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m2_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_1\\audit.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_1\\audit_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen3\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen3\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen3\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen3\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen4\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen4\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen4\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m3_gen4\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_1\\audit.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_1\\audit_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_prod\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_prod\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_prod\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\auditor_m4_prod\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m1_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m1_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m1_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m1_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m2_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\challenger_m3_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_db_engine\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_db_engine\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_db_engine\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_db_engine\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1_1\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m1_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2_1\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m2_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3_1\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m3_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m4\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m4\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m4\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_m4\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_portal_ui\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_portal_ui\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_portal_ui\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_portal_ui\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_victory_1\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_victory_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_victory_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_victory_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_victory_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_wa_brand\\analysis.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_wa_brand\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_wa_brand\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_wa_brand\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\explorer_wa_brand\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\orchestrator\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\orchestrator\\context.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\orchestrator\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\orchestrator\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\orchestrator\\plan.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\orchestrator\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m1_1\\review_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_1\\review_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_gen2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_gen2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_gen2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m2_gen2\\review_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_1\\review_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen3\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen3\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen3\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen3\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen4\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen4\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen4\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m3_gen4\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m4_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m4_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m4_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\reviewer_m4_1\\review_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\AI-START-HERE.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\integration-bridge.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\role-definitions.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\RUL-001.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\RUL-002.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\RUL-003.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\rules\\RUL-004.md",
+        "Scope":  ".agents",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\sentinel\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\sentinel\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\skills\\antigravity-agent-manager\\SKILL.md",
+        "Scope":  ".agents",
+        "Status":  "MISSING_KEYS",
+        "Reason":  "Missing: Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingKeys":  "Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingVersion":  true
+    },
+    {
+        "File":  ".agents\\skills\\apify-lead-generation\\SKILL.md",
+        "Scope":  ".agents",
+        "Status":  "MISSING_KEYS",
+        "Reason":  "Missing: Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingKeys":  "Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingVersion":  true
+    },
+    {
+        "File":  ".agents\\skills\\brain-to-docs\\SKILL.md",
+        "Scope":  ".agents",
+        "Status":  "MISSING_KEYS",
+        "Reason":  "Missing: Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingKeys":  "Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingVersion":  true
+    },
+    {
+        "File":  ".agents\\skills\\cold-email\\SKILL.md",
+        "Scope":  ".agents",
+        "Status":  "MISSING_KEYS",
+        "Reason":  "Missing: Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingKeys":  "Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingVersion":  true
+    },
+    {
+        "File":  ".agents\\skills\\ui-ux-pro-max-skill\\SKILL.md",
+        "Scope":  ".agents",
+        "Status":  "MISSING_KEYS",
+        "Reason":  "Missing: Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingKeys":  "Title:, ID:, Type:, Module:, Status:, Version:",
+        "MissingVersion":  true
+    },
+    {
+        "File":  ".agents\\victory_auditor\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_1\\victory_audit_report.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_prod\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_prod\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_prod\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\victory_auditor_prod\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_db_engine\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_db_engine\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_db_engine\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_db_engine\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_1\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_fix\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_fix\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_fix\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_fix\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m1_fix\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_1\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_fix\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_fix\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_fix\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_fix\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_fix\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_gen2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_gen2\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_gen2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_gen2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m2_gen2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_1\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_collision_fix\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_collision_fix\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_collision_fix\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_collision_fix\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_fix\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_fix\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_fix\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_fix\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_fix\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_gen2\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_gen2\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_gen2\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m3_gen2\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4_1\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4_1\\changes.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4_1\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4_1\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_m4_1\\progress.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_portal_ui\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_portal_ui\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_portal_ui\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_wa_brand\\BRIEFING.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_wa_brand\\handoff.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  ".agents\\worker_wa_brand\\ORIGINAL_REQUEST.md",
+        "Scope":  ".agents",
+        "Status":  "NO_HEADER",
+        "Reason":  "Does not start with ---",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\AI-START-HERE.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\AI-Suggestions.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\Daily-Control-Loop.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\Dashboard-Legacy.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\ID-Registry.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\Module-Health-Report.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\Workspace-Index.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\ZK-Nexus-Guide.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "00_Command Center\\ZK-Nexus-Master-Index.md",
+        "Scope":  "00_Command Center",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\Business-Registry.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\DAE-Ecosystem\\Strategy\\Asset_Strategy.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\DAE-Ecosystem\\Strategy\\Business_Context.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\DAE-Ecosystem\\Strategy\\Roadmap.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\Strategy\\RDM-001-Roadmap-RM10k-Month.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\001_Service-Catalog.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\002_SDR-Campaign-Blueprints.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\003_Cold-Outreach-Scripts.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\004_Lead-Qualification-SOP-001.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\005_CRM-Automation-Blueprints.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\001_Vision.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\002_Mission.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\003_Core-Values.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\004_Product-Overview.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\005_Problem-Statement.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\006_Solution.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\007_Scope.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\008_User-Roles.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\009_Terminology.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\00_Foundation\\010_Success-Metrics.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\001_Business-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\002_Naming-Convention.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\003_Object-ID-Standard.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\004_Status-Standard.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\005_Priority-Standard.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\006_SLA-Standard.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\007_Permission-Matrix.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\008_Audit-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\009_Version-Control.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\02_Governance\\010_Data-Governance.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\001_Entity-Dictionary.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\002_Entity-Relationships.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\003_Field-Dictionary.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\004_Status-Dictionary.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\005_Tag-Dictionary.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\006_Source-Dictionary.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\007_Validation-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\008_Data-Flow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\009_Data-Lifecycle.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\010_Ownership-Matrix.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\011_Folder-Architecture.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\012_Naming-Convention-Reference.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\03_Information_Architecture\\013_Metadata-Standard.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\001_Master-Workflow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\002_Lead-Lifecycle.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\003_Client-Lifecycle.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\004_Appointment-Lifecycle.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\005_Follow-up-Lifecycle.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\006_Task-Lifecycle.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\007_Reporting-Workflow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\008_Exception-Workflow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\009_Escalation-Workflow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\04_Operational_Workflow_Engine\\010_State-Transition-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-001_Lead-Import.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-002_Lead-Cleaning.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-003_Duplicate-Checking.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-004_Lead-Segmentation.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-005_Lead-Assignment.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-006_Outreach.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-007_Follow-up.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-008_Appointment-Booking.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-009_CRM-Update.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-010_Reporting.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-011_Lead-Revival.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\01_SOP_Library\\SOP-012_Archive.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\02_Work_Instructions\\WI-001_Import-CSV.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\03_Checklists\\CHK-001_Lead-Cleaning-Checklist.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\04_Quality_Assurance\\QA-001_Import-Audit.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\05_Templates\\TMP-001_WhatsApp-Greeting-DSR.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\06_SLAs\\SLA-001_Operational-SLA-Matrix.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\07_Exceptions\\EXC-001_Exception-Execution-Guide.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\08_Daily_Operations\\DOP-001_Daily-Operations-Manual.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\09_Weekly_Operations\\WOP-001_Weekly-Operations-Manual.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\05_Execution_System\\10_Monthly_Operations\\MOP-001_Monthly-Operations-Manual.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\01_Communication_Principles\\001_Communication-Principles.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\02_Communication_Channels\\002_Communication-Channels.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\03_Message_Library\\003_Message-Library.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\04_Call_Library\\004_Call-Library.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\05_Follow-up_Library\\005_Follow-up-Library.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\06_Appointment_Communication\\006_Appointment-Communication.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\07_Client_Communication\\007_Client-Communication.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\08_Internal_Communication\\008_Internal-Communication.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\09_Notification_System\\009_Notification-System.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\10_Communication_QA\\010_Communication-QA.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\11_Objection_Handling\\011_Objection-Handling.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\06_Communication_System\\12_Compliance_Privacy\\012_Compliance-Privacy.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\01_Analytics_Framework\\ZK-ANA-001_Analytics-Framework.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\02_Metric_Dictionary\\ZK-ANA-002_Metric-Dictionary.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\03_KPI_System\\ZK-ANA-003_KPI-System.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-001_Client-Dashboard-Spec.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-002_Operator-Dashboard-Spec.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\04_Dashboard_Specification\\ZK-DASH-003_Admin-Dashboard-Spec.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\05_Report_Templates\\ZK-RPT-001_Daily-Report-Template.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\06_Report_Workflow\\ZK-ANA-004_Report-Workflow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\07_Performance_Analysis\\ZK-ANA-005_Performance-Analysis.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\08_Client_Reporting\\ZK-RPT-007_Client-Reporting-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\09_Internal_Reporting\\ZK-RPT-008_Internal-Reporting-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\10_Data_Quality\\ZK-ANA-006_Data-Quality-Checklist.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\07_Reporting_Analytics_System\\11_Future_Analytics\\ZK-ANA-007_Future-Analytics.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\01_Automation_Strategy\\ZK-AUT-001_Automation-Strategy.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\02_Automation_Map\\ZK-AUT-002_Automation-Map.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\03_Process_Automation\\ZK-AUT-003_Process-Automation.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\04_Data_Automation\\ZK-AUT-004_Data-Automation.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\05_Communication_Automation\\ZK-AUT-005_Communication-Automation.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\06_Task_Automation\\ZK-AUT-006_Task-Automation.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\07_Report_Automation\\ZK-AUT-007_Report-Automation.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\08_AI_Automation\\ZK-AUT-008_AI-Automation-Design.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\09_Integration_Library\\ZK-AUT-009_Integration-Library.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\10_Automation_QA\\ZK-AUT-010_Automation-QA-Checklist.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\08_Automation_System\\11_Automation_Backlog\\ZK-AUT-011_Automation-Backlog.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\01_Product_Requirements\\ZK-PRD-001_Product-Requirement-Document.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\02_System_Architecture\\ZK-ARCH-001_System-Architecture.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\03_User_Management\\ZK-USER-001_User-Management-System.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\04_User_Roles_Permissions\\ZK-USER-002_User-Roles-Permissions-Matrix.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-001_Lead-Management-Engine.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-002_Operator-Task-Console.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\05_Feature_Specification\\ZK-FEAT-003_Client-REN-Portal.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\06_User_Flow\\ZK-FLOW-001_User-Flow-Diagrams.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\07_UI_UX_Specification\\ZK-UI-001_UI-UX-Design-System.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\08_Database_Specification\\ZK-DB-001_Database-Relational-Schema.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\09_API_Integration\\ZK-API-001_API-Integration-Endpoints.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\10_Notification_System\\ZK-NOTIF-001_Notification-Engine.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\11_Search_Filter_System\\ZK-FEAT-006_Search-Filter-System.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\12_Security\\ZK-SEC-001_Security-and-RLS-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\13_QA_Testing\\ZK-TEST-001_QA-Test-Cases.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\14_Release_Management\\ZK-REL-001_Cardless-Release-Management.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\09_Software_Specification\\15_Product_Backlog\\ZK-BACK-001_Product-Backlog.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\01_Workforce_Architecture\\ZK-AI-001_Workforce-Architecture.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\02_Agent_Catalog\\ZK-AI-002_Agent-Catalog.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\03_Agent_Specifications\\ZK-AI-003_Agent-Specifications.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\04_Agent_Workflows\\ZK-AI-004_Agent-Workflows.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\05_Agent_Knowledge\\ZK-AI-005_Agent-Knowledge-Architecture.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\06_Agent_Tools\\ZK-AI-006_Agent-Tools-Registry.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\07_Agent_Memory\\ZK-AI-007_Agent-Memory-System.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\08_Agent_Permissions\\ZK-AI-008_Agent-Permissions-Matrix.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\09_Human_AI_Handoff\\ZK-AI-009_Human-AI-Handoff-Rules.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\10_Agent_Monitoring\\ZK-AI-010_Agent-Monitoring-Framework.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\11_AI_QA\\ZK-AI-011_AI-QA-Audit-Checklist.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\12_AI_Security\\ZK-AI-012_AI-Security-Governance.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\13_AI_Training\\ZK-AI-013_AI-Training-Knowledge-Review.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\14_AI_Backlog\\ZK-AI-014_AI-Backlog.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\10_Digital_Workforce\\15_Future_Workforce\\ZK-AI-015_Future-Workforce-Vision.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Client-Delivery\\client-folder-structure.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Client-Delivery\\Client-Lead-Tracker-Active.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Marketing\\FB_IG_ADS_CAMPAIGN_MASTER_KIT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Offers\\client-offers.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\BATCH_1_OUTREACH_REVIEW_KIT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\outreach-sop.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\PRE_LAUNCH_CHECKLIST_AND_EXECUTION_ROADMAP.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\SOP-OPS-002_Console-Operator-Manual.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\WHATSAPP_BUSINESS_BRANDING_BLUEPRINT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\WHATSAPP_BUSINESS_COVER_CATALOG_MASTER_BLUEPRINT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\WHATSAPP_BUSINESS_MASTER_KIT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Operations\\WHATSAPP_BUSINESS_STRUCTURED_MASTER_KIT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Pricing\\pricing-model.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Reports\\REN_PROSPECTS_100_AUDIT_REPORT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Reports\\ZK_NEXUS_EMPIRE_REVOPS_MASTER_REPORT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Reports\\ZK_REVENUE_OPS_END_TO_END_MASTER_REPORT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\Listing-Based-Pitch-Matrix.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\malaysian-ren-prospects.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\outreach-database-schema.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\Sales-Pitch-Deck.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\sales-process.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\SOP-004_Objection-Handling.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\Proposals\\Ahmad-PJ-Proposal.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Sales\\Proposals\\Ahmad-PJ-SOW.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Services\\service-catalog.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\business-context.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\client-profile.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\current-crm-audit.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\feature-map.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\GEMINI_SPARK_INTEGRATION_BLUEPRINT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\MALAYSIA_6_ZONE_REN_STRATEGY.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\Master-Execution-Roadmap-Framework.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\NOTION_SALES_CRM_FRAMEWORK.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\PRICING_TIERS_AND_PILOT_PROGRAM_BLUEPRINT.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\REN-Client-Acquisition-Playbook-Tomorrow.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\strategy-overview.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\system-architecture.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\Tomorrow-Operations-Launch-Checklist.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\zk-revenue-ops-dashboard.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "01_Business\\ZK-Revenue-Ops\\Strategy\\ZK-Revenue-Ops-Master-Product-Framework.md",
+        "Scope":  "01_Business",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active-Projects-List.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Idea-Backlog.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Idea-Catcher.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active\\ZKRO-Service-Catalog-Draft.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active\\PRJ-002_Workspace-Cleanup\\project-charter.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active\\PRJ-002_Workspace-Cleanup\\project-report.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active\\PRJ-003_Business-Readiness\\project-charter.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active\\PRJ-003_Business-Readiness\\project-report.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "02_Projects\\Active\\PRJ-004_Sales-Engine\\project-report.md",
+        "Scope":  "02_Projects",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Knowledge-Index.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Research-Backlog.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Finance\\FINANCE_SYSTEM.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Legal\\LEGAL_SYSTEM.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Marketing\\MARKETING_SYSTEM.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Marketing\\PROJECT_TRACKER.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Sales\\SOP-SDR-001_WhatsApp-Outreach.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Sales\\SOP-SDR-002_Lead-Enrichment-Qualification.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\Sales\\SOP-SDR-003_Cadence-And-Follow-Up.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\SOPs\\SOP-001-Lead-Qualification.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\SOPs\\SOP-002-Client-Onboarding.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "03_Knowledge\\SOPs\\SOP-003-Daily-Control-Loop.md",
+        "Scope":  "03_Knowledge",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Agent-Schedules.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI-Onboarding-Protocol.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI-Worker-Registry.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Department-Breakdown.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Role-Definitions.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI\\AI-001_ZK-Architect.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI\\AI-002_ZK-Operator.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI\\AI-003_ZK-Knowledge.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI\\AI-004_ZK-Creator.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI\\AI-005_ZK-Developer.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\AI-OS\\AI-Operating-System.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Constitution\\AI-Worker-Constitution.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Constitution\\EMPIRE_OPERATING_SYSTEM.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Roles\\ROL-001-COO.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Roles\\ROL-002-CMO.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Roles\\ROL-003-CTO.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Roles\\ROL-004-CPO.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Rules\\AI-Worker-Rules.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "04_Workforce\\Rules\\AI_WORKING_RULES.md",
+        "Scope":  "04_Workforce",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Integration-Map.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Systems-Inventory.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Automation\\BROWSER_CONFIG.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Automation\\ZK-Nexus-Workflow.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Databases\\NOTION_MULTI_TENANT_CRM_SPEC.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Databases\\NOTION_SALES_CRM_FRAMEWORK.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Databases\\ZK-DB-Engine-Architecture.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "05_Systems\\Integrations\\Google-Drive-Workspace-Bridge.md",
+        "Scope":  "05_Systems",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "06_Resources\\Asset-Catalog.md",
+        "Scope":  "06_Resources",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\Template-Index.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\Email\\TMP-002_Email_SDR-Outreach.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\Prompt\\TMP-003_Prompt_CEO-Operating-Prompt.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\Prompt\\TMP-006_Prompt_B2B-Cold-Outreach-Copywriter.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\Proposal\\TMP-001_Proposal_SDR-Pilot.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\SOP\\TMP-004_Lead-Qualification-Checklist.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "07_Templates\\Spreadsheet\\TMP-005_Client-Lead-Database.md",
+        "Scope":  "07_Templates",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "08_Logs\\Log-Index.md",
+        "Scope":  "08_Logs",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "08_Logs\\AI-Logs\\AI-Log-2026-07-25.md",
+        "Scope":  "08_Logs",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "08_Logs\\Daily-Logs\\2026-08-02_Daily-Pulse.md",
+        "Scope":  "08_Logs",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Archive-Index.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\migration-summary.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\project-charter.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\business-context.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\client-profile.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\current-crm-audit.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\feature-map.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\strategy-overview.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\system-architecture.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Completed-Projects\\PRJ-001_ZK-RevOps-Migration\\drafts\\zk-revenue-ops-dashboard.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Old-Business-Plans\\Digital-Products\\Strategy\\Business_Context.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Old-Business-Plans\\Digital-Products\\Strategy\\Launch_Process.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\Old-Business-Plans\\Digital-Products\\Strategy\\Product_Framework.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\01_Dashboard\\Dashboard.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\01_Dashboard\\ZK Nexus Guide.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\01_Dashboard\\ZK Nexus Master Index.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\02_AI_Workers\\AI Operating System.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\02_AI_Workers\\AI Worker Constitution.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\02_AI_Workers\\AI Worker Rules.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\03_Projects\\DAE\\AI_Context\\Asset_Strategy.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\03_Projects\\DAE\\AI_Context\\Business_Context.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\03_Projects\\DAE\\AI_Context\\Roadmap.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\03_Projects\\Digital Products\\AI_Context\\Business_Context.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\03_Projects\\Digital Products\\AI_Context\\Launch_Process.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\03_Projects\\Digital Products\\AI_Context\\Product_Framework.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\04_SOP\\SOP\\AI_WORKING_RULES.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\04_SOP\\SOP\\EMPIRE_OPERATING_SYSTEM.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\05_Knowledge\\Finance\\FINANCE_SYSTEM.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\05_Knowledge\\Legal\\LEGAL_SYSTEM.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\05_Knowledge\\Marketing\\MARKETING_SYSTEM.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\05_Knowledge\\Marketing\\Projects\\PROJECT_TRACKER.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\06_Templates\\Prompt-Library\\CEO-Operating-Prompt.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\06_Templates\\Prompt-Library\\README.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\01_Strategy\\Current-CRM-Audit.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\01_Strategy\\Feature-Map.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\01_Strategy\\README.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\01_Strategy\\ZK Revenue Ops Dashboard.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\02_Offer\\AI_Context\\Business_Context.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\02_Offer\\AI_Context\\Client_Profile.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\08_RevenueOps\\ZK Revenue Ops\\02_Offer\\AI_Context\\System_Architecture.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    },
+    {
+        "File":  "99_Archive\\ZK-Nexus-Legacy\\09_Automation\\ZK Nexus Workflow.md",
+        "Scope":  "99_Archive",
+        "Status":  "OK",
+        "Reason":  "",
+        "MissingKeys":  "",
+        "MissingVersion":  false
+    }
+]

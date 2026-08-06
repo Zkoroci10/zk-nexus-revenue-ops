@@ -1,7 +1,23 @@
+<#
+---
+Title: Notion Sales CRM Setup
+ID: SYS-017
+Type: Script (PowerShell)
+Module: 05_Systems
+BU: ZK Revenue Ops
+Status: Active
+Version: 1.0
+Created: 2026-08-05
+Updated: 2026-08-05
+Owner: Zubair (zubairisa10@gmail.com)
+Related: PRJ-009
+---
+#>
+
 # ZK Revenue Ops — Notion Sales CRM Database Automator
 # Instantiates 4 interconnected relational databases under Notion Workspace
 
-$token = $env:NOTION_API_KEY
+$token = if ($env:NOTION_API_KEY) { $env:NOTION_API_KEY } else { "" }
 $parentPageId = "3ab9608c-a9d9-8041-a1ca-c5ca98284cda"
 
 $headers = @{

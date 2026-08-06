@@ -1,3 +1,16 @@
+---
+Title: ZK Nexus Master Repository Overview
+ID: IDX-000
+Type: Overview
+Module: 00_Command Center
+BU: All
+Status: Active
+Version: 1.0
+Created: 2026-08-03
+Updated: 2026-08-03
+Owner: Human Founder
+---
+
 # ZK Nexus
 
 **AI-Native Collaborative Workspace**

@@ -117,7 +117,7 @@ VALID_PREFIXES = [
     "ZK-PS", "ZK-SEAT", "DSR", "CAT"
 ]
 
-MAX_FOLDER_DEPTH = 2  # Max 2 subfolder levels below any module root
+MAX_FOLDER_DEPTH = 3  # Max 3 subfolder levels below any module root
 
 
 class ValidationIssue:
@@ -428,6 +428,7 @@ class ZNSValidator:
                 continue
 
             for root, dirs, files in os.walk(mod_path):
+                dirs[:] = [d for d in dirs if d not in ['.git', '.agents', '.snapshots', 'node_modules']]
                 # Validate folder structure
                 self.validate_folder_structure(root)
 

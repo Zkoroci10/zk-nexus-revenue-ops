@@ -7,7 +7,7 @@ BU: All
 Status: Active
 Version: 1
 Created: 2025-07-16
-Updated: 2025-07-16
+Updated: 2026-08-03
 Owner: Human Founder
 Related: RUL-001, RUL-002
 ---
@@ -24,9 +24,10 @@ Related: RUL-001, RUL-002
 
 | Source Module | Item ID | Item Name | Date Archived | Archived By | Reason |
 |---------------|---------|-----------|---------------|-------------|--------|
-| (none) | — | — | — | — | — |
-
-*No archived items at this time.*
+| 02_Projects | PRJ-001 | ZK RevOps Migration | 2026-07-18 | AI-002 | Project completed |
+| 02_Projects | PRJ-002 | Workspace Cleanup | 2026-08-03 | worker_m2 | Project completed |
+| 02_Projects | PRJ-003 | Business Readiness | 2026-08-03 | worker_m2 | Project completed |
+| 02_Projects | PRJ-004 | Sales Engine | 2026-08-03 | worker_m2 | Project completed |
 
 ---
 
@@ -36,7 +37,10 @@ Related: RUL-001, RUL-002
 
 | Project ID | Name | Completion Date | Archive Location |
 |------------|------|-----------------|-------------------|
-| (none) | — | — | — |
+| PRJ-001 | ZK RevOps Migration | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-001_ZK-RevOps-Migration/` |
+| PRJ-002 | Workspace Cleanup | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-002_Workspace-Cleanup/` |
+| PRJ-003 | Business Readiness | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-003_Business-Readiness/` |
+| PRJ-004 | Sales Engine | 2026-07-18 | `99_Archive/Completed-Projects/PRJ-004_Sales-Engine/` |
 
 ### Old SOPs
 
@@ -102,3 +106,4 @@ Related: RUL-001, RUL-002
 | Date | Actor | Change |
 |------|-------|--------|
 | 2025-07-16 | Human Founder | Created Archive Index (empty state) |
+| 2026-08-03 | worker_m2 | Populated Archive Index with PRJ-001 through PRJ-004 records |

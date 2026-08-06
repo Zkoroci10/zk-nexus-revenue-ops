@@ -5,9 +5,9 @@ Type: Index
 Module: 08_Logs
 BU: All
 Status: Active
-Version: 1
+Version: 1.1
 Created: 2025-07-16
-Updated: 2025-07-16
+Updated: 2026-08-03
 Owner: Human Founder
 Related: RUL-001
 ---
@@ -26,7 +26,11 @@ Related: RUL-001
 
 | File | Date Range | Entries | Status |
 |------|------------|---------|--------|
-| (none) | — | 0 | — |
+| `LOG_2026-07-27_Decision_Focus-Pivot-ZK-Revenue-Ops.md` | 2026-07-27 | 1 | Active |
+| `LOG_2026-07-29_Decision_Pricing-Model-v2-Dual-Stream.md` | 2026-07-29 | 1 | Active |
+| `LOG_2026-07-29_Decision_Founder-Branding-Authentic-Identity.md` | 2026-07-29 | 1 | Active |
+| `LOG_2026-07-29_Decision_Standard-Tech-Stack-Selection.md` | 2026-07-29 | 1 | Active |
+| `LOG_2026-07-30_Decision_Lead-Scale-Repositioning-100k.md` | 2026-07-30 | 1 | Active |
 
 ### Change Logs
 
@@ -89,3 +93,5 @@ Related: RUL-001
 | Date | Actor | Change |
 |------|-------|--------|
 | 2025-07-16 | Human Founder | Created Log Index |
+| 2026-08-03 | AI Worker M4 | Indexed 5 new decision log files for Milestone 4 |
+

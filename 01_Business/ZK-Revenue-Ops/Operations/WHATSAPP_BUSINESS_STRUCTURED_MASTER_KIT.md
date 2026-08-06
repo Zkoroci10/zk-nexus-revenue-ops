@@ -25,7 +25,7 @@ Related: STR-006, STR-007, SYS-003, OP-010, OP-012
 
 Banner memanjang ini diletakkan di bahagian atas (*header background*) profil WhatsApp Business & FB Cover Page:
 
-![16:9 Landscape Cover Banner](file:///C:/Users/Dell/Documents/Projects%20ZK%20Nexus/06_Assets/Banners/cover_banner_16_9_landscape.jpg)
+![16:9 Landscape Cover Banner](file:///C:/Users/Dell/Documents/Projects%20ZK%20Nexus/06_Resources/Assets/Banners/cover_banner_16_9_landscape.jpg)
 
 - **Ciri-ciri Reka Bentuk**: Dark Teal Blue Ribbon Overlay (`#006680`), Typography Bold Clean (`WE ARE REAL ESTATE DIGITAL SALES REVOPS`), Lencana Founder Zubair Ariff, dan pautan web demo `https://zkoroci10.github.io/zk-nexus-revenue-ops/`.
 
@@ -89,20 +89,22 @@ C:\Users\Dell\Documents\Projects ZK Nexus\
 │       ├── generate_minimalist_cards.js                <-- Generator Minimalist Luxury Cards
 │       └── validate-zns.ps1                            <-- ZNS Metadata Validator Script
 │
-├── 06_Assets/
-│   ├── Banners/
-│   │   ├── cover_banner_16_9_landscape.jpg / .svg      <-- Banner Header 16:9 Landscape (Teal Wave)
-│   │   ├── catalog_card_01_pilot.jpg / .svg            <-- Kad Catalog Package 01 (Navy Slate)
-│   │   ├── catalog_card_02_starter.jpg / .svg          <-- Kad Catalog Package 02 (Forest Green)
-│   │   ├── catalog_card_03_growth.jpg / .svg           <-- Kad Catalog Package 03 (Warm Bronze)
-│   │   ├── catalog_card_04_enterprise.jpg / .svg       <-- Kad Catalog Package 04 (Charcoal)
-│   │   ├── fb_ig_ad1_hero_hook_*.jpg                   <-- Gambar Iklan FB/IG Hero Hook
-│   │   ├── fb_ig_ad2_tier1_starter_*.jpg               <-- Gambar Iklan FB/IG Starter Promo
-│   │   ├── fb_ig_ad3_tier2_growth_*.jpg                <-- Gambar Iklan FB/IG Growth Team
-│   │   ├── fb_ig_ad4_tier3_enterprise_*.jpg             <-- Gambar Iklan FB/IG Enterprise
-│   │   └── fb_ig_ad5_pilot_trial_*.jpg                 <-- Gambar Iklan FB/IG Pilot Trial
-│   └── Dashboard/
-│       └── client-dashboard.html                       <-- Client Portal v2.0 (5 Tabs Interaktif)
+├── 06_Resources/
+│   ├── Assets/
+│   │   ├── Banners/
+│   │   │   ├── cover_banner_16_9_landscape.jpg / .svg      <-- Banner Header 16:9 Landscape (Teal Wave)
+│   │   │   ├── catalog_card_01_pilot.jpg / .svg            <-- Kad Catalog Package 01 (Navy Slate)
+│   │   │   ├── catalog_card_02_starter.jpg / .svg          <-- Kad Catalog Package 02 (Forest Green)
+│   │   │   ├── catalog_card_03_growth.jpg / .svg           <-- Kad Catalog Package 03 (Warm Bronze)
+│   │   │   ├── catalog_card_04_enterprise.jpg / .svg       <-- Kad Catalog Package 04 (Charcoal)
+│   │   │   ├── fb_ig_ad1_hero_hook_*.jpg                   <-- Gambar Iklan FB/IG Hero Hook
+│   │   │   ├── fb_ig_ad2_tier1_starter_*.jpg               <-- Gambar Iklan FB/IG Starter Promo
+│   │   │   ├── fb_ig_ad3_tier2_growth_*.jpg                <-- Gambar Iklan FB/IG Growth Team
+│   │   │   ├── fb_ig_ad4_tier3_enterprise_*.jpg             <-- Gambar Iklan FB/IG Enterprise
+│   │   │   └── fb_ig_ad5_pilot_trial_*.jpg                 <-- Gambar Iklan FB/IG Pilot Trial
+│   │   └── Dashboard/
+│   │       └── client-dashboard.html                       <-- Client Portal v2.0 (5 Tabs Interaktif)
+│   └── Asset-Catalog.md                                    <-- ZNS Asset Catalog
 │
 ├── .nojekyll                                           <-- Fail Jekyll Override GitHub Pages
 ├── index.html                                          <-- Root Preview File GitHub Pages
@@ -114,5 +116,5 @@ C:\Users\Dell\Documents\Projects ZK Nexus\
 ## 🌐 4. PAUTAN SERVIIS & REPOSITORY LIVE
 
 - **Live Client Portal Cloud**: `https://zkoroci10.github.io/zk-nexus-revenue-ops/`
-- **Local Server Dashboard**: `http://localhost:3777/06_Assets/Dashboard/client-dashboard.html`
+- **Local Server Dashboard**: `http://localhost:3777/06_Resources/Assets/Dashboard/client-dashboard.html`
 - **GitHub Repository**: `https://github.com/Zkoroci10/zk-nexus-revenue-ops.git`

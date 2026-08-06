@@ -1,3 +1,19 @@
+﻿<#
+---
+Title: HTML Structure Checker
+ID: SYS-004
+Type: Script (PowerShell)
+Module: 05_Systems
+BU: ZK Revenue Ops
+Status: Active
+Version: 1.0
+Created: 2026-08-05
+Updated: 2026-08-05
+Owner: Zubair (zubairisa10@gmail.com)
+Related: PRJ-009
+---
+#>
+
 $text = Get-Content '05_Systems\Scripts\ClientPortal.html' -Raw
 $openDiv = ([regex]::Matches($text, '(?i)<div\b[^>]*>')).Count
 $closeDiv = ([regex]::Matches($text, '(?i)</div>')).Count

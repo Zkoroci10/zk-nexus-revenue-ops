@@ -1,3 +1,19 @@
+﻿<#
+---
+Title: ZNS Validator (PowerShell)
+ID: SYS-022
+Type: Script (PowerShell)
+Module: 05_Systems
+BU: ZK Revenue Ops
+Status: Active
+Version: 1.0
+Created: 2026-08-05
+Updated: 2026-08-05
+Owner: Zubair (zubairisa10@gmail.com)
+Related: PRJ-009
+---
+#>
+
 # ZNS Validation PowerShell Script (validate-zns.ps1)
 # Validates metadata frontmatter for Project ZK Nexus
 
@@ -15,25 +31,40 @@ $issues = @()
 $mdFiles = Get-ChildItem -Path $WorkspaceDir -Recurse -Filter "*.md" | Where-Object {
     $_.FullName -notmatch '\\\.git\\' -and 
     $_.FullName -notmatch '\\\.snapshots\\' -and 
-    $_.FullName -notmatch '\\\.agents\\' -and 
-    $_.FullName -notmatch '\\99_Archive\\' -and
-    $_.Name -ne "README.md" -and
-    $_.Name -ne "AI-START-HERE.md"
+    $_.FullName -notmatch '\\\.agents\\'
 }
 
 foreach ($file in $mdFiles) {
     $content = Get-Content -Path $file.FullName -Raw
     $relPath = $file.FullName.Replace($WorkspaceDir, "").TrimStart("\")
 
-    if (-not ($content -like "---*")) {
+    if ([string]::IsNullOrWhiteSpace($content)) {
+        $invalidCount++
+        $issues += [PSCustomObject]@{ File = $relPath; Issue = "File is empty" }
+        continue
+    }
+
+    $trimmedContent = $content.TrimStart()
+    if (-not ($trimmedContent.StartsWith("---"))) {
         $invalidCount++
         $issues += [PSCustomObject]@{ File = $relPath; Issue = "Missing frontmatter header" }
         continue
     }
 
+    # Find the closing '---' of the YAML frontmatter block (after the opening '---')
+    $secondDashIndex = $trimmedContent.IndexOf("---", 3)
+    if ($secondDashIndex -lt 0) {
+        $invalidCount++
+        $issues += [PSCustomObject]@{ File = $relPath; Issue = "Unclosed frontmatter header block" }
+        continue
+    }
+
+    # Extract the frontmatter header substring strictly
+    $headerText = $trimmedContent.Substring(0, $secondDashIndex + 3)
+
     $missing = @()
     foreach ($key in $requiredKeys) {
-        if (-not ($content -match $key)) {
+        if (-not ($headerText -match $key)) {
             $missing += $key
         }
     }
@@ -41,7 +72,7 @@ foreach ($file in $mdFiles) {
     if ($missing.Count -gt 0) {
         $missingStr = $missing -join ", "
         $invalidCount++
-        $issues += [PSCustomObject]@{ File = $relPath; Issue = "Missing metadata keys: $missingStr" }
+        $issues += [PSCustomObject]@{ File = $relPath; Issue = "Missing metadata keys in frontmatter header: $missingStr" }
     } else {
         $validCount++
     }
@@ -58,7 +89,9 @@ if ($issues.Count -gt 0) {
     foreach ($issue in $issues) {
         Write-Host " - [$($issue.File)]: $($issue.Issue)" -ForegroundColor Red
     }
+    exit 1
 } else {
     Write-Host ""
     Write-Host "All workspace files pass ZNS validation standards!" -ForegroundColor Green
+    exit 0
 }

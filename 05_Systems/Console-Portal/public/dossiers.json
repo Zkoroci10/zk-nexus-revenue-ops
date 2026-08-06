@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-08-06T01:48:00Z",
+  "dossiers": [
+    {
+      "id": "LEAD-001",
+      "buyerName": "Muhammad Hariz",
+      "phone": "+60123456789",
+      "projectInterest": "SkyResidence Subang",
+      "loanStatus": "Pre-Approved LPPSA",
+      "viewingTime": "Sabtu 11:00 AM @ Sales Gallery",
+      "assignedAgentId": "REN-001",
+      "assignedAgentName": "Agent Ahmad",
+      "tier": "Hot"
+    },
+    {
+      "id": "LEAD-003",
+      "buyerName": "Tan Wei Lun",
+      "phone": "+60171112233",
+      "projectInterest": "SkyResidence Subang",
+      "loanStatus": "Pre-Approved Bank",
+      "viewingTime": "Ahad 3:00 PM @ Sales Gallery",
+      "assignedAgentId": "REN-002",
+      "assignedAgentName": "Agent Sarah",
+      "tier": "Hot"
+    }
+  ]
+}

@@ -1,3 +1,15 @@
+﻿---
+Title: Digital Products Framework (Archived)
+ID: ARC-003
+Type: Framework
+Module: 99_Archive
+BU: All
+Status: Archived
+Version: 1.0
+Created: 2026-08-03
+Updated: 2026-08-03
+Owner: Human Founder
+---
 # Digital Product Framework
 
 ## Step 1: Identify Problem

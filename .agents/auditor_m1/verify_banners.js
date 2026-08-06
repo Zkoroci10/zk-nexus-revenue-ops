@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const bannerDir = path.join(__dirname, '..', '..', '06_Assets', 'Banners');
+const bannerDir = path.join(__dirname, '..', '..', '06_Resources', 'Assets', 'Banners');
 
 console.log("=== STEP 1: Checking File Existence & Non-Zero Sizes ===");
 const expectedFiles = [

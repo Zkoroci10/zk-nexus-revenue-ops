@@ -1,0 +1,588 @@
+[
+  {
+    "rel": "1c511e99-1290-4c59-be68-631ea7380b1f\\zk_revenue_ops_positioning_and_copy_strategy.md",
+    "size": 13574,
+    "mtime": "2026-07-29T08:47:21.125Z",
+    "headers": [
+      "# ZK Revenue Ops: Enterprise B2B Real Estate CRM & Revenue Operations Positioning Strategy",
+      "## Executive Summary & Market Landscape",
+      "## 1. Enterprise Lead Capacity Messaging (100,000+ to 500,000+ Leads)",
+      "### Market Positioning Analysis",
+      "### Core Pain Points to Address in Copy",
+      "### Strategic Messaging Pillars for ZK Revenue Ops",
+      "### Actionable B2B Copy Recommendations: Lead Capacity",
+      "#### Hero Headlines",
+      "#### Sub-Headlines & Supporting Copy",
+      "#### Enterprise Spec Sheet / Micro-Copy"
+    ],
+    "preview": "# ZK Revenue Ops: Enterprise B2B Real Estate CRM & Revenue Operations Positioning Strategy\n\n---\n\n## Executive Summary & Market Landscape\n\nIn high-volume B2B Real Estate and Revenue Operations, Team Leaders, Agency Directors, and Operations Executives evaluate CRM software through three core operational lenses:\n\n1. **System Performance at Scale**: Will the platform slow down, crash, or freeze when managing 100,000 to 500,000+ lead records, running bulk campaigns, or generating complex pipeline re"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\BATCH_1_OUTREACH_REVIEW_KIT.md",
+    "size": 13033,
+    "mtime": "2026-08-01T19:55:18.059Z",
+    "headers": [
+      "# 📋 BATCH 1 COLD OUTREACH REVIEW KIT (20 REN PROSPECTS)",
+      "## 💬 FORMULA MESEJ 3-PERINGKAT (STRICT FOUNDER CONVERSATIONAL TONE)",
+      "## 📑 SENARAI MESEJ 20 PROSPEK BATCH 1 FOR REVIEW",
+      "### 1. Muhammad Kumar (`REN 66610` · ERA Malaysia · KLCC)",
+      "### 2. Wong Faizal (`REN 60550` · Reapfield Properties · Mont Kiara)",
+      "### 3. Mohd Razif (`REN 79209` · PropNex Realty · Bangsar)",
+      "### 4. Kavitha Rashid (`REN 75643` · Reapfield Properties · Bukit Bintang)",
+      "### 5. Devi Zulkifli (`REN 30878` · IQI Realty · Cheras)",
+      "### 6. Farid Aiman (`REN 49243` · IQI Realty · KLCC)",
+      "### 7. Lim Danial (`REN 89739` · Vivahomes Realty · Mont Kiara)"
+    ],
+    "preview": "# 📋 BATCH 1 COLD OUTREACH REVIEW KIT (20 REN PROSPECTS)\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Tujuan**: Untuk semakan & kelulusan anda secara baris-demi-baris bagi 20 prospek REN pertama (Zon 1 KL Core & Luxury + Subang/PJ) sebelum dipush ke WhatsApp Web.\n\n---\n\n## 💬 FORMULA MESEJ 3-PERINGKAT (STRICT FOUNDER CONVERSATIONAL TONE)\n\n- **Mesej 1 (Hook / Curiosity)**: Menyebut kawasan listing khusus & minta izin secara bersahaja (Zero corporate jargon).\n- **Mesej 2 (Pr"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\FB_IG_ADS_CAMPAIGN_MASTER_KIT.md",
+    "size": 5144,
+    "mtime": "2026-07-30T06:48:53.969Z",
+    "headers": [
+      "# 📢 MASTER KIT CAMPAIGN IKLAN FB & IG — ZK REVENUE OPS",
+      "## 🖼️ 1. IKLAN 1: HERO HOOK (WE QUALIFY THE DSR, YOU CLOSE THE SPA DEALS)",
+      "### 📋 Tetapan Copywriting FB/IG Ads:",
+      "## 🖼️ 2. IKLAN 2: TIER 1 STARTER SOLO REN (PROMOSI LAUNCH RM500)",
+      "### 📋 Tetapan Copywriting FB/IG Ads:",
+      "## 🖼️ 3. IKLAN 3: TIER 2 GROWTH TOP TEAM (RM 3,000 / BULAN)",
+      "### 📋 Tetapan Copywriting FB/IG Ads:",
+      "## 🖼️ 4. IKLAN 4: TIER 3 ENTERPRISE AGENCY (OPEN TO DISCUSSION)",
+      "### 📋 Tetapan Copywriting FB/IG Ads:",
+      "## 🖼️ 5. IKLAN 5: PROGRAM 30-DAY FREE PILOT (RISK-FREE TRIAL)"
+    ],
+    "preview": "# 📢 MASTER KIT CAMPAIGN IKLAN FB & IG — ZK REVENUE OPS\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Hasil Utama**: 5 Grafik Visual High-Impact (Format 1:1 Square - Standard FB/IG Feed & Story) bersama Copywriting Iklan B2B & Tetapan Sasaran FB Ads Manager.\n\n---\n\n## 🖼️ 1. IKLAN 1: HERO HOOK (WE QUALIFY THE DSR, YOU CLOSE THE SPA DEALS)\n\n![FB IG Ad 1 Hero Hook](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/fb_ig_ad1_hero_hook_1785394"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\GEMINI_SPARK_INTEGRATION_BLUEPRINT.md",
+    "size": 2249,
+    "mtime": "2026-08-01T19:48:07.111Z",
+    "headers": [
+      "# ⚡ GEMINI SPARK AI INTEGRATION BLUEPRINT v1.0",
+      "## 🚀 KEUPAYAAN INTEGRASI GEMINI SPARK",
+      "## 🛠️ MODUL INTEGRASI KOD (`gemini_spark_integration.js`)",
+      "## 🌐 INTEGRASI PLATFORM ANTIGRAVITY"
+    ],
+    "preview": "# ⚡ GEMINI SPARK AI INTEGRATION BLUEPRINT v1.0\n\n> **Integrasi Model AI Ultra-Laju (Google Gemini Spark / Gemini 2.0)**: Keupayaan integrasi langsung antara ZK Revenue Ops dengan enjin AI Google Gemini Spark untuk analisis lead WhatsApp, Auto-DSR Loan Qualifier, dan Notion CRM.\n\n---\n\n## 🚀 KEUPAYAAN INTEGRASI GEMINI SPARK\n\n```\n┌──────────────────────────────────────────────────────────────────────────────────────────┐\n│                            INTEGRASI GEMINI SPARK & ZK REVOPS                "
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\PRE_LAUNCH_CHECKLIST_AND_EXECUTION_ROADMAP.md",
+    "size": 2878,
+    "mtime": "2026-07-31T06:57:05.167Z",
+    "headers": [
+      "# 🚀 PRE-LAUNCH CHECKLIST & PANDUAN EXECUTION FIRST BATCH",
+      "## 📋 SENARAI SEMAK KESEDIAAN SISTEM (100% COMPLETED)",
+      "## 🛠️ 2 LANGKAH SEBELUM PELANCARAN FIRST BATCH (PANDUAN HARI INI)",
+      "### LANGKAH 1: SETUP AKAUN WHATSAPP BUSINESS FON (5 MINIT)",
+      "### LANGKAH 2: IMBAS QR CODE WHATSAPP WEB DI BRAVE BROWSER (2 MINIT)",
+      "## ⚡ PELANCARAN FIRST BATCH (BATCH 1: 15-20 REN KL CITY & CENTRAL)",
+      "### 💬 Contoh Mesej 1 (Hook):"
+    ],
+    "preview": "# 🚀 PRE-LAUNCH CHECKLIST & PANDUAN EXECUTION FIRST BATCH\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Status**: Semua Sistem & Aset Visual 100% Ready! Tinggal 2 Langkah Mudah Sebelum Pelancaran Penghantaran First Batch.\n\n---\n\n## 📋 SENARAI SEMAK KESEDIAAN SISTEM (100% COMPLETED)\n\n| Modul / Komponen | Status | Pautan / Lokasi Fail |\n|---|---|---|\n| **Live Client Portal Cloud** | ✅ Ready (Live) | `https://zkoroci10.github.io/zk-nexus-revenue-ops/` |\n| **Data 100 REN Prospe"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\PRICING_TIERS_AND_PILOT_PROGRAM_BLUEPRINT.md",
+    "size": 3759,
+    "mtime": "2026-07-29T09:01:19.883Z",
+    "headers": [
+      "# 💰 STRUKTUR HARGA REAL ESTATE REVOPS v2.0 (MODAL SETUP & DEAL COMMISSION)",
+      "## 📊 MATRIKS HARGA & REVENUE SHARING HARTANAH v2.0",
+      "## 💡 RATIONALISASI MODEL BISNES & MODAL SETUP (CEO DIRECTIVE)",
+      "### 1. 🛡️ Perlindungan Kos Setup (*Setup Cost Absorbed*)",
+      "### 2. 💰 Lead Nurture Handling Commission (% Closed Deal Override)",
+      "### 3. 🥇 Enterprise Tier: Open to Discussion (Custom Quote)",
+      "## 🚀 UNJURAN REVENUE DUAL-STREAM (YURAN BULANAN + DEAL COMMISSION)"
+    ],
+    "preview": "# 💰 STRUKTUR HARGA REAL ESTATE REVOPS v2.0 (MODAL SETUP & DEAL COMMISSION)\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Fokus Utama**: Mengukuhkan model perniagaan B2B Hartanah Malaysia dengan menyerap **Modal Setup**, menetapkan **Harga Promosi Newcomer (Standard RM1,500 $\\rightarrow$ Promosi RM500)**, **Growth Tier (RM3,000)**, **Enterprise (Open for Discussion)**, serta **Perkongsian Komisen Closed Deal (Lead Nurture Override)**.\n\n---\n\n## 📊 MATRIKS HARGA & REVENUE SH"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\prompt_draft.md",
+    "size": 2532,
+    "mtime": "2026-07-30T06:42:41.211Z",
+    "headers": [
+      "# Teamwork Project Prompt — Draft",
+      "## Requirements",
+      "### R1. WhatsApp Business Assets & Catalog Restructure (ZK-WA-BRAND)",
+      "### R2. Dual-Layer Database & Qualification Engine (ZK-DB-ENGINE)",
+      "### R3. Interactive Client Portal UI & Deployment (ZK-PORTAL-UI)",
+      "## Acceptance Criteria",
+      "### Technical & Visual Verification"
+    ],
+    "preview": "# Teamwork Project Prompt — Draft\n\n> Status: Launched\n> Goal: Delegate to teamwork_preview\n\nZK Revenue Ops R&D & Production Rollout: Complete End-to-End Real Estate Sales Delegate (SDR) SaaS Platform, featuring single-tenant Client Portal, automated DSR Loan Qualification Engine, WhatsApp Business Founder Branding, and 100k+ Lead Scale Database Engine for Malaysian REN agents and teams.\n\nWorking directory: C:\\Users\\Dell\\Documents\\Projects ZK Nexus\nIntegrity mode: development\n\n## Requirements\n\n##"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\REN_PROSPECTS_100_AUDIT_REPORT.md",
+    "size": 8164,
+    "mtime": "2026-07-29T04:56:26.306Z",
+    "headers": [
+      "# 📋 LAPORAN AUDIT PENUH: 100 PROSPEK REN TERPELIHARA (BATCH 1)",
+      "## 📊 RINGKASAN STRATIFIKASI BATCH 1 (100 REN)",
+      "## 🗺️ PECAHAN DETAIL PROSPEK MENGIKUT ZON & SUB-MARKET",
+      "### 📍 ZON 1: KL CORE & LUXURY (`Z1-KLC`) — 17 REN Prospects",
+      "### 📍 ZON 2: SELANGOR WEST METRO (`Z2-SELW`) — 17 REN Prospects",
+      "### 📍 ZON 3: GREATER SOUTH CORRIDOR (`Z3-SELS`) — 17 REN Prospects",
+      "### 📍 ZON 4: JOHOR BAHRU & ISKANDAR SEZ (`Z4-JHB`) — 17 REN Prospects",
+      "### 📍 ZON 5: PENANG ISLAND & MAINLAND (`Z5-PNG`) — 16 REN Prospects",
+      "### 📍 ZON 6: EAST MALAYSIA HUBS (`Z6-EMA`) — 16 REN Prospects",
+      "## 🎯 STATUS KESELURUHAN & ACCURACY AUDIT"
+    ],
+    "preview": "# 📋 LAPORAN AUDIT PENUH: 100 PROSPEK REN TERPELIHARA (BATCH 1)\n\n> **Disediakan Khas Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Status Audit**: 100% Terapis & Disemak Latar Belakang (6 Zon Hartanah Malaysia)  \n\n---\n\n## 📊 RINGKASAN STRATIFIKASI BATCH 1 (100 REN)\n\n- **Jumlah Ejen Hartanah**: 100 REN Berdaftar\n- **Pecahan Agensi**: IQI Realty (30), PropNex (20), Reapfield (15), Vivahomes (12), ERA (10), CBD (8), Chester (5)\n- **Pecahan Peranan**: 50 Team Leaders (TL) | 50 Solo Runners\n- "
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\task.md",
+    "size": 1771,
+    "mtime": "2026-07-27T20:29:46.537Z",
+    "headers": [
+      "# Senarai Tugasan Seterusnya — ZK Revenue Ops (Fokus 100%)",
+      "## 🔴 Keutamaan Tinggi (Sesi Seterusnya)",
+      "## 🟡 Keutamaan Sedang",
+      "## 🟢 Penambahbaikan Berterusan",
+      "## 📱 Rujukan Pantas: Alatan WhatsApp Percuma",
+      "## 📊 Stack Operasi ZK Revenue Ops (100% Percuma)"
+    ],
+    "preview": "# Senarai Tugasan Seterusnya — ZK Revenue Ops (Fokus 100%)\n\n> Status: Menunggu pengguna kembali dari rehat\n> Keutamaan: ZK Revenue Ops sahaja (DAE & Future Ventures di-PAUSE)\n\n---\n\n## 🔴 Keutamaan Tinggi (Sesi Seterusnya)\n\n- [ ] **Daftar Resend.com & dapatkan API Key percuma** — Setup emel outreach (100 emel/hari percuma)\n- [ ] **Bina Notion CRM Database** — Pangkalan data leads REN dengan paparan Kanban (Lead → Qualified → Viewing → Closed)\n\n## 🟡 Keutamaan Sedang\n\n- [ ] **Scrape 100 prospek RE"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\WHATSAPP_BUSINESS_BRANDING_BLUEPRINT.md",
+    "size": 2739,
+    "mtime": "2026-07-29T05:33:29.177Z",
+    "headers": [
+      "# 📱 BLUEPRINT SETUP WHATSAPP BUSINESS — FOUNDER ARIFF (100% AUTHENTIC REAL FACE)",
+      "## 1. 📸 Gambar Profil (Profile Picture - FOTO MUKA ASLI ARIFF 100%)",
+      "### Kenapa Foto Asli Ini 100x Lebih Berkesan?",
+      "## 2. 📝 Profil Info & Bio WhatsApp Business",
+      "## 3. 🛍️ Reka Bentuk & Struktur Katalog WhatsApp Business",
+      "### Item Katalog 1: White-Label Client Portal REN",
+      "### Item Katalog 2: DSR Loan Qualification Engine",
+      "### Item Katalog 3: 5,000 Lead Database R&D Engine"
+    ],
+    "preview": "# 📱 BLUEPRINT SETUP WHATSAPP BUSINESS — FOUNDER ARIFF (100% AUTHENTIC REAL FACE)\n\n> **Tujuan**: Membina akaun WhatsApp Business yang berwibawa (*high trust & authority*) menggunakan **muka asli 100% Founder Ariff** tanpa sebarang gangguan AI!\n\n---\n\n## 1. 📸 Gambar Profil (Profile Picture - FOTO MUKA ASLI ARIFF 100%)\n\nKami menggunakan **foto muka asli anda 100% tulen**:\n\n![Founder Ariff Authentic Real Face](file:///C:/Users/Dell/.gemini/antigravity/brain/23fe428c-a4f4-42cd-aeee-061fa6a86f90/arif"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\WHATSAPP_BUSINESS_COVER_CATALOG_MASTER_BLUEPRINT.md",
+    "size": 5574,
+    "mtime": "2026-07-29T08:47:39.602Z",
+    "headers": [
+      "# 🎨 MASTER BLUEPRINT ENTERPRISE WHATSAPP BUSINESS v3.0",
+      "## 📑 ISI KANDUNGAN BLUEPRINT v3.0",
+      "## 1. 🔄 RINGKASAN KOREKSI CRUCIAL (CEO DIRECTIVE)",
+      "### ❌ Isu 1: Klaim Palsu \"PDPA Certified\"",
+      "### ❌ Isu 2: Skala \"5,000 Lead\" Nampak Rookie",
+      "## 2. 🖼️ REKA BENTUK 1: COVER PHOTO WHATSAPP BUSINESS (ENTERPRISE HEADER 16:9)",
+      "### 📋 Salinan Teks Bahasa Pemasaran B2B (Cover Photo):",
+      "## 3. 📦 REKA BENTUK 2: CATALOG BANNER 1 — WHITE-LABEL CLIENT PORTAL",
+      "## 4. 📦 REKA BENTUK 3: CATALOG BANNER 2 — ENJIN AUTO-TAPIS DSR BANK",
+      "## 5. 📦 REKA BENTUK 4: CATALOG BANNER 3 — INFRASTRUKTUR 100,000+ LEAD DATABASE ENGINE"
+    ],
+    "preview": "# 🎨 MASTER BLUEPRINT ENTERPRISE WHATSAPP BUSINESS v3.0\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Status**: Terkemaskini Mengikut Teguran Skala 100,000+ Lead & Pematuhan Undang-Undang PDPA 2010 (Zero Fake Certification Badges)  \n\n---\n\n## 📑 ISI KANDUNGAN BLUEPRINT v3.0\n\n1. **Ringkasan Penambahbaikan & Koreksi (Berdasarkan Feedback CEO)**\n2. **Kajian Pemasaran B2B Scale: Skala 100,000+ Lead Database Engine**\n3. **Pematuhan Undang-Undang PDPA Act 2010 (Tanpa Klaim Palsu "
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\WHATSAPP_BUSINESS_MASTER_KIT.md",
+    "size": 3838,
+    "mtime": "2026-07-29T05:46:14.350Z",
+    "headers": [
+      "# 📱 MASTER KIT SETUP WHATSAPP BUSINESS — FOUNDER ARIFF",
+      "## 🗺️ STEP-BY-STEP CADANGAN PENYELESAIAN (5 LANGKAH)",
+      "## 1. 📸 LANGKAH 1: FOTO PROFIL MUKA ASLI FOUNDER ARIFF",
+      "## 2. 📝 LANGKAH 2: BIO & INFO PROFIL (REVISI 100% ZERO BUZZWORD)",
+      "## 3. 🛍️ LANGKAH 3 & 4: BANNER GRAFIK KATALOG & REVISI PRODUK",
+      "### 📦 ITEM KATALOG 1: Client Portal Khas REN",
+      "### 📦 ITEM KATALOG 2: Enjin Auto-Tapis DSR Bank",
+      "### 📦 ITEM KATALOG 3: Pengurusan 5,000+ Lead Database",
+      "## ⚡ LANGKAH 5: SETTING QUICK REPLIES (/demo)"
+    ],
+    "preview": "# 📱 MASTER KIT SETUP WHATSAPP BUSINESS — FOUNDER ARIFF\n\n> **Outcome Utama**: Membina akaun WhatsApp Business rasmi Founder Ariff daripada **0% ke 100% SIAP** (termasuk Foto Profil, Bio Manusia, Banner Grafik Katalog, & Produk).\n\n---\n\n## 🗺️ STEP-BY-STEP CADANGAN PENYELESAIAN (5 LANGKAH)\n\n```\n[LANGKAH 1] Set Foto Profil Muka Asli Ariff\n     │\n[LANGKAH 2] Copy-Paste Bio Profil Baru (Zero Buzzword)\n     │\n[LANGKAH 3] Muat Naik Banner Grafik Katalog (3 Item Product)\n     │\n[LANGKAH 4] Copy-Paste Pe"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\WHATSAPP_BUSINESS_STRUCTURED_MASTER_KIT.md",
+    "size": 6754,
+    "mtime": "2026-07-30T07:33:36.097Z",
+    "headers": [
+      "# 📱 MASTER BRANDING & FILE DIRECTORY KIT — ZK REVENUE OPS v5.0",
+      "## 🖼️ 1. 16:9 LANDSCAPE COVER PHOTO BANNER (CORPORATE WAVE STYLE)",
+      "## 🛍️ 2. MINIMALIST LUXURY CATALOG CARDS (1:1 SQUARE CARDS)",
+      "## 📂 3. PETA LOKASI FAIL PROJEK TERPERINCI (MANA SEMUA FILE MASUK)",
+      "## 🌐 4. PAUTAN SERVIIS & REPOSITORY LIVE"
+    ],
+    "preview": "# 📱 MASTER BRANDING & FILE DIRECTORY KIT — ZK REVENUE OPS v5.0\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Laporan Dwi-Fokus**:  \n> 1. **16:9 Landscape Cover Banner (Simple Bold Corporate Wave)** mengikut rujukan foto terkini CEO Ariff.  \n> 2. **Peta Lokasi Terperinci Penuh (Full Directory Map)** untuk semua fail projek, sistem, portal, dan aset grafik yang telah dicipta.\n\n---\n\n## 🖼️ 1. 16:9 LANDSCAPE COVER PHOTO BANNER (CORPORATE WAVE STYLE)\n\nBanner memanjang ini dile"
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\ZK_NEXUS_EMPIRE_REVOPS_MASTER_REPORT.md",
+    "size": 3895,
+    "mtime": "2026-07-31T07:19:32.981Z",
+    "headers": [
+      "# 🏆 LAPORAN EXECUTIVE & HARMONISASI APPLE-TO-APPLE ZK REVOPS v2.0",
+      "## 🎯 4 TIANG UTAMA REVOPS (100% APPLE-TO-APPLE ALIGNED)",
+      "## 🖼️ KAD KATALOG MINIMALIST LUXURY (TERKEMASKINI DENGAN DEAD LEAD REVIVAL)",
+      "## 🧹 ANGSAP DAN PEMBERSIHAN KOD KETIGA (CLEANUP REPORT)",
+      "## 🌐 STATUS DEPLOYMENT & CLOUD SYNC"
+    ],
+    "preview": "# 🏆 LAPORAN EXECUTIVE & HARMONISASI APPLE-TO-APPLE ZK REVOPS v2.0\n\n> **Disediakan Untuk**: Brader Ariff (CEO / Founder ZK Nexus & ZK Empire)  \n> **Laporan Penyelarasan Penuh**: Penyelarasan 100% Apple-to-Apple antara Portal Web/Tool, Poster Katalog WhatsApp, Pricing Tiers, & Enjin Utama (**VA Sales SDR + Dead Lead Revival Engine**).\n\n---\n\n## 🎯 4 TIANG UTAMA REVOPS (100% APPLE-TO-APPLE ALIGNED)\n\n```\n┌──────────────────────────────────────────────────────────────────────────────────────────┐\n│  "
+  },
+  {
+    "rel": "23fe428c-a4f4-42cd-aeee-061fa6a86f90\\ZK_REVENUE_OPS_END_TO_END_MASTER_REPORT.md",
+    "size": 9767,
+    "mtime": "2026-07-29T02:17:07.185Z",
+    "headers": [
+      "# 🚀 ZK REVENUE OPS — STRATEGI PRODUCT PLANNING, UI/UX BLUEPRINT & WORKFLOW SDR END-TO-END",
+      "## 📋 ISI KANDUNGAN LAPORAN",
+      "## 1. 🎯 RINGKASAN EKSEKUTIF & VISI SISTEM",
+      "### Masalah Utama Ejen REN di Malaysia:",
+      "### Solusi ZK Revenue Ops:",
+      "## 2. 🏗️ SENI BINA PRODUK END-TO-END & USER JOURNEY",
+      "### User Journey 3 Persona Utama:",
+      "## 3. 🎨 UI/UX DESIGN TOKENS & STANDARD VISUAL CLIENT PORTAL",
+      "### Design System Tokens:",
+      "## 4. ⚡ SDR OPERATIONS PLAYBOOK & AUTOMASI 5,000+ LEAD DATABASE"
+    ],
+    "preview": "# 🚀 ZK REVENUE OPS — STRATEGI PRODUCT PLANNING, UI/UX BLUEPRINT & WORKFLOW SDR END-TO-END\n\n> **Disediakan Khas Untuk**: Brader Ariff (CEO / Founder ZK Nexus)  \n> **Tarikh / Masa**: 29 Julai 2026 | Target 11:00 AM Delivery  \n> **Status**: APPROVED & READY FOR EXECUTION  \n\n---\n\n## 📋 ISI KANDUNGAN LAPORAN\n\n1. **Ringkasan Eksekutif & Visi Sistem (RM 10,000/Bulan MRR)**\n2. **Seni Bina Produk End-to-End & User Journey (3 Persona)**\n3. **UI/UX Design Tokens & Standard Visual Client Portal**\n4. **SDR "
+  },
+  {
+    "rel": "3de85b56-21f0-4f14-89a3-0f3999f6c6cb\\implementation_plan.md",
+    "size": 3912,
+    "mtime": "2026-08-01T22:20:26.246Z",
+    "headers": [
+      "# Master Implementation Plan — Professional Workspace Autopilot & 3-Gap System",
+      "## User Review Required",
+      "## Open Questions",
+      "## Proposed Changes",
+      "### 1. Pillar 1: Daily Autopilot System (`00_Command Center`)",
+      "#### [MODIFY] [Daily-Control-Loop.md](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/00_Command%20Center/Daily-Control-Loop.md)",
+      "#### [NEW] [daily-autopilot.ps1](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/05_Systems/Scripts/daily-autopilot.ps1)",
+      "### 2. Pillar 2: Idea Triage System (`02_Projects`)",
+      "#### [NEW] [Idea-Backlog.md](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/02_Projects/Idea-Backlog.md)",
+      "#### [NEW] [idea-triage-engine.ps1](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/05_Systems/Scripts/idea-triage-engine.ps1)"
+    ],
+    "preview": "# Master Implementation Plan — Professional Workspace Autopilot & 3-Gap System\n\nDesign document establishing a structured, professional, and zero-burden workspace management system built via `antigravity-agent-manager` rules.\n\n---\n\n## User Review Required\n\n> [!IMPORTANT]\n> **No Execution Without Explicit Approval**: As requested, this plan defines the complete scope of work. All actual modifications and cleanups remain on hold until you review this plan and give explicit permission to proceed.\n\n"
+  },
+  {
+    "rel": "3de85b56-21f0-4f14-89a3-0f3999f6c6cb\\walkthrough.md",
+    "size": 2008,
+    "mtime": "2026-08-01T22:21:03.057Z",
+    "headers": [
+      "# Walkthrough — 3 Core Gaps Resolution & Autopilot Execution",
+      "## 1. Deliverables Implemented & Tested",
+      "### Pillar 1: Daily Autopilot System",
+      "### Pillar 2: Idea Triage System",
+      "### Pillar 3: AI-to-Human Proactive Feedback Loop",
+      "## 2. Summary of Operational State"
+    ],
+    "preview": "# Walkthrough — 3 Core Gaps Resolution & Autopilot Execution\n\nWe have fully implemented and executed the **3 Core Gaps Resolution Plan** using the `antigravity-agent-manager` framework.\n\n---\n\n## 1. Deliverables Implemented & Tested\n\n### Pillar 1: Daily Autopilot System\n* **[Daily-Control-Loop.md](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/00_Command%20Center/Daily-Control-Loop.md)** — Upgraded to v2.0 Automated Autopilot Contract.\n* **[daily-autopilot.ps1](file:///c:/Users/Dell/Docume"
+  },
+  {
+    "rel": "435ee332-a864-4437-88f8-f519df28b010\\implementation_plan.md",
+    "size": 4287,
+    "mtime": "2026-07-24T08:49:42.558Z",
+    "headers": [
+      "# Implementation Plan: Workspace Audit & Restructuring for Projects ZK Nexus",
+      "## Goal",
+      "## User Review Required",
+      "## Audit Findings & Issues Identified",
+      "## Proposed Changes",
+      "### Component 1: Root Directory Cleanup & Script Organization",
+      "#### [MODIFY] [README.md](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/README.md)",
+      "#### [MOVE] `*.ps1` and `test*.js` files",
+      "### Component 2: Business Unit Simplification",
+      "#### [MOVE] [Future-Ventures](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/01_Business/Future-Ventures) & [Digital-Products](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/01_Business/Digital-Products)"
+    ],
+    "preview": "# Implementation Plan: Workspace Audit & Restructuring for Projects ZK Nexus\n\n## Goal\nAudit the entire `Projects ZK Nexus` workspace, identify all out-of-place scripts, empty scaffolding folders, and legacy assets, list structural issues, and propose a clean restructuring and archiving plan that focuses 100% on **ZK Revenue Ops (30 REN Exclusive Cap)** as the core revenue engine.\n\n---\n\n## User Review Required\n\n> [!IMPORTANT]\n> **Key Decisions to Confirm:**\n> 1. **Root Script Clean-up**: Move 13 "
+  },
+  {
+    "rel": "435ee332-a864-4437-88f8-f519df28b010\\walkthrough.md",
+    "size": 2850,
+    "mtime": "2026-07-24T08:50:27.045Z",
+    "headers": [
+      "# Walkthrough: Workspace Audit & Restructuring",
+      "## 🛠️ Changes Executed",
+      "### 1. Root Directory Cleanup",
+      "### 2. Business Unit Streamlining",
+      "### 3. Master Index & Registry Verification",
+      "## 🔍 Verification Results"
+    ],
+    "preview": "# Walkthrough: Workspace Audit & Restructuring\n\nAll planned tasks for auditing, cleaning up root folder scripts, archiving inactive business scaffolds, and updating master indices for **Projects ZK Nexus** have been successfully executed and verified.\n\n---\n\n## 🛠️ Changes Executed\n\n### 1. Root Directory Cleanup\nMoved all 13 loose PowerShell & JavaScript test/audit scripts from the root workspace directory into their appropriate system or archive locations:\n* **Active System Scripts** moved to [0"
+  },
+  {
+    "rel": "435ee332-a864-4437-88f8-f519df28b010\\zk_revenue_ops_master_blueprint.md",
+    "size": 15286,
+    "mtime": "2026-07-25T05:55:40.442Z",
+    "headers": [
+      "# ZK Revenue Ops — Master Product Architecture & Technical Specification",
+      "## 1. Product Vision",
+      "### Core Value Proposition",
+      "## 2. Information Architecture",
+      "## 3. Navigation Structure",
+      "## 4. Complete Screen List",
+      "## 5. Detailed Page Breakdown",
+      "### SCR-001: Executive Command Dashboard",
+      "### SCR-003: 360° Lead Detail Workspace",
+      "## 6. Database Design"
+    ],
+    "preview": "# ZK Revenue Ops — Master Product Architecture & Technical Specification\n\n> **Product Vision**: A high-velocity, lightweight Revenue Operations Workspace purpose-built for Malaysian Property Revenue Operators and Real Estate Agencies. Designed with the precision of Linear, the flexibility of Notion, and the intelligence of Attio.\n\n---\n\n## 1. Product Vision\n\nZK Revenue Ops is not another bloated CRM. It is an **execution workspace** built specifically for Revenue Operators (SDRs, VAs, and RevOps "
+  },
+  {
+    "rel": "58e35714-d7a4-449f-a051-62c2aaba283c\\zk_revenue_ops_catalog_analysis.md",
+    "size": 9060,
+    "mtime": "2026-07-29T08:23:33.524Z",
+    "headers": [
+      "# B2B Sales Delegation & Data Security Marketing Analysis",
+      "## Strategy & Copy Blueprints for ZK Revenue Ops (WhatsApp Business Catalog & Cover)",
+      "## Executive Summary",
+      "## Section 1: Data Security Marketing in B2B Sales Agencies",
+      "### Key Messaging Tactics & Positioning",
+      "### Trust-Building Vocabulary & Key Phrases",
+      "## Section 2: Real Estate SaaS & Single-Tenant Lead Privacy Marketing",
+      "### Key Messaging Tactics & Positioning",
+      "### Trust-Building Vocabulary & Key Phrases",
+      "## Section 3: Catchy B2B Headlines & Value Propositions for Sales Delegation"
+    ],
+    "preview": "# B2B Sales Delegation & Data Security Marketing Analysis\n## Strategy & Copy Blueprints for ZK Revenue Ops (WhatsApp Business Catalog & Cover)\n\n---\n\n## Executive Summary\nTop-performing B2B Sales Engagement agencies (**Belkins**, **CIENCE**, **SalesRoads**) and real estate PropTech platforms (**Propertybase**, **Salesforce**) leverage **three core psychological pillars** to convert high-ticket B2B clients and agents:\n1. **Uncompromising Data Security & Compliance**: Converting legal standard requ"
+  },
+  {
+    "rel": "87e8612a-47bf-4578-bd7c-d706b1e22cea\\sdr_workflow_report.md",
+    "size": 5057,
+    "mtime": "2026-07-29T02:17:31.664Z",
+    "headers": [
+      "# SDR Team Workflow Optimization for Real Estate Sales",
+      "## 1. SDR Workflow Best Practices (HubSpot, Salesforce, Close, Outreach, Apollo, Gong)",
+      "## 2. The Ideal SDR Daily Workflow",
+      "## 3. Managing a 5,000+ Lead Database",
+      "## 4. Real Estate Lead Scoring Model (Focus on Malaysia)",
+      "### Behavioral Scoring",
+      "### Demographic & Fit Scoring",
+      "### Source-Based Scoring",
+      "### Malaysian Market Specifics",
+      "## 5. SDR Metrics and KPIs"
+    ],
+    "preview": "# SDR Team Workflow Optimization for Real Estate Sales\n**Platform:** ZK Revenue Ops (SDR SaaS for Real Estate Negotiators in Malaysia)\n\n## 1. SDR Workflow Best Practices (HubSpot, Salesforce, Close, Outreach, Apollo, Gong)\nModern top-tier SDR teams integrate their sales stack to create a unified engine, eliminating manual friction and ensuring bi-directional data flow. \n- **Workflow Compression (Apollo & Outreach):** Consolidate prospecting, sequencing, and CRM logging in one interface. Avoid ex"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\cleanup_summary.md",
+    "size": 1553,
+    "mtime": "2026-07-17T17:38:00.263Z",
+    "headers": [
+      "# PRJ-002 Workspace Cleanup — Final Summary",
+      "## Completed Tasks",
+      "## Validation Summary",
+      "## Project Close-Out"
+    ],
+    "preview": "# PRJ-002 Workspace Cleanup — Final Summary\n\n---\n\n| Field | Value |\n|-------|-------|\n| Project ID | PRJ-002 |\n| Project Name | Workspace Cleanup |\n| Type | Workspace Optimization |\n| Owner | AI-002 ZK Operator |\n| Supervised By | Human Founder |\n| Start Date | 2026-07-18 |\n| Completion Date | 2026-07-18 |\n| Status | **Completed** |\n\n---\n\n## Completed Tasks\n\n1. **Legacy Workspace Archival**\n   - Moved the legacy `ZK Nexus` folder containing duplicate assets and nested `.git` to `99_Archive/ZK-Ne"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\implementation_plan.md",
+    "size": 7511,
+    "mtime": "2026-07-23T10:44:32.725Z",
+    "headers": [
+      "# 🚀 Master Rework Plan: End-to-End System Alignment (Master SOP to Department Management)",
+      "## 💡 Pendapat & Pendekatan Strategik",
+      "## 🏛️ 5 Teras Utama Rework End-to-End",
+      "## 📋 Perincian Rework Mengikut Modul",
+      "### 1. Teras 1: Master SOP & Script Toolkit Live Sync Engine (`syncToolkitFromDoc`)",
+      "### 2. Teras 2: Zero-Friction Client Portal (`ClientPortal.html`)",
+      "### 3. Teras 3: Multi-Department Workflow System (Operator Console)",
+      "#### 🔹 Jabatan 1: SDR REN Prospecting & Outreach",
+      "#### 🔹 Jabatan 2: War Room Lead Triage & Bulk Data Management",
+      "#### 🔹 Jabatan 3: Sales Closing Desk & DSR Calculator Engine"
+    ],
+    "preview": "# 🚀 Master Rework Plan: End-to-End System Alignment (Master SOP to Department Management)\n\nPelan ini menyusun semula (*rework*) keseluruhan sistem **ZK Revenue Operations Engine** secara menyeluruh dari Master SOP, penyelarasan Script Toolkit, pengurusan pelbagai jabatan (*multi-department*), sehingga ke pengesahan Client Portal tanpa geseran (*Zero-Friction Client Portal*).\n\n---\n\n## 💡 Pendapat & Pendekatan Strategik\n\n> [!IMPORTANT]\n> **Pendapat & Pendirian:**\n> Cadangan anda untuk membuat **P"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\master_sop_v3.md",
+    "size": 8411,
+    "mtime": "2026-07-23T12:01:29.130Z",
+    "headers": [
+      "# 📖 ZK REVENUE OPERATIONS — MASTER SOP V3.0",
+      "### *\"Kami tidak mencari orang yang sudah pro. Kami mencari insan yang dahagakan perubahan dan bersedia mengubah hidup mereka menerusi penguasaan Operasi Hasil.\"*",
+      "## 🏛️ BAB 1: MANIFESTO ZK REVOPS & MINDA KEJAYAAN",
+      "### 1.1 Siapa Kita & Mengapa Kita Di Sini?",
+      "## 🔄 BAB 2: PENGURUSAN DATA 20,000 PROSPEK & RITUAL TRIAGE HARIAN",
+      "### 2.1 Alur Kerja Triage Harian (Langkah-demi-Langkah):",
+      "## 💬 BAB 3: MATRIKS SKRIP WHATSAPP & SENTUHAN EMPATI MANUSIA",
+      "### 📜 3.1 Skrip SOP Utama (Script Matrix)",
+      "#### ⚡ SOP-01: First Touch — Soft Human Hook",
+      "#### 📄 SOP-02: Penghantaran Katalog Digital & Pelan Lantai"
+    ],
+    "preview": "# 📖 ZK REVENUE OPERATIONS — MASTER SOP V3.0\n### *\"Kami tidak mencari orang yang sudah pro. Kami mencari insan yang dahagakan perubahan dan bersedia mengubah hidup mereka menerusi penguasaan Operasi Hasil.\"*\n\n---\n\n## 🏛️ BAB 1: MANIFESTO ZK REVOPS & MINDA KEJAYAAN\n\n### 1.1 Siapa Kita & Mengapa Kita Di Sini?\nSelamat datang ke pasukan **ZK Revenue Operations**. Di sini, anda bukan sekadar seorang penyunting data atau penghantar mesej automatik. Anda adalah seorang **Revenue Operator** — kunci utam"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\master_system_blueprint.md",
+    "size": 8089,
+    "mtime": "2026-07-22T10:01:24.763Z",
+    "headers": [
+      "# Cetak Biru Master & Spesifikasi Penyeluruh — ZK Revenue Ops Engine",
+      "## 1. Pangkalan Data Google Sheet (Database Storage Layer)",
+      "### Tab 1: `War Room` (Pangkalan Data Utama Prospek / Buyers)",
+      "### Tab 2: `SDR Prospects` (Pangkalan Data Prospek REN / Ejen Baru)",
+      "### Tab 3: `Ghost Revival` (Prospek Menyepi Untuk Dihidupkan Semula)",
+      "### Tab 4: `Clients` (Direktori Klien & Kunci Token Portal)",
+      "### Tab 5: `Toolkit` (Pustaka Skrip Jualan SDR)",
+      "### Tab 6: `System Log` (Jalur Audit Keselamatan)",
+      "## 2. Enjin Backend Apps Script (`gas-code-optimized.js`)",
+      "## 3. Frontend Operator Console (`OperatorConsole.html`)"
+    ],
+    "preview": "# Cetak Biru Master & Spesifikasi Penyeluruh — ZK Revenue Ops Engine\n\nDokumen ini mengandungi **pembedahan seni bina 360-darjah**, struktur *pangkalan data Google Sheet*, penjelasan *Backend Apps Script*, serta kedua-dua *Frontend (Operator Console & Client Portal Ultra-VIP)*.\n\n---\n\n## 1. Pangkalan Data Google Sheet (Database Storage Layer)\n\nSistem ZK Revenue Ops memerlukan **1 Google Spreadsheet** yang mengandungi **6 Helaian (Tabs)** utama dengan struktur lajur (*columns*) yang tepat seperti d"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\migration_summary.md",
+    "size": 4166,
+    "mtime": "2026-07-18T09:11:49.092Z",
+    "headers": [
+      "# Migration & Workspace Organization Summary",
+      "## 1. ZK Revenue Ops Reorganization (`01_Business/ZK-Revenue-Ops/`)",
+      "## 2. Legacy Migration (`99_Archive/ZK-Nexus-Legacy/` ➔ Active Workspace)",
+      "## 3. Registries & Link Integrity",
+      "## 4. Final Verification Check"
+    ],
+    "preview": "# Migration & Workspace Organization Summary\n\nWe have successfully migrated all outstanding legacy files and organized the scattered documents under ZK Revenue Ops (`01_Business/ZK-Revenue-Ops/`) into their proper subfolders.\n\n---\n\n## 1. ZK Revenue Ops Reorganization (`01_Business/ZK-Revenue-Ops/`)\nThe 20 files previously flat-dumped in the root folder have been moved into ZNS-compliant subfolders:\n\n- **`Strategy/` (Planning & Context):**\n  - `business-context.md`\n  - `client-profile.md`\n  - `cu"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\promotion_checklist.md",
+    "size": 3372,
+    "mtime": "2026-07-17T02:18:13.881Z",
+    "headers": [
+      "# PRJ-001 Promotion Checklist",
+      "## Step 6A — Promotion Preparation",
+      "## Group A: Business Markdown Documents",
+      "## Group B: Business Text & HTML Documents",
+      "## Group C: Business Binary Assets",
+      "## Group D: System Scripts",
+      "## Promotion Sequence",
+      "## Pre-Promotion Checks"
+    ],
+    "preview": "# PRJ-001 Promotion Checklist\n## Step 6A — Promotion Preparation\n\n**Total Assets in drafts/:** 24 files  \n**Promotion Target:** Step 6B → `01_Business/ZK-Revenue-Ops/` | Step 6C → `05_Systems/Scripts/`\n\n---\n\n## Group A: Business Markdown Documents\n*Destination: `01_Business/ZK-Revenue-Ops/`*\n*Action on promotion: Status → Active, assign BUS-ID*\n\n| # | Draft Filename | Type | Assign ID |\n|---|---|---|---|\n| 1 | `business-context.md` | Markdown | BUS-001 |\n| 2 | `client-profile.md` | Markdown | BU"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\readiness_summary.md",
+    "size": 2788,
+    "mtime": "2026-07-17T17:46:48.475Z",
+    "headers": [
+      "# PRJ-003 ZK Revenue Ops Business Readiness — Final Summary",
+      "## Deliverables Completed",
+      "## Workspace Validation",
+      "## Next Project Roadmap"
+    ],
+    "preview": "# PRJ-003 ZK Revenue Ops Business Readiness — Final Summary\n\n---\n\n| Field | Value |\n|-------|-------|\n| Project ID | PRJ-003 |\n| Project Name | ZK Revenue Ops Business Readiness |\n| Type | Business Enablement |\n| Owner | AI-002 ZK Operator |\n| Supervised By | Human Founder |\n| Start Date | 2026-07-18 |\n| Completion Date | 2026-07-18 |\n| Status | **Completed** |\n\n---\n\n## Deliverables Completed\n\n1. **Service Catalog**\n   - Created [service-catalog.md](file:///c:/Users/Dell/Documents/Projects%20ZK%"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\realtime_stresstest_and_teamwork_plan.md",
+    "size": 6757,
+    "mtime": "2026-07-23T10:09:32.763Z",
+    "headers": [
+      "# 🚀 Pelan Operasi Real-Time: Stress Test, Live Recording Demo & Pembahagian Pasukan (Coder vs Sales)",
+      "## 1. Analisis & Jawapan Isu \"Tak Boleh Tekan / Beku\" (Root Cause & Fix Summary)",
+      "### ❓ Punca Utama Mengapa Butang Tidak Boleh Ditekan Sebelum Ini:",
+      "### 🛠️ Apa Yang Telah Dibetulkan & Diganti:",
+      "## 2. /goal Scenarios: Stress Testing & Live Record Demo Matrix",
+      "### 📋 Senarai Senario Ujian Beban (Stress Test Scenarios):",
+      "## 3. /teamwork-preview Pembahagian Tugas (Team Coder vs Sales Department)",
+      "### 💻 Pasukan Coder (Technical & Ops Team)",
+      "### 💼 Pasukan Sales & Testing (Business & QA Department)",
+      "## 4. Pelan Tindakan & Pengesahan"
+    ],
+    "preview": "# 🚀 Pelan Operasi Real-Time: Stress Test, Live Recording Demo & Pembahagian Pasukan (Coder vs Sales)\n\n---\n\n## 1. Analisis & Jawapan Isu \"Tak Boleh Tekan / Beku\" (Root Cause & Fix Summary)\n\n### ❓ Punca Utama Mengapa Butang Tidak Boleh Ditekan Sebelum Ini:\n1. **Unclosed HTML Layout Mismatch (`<div>` tags unbalanced):**  \n   Tag HTML yang tidak ditutup dengan betul menyebabkan *layout tree* browser rosak. Elemen modal/backdrop halimunan melindung (*overlay*) di atas butang-butang utama dengan `z-i"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\research_notes.md",
+    "size": 3357,
+    "mtime": "2026-07-19T12:51:58.416Z",
+    "headers": [
+      "# Research Notes — Systems Limits & WhatsApp Gateways",
+      "## 1. Google Apps Script Quotas & Limits Validation",
+      "## 2. WhatsApp API Gateway Options in Malaysia",
+      "### Option A: Evolution API (Recommended for 100% Zero Message Cost)",
+      "### Option B: Wassenger / Waapi.co (Recommended for Instant Setup)",
+      "### Option C: Meta Cloud API (Official)",
+      "## 3. How to Setup the API Gateway in GAS"
+    ],
+    "preview": "# Research Notes — Systems Limits & WhatsApp Gateways\n\nThis document details the performance quotas of Google Apps Script (GAS) and evaluates the best WhatsApp API integration options for Malaysia to ensure a smooth Pilot trial.\n\n---\n\n## 1. Google Apps Script Quotas & Limits Validation\n\nFor a target capacity of **5 active REN clients** and **up to 10,000 leads**, we validated our headless Apps Script architecture against Google's official quotas:\n\n| Quota Category | Daily Limit (Free Gmail) | Da"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\task.md",
+    "size": 804,
+    "mtime": "2026-07-22T11:09:19.360Z",
+    "headers": [
+      "# Tugasan System Integration: Bulk CSV Import/Export & Offline Mock Mode"
+    ],
+    "preview": "# Tugasan System Integration: Bulk CSV Import/Export & Offline Mock Mode\n\n- `[/]` 1. Bulk CSV Batch Import & Export Engine (20, 50, 100+ Leads)\n  - `[ ]` Modal Bulk CSV Import dengan Drag-and-Drop & Pasting di OperatorConsole.html\n  - `[ ]` Jadual Pra-Tonton (Table Preview) sebelum pengesahan import\n  - `[ ]` Butang 1-Click Export CSV Database\n  - `[ ]` Backend function `importLeadsFromCSV` batch handling di gas-code-optimized.js\n\n- `[/]` 2. Offline Mock Demo Testing Mode (Client Portal & Operat"
+  },
+  {
+    "rel": "b2e73095-31c3-4336-8b5b-63e52ec5e534\\walkthrough.md",
+    "size": 4281,
+    "mtime": "2026-07-23T11:01:04.481Z",
+    "headers": [
+      "# 🏛️ Walkthrough: Master Rework & Full Integration (Project 01 — Project 04)",
+      "## 🌟 Ringkasan Pencapaian Utama",
+      "## 🛠️ Kod & Fail Yang Dikemas Kini",
+      "#### 1. [gas-code-optimized.js](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/05_Systems/Scripts/gas-code-optimized.js)",
+      "#### 2. [OperatorConsole.html](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/05_Systems/Scripts/OperatorConsole.html)",
+      "#### 3. [ClientPortal.html](file:///c:/Users/Dell/Documents/Projects%20ZK%20Nexus/05_Systems/Scripts/ClientPortal.html)",
+      "## 📤 Status Deployment Public Live",
+      "# Clasp Push:",
+      "# Redeploy Target Endpoints:",
+      "## 🧪 Keputusan Pengesahan Ujian Sistem (Validation Benchmark)"
+    ],
+    "preview": "# 🏛️ Walkthrough: Master Rework & Full Integration (Project 01 — Project 04)\n\nDokumen ini merangkumkan keseluruhan kerja penambahbaikan, penyelarasan strategi, dan pembangunan sistem yang telah diselesaikan untuk **ZK Revenue Operations Engine** mengikut penanda aras perniagaan anda.\n\n---\n\n## 🌟 Ringkasan Pencapaian Utama\n\n1. **Integrasi Google Doc Master SOP & Script Toolkit**:\n   - Menghubungkan Google Doc **Master SOP** (`1wT3OAsDg05GcqZgA9vf1drUD7JEVGM2__SqYXzIa0xg`) dan **Script Toolkit** "
+  },
+  {
+    "rel": "b868e254-2307-47f9-9b64-d83b087d495f\\prompt_draft.md",
+    "size": 2864,
+    "mtime": "2026-08-02T23:31:31.635Z",
+    "headers": [
+      "# Teamwork Project Prompt — Draft",
+      "## Requirements",
+      "### R1. Complete Workspace Inventory & Version Standard Enforcement (ZNS-VC)",
+      "### R2. Project Lifecycle Cleanup & Archiving",
+      "### R3. Structural Consolidation & Duplicate Resolution",
+      "### R4. Antigravity Brain Context Extraction & Logging",
+      "### R5. Staging Approval Matrix Generation",
+      "## Acceptance Criteria",
+      "### Audit & System Integrity"
+    ],
+    "preview": "# Teamwork Project Prompt — Draft\n\n> Status: Ready for launch — awaiting execution\n> Goal: Comprehensive audit of ZK Nexus & Antigravity logs → Version Tagging & System Cleanup → Approval Matrix\n\nDeep audit and restructuring of all files in **ZK Nexus** (`c:\\Users\\Dell\\Documents\\Projects ZK Nexus`) and **Antigravity Brain Logs** (`C:\\Users\\Dell\\.gemini\\antigravity\\brain`).\n\nWorking directory: `c:\\Users\\Dell\\Documents\\Projects ZK Nexus`\nIntegrity mode: development\n\n## Requirements\n\n### R1. Comple"
+  },
+  {
+    "rel": "db5ac766-a349-4973-b136-8a3b7fc8bf12\\implementation_plan.md",
+    "size": 1602,
+    "mtime": "2026-08-01T17:26:02.133Z",
+    "headers": [
+      "# 🚀 Pelan Pelaksanaan Pelancaran ZK Revenue Ops (Sasaran: 4 Ogos 2026)",
+      "## 📌 Ringkasan Matlamat",
+      "## 🏗️ Komponen Utama Pelancaran",
+      "### 1. [NEW] [zk_revenue_launch.js](file:///C:/Users/Dell/.gemini/antigravity/scratch/ai-worker-system/src/tools/zk_revenue_launch.js)",
+      "### 2. [MODIFY] [dashboard_server.js](file:///C:/Users/Dell/.gemini/antigravity/scratch/ai-worker-system/src/dashboard_server.js)",
+      "### 3. [MODIFY] [index.html](file:///C:/Users/Dell/.gemini/antigravity/scratch/ai-worker-system/dashboard/index.html)",
+      "### 4. [MODIFY] [index.js](file:///C:/Users/Dell/.gemini/antigravity/scratch/ai-worker-system/src/index.js)",
+      "## 🧪 Pelan Verifikasi"
+    ],
+    "preview": "# 🚀 Pelan Pelaksanaan Pelancaran ZK Revenue Ops (Sasaran: 4 Ogos 2026)\n\n## 📌 Ringkasan Matlamat\nMembina dan mempersiapkan keseluruhan persekitaran automasi, dokumen jualan, corong pemasaran WhatsApp, dan pangkalan data prospek **ZK Revenue Ops** supaya sedia dilancarkan (*Go-Live*) pada **4 Ogos 2026**.\n\n---\n\n## 🏗️ Komponen Utama Pelancaran\n\n### 1. [NEW] [zk_revenue_launch.js](file:///C:/Users/Dell/.gemini/antigravity/scratch/ai-worker-system/src/tools/zk_revenue_launch.js)\nEnjin automasi pel"
+  },
+  {
+    "rel": "db5ac766-a349-4973-b136-8a3b7fc8bf12\\prompt_draft.md",
+    "size": 1509,
+    "mtime": "2026-07-31T15:32:33.842Z",
+    "headers": [
+      "# Teamwork Project Prompt — Draft",
+      "## Requirements",
+      "### R1. Hybrid Dual-Engine Optimization (Groq + Gemini)",
+      "### R2. Automated Fault Tolerance & Fallback",
+      "### R3. Interactive Telegram & Dashboard Control",
+      "## Acceptance Criteria",
+      "### Automated Verification"
+    ],
+    "preview": "# Teamwork Project Prompt — Draft\n\n> Status: Launched\n> Goal: Craft prompt → get user approval → delegate to teamwork_preview\n\nEnhance the **Putra Enzo Node.js Personal Assistant Software** codebase (`C:\\Users\\Dell\\.gemini\\antigravity\\scratch\\ai-worker-system`) to leverage a hybrid **Groq AI (Llama-3.3 70B)** + **Gemini 3.6 Flash** dual-engine architecture for ultra-fast task execution, automated voice processing, PDF report generation, and robust personal task management.\n\nWorking directory: `C"
+  },
+  {
+    "rel": "db5ac766-a349-4973-b136-8a3b7fc8bf12\\walkthrough.md",
+    "size": 1714,
+    "mtime": "2026-08-01T17:26:59.235Z",
+    "headers": [
+      "# 🛠️ Walkthrough: Pelancaran ZK Revenue Ops (4 Ogos 2026)",
+      "## 📌 Ringkasan Status Pelancaran",
+      "## ⚡ Ciri-ciri Pelancaran Utama yang Dibina",
+      "### 1. Enjin Automasi Pelancaran (`src/tools/zk_revenue_launch.js`)",
+      "### 2. J.A.R.V.I.S. Web Launch Control Center (`http://localhost:3000`)",
+      "### 3. Perintah Telegram Putra Enzo:",
+      "## 🧪 Keputusan Ujian Verifikasi"
+    ],
+    "preview": "# 🛠️ Walkthrough: Pelancaran ZK Revenue Ops (4 Ogos 2026)\n\n## 📌 Ringkasan Status Pelancaran\nSistem automasi pelancaran **ZK Revenue Ops** telah sedia 100% dan berada dalam keadaan aktif 24/7 di bawah kawalan **Putra Enzo**.\n\n* 📅 **Tarikh Pelancaran**: **4 Ogos 2026**\n* 💯 **Skor Kesediaan (Launch Readiness Score)**: **100% (READY FOR LAUNCH)**\n* 👥 **Prospek TERSEDIA**: **100 Ejen Hartanah (REN) Audited Leads**\n* 🌐 **Web Launch Center**: **[http://localhost:3000](http://localhost:3000)**\n\n--"
+  }
+]

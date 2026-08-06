@@ -139,7 +139,7 @@ const server = http.createServer((req, res) => {
     }
     else {
         // Serve dashboard HTML
-        const htmlPath = path.join(__dirname, '..', '..', '06_Assets', 'Dashboard', 'client-dashboard.html');
+        const htmlPath = path.join(__dirname, '..', '..', '06_Resources', 'Assets', 'Dashboard', 'client-dashboard.html');
         if (fs.existsSync(htmlPath)) {
             res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
             res.end(fs.readFileSync(htmlPath, 'utf8'));

@@ -1,4 +1,20 @@
-﻿$content = Get-Content -Path '05_Systems\Scripts\operator-console.html' -Raw -Encoding utf8
+﻿<#
+---
+Title: Triage Injector
+ID: SYS-012
+Type: Script (PowerShell)
+Module: 05_Systems
+BU: ZK Revenue Ops
+Status: Active
+Version: 1.0
+Created: 2026-08-05
+Updated: 2026-08-05
+Owner: Zubair (zubairisa10@gmail.com)
+Related: PRJ-009
+---
+#>
+
+$content = Get-Content -Path '05_Systems\Scripts\operator-console.html' -Raw -Encoding utf8
 
 # Add Triage button to War Room toolbar
 $oldWarRoomNav = '<button class="btn" id="btn-view-table" onclick="setWarRoomView\(''table''\)" style="background:var\(--bg-elevated\); border:none; box-shadow:0 2px 4px rgba\(0,0,0,0\.05\);">Table</button>\s*<button class="btn btn-ghost" id="btn-view-kanban" onclick="setWarRoomView\(''kanban''\)" style="border:none;">Kanban</button>'

@@ -1,3 +1,19 @@
+﻿<#
+---
+Title: ZNS Frontmatter Fixer
+ID: SYS-027
+Type: Script (PowerShell)
+Module: 05_Systems
+BU: ZK Revenue Ops
+Status: Active
+Version: 1.0
+Created: 2026-08-05
+Updated: 2026-08-05
+Owner: Zubair (zubairisa10@gmail.com)
+Related: PRJ-009
+---
+#>
+
 # M3 Remediation: Auto-Fix ZNS Frontmatter Headers
 # Adds ZNS-compliant frontmatter to all 17 non-compliant files
 

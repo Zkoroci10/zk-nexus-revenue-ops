@@ -1,3 +1,19 @@
+﻿/**
+ * ---
+ * Title: Empire References Search Tool
+ * ID: SYS-014
+ * Type: Script (Node.js)
+ * Module: 05_Systems
+ * BU: ZK Revenue Ops
+ * Status: Active
+ * Version: 1.0
+ * Created: 2026-08-05
+ * Updated: 2026-08-05
+ * Owner: Zubair (zubairisa10@gmail.com)
+ * Related: PRJ-009
+ * ---
+ */
+
 const fs = require('fs');
 const path = require('path');
 

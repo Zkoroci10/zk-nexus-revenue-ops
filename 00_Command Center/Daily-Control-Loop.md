@@ -1,137 +1,59 @@
 ---
-Title: ZK Nexus Daily Control Loop
+Title: ZK Nexus Daily Control Loop & Autopilot Engine
 ID: RUL-005
-Type: Ritual
+Type: Ritual & Autopilot Contract
 Module: 00_Command Center
 BU: All
 Status: Active
-Version: 1
+Version: 2.0
 Created: 2025-07-16
-Updated: 2025-07-16
-Owner: Human Founder
-Related: IDX-001, IDX-003
+Updated: 2026-08-02
+Owner: Human Founder & AI AGY System
+Related: IDX-001, IDX-003, RUL-004
 ---
 
-# ZK Nexus Daily Control Loop
+# ZK Nexus Daily Control Loop & Autopilot Contract
 
-**Purpose:** A 5-minute morning ritual to orient the Human Founder and identify priorities.
-
-**Frequency:** Every morning, before any deep work.
-
-**Duration:** 5 minutes maximum.
+> Automated Daily Operations Contract for ZK Nexus Workspace
 
 ---
 
-## The 5 Questions
+## 1. Executive Summary & Autopilot Mandate
+The **Daily Control Loop** is fully automated by the AI Autopilot Engine (`05_Systems/Scripts/daily-autopilot.ps1`). 
 
-### 1. What requires attention?
-
-**Check:**
-- 00_Command Center/Module-Health-Report.md
-- 08_Logs/Decision-Logs/ (for pending decisions)
-- 08_Logs/AI-Logs/ (for AI-reported issues)
-
-**Action:** Flag any module with non-green health status.
+The system runs twice daily without requiring manual user execution:
+* **Morning Run (8:00 AM)**: Performs workspace health scan, checks client follow-ups, updates project status, generates `00_Command Center/AI-Suggestions.md`, and dispatches the morning summary.
+* **Evening Run (6:00 PM)**: Conducts daily log closure, archives completed tasks, updates activity metrics, and prepares the next day's backlog.
 
 ---
 
-### 2. What client actions exist?
+## 2. Automated 5-Phase Check
 
-**Check:**
-- 01_Business/Business-Registry.md (Client Directory)
-- 01_Business/ZK-Revenue-Ops/Client-Delivery/ (for active clients)
-- 02_Projects/Active-Projects-List.md (Client projects)
+### Phase 1: Module Health & System Audit
+* Automatically scans all 10 workspace modules (`00_Command Center` to `99_Archive`).
+* Validates ZNS metadata integrity and reports broken links in `00_Command Center/Module-Health-Report.md`.
 
-**Action:** List all clients requiring follow-up today.
+### Phase 2: Client & Revenue Actions
+* Scans `01_Business/ZK-Revenue-Ops/` for active clients requiring follow-ups or dossier deliveries.
 
-| Client | Action Needed | Deadline | Owner |
-|--------|--------------|----------|-------|
-| | | | |
+### Phase 3: Active Projects Progress
+* Scans `02_Projects/Active-Projects-List.md` and updates progress counters for active `PRJ` projects.
 
----
+### Phase 4: Pending Decisions & Triage
+* Scans `08_Logs/Decision-Logs/` and `02_Projects/Idea-Backlog.md` for items requiring Human Founder approval.
 
-### 3. What projects move today?
-
-**Check:**
-- 02_Projects/Active-Projects-List.md
-- 02_Projects/Active/ (for project folders)
-
-**Action:** Identify which active projects have tasks due today.
-
-| Project ID | Task | Owner | Status |
-|------------|------|-------|--------|
-| | | | |
+### Phase 5: Proactive AI Suggestions
+* Publishes daily optimization tips, bottleneck alerts, and high-impact suggestions to `00_Command Center/AI-Suggestions.md`.
 
 ---
 
-### 4. What decisions are pending?
+## 3. Autopilot Schedule & Watcher Integration
 
-**Check:**
-- 08_Logs/Decision-Logs/ (for decisions awaiting approval)
-- 02_Projects/Active/ (for staged deliverables awaiting review)
-
-**Action:** List decisions that need Human Founder input today.
-
-| Decision | Context | Blocking | Due |
-|----------|---------|----------|-----|
-| | | | |
-
----
-
-### 5. What metrics matter?
-
-**Check:**
-- 01_Business/ZK-Revenue-Ops/Sales/ (pipeline)
-- 01_Business/ZK-Revenue-Ops/Finance/ (cash position)
-- 00_Command Center/Module-Health-Report.md
-
-**Action:** Note the 1–3 metrics that matter most today.
-
-| Metric | Current | Target | Trend |
-|--------|---------|--------|-------|
-| | | | |
-
----
-
-## Daily Control Loop Template
-
-**Date:** ___________
-
-### 1. Requires Attention
-- [ ] Module health: All green / ___________ flagged
-- [ ] Pending decisions: ___________
-- [ ] AI-reported issues: ___________
-
-### 2. Client Actions
-| Client | Action | Deadline |
-|--------|--------|----------|
-| | | |
-
-### 3. Projects Moving Today
-| Project | Task | Owner |
-|---------|------|-------|
-| | | |
-
-### 4. Pending Decisions
-| Decision | Context | Blocking |
-|----------|---------|----------|
-| | | |
-
-### 5. Metrics That Matter
-| Metric | Current | Target |
-|--------|---------|--------|
-| | | |
-
----
-
-## Weekly Review Extension
-
-Every Friday, spend 15 minutes on:
-- Review completed projects → 99_Archive
-- Review pending decisions → Make or delegate
-- Update Research Backlog
-- Check Archive growth rate
-- Plan next week's priorities
+| Trigger | Schedule | Execution Script | Primary Target Output |
+|---------|----------|------------------|----------------------|
+| **Morning Autopilot** | 08:00 AM | `05_Systems/Scripts/daily-autopilot.ps1` | `AI-Suggestions.md` & Morning Pulse Email |
+| **Evening Autopilot** | 06:00 PM | `05_Systems/Scripts/daily-autopilot.ps1` | Daily Log Closure & Evening Summary |
+| **Sunday Review** | Sunday 8:00 PM | `05_Systems/Scripts/sunday-idea-review.ps1` | `Idea-Backlog.md` Triage & Draft PRJs |
 
 ---
 
@@ -139,4 +61,5 @@ Every Friday, spend 15 minutes on:
 
 | Date | Actor | Change |
 |------|-------|--------|
-| 2025-07-16 | Human Founder | Created Daily Control Loop ritual |
+| 2025-07-16 | Human Founder | Created initial Daily Control Loop ritual |
+| 2026-08-02 | AI AGY System | Upgraded to v2.0 Automated Autopilot Contract |

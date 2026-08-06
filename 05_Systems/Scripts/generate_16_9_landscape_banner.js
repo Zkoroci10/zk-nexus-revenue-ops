@@ -1,8 +1,24 @@
+﻿/**
+ * ---
+ * Title: Landscape Banner Generator
+ * ID: SYS-007
+ * Type: Script (Node.js)
+ * Module: 05_Systems
+ * BU: ZK Revenue Ops
+ * Status: Active
+ * Version: 1.0
+ * Created: 2026-08-05
+ * Updated: 2026-08-05
+ * Owner: Zubair (zubairisa10@gmail.com)
+ * Related: PRJ-009
+ * ---
+ */
+
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const targetDir = path.join(__dirname, '..', '..', '06_Assets', 'Banners');
+const targetDir = path.join(__dirname, '..', '..', '06_Resources', 'Assets', 'Banners');
 if (!fs.existsSync(targetDir)) {
   fs.mkdirSync(targetDir, { recursive: true });
 }

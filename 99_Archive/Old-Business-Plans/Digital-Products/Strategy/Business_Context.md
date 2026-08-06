@@ -1,3 +1,15 @@
+﻿---
+Title: Digital Products Business Context (Archived)
+ID: ARC-001
+Type: Strategy
+Module: 99_Archive
+BU: All
+Status: Archived
+Version: 1.0
+Created: 2026-08-03
+Updated: 2026-08-03
+Owner: Human Founder
+---
 # Digital Products Business Context
 
 ## Project

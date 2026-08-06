@@ -3,1196 +3,557 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Portal — ZK Revenue Ops</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        :root {
-            --bg: #0d1117;
-            --surface: #161b22;
-            --surface-hover: #21262d;
-            --border: #30363d;
-            --border-hover: #8b949e;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --text-subtle: #6e7681;
-            --accent-green: #238636;
-            --accent-green-bg: rgba(35,134,54,0.15);
-            --accent-amber: #d29922;
-            --accent-amber-bg: rgba(210,153,34,0.15);
-            --accent-rose: #f85149;
-            --accent-rose-bg: rgba(248,81,73,0.15);
-            --accent-blue: #58a6ff;
-            --accent-blue-bg: rgba(88,166,255,0.15);
-            --accent-purple: #a855f7;
-            --accent-purple-bg: rgba(168,85,247,0.15);
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text-main);
-            font-size: 13px;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .mono {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-feature-settings: "tnum";
-        }
-
-        /* Layout */
-        .layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
-
-        /* Sidebar */
-        aside {
-            background: #0d1117;
-            border-right: 1px solid var(--border);
-            padding: 24px 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .portal-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 0 8px 24px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .brand-badge {
-            width: 34px; height: 34px;
-            border-radius: 8px;
-            background: var(--surface);
-            border: 1px solid var(--border-hover);
-            display: grid; place-items: center;
-            font-weight: 700; font-size: 13px;
-            color: var(--accent-green);
-        }
-
-        .brand-name { font-weight: 600; font-size: 13px; color: var(--text-main); }
-        .brand-sub { font-size: 11px; color: var(--accent-green); font-weight: 500; }
-
-        .agent-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px;
-            margin-top: 16px;
-        }
-
-        .agent-label { font-size: 10px; font-weight: 600; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.8px; }
-        .agent-name { font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 2px; }
-        .agent-agency { font-size: 11px; color: var(--accent-blue); font-weight: 500; }
-
-        .nav-group { margin-top: 24px; }
-        .nav-title { font-size: 10px; font-weight: 600; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.8px; padding: 0 8px 8px; }
-        
-        .nav-item {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 10px 12px; border-radius: 6px;
-            color: var(--text-muted); font-weight: 500; font-size: 12px;
-            cursor: pointer; transition: all 0.15s; margin-bottom: 3px;
-            border: 1px solid transparent;
-        }
-        .nav-item:hover { background: var(--surface); color: var(--text-main); border-color: var(--border); }
-        .nav-item.active { background: var(--surface); color: var(--text-main); font-weight: 600; border-color: var(--border-hover); }
-        .nav-count { font-size: 11px; color: var(--text-subtle); font-family: 'JetBrains Mono', 'Fira Code', monospace; }
-        .nav-item.active .nav-count { color: var(--accent-green); }
-
-        /* Main Workspace */
-        main { padding: 32px 40px; }
-
-        /* Header */
-        header {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
-        }
-
-        .h-title { font-size: 20px; font-weight: 600; letter-spacing: -0.4px; color: var(--text-main); }
-        .h-sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
-
-        .portal-status {
-            display: flex; align-items: center; gap: 8px;
-            padding: 6px 14px; border-radius: 6px;
-            background: var(--surface); border: 1px solid var(--border);
-            font-size: 11px; font-weight: 500; color: var(--text-muted);
-        }
-        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-green); }
-
-        /* Action Buttons Header */
-        .header-actions { display: flex; gap: 10px; }
-        
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 500;
-            cursor: pointer; transition: all 0.15s; border: 1px solid var(--border);
-            background: var(--surface); color: var(--text-main);
-        }
-        .btn:hover { background: var(--surface-hover); border-color: var(--border-hover); }
-        .btn-primary { background: var(--accent-green); color: #ffffff; font-weight: 600; border: none; }
-        .btn-primary:hover { background: #2ea043; }
-
-        /* Metrics Grid */
-        .metrics-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 28px;
-        }
-
-        .metric-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 18px 20px;
-            transition: border-color 0.15s;
-        }
-        .metric-card:hover { border-color: var(--border-hover); }
-
-        .metric-label { font-size: 11px; font-weight: 500; color: var(--text-muted); margin-bottom: 6px; }
-        .metric-val { font-size: 26px; font-weight: 600; letter-spacing: -0.8px; line-height: 1; color: var(--text-main); }
-        .metric-sub { font-size: 11px; color: var(--text-subtle); margin-top: 6px; }
-
-        /* Views Container */
-        .view-pane { display: none; }
-        .view-pane.active { display: block; }
-
-        /* Filter Controls */
-        .controls {
-            display: flex; justify-content: space-between; align-items: center;
-            gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
-        }
-
-        .filter-group { display: flex; gap: 4px; background: var(--surface); padding: 3px; border-radius: 6px; border: 1px solid var(--border); }
-        .f-tab {
-            padding: 6px 12px; border-radius: 4px; border: none;
-            background: transparent; color: var(--text-muted);
-            font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s;
-        }
-        .f-tab:hover { color: var(--text-main); }
-        .f-tab.active { background: var(--surface-hover); color: var(--text-main); font-weight: 600; border: 1px solid var(--border-hover); }
-
-        .search-field {
-            padding: 7px 14px; background: var(--surface);
-            border: 1px solid var(--border); border-radius: 6px;
-            color: var(--text-main); font-size: 12px; outline: none; width: 260px;
-        }
-        .search-field:focus { border-color: var(--border-hover); }
-
-        /* Data Tables */
-        .table-container {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-
-        th {
-            padding: 12px 16px; font-size: 11px; font-weight: 500;
-            color: var(--text-muted); border-bottom: 1px solid var(--border);
-            background: #161b22;
-        }
-
-        td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: var(--surface-hover); cursor: pointer; }
-
-        .lead-name { font-weight: 500; color: var(--text-main); font-size: 13px; }
-        .lead-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-
-        .badge {
-            display: inline-block; padding: 3px 8px; border-radius: 4px;
-            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
-        }
-        .badge-a { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(35,134,54,0.3); }
-        .badge-b { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(210,153,34,0.3); }
-        .badge-c { background: var(--accent-rose-bg); color: var(--accent-rose); border: 1px solid rgba(248,81,73,0.3); }
-
-        .dsr-tag { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; font-weight: 600; }
-        .dsr-pass { color: var(--accent-green); }
-        .dsr-warn { color: var(--accent-amber); }
-        .dsr-fail { color: var(--accent-rose); }
-
-        /* Calculator Form */
-        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .calc-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
-        .form-group { margin-bottom: 16px; }
-        .form-label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-input { width: 100%; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text-main); font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 14px; outline: none; }
-        .form-input:focus { border-color: var(--accent-green); }
-
-        .verdict-box {
-            padding: 20px; border-radius: 8px; border: 1px solid var(--border);
-            text-align: center; margin-top: 16px; background: var(--bg);
-        }
-        .verdict-val { font-size: 36px; font-weight: 700; margin: 8px 0; }
-
-        /* Modal Overlay & Content */
-        .modal-overlay, .drawer-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.75);
-            display: none; place-items: center; z-index: 100; backdrop-filter: blur(4px);
-        }
-        .modal-content, .drawer-content {
-            width: 520px; max-width: 90vw; background: var(--surface);
-            border: 1px solid var(--border-hover); border-radius: 12px;
-            padding: 28px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-        }
-        .modal-close, .drawer-close {
-            position: absolute; top: 20px; right: 20px;
-            background: transparent; border: none; color: var(--text-muted);
-            font-size: 18px; cursor: pointer; transition: color 0.15s;
-        }
-        .modal-close:hover, .drawer-close:hover { color: var(--text-main); }
-
-        .modal-title, .drawer-title { font-size: 18px; font-weight: 600; color: var(--text-main); }
-        .modal-sub, .drawer-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; margin-bottom: 20px; }
-
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
-        .info-box { background: var(--bg); border: 1px solid var(--border); padding: 12px 14px; border-radius: 8px; }
-        .info-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
-        .info-val { font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 4px; }
-
-        .modal-actions, .drawer-actions { display: flex; gap: 10px; margin-top: 20px; }
-        .modal-actions .btn, .drawer-actions .btn { flex: 1; text-align: center; justify-content: center; }
-
-        @media(max-width: 900px) {
-            .layout { grid-template-columns: 1fr; }
-            aside { display: none; }
-            main { padding: 20px; }
-            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-            .calc-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <meta name="description" content="ZK Revenue Ops — Multi-Tenant Enterprise Command Center & REN Client Portal Engine.">
+    <meta name="author" content="Zubair, ZK Revenue Ops">
+    <meta name="robots" content="noindex, nofollow">
+    <!-- ZNS: SYS-CON-001 | Console-Portal Web App v3.1 Enterprise -->
+    <title>ZK Revenue Ops — Enterprise Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="theme-dark">
+    <div class="app-layout">
 
-<div class="layout">
-    <!-- Sidebar Navigation -->
-    <aside>
-        <div>
-            <div class="portal-brand">
-                <div class="brand-badge">ZK</div>
-                <div>
-                    <div class="brand-name">ZK Revenue Ops</div>
-                    <div class="brand-sub">Client Portal v2.0</div>
+        <!-- ── SIDEBAR NAVIGATION ──────────────────────────────────────── -->
+        <aside class="app-sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="brand-block">
+                <div class="brand-logo" aria-label="ZK Revenue Ops Logo">ZK</div>
+                <div class="brand-info">
+                    <span class="brand-title">ZK REVENUE OPS</span>
+                    <span class="brand-subtitle">Enterprise Operating System</span>
                 </div>
             </div>
 
-            <!-- Agent Focus Card -->
-            <div class="agent-card">
-                <div class="agent-label">Assigned Client Portal</div>
-                <div class="agent-name" id="portalAgentName">Ahmad Razif</div>
-                <div class="agent-agency" id="portalAgentAgency">IQI Realty • REN 23096</div>
-            </div>
+            <nav class="nav-menu">
+                <button id="btn-dashboard-mode" class="nav-item active" onclick="switchMode('dashboard')" aria-pressed="true">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Command Dashboard</span>
+                </button>
+                <button id="btn-operator-mode" class="nav-item" onclick="switchMode('operator')" aria-pressed="false">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Operator Hub</span>
+                    <span id="badge-raw-count" class="nav-badge">0</span>
+                </button>
+                <button id="btn-client-mode" class="nav-item" onclick="switchMode('client')" aria-pressed="false">
+                    <span class="nav-icon">🏢</span>
+                    <span class="nav-text">REN Client Desk</span>
+                    <span id="badge-client-seats" class="nav-badge green">3 Seats</span>
+                </button>
+                <button id="btn-manager-mode" class="nav-item" onclick="switchMode('manager')" aria-pressed="false">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Client Manager</span>
+                </button>
+                <button id="btn-sync-mode" class="nav-item" onclick="openSyncModal()" aria-pressed="false">
+                    <span class="nav-icon">🔄</span>
+                    <span class="nav-text">Live Sync &amp; Backup</span>
+                </button>
+            </nav>
 
-            <div class="nav-group">
-                <div class="nav-title">Delegated Pipeline</div>
-                <div class="nav-item active" onclick="switchNav('buyers', this)">
-                    <span>Buyer Pipeline</span>
-                    <span class="nav-count" id="navBuyerCount">0</span>
-                </div>
-                <div class="nav-item" onclick="switchNav('dsr', this)">
-                    <span>DSR Loan Calculator</span>
-                    <span class="nav-count">Engine</span>
-                </div>
-            </div>
-
-            <div class="nav-group">
-                <div class="nav-title">Listings & Deals</div>
-                <div class="nav-item" onclick="switchNav('listings', this)">
-                    <span>Property Listings</span>
-                    <span class="nav-count" id="navListingCount">0</span>
-                </div>
-                <div class="nav-item" onclick="switchNav('appointments', this)">
-                    <span>Viewing Schedule</span>
-                    <span class="nav-count" id="navApptCount">0</span>
-                </div>
-                <div class="nav-item" onclick="switchNav('deals', this)">
-                    <span>Commission Ledger</span>
-                    <span class="nav-count" id="navDealCount">RM 0</span>
-                </div>
-            </div>
-        </div>
-
-        <div style="font-size:11px; color:var(--text-subtle); padding: 0 8px;">
-            Single-Tenant • Live Sync Active
-        </div>
-    </aside>
-
-    <!-- Main Workspace -->
-    <main>
-        <header>
-            <div>
-                <h1 class="h-title" id="headTitle">Buyer Lead Pipeline — Ahmad Razif</h1>
-                <div class="h-sub">Personalized Lead Database & DSR Loan Qualification Engine</div>
-            </div>
-            <div class="header-actions">
-                <div class="portal-status">
-                    <span class="status-dot"></span>
-                    <span>Live Database Sync</span>
-                </div>
-                <button class="btn btn-primary" onclick="openModal('modalAddLead')">+ Add New Lead</button>
-            </div>
-        </header>
-
-        <!-- Personal Metrics Summary -->
-        <section class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-label">Delegated Leads</div>
-                <div class="metric-val mono" id="mTotalLeads">0</div>
-                <div class="metric-sub">Assigned to Ahmad Razif</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Grade A (Loan Eligible)</div>
-                <div class="metric-val mono" id="mGradeA" style="color: var(--accent-green);">0</div>
-                <div class="metric-sub">DSR ≤ 65% + Ready to View</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Grade B (Warm Nurture)</div>
-                <div class="metric-val mono" id="mGradeB" style="color: var(--accent-amber);">0</div>
-                <div class="metric-sub">Follow-up 3–6 Months</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Est. Grade A Commission</div>
-                <div class="metric-val mono" id="mEstComm" style="color: var(--accent-blue);">RM 0</div>
-                <div class="metric-sub" id="mDsrRate">DSR Pass Rate: 0%</div>
-            </div>
-        </section>
-
-        <!-- PANE 1: BUYER PIPELINE -->
-        <div class="view-pane active" id="paneBuyers">
-            <div class="controls">
-                <div class="filter-group">
-                    <button class="f-tab active" onclick="setGrade('', this)">All Leads</button>
-                    <button class="f-tab" onclick="setGrade('A', this)">Grade A (Eligible)</button>
-                    <button class="f-tab" onclick="setGrade('B', this)">Grade B (Nurture)</button>
-                    <button class="f-tab" onclick="setGrade('C', this)">Grade C (Cold/Fail)</button>
-                </div>
-                <div style="display:flex; gap:8px;">
-                    <input type="text" class="search-field" id="searchInput" placeholder="Search buyer name, phone, area..." oninput="onSearch()">
-                    <button class="btn" onclick="exportCSV()">Export CSV</button>
+            <div class="sidebar-footer">
+                <div class="system-status-card">
+                    <div class="status-indicator">
+                        <span class="dot live"></span>
+                        <span class="status-text">SYSTEM ONLINE</span>
+                    </div>
+                    <div class="sync-status" id="live-sync-indicator">GAS &amp; Notion Bridge Active</div>
                 </div>
             </div>
+        </aside>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Buyer Prospect</th>
-                            <th>Grade</th>
-                            <th>Target Area & Budget</th>
-                            <th>Net Income</th>
-                            <th>Commitments</th>
-                            <th>DSR Loan %</th>
-                            <th>Est. Commission</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">Loading client leads...</td></tr>
-                    </tbody>
-                </table>
+        <!-- ── MAIN CONTENT AREA ────────────────────────────────────────── -->
+        <div class="main-wrapper">
+
+            <!-- Top Header Bar -->
+            <header class="top-header" role="banner">
+                <div class="header-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="global-search" placeholder="Search leads, REN agents, projects, dossiers..." oninput="handleGlobalSearch(event)" aria-label="Global search">
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="exportDataCsv('leads')">📥 Export CSV</button>
+                    <button class="btn btn-secondary btn-sm" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
+                    <button class="btn btn-secondary btn-sm" onclick="openAddClientModal()">+ Add REN Client</button>
+                    <button class="btn btn-primary btn-sm" onclick="openLeadModal()">+ Add New Lead</button>
+                </div>
+            </header>
+
+            <!-- ── VIEW 0: COMMAND DASHBOARD ───────────────────────────── -->
+            <main id="view-dashboard" class="view-panel active" role="main" aria-label="Command Dashboard">
+                <div class="view-header">
+                    <div>
+                        <h1>Executive Command Center</h1>
+                        <p class="view-sub">Unified telemetry — Revenue metrics, active lead queues, project roadmaps &amp; system health.</p>
+                    </div>
+                    <div class="pulse-date-badge" id="dash-pulse-date">TODAY</div>
+                </div>
+
+                <!-- KPI Metric Grid -->
+                <div class="kpi-grid">
+                    <div class="kpi-card glass-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">TOTAL LEADS INGESTED</span>
+                            <span class="kpi-icon">📥</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-raw-cnt" class="kpi-value">0</span>
+                            <span class="kpi-sub">Raw Inflow Stream</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card glass-card border-hot">
+                        <div class="kpi-header">
+                            <span class="kpi-label">TIER 1 HOT BUYERS</span>
+                            <span class="kpi-icon">🔥</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-hot-cnt" class="kpi-value hot-color">0</span>
+                            <span class="kpi-sub">Pre-Approved LPPSA / High DSR</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card glass-card border-client">
+                        <div class="kpi-header">
+                            <span class="kpi-label">PUBLISHED DOSSIERS</span>
+                            <span class="kpi-icon">📑</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-client-cnt" class="kpi-value client-color">0</span>
+                            <span class="kpi-sub">Live on REN Client Desk</span>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card glass-card">
+                        <div class="kpi-header">
+                            <span class="kpi-label">ACTIVE REN SEATS</span>
+                            <span class="kpi-icon">🏢</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span id="dash-ren-cnt" class="kpi-value">3</span>
+                            <span class="kpi-sub">Subang &amp; Shah Alam Lock</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2-Column Main Dashboard Content -->
+                <div class="dash-columns">
+                    <!-- Column 1: Live Lead Inflow Feed & Priorities -->
+                    <div class="dash-col space-y-6">
+                        <section class="glass-card" aria-labelledby="inflow-heading">
+                            <div class="card-header-bar">
+                                <h3 id="inflow-heading" class="card-title">RECENT LEAD INFLOW FEED</h3>
+                                <button class="btn btn-text btn-sm" onclick="switchMode('operator')">View All Queue &rarr;</button>
+                            </div>
+                            <div id="dash-recent-leads" class="recent-leads-list"></div>
+                        </section>
+
+                        <section class="glass-card" aria-labelledby="projects-heading">
+                            <div class="card-header-bar">
+                                <h3 id="projects-heading" class="card-title">ACTIVE REVOPS ROADMAP</h3>
+                                <span class="badge-tag primary-tag">02_PROJECTS</span>
+                            </div>
+                            <div class="projects-roadmap-list">
+                                <div class="roadmap-item">
+                                    <div class="roadmap-head">
+                                        <span class="proj-code">PRJ-008</span>
+                                        <span class="proj-title">Jarvis Command Center</span>
+                                        <span class="badge-status active">Active</span>
+                                    </div>
+                                    <p class="proj-sub">Local PowerShell server API &amp; telemetry monitoring hub.</p>
+                                </div>
+                                <div class="roadmap-item">
+                                    <div class="roadmap-head">
+                                        <span class="proj-code">PRJ-009</span>
+                                        <span class="proj-title">Tools &amp; CRM Standardization</span>
+                                        <span class="badge-status done">Completed</span>
+                                    </div>
+                                    <p class="proj-sub">ZNS header compliance, gas-crm-engine.js refactor &amp; GDrive sync.</p>
+                                </div>
+                                <div class="roadmap-item">
+                                    <div class="roadmap-head">
+                                        <span class="proj-code">PRJ-010</span>
+                                        <span class="proj-title">Console-Portal Enterprise Overhaul</span>
+                                        <span class="badge-status active">Active</span>
+                                    </div>
+                                    <p class="proj-sub">Multi-tenant REN Client Manager, Bulk CSV Batch Engine &amp; Live Sync Bridge.</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Column 2: Idea Catcher & Quick Actions -->
+                    <div class="dash-col space-y-6">
+                        <section class="glass-card" aria-labelledby="ideas-heading">
+                            <div class="card-header-bar">
+                                <h3 id="ideas-heading" class="card-title">IDEA CATCHER VAULT</h3>
+                                <span class="badge-tag primary-tag">PRJ-998</span>
+                            </div>
+                            <form id="dash-idea-form" onsubmit="handleDashIdea(event)" class="idea-input-row">
+                                <input type="text" id="dash-idea-text" placeholder="Dump a quick idea here..." required class="input-field">
+                                <button type="submit" class="btn btn-primary">Capture</button>
+                            </form>
+                            <div id="dash-ideas-container" class="ideas-feed"></div>
+                        </section>
+
+                        <section class="glass-card" aria-labelledby="quick-actions-heading">
+                            <h3 id="quick-actions-heading" class="card-title mb-4">QUICK SYSTEM ACTIONS</h3>
+                            <div class="quick-buttons-grid">
+                                <button class="btn btn-secondary" onclick="openLeadModal()">+ Ingest Lead</button>
+                                <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk Import CSV</button>
+                                <button class="btn btn-secondary" onclick="openAddClientModal()">+ Onboard REN Agent</button>
+                                <button class="btn btn-secondary" onclick="openSyncModal()">🔄 Live Sync Settings</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+            <!-- ── VIEW 1: CONSOLE OPERATOR HUB ───────────────────────────── -->
+            <main id="view-operator" class="view-panel" role="main" aria-label="Console Operator Hub" hidden>
+                <div class="view-header">
+                    <div>
+                        <h2>Console Operator Hub</h2>
+                        <p class="view-sub">Private lead triage queue, DSR qualification, 1-click WhatsApp outreach, and buyer dossier publishing.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
+                        <button class="btn btn-primary" onclick="openLeadModal()">+ Ingest New Lead</button>
+                    </div>
+                </div>
+
+                <!-- Operator Metrics Row -->
+                <div class="metrics-grid">
+                    <div class="metric-card glass-card">
+                        <span class="metric-label">RAW QUEUE</span>
+                        <span id="metric-raw" class="metric-value">0</span>
+                    </div>
+                    <div class="metric-card glass-card border-hot">
+                        <span class="metric-label">TIER 1 HOT</span>
+                        <span id="metric-hot" class="metric-value hot-color">0</span>
+                    </div>
+                    <div class="metric-card glass-card border-warm">
+                        <span class="metric-label">TIER 2 WARM</span>
+                        <span id="metric-warm" class="metric-value warm-color">0</span>
+                    </div>
+                    <div class="metric-card glass-card border-client">
+                        <span class="metric-label">PUBLISHED TO REN</span>
+                        <span id="metric-published" class="metric-value client-color">0</span>
+                    </div>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="filter-bar">
+                    <span class="filter-title">FILTER TIER:</span>
+                    <button id="filter-all" class="filter-pill active" onclick="filterLeads('All')">All Leads</button>
+                    <button id="filter-hot" class="filter-pill hot-pill" onclick="filterLeads('Hot')">🔥 Tier 1 Hot</button>
+                    <button id="filter-warm" class="filter-pill warm-pill" onclick="filterLeads('Warm')">⚡ Tier 2 Warm</button>
+                    <button id="filter-new" class="filter-pill" onclick="filterLeads('New')">🆕 New Queue</button>
+                    <button id="filter-disqualified" class="filter-pill" onclick="filterLeads('Disqualified')">✗ Disqualified</button>
+                </div>
+
+                <!-- Kanban Board -->
+                <div class="kanban-grid">
+                    <section class="kanban-column glass-card">
+                        <div class="column-header">
+                            <span class="column-title">NEW &amp; SCREENING QUEUE</span>
+                            <span id="count-new" class="column-count">0</span>
+                        </div>
+                        <div id="container-new" class="kanban-list"></div>
+                    </section>
+
+                    <section class="kanban-column glass-card border-hot">
+                        <div class="column-header">
+                            <span class="column-title">TIER 1 HOT (PRE-APPROVED)</span>
+                            <span id="count-hot" class="column-count">0</span>
+                        </div>
+                        <div id="container-hot" class="kanban-list"></div>
+                    </section>
+
+                    <section class="kanban-column glass-card border-warm">
+                        <div class="column-header">
+                            <span class="column-title">TIER 2 WARM (CADENCE)</span>
+                            <span id="count-warm" class="column-count">0</span>
+                        </div>
+                        <div id="container-warm" class="kanban-list"></div>
+                    </section>
+
+                    <section class="kanban-column glass-card opacity-muted">
+                        <div class="column-header">
+                            <span class="column-title">DISQUALIFIED / ARCHIVE</span>
+                            <span id="count-disqualified" class="column-count">0</span>
+                        </div>
+                        <div id="container-disqualified" class="kanban-list"></div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- ── VIEW 2: REN CLIENT DESK ─────────────────────────────────── -->
+            <main id="view-client" class="view-panel" role="main" aria-label="REN Client Desk" hidden>
+                <div class="view-header">
+                    <div>
+                        <h2>REN Client Desk</h2>
+                        <p class="view-sub">Executive dashboard for Real Estate Negotiators. Verified buyer dossiers and confirmed viewing bookings.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="copyShareableAgentLink()">🔗 Copy Agent Shareable URL</button>
+                        <button class="btn btn-secondary" onclick="exportDossiersPdf()">📄 Export Dossiers (PDF / Print)</button>
+                    </div>
+                </div>
+
+                <!-- Dynamic REN Client Selection Banner -->
+                <div class="client-banner glass-card">
+                    <div class="client-select-wrapper">
+                        <label for="ren-client-select" class="select-label">SELECT ACTIVE REN CLIENT DESK:</label>
+                        <select id="ren-client-select" class="input-field select-lg" onchange="handleClientDeskSwitch(event)">
+                            <!-- Injected dynamically via JS -->
+                        </select>
+                    </div>
+                    <div class="client-meta-badge" id="client-meta-display">
+                        <!-- Injected dynamically via JS -->
+                    </div>
+                </div>
+
+                <div class="section-title flex-between">
+                    <h3>Verified Buyer Dossiers &amp; Confirmed Viewings</h3>
+                    <div id="shareable-url-display" class="shareable-url-badge"></div>
+                </div>
+                <div id="client-dossier-container" class="dossiers-grid"></div>
+            </main>
+
+            <!-- ── VIEW 3: REN CLIENT MANAGER (MULT-TENANT MANAGEMENT) ──────── -->
+            <main id="view-manager" class="view-panel" role="main" aria-label="REN Client Manager" hidden>
+                <div class="view-header">
+                    <div>
+                        <h2>REN Client Manager</h2>
+                        <p class="view-sub">Multi-tenant client seat management. Onboard new REN agents, set territory locks, and manage subscription tiers.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" onclick="openImportModal('clients')">📤 Bulk Import Agents CSV</button>
+                        <button class="btn btn-primary" onclick="openAddClientModal()">+ Onboard New REN Client</button>
+                    </div>
+                </div>
+
+                <!-- Client Table / Card Grid -->
+                <div class="client-manager-grid" id="ren-clients-manager-container">
+                    <!-- Injected via JavaScript -->
+                </div>
+            </main>
+
+        </div><!-- /.main-wrapper -->
+    </div><!-- /.app-layout -->
+
+    <!-- ── MODAL: LEAD INGESTION / EDIT ────────────────────────────────── -->
+    <div id="lead-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Direct Lead Ingestion</h3>
+                <button class="btn-close" onclick="closeLeadModal()">✕</button>
             </div>
-        </div>
-
-        <!-- PANE 2: DSR LOAN CALCULATOR ENGINE -->
-        <div class="view-pane" id="paneDsr">
-            <div class="calc-grid">
-                <div class="calc-card">
-                    <h2 style="font-size:15px; font-weight:600; margin-bottom:16px; color:var(--text-main);">Banking DSR Loan Eligibility Engine</h2>
+            <form id="add-lead-form" onsubmit="handleNewLead(event)">
+                <div class="modal-body space-y-4">
                     <div class="form-group">
-                        <label class="form-label">Gaji Bersih (Net Monthly Income - RM)</label>
-                        <input type="number" class="form-input" id="cIncome" value="8500" oninput="runDsrCalc()">
+                        <label for="lead-name">Full Name</label>
+                        <input type="text" id="lead-name" placeholder="e.g. Muhammad Hariz" required class="input-field">
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Komitmen Bank Sedia Ada (Existing Debts - RM)</label>
-                        <input type="number" class="form-input" id="cCommit" value="2100" oninput="runDsrCalc()">
+                        <label for="lead-phone">WhatsApp Contact (+601...)</label>
+                        <input type="tel" id="lead-phone" placeholder="+60123456789" required class="input-field">
                     </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="lead-project">Project Interest</label>
+                            <input type="text" id="lead-project" placeholder="e.g. SkyResidence Subang" required class="input-field">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="lead-income">Est. Income (RM/mo)</label>
+                            <input type="number" id="lead-income" placeholder="6500" class="input-field" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeLeadModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">+ Save Lead to Queue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── MODAL: TRIAGE & QUALIFICATION ──────────────────────────────── -->
+    <div id="triage-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card modal-lg">
+            <div class="modal-header">
+                <h3 id="modal-lead-name">Lead Triage &amp; DSR Qualification</h3>
+                <button class="btn-close" onclick="closeTriageModal()">✕</button>
+            </div>
+            <div class="modal-body space-y-4">
+                <p id="modal-lead-info" class="lead-subtitle"></p>
+
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="modal-tier-select">Qualification Tier</label>
+                        <select id="modal-tier-select" class="input-field">
+                            <option value="Hot">🔥 Tier 1 Hot (Pre-approved / High DSR)</option>
+                            <option value="Warm">⚡ Tier 2 Warm (In Cadence)</option>
+                            <option value="New">🆕 New / Screening</option>
+                            <option value="Disqualified">✗ Disqualified (Out of Budget / Invalid)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group flex-1">
+                        <label for="modal-assign-client">Assign to REN Client</label>
+                        <select id="modal-assign-client" class="input-field">
+                            <!-- Injected dynamically via JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="modal-loan-status">Loan Pre-Approval Status</label>
+                        <select id="modal-loan-status" class="input-field">
+                            <option value="Pre-Approved">Pre-Approved Loan (Bank/LPPSA)</option>
+                            <option value="Documents Collected">Documents Collected</option>
+                            <option value="Self-Employed / Cash">Cash / Self-Employed</option>
+                            <option value="Pending Submission">Pending Submission</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group flex-1">
+                        <label for="modal-viewing-time">Confirmed Viewing Date &amp; Time</label>
+                        <input type="text" id="modal-viewing-time" placeholder="e.g. Sabtu 11:00 AM @ Sales Gallery" class="input-field">
+                    </div>
+                </div>
+
+                <!-- DSR Interactive Calculator Box -->
+                <div class="dsr-calculator-box">
+                    <div class="dsr-header">
+                        <span>⚡ DSR LOAN ELIGIBILITY CALCULATOR</span>
+                        <span id="dsr-ratio-badge" class="dsr-badge green">DSR: 42% (Eligible)</span>
+                    </div>
+                    <div class="dsr-inputs">
+                        <input type="number" id="dsr-income-input" placeholder="Monthly Income (RM)" class="input-field input-sm" oninput="calculateDsr()">
+                        <input type="number" id="dsr-commitment-input" placeholder="Existing Commitments (RM)" class="input-field input-sm" oninput="calculateDsr()">
+                    </div>
+                    <div id="dsr-calc-output" class="dsr-output-text">Est. Max Installment Capacity: RM 2,730/mo &bull; Max Loan: RM 550,000</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="modal-notes">Operator Notes (Private)</label>
+                    <textarea id="modal-notes" rows="3" placeholder="DSR check details, preferred unit layout, loan eligibility notes..." class="input-field"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTriageModal()">Cancel</button>
+                <button class="btn btn-wa-triage" onclick="triageLeadToWa()">📱 1-Click WA Outreach</button>
+                <button class="btn btn-primary" onclick="saveTriageData()">Save &amp; Dispatch to REN Desk</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MODAL: ONBOARD NEW REN CLIENT ──────────────────────────────── -->
+    <div id="client-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Onboard New REN Client</h3>
+                <button class="btn-close" onclick="closeAddClientModal()">✕</button>
+            </div>
+            <form id="add-client-form" onsubmit="handleNewClientSubmit(event)">
+                <div class="modal-body space-y-4">
                     <div class="form-group">
-                        <label class="form-label">Harga Hartanah Sasaran (Property Price - RM)</label>
-                        <input type="number" class="form-input" id="cPrice" value="500000" oninput="runDsrCalc()">
+                        <label for="client-name">Agent Full Name</label>
+                        <input type="text" id="client-name" placeholder="e.g. Agent Sarah" required class="input-field">
                     </div>
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
-                        <div class="form-group">
-                            <label class="form-label">Kadar Faedah (Interest %)</label>
-                            <input type="number" step="0.1" class="form-input" id="cRate" value="4.5" oninput="runDsrCalc()">
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="client-ren-no">REN Tag Number</label>
+                            <input type="text" id="client-ren-no" placeholder="REN 52109" required class="input-field">
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Tempoh (Tenure Yrs)</label>
-                            <input type="number" class="form-input" id="cTenure" value="35" oninput="runDsrCalc()">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="calc-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-                    <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:600; letter-spacing:0.5px;">DSR Ratio Assessment</div>
-                    <div class="verdict-val mono" id="cDsrVal" style="color:var(--accent-green);">52.6%</div>
-                    <div class="badge badge-a" id="cBadge" style="font-size:12px; padding:6px 14px;">Grade A (PASS / HIGHLY ELIGIBLE)</div>
-                    
-                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; width:100%; margin-top:20px;">
-                        <div class="info-box">
-                            <div class="info-label">Anggaran Installment</div>
-                            <div class="info-val mono" id="cInstallment">RM 2,368</div>
-                        </div>
-                        <div class="info-box">
-                            <div class="info-label">Max Affordable Price</div>
-                            <div class="info-val mono" style="color:var(--accent-green);" id="cMaxPrice">RM 618,000</div>
+                        <div class="form-group flex-1">
+                            <label for="client-agency">Agency Name</label>
+                            <input type="text" id="client-agency" placeholder="IQI Realty / Renstar" required class="input-field">
                         </div>
                     </div>
-
-                    <button class="btn btn-primary" style="margin-top:20px; width:100%; padding:10px;" onclick="sendDsrWhatsAppReport()">
-                        📱 Send WhatsApp Loan Pre-Approval Report
-                    </button>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="client-territory">Territory Lock</label>
+                            <input type="text" id="client-territory" placeholder="Subang Jaya &amp; Shah Alam" required class="input-field">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="client-tier">Service Tier</label>
+                            <select id="client-tier" class="input-field">
+                                <option value="Starter">Starter (RM 800/mo)</option>
+                                <option value="Growth" selected>Growth (RM 1,500/mo)</option>
+                                <option value="Enterprise">Enterprise (RM 3,000/mo)</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- PANE 3: PROPERTY LISTINGS -->
-        <div class="view-pane" id="paneListings">
-            <div class="controls">
-                <div style="font-weight:600; font-size:14px; color:var(--text-main);">Exclusive Property Listings</div>
-                <button class="btn btn-primary" onclick="openModal('modalAddListing')">+ Add New Listing</button>
-            </div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Property Title</th>
-                            <th>Location Area</th>
-                            <th>Property Type</th>
-                            <th>Asking Price</th>
-                            <th>Specs</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="listingsBody">
-                        <!-- Populated by JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- PANE 4: VIEWING SCHEDULE -->
-        <div class="view-pane" id="paneAppointments">
-            <div class="controls">
-                <div style="font-weight:600; font-size:14px; color:var(--text-main);">Scheduled Viewing Appointments</div>
-                <button class="btn btn-primary" onclick="openModal('modalScheduleViewing')">+ Schedule Viewing</button>
-            </div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Buyer Prospect</th>
-                            <th>Property Listing</th>
-                            <th>Viewing Date & Time</th>
-                            <th>Feedback / Rating</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="apptsBody">
-                        <!-- Populated by JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- PANE 5: COMMISSION LEDGER -->
-        <div class="view-pane" id="paneDeals">
-            <div class="controls">
-                <div>
-                    <span style="font-weight:600; font-size:14px; color:var(--text-main);">Commission & Deals Ledger</span>
-                    <span class="lead-meta" style="margin-left:10px;">Gross Commission 3% · REN Split 80%</span>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddClientModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">+ Activate REN Client Seat</button>
                 </div>
-                <div style="display:flex; gap:16px; align-items:center;">
-                    <div class="mono" style="font-weight:600; color:var(--text-muted); font-size:13px;">Pipeline: <span id="mTotalPipeline" style="color:var(--text-main);">RM 0</span></div>
-                    <div class="mono" style="font-weight:600; color:var(--accent-green); font-size:13px;">Total Cleared: <span id="mTotalCleared">RM 0</span></div>
-                </div>
-            </div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Deal Ref</th>
-                            <th>Buyer Prospect</th>
-                            <th>Property Listing</th>
-                            <th>Deal Amount</th>
-                            <th>Gross Comm (3%)</th>
-                            <th>Agent Split (80%)</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dealsBody">
-                        <!-- Populated by JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </main>
-</div>
-
-<!-- Drawer Overlay for Lead Details -->
-<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
-    <div class="drawer-content">
-        <button class="drawer-close" onclick="closeModal('drawerOverlay')">✕</button>
-        <div class="drawer-title" id="dName">Buyer Lead Details</div>
-        <div class="drawer-sub" id="dMeta">Contact Info</div>
-
-        <div class="grid-2">
-            <div class="info-box"><div class="info-label">Net Income</div><div class="info-val mono" id="dIncome">RM 0</div></div>
-            <div class="info-box"><div class="info-label">Commitments</div><div class="info-val mono" id="dCommitment">RM 0</div></div>
-            <div class="info-box"><div class="info-label">DSR Ratio</div><div class="info-val mono" id="dDsr">0%</div></div>
-            <div class="info-box"><div class="info-label">Est. Commission</div><div class="info-val mono" style="color:var(--accent-green);" id="dComm">RM 0</div></div>
-        </div>
-
-        <div class="drawer-notes" id="dNotes" style="font-size:12px; color:var(--text-muted); padding:12px; background:var(--bg); border:1px solid var(--border); border-radius:6px; margin-bottom:16px;">
-            Lead passed initial qualification metrics. Ready for property viewing match.
-        </div>
-
-        <div class="drawer-actions">
-            <button class="btn btn-primary" onclick="triggerWhatsAppLead()">Send WhatsApp Report</button>
-            <button class="btn" onclick="scheduleViewingForLead()">Schedule Viewing</button>
+            </form>
         </div>
     </div>
-</div>
 
-<!-- Modal: Add New Lead -->
-<div class="modal-overlay" id="modalAddLead" onclick="closeModalOnOverlay(event, 'modalAddLead')">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('modalAddLead')">✕</button>
-        <div class="modal-title">+ Add New Buyer Lead</div>
-        <div class="modal-sub">Register prospect for automated DSR qualification</div>
-        <form onsubmit="handleAddLead(event)">
-            <div class="form-group">
-                <label class="form-label">Full Name</label>
-                <input type="text" id="addName" class="form-input" placeholder="e.g. Mohd Khairul" required>
+    <!-- ── MODAL: BULK CSV DATA IMPORT ────────────────────────────────── -->
+    <div id="import-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 id="import-modal-title">Bulk CSV Data Import</h3>
+                <button class="btn-close" onclick="closeImportModal()">✕</button>
             </div>
-            <div class="grid-2">
+            <div class="modal-body space-y-4">
+                <p class="view-sub">Upload or paste CSV batch data to import multiple records at once.</p>
                 <div class="form-group">
-                    <label class="form-label">Phone Number</label>
-                    <input type="text" id="addPhone" class="form-input" placeholder="+60123456789" required>
+                    <label for="csv-file-input">Select CSV File</label>
+                    <input type="file" id="csv-file-input" accept=".csv, .txt" class="input-field" onchange="handleCsvFileSelected(event)">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Preferred Location</label>
-                    <input type="text" id="addLocation" class="form-input" placeholder="Setia Alam / Bangi" required>
+                    <label for="csv-text-area">Or Paste Raw CSV Content</label>
+                    <textarea id="csv-text-area" rows="6" placeholder="name,phone,project,income,tier&#10;Muhammad Hariz,+60123456789,SkyResidence,6500,Hot" class="input-field font-mono"></textarea>
                 </div>
+                <button class="btn btn-secondary btn-sm" onclick="downloadCsvTemplate()">📥 Download CSV Format Template</button>
             </div>
-            <div class="grid-2">
-                <div class="form-group">
-                    <label class="form-label">Net Monthly Income (RM)</label>
-                    <input type="number" id="addIncome" class="form-input" value="8000" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Existing Commitments (RM)</label>
-                    <input type="number" id="addCommit" class="form-input" value="2200" required>
-                </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeImportModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="executeBatchCsvImport()">🚀 Process &amp; Ingest Batch</button>
             </div>
-            <div class="grid-2">
-                <div class="form-group">
-                    <label class="form-label">Property Type</label>
-                    <input type="text" id="addType" class="form-input" value="Condo" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Max Budget (RM)</label>
-                    <input type="number" id="addBudget" class="form-input" value="500000" required>
-                </div>
-            </div>
-            <div class="modal-actions">
-                <button type="button" class="btn" onclick="closeModal('modalAddLead')">Cancel</button>
-                <button type="submit" class="btn btn-primary">Save Prospect</button>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
 
-<!-- Modal: Add New Listing -->
-<div class="modal-overlay" id="modalAddListing" onclick="closeModalOnOverlay(event, 'modalAddListing')">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('modalAddListing')">✕</button>
-        <div class="modal-title">+ Add Exclusive Listing</div>
-        <div class="modal-sub">Create new property listing record</div>
-        <form onsubmit="handleAddListing(event)">
-            <div class="form-group">
-                <label class="form-label">Property Title</label>
-                <input type="text" id="lstTitle" class="form-input" placeholder="e.g. Clover Haven Residence" required>
+    <!-- ── MODAL: LIVE SYNC & BACKUP CONFIG ───────────────────────────── -->
+    <div id="sync-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Live Sync &amp; Database Backup Settings</h3>
+                <button class="btn-close" onclick="closeSyncModal()">✕</button>
             </div>
-            <div class="grid-2">
+            <div class="modal-body space-y-4">
                 <div class="form-group">
-                    <label class="form-label">Location Area</label>
-                    <input type="text" id="lstLocation" class="form-input" placeholder="Shah Alam / Cyberjaya" required>
+                    <label for="gas-url-input">Google Apps Script CRM Engine Web App URL (/exec)</label>
+                    <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="input-field font-mono">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Property Type</label>
-                    <input type="text" id="lstType" class="form-input" placeholder="Condo / Terrace / Semi-D" required>
+                    <label for="notion-key-input">Notion API Integration Token</label>
+                    <input type="password" id="notion-key-input" placeholder="ntn_4027..." class="input-field font-mono">
+                </div>
+                <div class="status-box glass-card border-client">
+                    <div style="font-weight:700;color:var(--client-color);">Bi-Directional Backup Status: ACTIVE</div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">
+                        Data automatically replicates across Local Storage, Google Sheets (`gas-crm-engine.js`), and Notion Sales CRM Databases.
+                    </div>
                 </div>
             </div>
-            <div class="grid-2">
-                <div class="form-group">
-                    <label class="form-label">Asking Price (RM)</label>
-                    <input type="number" id="lstPrice" class="form-input" placeholder="550000" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Bedrooms / Bathrooms</label>
-                    <input type="text" id="lstSpecs" class="form-input" placeholder="3 Bed, 2 Bath" required>
-                </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="triggerManualSync()">🔄 Trigger Instant Full Sync</button>
+                <button class="btn btn-primary" onclick="saveSyncSettings()">Save Sync Credentials</button>
             </div>
-            <div class="modal-actions">
-                <button type="button" class="btn" onclick="closeModal('modalAddListing')">Cancel</button>
-                <button type="submit" class="btn btn-primary">Add Listing</button>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
 
-<!-- Modal: Schedule Viewing -->
-<div class="modal-overlay" id="modalScheduleViewing" onclick="closeModalOnOverlay(event, 'modalScheduleViewing')">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('modalScheduleViewing')">✕</button>
-        <div class="modal-title">+ Schedule Viewing Appointment</div>
-        <div class="modal-sub">Set date and time for buyer site visit</div>
-        <form onsubmit="handleScheduleViewing(event)">
-            <div class="form-group">
-                <label class="form-label">Buyer Name</label>
-                <input type="text" id="schBuyer" class="form-input" placeholder="Buyer Prospect Name" required>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Property Listing</label>
-                <input type="text" id="schListing" class="form-input" placeholder="Property Listing Title" required>
-            </div>
-            <div class="grid-2">
-                <div class="form-group">
-                    <label class="form-label">Date & Time</label>
-                    <input type="text" id="schDate" class="form-input" placeholder="2026-08-02 10:00 AM" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Initial Status</label>
-                    <input type="text" id="schStatus" class="form-input" value="Scheduled" required>
-                </div>
-            </div>
-            <div class="modal-actions">
-                <button type="button" class="btn" onclick="closeModal('modalScheduleViewing')">Cancel</button>
-                <button type="submit" class="btn btn-primary">Confirm Appointment</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<script>
-const API = window.location.origin;
-let currentGrade = '';
-let searchTimer = null;
-let currentLeads = [];
-let activeNav = 'buyers';
-
-function escapeHtml(str) {
-    if (str === null || str === undefined) return '';
-    return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-}
-
-function rm(n) { return 'RM ' + (n || 0).toLocaleString(); }
-
-// Dual-Mode Architecture Fetch Handler
-async function apiFetch(endpoint, fallbackData) {
-    try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 2000);
-        const res = await fetch(`${API}${endpoint}`, { signal: controller.signal });
-        clearTimeout(timeoutId);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
-        if (json && json.success && Array.isArray(json.data)) {
-            return json.data;
-        }
-    } catch(err) {
-        console.log(`[Dual-Mode] Falling back to embedded seed data for ${endpoint}`);
-    }
-    return fallbackData;
-}
-
-// Embedded Fallback Seed Data for GitHub Pages Static Deployment
-let seedBuyers = [
-    { name: "Mohd Fikri bin Hassan", phone: "+60123456789", source: "FB Ads", grade: "A", location: "Setia Alam, Shah Alam", propertyType: "Condo", maxBudget: 500000, netIncome: 8500, existingCommitments: 2100, dsrPercent: 53, estCommission: 10000 },
-    { name: "Aina binti Kamal", phone: "+60198765432", source: "Portal Listing", grade: "A", location: "Bangi, Selangor", propertyType: "Terrace", maxBudget: 680000, netIncome: 12000, existingCommitments: 3400, dsrPercent: 55, estCommission: 13600 },
-    { name: "Lee Wei Jie", phone: "+60171234567", source: "Referral", grade: "A", location: "Cyberjaya", propertyType: "Semi-D", maxBudget: 850000, netIncome: 15000, existingCommitments: 4100, dsrPercent: 54, estCommission: 17000 },
-    { name: "Priya a/p Shankar", phone: "+60141122334", source: "WhatsApp", grade: "B", location: "Puchong, Selangor", propertyType: "Apartment", maxBudget: 350000, netIncome: 4500, existingCommitments: 1800, dsrPercent: 70, estCommission: 7000 },
-    { name: "Azman bin Yusof", phone: "+60169988776", source: "Google Ads", grade: "A", location: "Damansara Heights", propertyType: "Bungalow", maxBudget: 2400000, netIncome: 2800, existingCommitments: 7500, dsrPercent: 62, estCommission: 48000 },
-    { name: "Siti Nurhaliza bin Ariff", phone: "+60133445566", source: "FB Ads", grade: "C", location: "Kajang", propertyType: "Condo", maxBudget: 400000, netIncome: 4000, existingCommitments: 2800, dsrPercent: 82, estCommission: 8000 }
-];
-
-let seedListings = [
-    { title: "Suria Jelutong Residences", location: "Setia Alam", type: "Condo", price: 480000, specs: "3 Bed, 2 Bath", status: "Available" },
-    { title: "Eco Grandeur Terrace", location: "Puncak Alam", type: "Terrace", price: 650000, specs: "4 Bed, 3 Bath", status: "Available" },
-    { title: "Cyberjaya Tech Park Suite", location: "Cyberjaya", type: "Serviced Apt", price: 380000, specs: "2 Bed, 2 Bath", status: "Reserved" },
-    { title: "Bangi Hillview Residence", location: "Bangi", type: "Terrace", price: 580000, specs: "4 Bed, 3 Bath", status: "Available" },
-    { title: "Damansara Heights Villa", location: "Damansara", type: "Bungalow", price: 2400000, specs: "5 Bed, 6 Bath", status: "Sold" }
-];
-
-let seedAppts = [
-    { buyer: "Mohd Fikri bin Hassan", listing: "Suria Jelutong Residences", date: "2026-07-30 11:00 AM", rating: "★★★★★", status: "Confirmed" },
-    { buyer: "Aina binti Kamal", listing: "Bangi Hillview Residence", date: "2026-07-30 02:30 PM", rating: "★★★★☆", status: "Completed" },
-    { buyer: "Lee Wei Jie", listing: "Cyberjaya Tech Park Suite", date: "2026-07-31 03:00 PM", rating: "Pending", status: "Scheduled" },
-    { buyer: "Priya a/p Shankar", listing: "Eco Grandeur Terrace", date: "2026-08-01 10:00 AM", rating: "Pending", status: "Scheduled" }
-];
-
-let seedDeals = [
-    { ref: "DEAL-2026-001", buyer: "Azman bin Yusof", listing: "Damansara Luxury Bungalow", amount: 2400000, gross: 72000, net: 57600, status: "Closed Won" },
-    { ref: "DEAL-2026-002", buyer: "Aina binti Kamal", listing: "Bangi Hill Terrace", amount: 680000, gross: 20400, net: 16320, status: "Closed Won" },
-    { ref: "DEAL-2026-003", buyer: "Mohd Fikri bin Hassan", listing: "Suria Jelutong Condo", amount: 480000, gross: 14400, net: 11520, status: "Pending" }
-];
-
-function switchNav(paneId, el) {
-    activeNav = paneId;
-    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-    el.classList.add('active');
-
-    document.querySelectorAll('.view-pane').forEach(p => p.classList.remove('active'));
-    const pane = document.getElementById('pane' + paneId.charAt(0).toUpperCase() + paneId.slice(1));
-    if (pane) pane.classList.add('active');
-
-    const titles = {
-        buyers: "Buyer Lead Pipeline — Ahmad Razif",
-        dsr: "DSR Loan Eligibility Calculator Engine",
-        listings: "Exclusive Property Listings — Ahmad Razif",
-        appointments: "Viewing Schedule & Appointments",
-        deals: "Commission & Deals Ledger"
-    };
-    document.getElementById('headTitle').textContent = titles[paneId] || "Client Portal";
-
-    if (paneId === 'buyers') loadPortal();
-    if (paneId === 'listings') renderListings();
-    if (paneId === 'appointments') renderAppts();
-    if (paneId === 'deals') renderDeals();
-}
-
-async function loadPortal() {
-    try {
-        const rawBuyers = await apiFetch('/api/v1/buyers', seedBuyers);
-        let leads = rawBuyers.map(b => {
-            if (b.grade && b.netIncome !== undefined) return b;
-            const inc = b.net_income || 8500;
-            const com = b.existing_commitments || 2100;
-            const bg = b.max_budget || 500000;
-            const inst = Math.round(bg * 0.9 * (0.00375 * Math.pow(1.00375, 420)) / (Math.pow(1.00375, 420) - 1));
-            const dsr = inc > 0 ? Math.round(((com + inst) / inc) * 100) : 100;
-            const score = b.lead_score || 75;
-            const g = inc > 0 ? (dsr <= 65 ? 'A' : (dsr <= 75 ? 'B' : 'C')) : 'C';
-            return {
-                name: b.name,
-                phone: b.phone || '+60120000000',
-                source: b.status || 'Direct Inflow',
-                grade: g,
-                location: b.preferred_location || 'Selangor',
-                propertyType: b.property_type || 'Condo',
-                maxBudget: bg,
-                netIncome: inc,
-                existingCommitments: com,
-                dsrPercent: dsr,
-                estCommission: Math.round(bg * 0.02)
-            };
-        });
-
-        if (currentGrade) leads = leads.filter(l => l.grade === currentGrade);
-        const search = (document.getElementById('searchInput')?.value || '').trim();
-        if (search) {
-            const s = search.toLowerCase();
-            leads = leads.filter(l => l.name.toLowerCase().includes(s) || l.location.toLowerCase().includes(s) || l.propertyType.toLowerCase().includes(s));
-        }
-
-        currentLeads = leads;
-
-        const total = currentLeads.length;
-        const gradeA = currentLeads.filter(l => l.grade === 'A').length;
-        const gradeB = currentLeads.filter(l => l.grade === 'B').length;
-        const commA = currentLeads.filter(l => l.grade === 'A').reduce((sum, l) => sum + (l.estCommission || 0), 0);
-
-        document.getElementById('mTotalLeads').textContent = total.toLocaleString();
-        document.getElementById('mGradeA').textContent = gradeA.toLocaleString();
-        document.getElementById('mGradeB').textContent = gradeB.toLocaleString();
-        document.getElementById('mEstComm').textContent = 'RM ' + (commA / 1000).toFixed(0) + 'K';
-        document.getElementById('navBuyerCount').textContent = total.toLocaleString();
-        
-        const passRate = total > 0 ? Math.round(((gradeA + gradeB) / total) * 100) : 0;
-        document.getElementById('mDsrRate').textContent = `DSR Pass Rate: ${passRate}%`;
-
-        renderTable(currentLeads);
-    } catch(e) {
-        renderTable(seedBuyers);
-    }
-}
-
-function renderTable(leads) {
-    if (!leads || leads.length === 0) {
-        document.getElementById('tableBody').innerHTML = `<tr><td colspan="7" style="text-align:center; padding:24px; color:var(--text-muted);">No records found.</td></tr>`;
-        return;
-    }
-
-    let rows = '';
-    leads.forEach((l, idx) => {
-        const bCls = l.grade === 'A' ? 'badge-a' : (l.grade === 'B' ? 'badge-b' : 'badge-c');
-        const dsrCls = l.dsrPercent <= 65 ? 'dsr-pass' : (l.dsrPercent <= 75 ? 'dsr-warn' : 'dsr-fail');
-
-        rows += `<tr onclick="openDrawer(${idx})">
-            <td>
-                <div class="lead-name">${escapeHtml(l.name)}</div>
-                <div class="lead-meta">${escapeHtml(l.phone)} · ${escapeHtml(l.source)}</div>
-            </td>
-            <td><span class="badge ${bCls}">Grade ${escapeHtml(l.grade)}</span></td>
-            <td>
-                <div style="font-weight:500;">${escapeHtml(l.location)}</div>
-                <div class="lead-meta">${escapeHtml(l.propertyType)} (Max ${rm(l.maxBudget)})</div>
-            </td>
-            <td class="mono">${rm(l.netIncome)}</td>
-            <td class="mono" style="color:var(--text-muted);">${rm(l.existingCommitments)}</td>
-            <td><span class="dsr-tag ${dsrCls}">${l.dsrPercent}% DSR</span></td>
-            <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(l.estCommission)}</td>
-        </tr>`;
-    });
-
-    document.getElementById('tableBody').innerHTML = rows;
-}
-
-async function renderListings() {
-    const raw = await apiFetch('/api/v1/listings', seedListings);
-    let listings = raw.map(item => ({
-        title: item.title,
-        location: item.location,
-        type: item.property_type || item.type || 'Condo',
-        price: item.price,
-        specs: item.specs || `${item.bedrooms || 3} Bed, ${item.bathrooms || 2} Bath`,
-        status: item.status || 'Available'
-    }));
-
-    const search = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
-    if (search) {
-        listings = listings.filter(item =>
-            item.title.toLowerCase().includes(search) ||
-            item.location.toLowerCase().includes(search) ||
-            item.type.toLowerCase().includes(search)
-        );
-    }
-
-    document.getElementById('navListingCount').textContent = listings.length;
-    let rows = '';
-    listings.forEach(item => {
-        const badgeCls = item.status === 'Available' ? 'badge-a' : (item.status === 'Reserved' ? 'badge-b' : 'badge-c');
-        rows += `<tr>
-            <td style="font-weight:600; color:var(--text-main);">${escapeHtml(item.title)}</td>
-            <td>${escapeHtml(item.location)}</td>
-            <td>${escapeHtml(item.type)}</td>
-            <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(item.price)}</td>
-            <td class="mono" style="font-size:11px; color:var(--text-muted);">${escapeHtml(item.specs)}</td>
-            <td><span class="badge ${badgeCls}">${escapeHtml(item.status)}</span></td>
-        </tr>`;
-    });
-    document.getElementById('listingsBody').innerHTML = rows;
-}
-
-async function renderAppts() {
-    const raw = await apiFetch('/api/v1/viewings', seedAppts);
-    let appts = raw.map(item => ({
-        buyer: item.buyer_name || item.buyer || 'Buyer Prospect',
-        listing: item.listing_title || item.listing || 'Property Listing',
-        date: item.viewing_date || item.date || '2026-08-01',
-        rating: item.rating ? (typeof item.rating === 'number' ? '★'.repeat(item.rating) + '☆'.repeat(5-item.rating) : item.rating) : 'Pending',
-        status: item.status || 'Scheduled'
-    }));
-
-    const search = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
-    if (search) {
-        appts = appts.filter(item =>
-            item.buyer.toLowerCase().includes(search) ||
-            item.listing.toLowerCase().includes(search)
-        );
-    }
-
-    document.getElementById('navApptCount').textContent = appts.length;
-    let rows = '';
-    appts.forEach((item, idx) => {
-        const badgeCls = item.status === 'Completed' || item.status === 'Confirmed' ? 'badge-a' : 'badge-b';
-        rows += `<tr>
-            <td style="font-weight:600;">${escapeHtml(item.buyer)}</td>
-            <td>${escapeHtml(item.listing)}</td>
-            <td class="mono">${escapeHtml(item.date)}</td>
-            <td style="color:var(--accent-amber);">${escapeHtml(item.rating)}</td>
-            <td><span class="badge ${badgeCls}">${escapeHtml(item.status)}</span></td>
-            <td><button class="btn" style="padding:4px 8px; font-size:11px;" onclick="confirmAppt(${idx})">Confirm</button></td>
-        </tr>`;
-    });
-    document.getElementById('apptsBody').innerHTML = rows;
-}
-
-async function renderDeals() {
-    const raw = await apiFetch('/api/v1/deals', seedDeals);
-    let deals = raw.map(item => {
-        const amt = item.deal_amount || item.amount || 0;
-        const gross = item.commission_earned || item.gross || Math.round(amt * 0.03);
-        const net = item.net || Math.round(gross * 0.8);
-        return {
-            ref: item.deal_id || item.ref || 'DEAL-2026',
-            buyer: item.buyer_name || item.buyer || 'Buyer',
-            listing: item.listing_title || item.listing || 'Property',
-            amount: amt,
-            gross: gross,
-            net: net,
-            status: item.status || 'Closed Won'
-        };
-    });
-
-    const search = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
-    if (search) {
-        deals = deals.filter(item =>
-            item.ref.toLowerCase().includes(search) ||
-            item.buyer.toLowerCase().includes(search) ||
-            item.listing.toLowerCase().includes(search)
-        );
-    }
-
-    const totalCleared = deals.filter(d => d.status === 'Closed Won' || d.status === 'SPA Signed' || d.status === 'Completed').reduce((s, d) => s + d.net, 0);
-    const totalPipeline = deals.reduce((s, d) => s + d.amount, 0);
-
-    document.getElementById('mTotalCleared').textContent = rm(totalCleared);
-    document.getElementById('mTotalPipeline').textContent = rm(totalPipeline);
-    document.getElementById('navDealCount').textContent = 'RM ' + Math.round(totalCleared/1000) + 'K';
-
-    let rows = '';
-    deals.forEach(item => {
-        const badgeCls = item.status === 'Closed Won' || item.status === 'Completed' || item.status === 'SPA Signed' ? 'badge-a' : 'badge-b';
-        rows += `<tr>
-            <td class="mono" style="font-weight:600; color:var(--accent-blue);">${escapeHtml(item.ref)}</td>
-            <td>${escapeHtml(item.buyer)}</td>
-            <td>${escapeHtml(item.listing)}</td>
-            <td class="mono">${rm(item.amount)}</td>
-            <td class="mono" style="color:var(--text-muted);">${rm(item.gross)}</td>
-            <td class="mono" style="color:var(--accent-green); font-weight:600;">${rm(item.net)}</td>
-            <td><span class="badge ${badgeCls}">${escapeHtml(item.status)}</span></td>
-        </tr>`;
-    });
-    document.getElementById('dealsBody').innerHTML = rows;
-}
-
-function runDsrCalc() {
-    const inc = parseFloat(document.getElementById('cIncome').value) || 0;
-    const com = Math.max(0, parseFloat(document.getElementById('cCommit').value) || 0);
-    const prc = parseFloat(document.getElementById('cPrice').value) || 0;
-    const rate = parseFloat(document.getElementById('cRate').value) || 4.5;
-    const tenure = parseFloat(document.getElementById('cTenure').value) || 35;
-
-    const r = rate / 1200;
-    const n = tenure * 12;
-    const principal = prc * 0.9;
-    
-    let pmt = 0;
-    if (r > 0 && n > 0) {
-        pmt = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-    } else if (n > 0) {
-        pmt = principal / n;
-    }
-    const inst = Math.round(pmt);
-
-    const totalCommit = com + inst;
-    const dsr = inc > 0 ? parseFloat(((totalCommit / inc) * 100).toFixed(1)) : 100;
-
-    // Max affordable loan calculation (at 65% max DSR threshold)
-    const maxCommitment = (inc * 0.65) - com;
-    let maxLoan = 0;
-    if (maxCommitment > 0 && r > 0) {
-        maxLoan = maxCommitment * (Math.pow(1 + r, n) - 1) / (r * Math.pow(1 + r, n));
-    }
-    const maxPrice = maxLoan > 0 ? Math.round(maxLoan / 0.9) : 0;
-
-    document.getElementById('cDsrVal').textContent = `${dsr}%`;
-    document.getElementById('cInstallment').textContent = rm(inst);
-    document.getElementById('cMaxPrice').textContent = rm(maxPrice);
-
-    const b = document.getElementById('cBadge');
-    if (inc <= 0 || dsr > 75) {
-        b.className = 'badge badge-c';
-        b.textContent = 'Grade C (HIGH DSR / UNQUALIFIED)';
-        document.getElementById('cDsrVal').style.color = '#f85149';
-    } else if (dsr <= 65) {
-        b.className = 'badge badge-a';
-        b.textContent = 'Grade A (PASS / HIGHLY ELIGIBLE)';
-        document.getElementById('cDsrVal').style.color = 'var(--accent-green)';
-    } else {
-        b.className = 'badge badge-b';
-        b.textContent = 'Grade B (MODERATE RISK / NURTURE)';
-        document.getElementById('cDsrVal').style.color = 'var(--accent-amber)';
-    }
-}
-const calculateDsr = runDsrCalc;
-
-function sendDsrWhatsAppReport() {
-    const inc = document.getElementById('cIncome').value;
-    const com = document.getElementById('cCommit').value;
-    const prc = document.getElementById('cPrice').value;
-    const inst = document.getElementById('cInstallment').textContent;
-    const dsr = document.getElementById('cDsrVal').textContent;
-    const maxPrc = document.getElementById('cMaxPrice').textContent;
-    const badge = document.getElementById('cBadge').textContent;
-
-    const reportText = `📋 ZK REVENUE OPS — DSR LOAN PRE-APPROVAL REPORT\n` +
-        `Client Net Income: RM ${parseFloat(inc).toLocaleString()}\n` +
-        `Existing Commitments: RM ${parseFloat(com).toLocaleString()}\n` +
-        `Target Property Price: RM ${parseFloat(prc).toLocaleString()}\n` +
-        `Est. Monthly Installment: ${inst}\n` +
-        `Calculated DSR Ratio: ${dsr} (${badge})\n` +
-        `Max Affordable Property Price: ${maxPrc}`;
-
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(reportText);
-    }
-    alert(`Pre-Approval Report copied to clipboard!\n\n${reportText}`);
-}
-
-function setGrade(g, btn) {
-    currentGrade = g;
-    document.querySelectorAll('.f-tab').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    loadPortal();
-}
-
-function onSearch() {
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => {
-        if (activeNav === 'buyers') loadPortal();
-        else if (activeNav === 'listings') renderListings();
-        else if (activeNav === 'appointments') renderAppts();
-        else if (activeNav === 'deals') renderDeals();
-        else loadPortal();
-    }, 250);
-}
-
-let selectedLead = null;
-function openDrawer(idx) {
-    const l = currentLeads[idx];
-    if (!l) return;
-    selectedLead = l;
-    document.getElementById('dName').textContent = `${l.name} (Grade ${l.grade})`;
-    document.getElementById('dMeta').textContent = `${l.phone} · ${l.location} · ${l.propertyType}`;
-    document.getElementById('dIncome').textContent = rm(l.netIncome);
-    document.getElementById('dCommitment').textContent = rm(l.existingCommitments);
-    document.getElementById('dDsr').textContent = `${l.dsrPercent}% (${l.dsrPercent <= 65 ? 'PASS' : 'HIGH RISK'})`;
-    document.getElementById('dComm').textContent = rm(l.estCommission);
-    document.getElementById('drawerOverlay').style.display = 'grid';
-}
-
-function openModal(id) {
-    document.getElementById(id).style.display = 'grid';
-}
-
-function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-}
-
-function closeModalOnOverlay(e, id) {
-    if (e.target.id === id) closeModal(id);
-}
-
-function closeDrawer(e) {
-    if (e.target.id === 'drawerOverlay') closeModal('drawerOverlay');
-}
-
-function triggerWhatsAppLead() {
-    if (!selectedLead) return;
-    alert(`Sending WhatsApp Pre-Approval Report to ${selectedLead.name} (${selectedLead.phone})...`);
-}
-
-function scheduleViewingForLead() {
-    if (!selectedLead) return;
-    closeModal('drawerOverlay');
-    document.getElementById('schBuyer').value = selectedLead.name;
-    document.getElementById('schListing').value = `${selectedLead.location} ${selectedLead.propertyType}`;
-    openModal('modalScheduleViewing');
-}
-
-function handleAddLead(e) {
-    e.preventDefault();
-    const budget = parseFloat(document.getElementById('addBudget').value) || 0;
-    const income = parseFloat(document.getElementById('addIncome').value) || 0;
-    const commit = parseFloat(document.getElementById('addCommit').value) || 0;
-
-    const newLead = {
-        name: document.getElementById('addName').value,
-        phone: document.getElementById('addPhone').value,
-        source: "Manual Entry",
-        grade: "A",
-        location: document.getElementById('addLocation').value,
-        propertyType: document.getElementById('addType').value,
-        maxBudget: budget,
-        netIncome: income,
-        existingCommitments: commit,
-        dsrPercent: 52,
-        estCommission: Math.round(budget * 0.02)
-    };
-    seedBuyers.unshift(newLead);
-    closeModal('modalAddLead');
-    loadPortal();
-    alert(`Lead ${newLead.name} successfully added!`);
-}
-
-function handleAddListing(e) {
-    e.preventDefault();
-    const price = parseFloat(document.getElementById('lstPrice').value) || 0;
-    const newListing = {
-        title: document.getElementById('lstTitle').value,
-        location: document.getElementById('lstLocation').value,
-        type: document.getElementById('lstType').value,
-        price: price,
-        specs: document.getElementById('lstSpecs').value,
-        status: "Available"
-    };
-    seedListings.unshift(newListing);
-    closeModal('modalAddListing');
-    renderListings();
-    alert(`Listing ${newListing.title} successfully added!`);
-}
-
-function handleScheduleViewing(e) {
-    e.preventDefault();
-    const newAppt = {
-        buyer: document.getElementById('schBuyer').value,
-        listing: document.getElementById('schListing').value,
-        date: document.getElementById('schDate').value,
-        rating: "Pending",
-        status: document.getElementById('schStatus').value
-    };
-    seedAppts.unshift(newAppt);
-    closeModal('modalScheduleViewing');
-    renderAppts();
-    alert(`Viewing for ${newAppt.buyer} successfully scheduled!`);
-}
-
-function confirmAppt(idx) {
-    if (seedAppts[idx]) {
-        seedAppts[idx].status = 'Confirmed';
-        renderAppts();
-        alert('Viewing appointment confirmed!');
-    }
-}
-
-function exportCSV() {
-    if (!currentLeads || currentLeads.length === 0) return alert('No data to export.');
-    let csv = 'Name,Phone,Grade,Location,PropertyType,MaxBudget,NetIncome,Commitments,DSR_Percent,EstCommission\n';
-    currentLeads.forEach(l => {
-        csv += `"${l.name}","${l.phone}","${l.grade}","${l.location}","${l.propertyType}",${l.maxBudget},${l.netIncome},${l.existingCommitments},${l.dsrPercent},${l.estCommission}\n`;
-    });
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `Ahmad_Razif_Leads_${new Date().toISOString().split('T')[0]}.csv`;
-    a.click();
-}
-
-// Initial Run
-runDsrCalc();
-loadPortal();
-</script>
+    <script src="js/app.js"></script>
 </body>
 </html>
