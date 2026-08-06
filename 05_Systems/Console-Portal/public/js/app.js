@@ -216,13 +216,30 @@ function autoRouteLeadToTerritory(projectOrLocation) {
     return 'REN-001'; // Default fallback
 }
 
-function calculateDsrMetrics(grossIncome, commitmentsInput = 0) {
+function calculateDsrMetrics(grossIncome, commitmentsInput) {
     const gross = parseFloat(grossIncome) || 0;
-    const netIncome = Math.round(gross * 0.87); // Net Income = Gross * 0.87
-    const commitments = parseFloat(commitmentsInput) > 0 ? parseFloat(commitmentsInput) : Math.round(netIncome * 0.3);
-    const dsrRatio = netIncome > 0 ? Math.round((commitments / netIncome) * 100) : 0;
-    const tier = dsrRatio < 40 ? 'Hot' : (dsrRatio <= 65 ? 'Warm' : 'New');
-    const loanStatus = dsrRatio < 40 ? 'Pre-Approved' : (dsrRatio <= 65 ? 'Documents Collected' : 'Pending Submission');
+    const hasCommitmentVal = commitmentsInput !== undefined && commitmentsInput !== null && commitmentsInput !== '' && !isNaN(parseFloat(commitmentsInput));
+
+    if (gross <= 0) {
+        const commitments = hasCommitmentVal ? (parseFloat(commitmentsInput) || 0) : 0;
+        return {
+            gross: 0,
+            netIncome: 0,
+            commitments: commitments,
+            dsrRatio: 999.0,
+            tier: 'Cold',
+            loanStatus: 'High Risk / Unqualified'
+        };
+    }
+
+    const netIncome = Math.round(gross * 0.87);
+    const commitments = hasCommitmentVal ? parseFloat(commitmentsInput) : Math.round(netIncome * 0.3);
+
+    const rawDsr = (commitments / netIncome) * 100;
+    const dsrRatio = Math.round(rawDsr);
+    const tier = rawDsr <= 40.0 ? 'Hot' : (rawDsr <= 65.0 ? 'Warm' : 'Cold');
+    const loanStatus = rawDsr <= 40.0 ? 'Pre-Approved' : (rawDsr <= 65.0 ? 'Documents Collected' : 'Pending Submission');
+
     return { gross, netIncome, commitments, dsrRatio, tier, loanStatus };
 }
 
@@ -819,7 +836,7 @@ function renderClientRoiReport() {
 
     const estDeals = Math.round(hotQualified * 0.4); // 40% close rate on hot leads
     const estCommissionPipeline = estDeals * 15000; // RM 15k commission per deal
-    const totalRetainerFees = targetClients.length * 1500;
+    const totalRetainerFees = targetClients.reduce((sum, c) => sum + (c.retainerFee || (c.tier === 'Enterprise' ? 3000 : c.tier === 'Growth' ? 1500 : 800)), 0);
     const roiMultiple = totalRetainerFees > 0 ? (estCommissionPipeline / totalRetainerFees).toFixed(1) : '0.0';
 
     container.innerHTML = `
@@ -871,7 +888,7 @@ function renderClientRoiReport() {
                         const cLeads = leads.filter(l => l.assignedClientId === c.id);
                         const cHot = cLeads.filter(l => l.tier === 'Hot').length;
                         const cEstPipe = Math.round(cHot * 0.4) * 15000;
-                        const cFee = c.tier === 'Enterprise' ? 3000 : c.tier === 'Growth' ? 1500 : 800;
+                        const cFee = c.retainerFee || (c.tier === 'Enterprise' ? 3000 : c.tier === 'Growth' ? 1500 : 800);
                         const cRoi = (cEstPipe / cFee).toFixed(1);
                         return `
                             <tr style="border-bottom:1px solid var(--border-color);">
@@ -909,21 +926,22 @@ function calculateDsr() {
     const outputText = document.getElementById('dsr-calc-output');
 
     if (income <= 0) {
-        badge.className = 'dsr-badge green';
-        badge.textContent = 'DSR: --%';
-        outputText.textContent = 'Masukkan pendapatan bulanan untuk mengira kelayakan DSR.';
+        badge.className = 'dsr-badge red';
+        badge.textContent = 'DSR: 999% (Tinggi / Berrisiko)';
+        outputText.textContent = 'Pendapatan RM 0 / Tidak Layak. Sila semak semula maklumat pemohon.';
         return;
     }
 
     const netIncome = Math.round(income * 0.87);
-    const dsrRatio = Math.round((commitment / netIncome) * 100);
+    const rawDsr = (commitment / netIncome) * 100;
+    const dsrRatio = Math.round(rawDsr);
     const maxInstallment = Math.round(netIncome * 0.65 - commitment);
     const estMaxLoan = maxInstallment > 0 ? Math.round(maxInstallment * 200) : 0;
 
-    if (dsrRatio <= 40) {
+    if (rawDsr <= 40.0) {
         badge.className = 'dsr-badge green';
         badge.textContent = `DSR: ${dsrRatio}% (Tier 1 Hot Layak)`;
-    } else if (dsrRatio <= 65) {
+    } else if (rawDsr <= 65.0) {
         badge.className = 'dsr-badge green';
         badge.textContent = `DSR: ${dsrRatio}% (Tier 2 Warm Layak)`;
     } else {
@@ -1358,7 +1376,9 @@ function syncToGasEngine(lead) {
 
 function normalisePhone(phone) {
     let clean = (phone || '').replace(/[^0-9+]/g, '');
-    if (clean.startsWith('01')) clean = '+60' + clean.substring(1);
+    if (clean.startsWith('+60')) return clean;
+    if (clean.startsWith('60')) return '+' + clean;
+    if (clean.startsWith('01')) return '+60' + clean.substring(1);
     if (!clean.startsWith('+60') && clean.length >= 9) clean = '+60' + clean;
     return clean;
 }
