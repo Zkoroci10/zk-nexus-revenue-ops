@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REN Client Portal — ZK Revenue Ops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --card-bg: #111827;
+            --accent-gold: #f59e0b;
+            --accent-blue: #38bdf8;
+            --accent-green: #10b981;
+            --border-color: #1f2937;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .portal-header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .agent-badge {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .stat-val { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+        .stat-lbl { font-size: 13px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; }
+        .dossier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        .dossier-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .dossier-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+        .tier-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .tier-hot { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+        .tier-qualified { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+        .btn-print {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="portal-header">
+        <div>
+            <h1 style="margin: 0; font-size: 22px; color: #fff;">🏢 ZK REVENUE OPS — REN CLIENT PORTAL</h1>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #9ca3af;">White-Label Lead Dossier & DSR Qualification Engine</p>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <span class="agent-badge" id="clientAgentName">AGENT: REN-001 (Ahmad Razif)</span>
+            <button class="btn-print" onclick="window.print()">🖨️ Cetak Dossiers (PDF)</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Stats Row -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-val" style="color: var(--accent-gold);" id="statLeads">34</div>
+                <div class="stat-lbl">Active Buyer Leads</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" style="color: var(--accent-green);" id="statQualified">22</div>
+                <div class="stat-lbl">Qualified DSR Buyers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" style="color: var(--accent-blue);" id="statViewings">8</div>
+                <div class="stat-lbl">Scheduled Viewings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val" style="color: #a855f7;">RM 14.5M</div>
+                <div class="stat-lbl">Pipeline Loan Value</div>
+            </div>
+        </div>
+
+        <h2 style="font-size: 18px; color: #fff; margin-bottom: 20px;">📋 Verified Buyer Dossiers & DSR Qualification Cards</h2>
+
+        <!-- Dossiers Grid -->
+        <div class="dossier-grid" id="dossierGrid">
+            <!-- Sample Card 1 -->
+            <div class="dossier-card">
+                <span class="tier-tag tier-qualified">Pre-Approved LPPSA</span>
+                <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #fff;">Muhammad Hariz</h3>
+                <p style="margin: 0 0 16px 0; color: #9ca3af; font-size: 14px;">📱 +6012-345 6789</p>
+                
+                <div style="background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 16px; border: 1px solid #1f2937;">
+                    <div style="font-size: 13px; color: #9ca3af;">Projek Minat: <strong style="color: #fff;">SkyResidence Subang</strong></div>
+                    <div style="font-size: 13px; color: #9ca3af; margin-top: 4px;">Anggaran Gaji: <strong style="color: #4ade80;">RM 7,500 / bulan</strong></div>
+                    <div style="font-size: 13px; color: #9ca3af; margin-top: 4px;">Status DSR: <strong style="color: #38bdf8;">38.5% (LULUS BANK & LPPSA)</strong></div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 12px; color: #9ca3af;">📅 Viewing: Sabtu 11:00 AM</span>
+                    <a href="https://wa.me/60123456789" target="_blank" style="background: #166534; color: #4ade80; text-decoration: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;">📱 Hubungi Buyer</a>
+                </div>
+            </div>
+
+            <!-- Sample Card 2 -->
+            <div class="dossier-card">
+                <span class="tier-tag tier-hot">Pre-Approved Bank</span>
+                <h3 style="margin: 0 0 8px 0; font-size: 18px; color: #fff;">Tan Wei Lun</h3>
+                <p style="margin: 0 0 16px 0; color: #9ca3af; font-size: 14px;">📱 +6017-111 2233</p>
+                
+                <div style="background: #0f172a; padding: 12px; border-radius: 8px; margin-bottom: 16px; border: 1px solid #1f2937;">
+                    <div style="font-size: 13px; color: #9ca3af;">Projek Minat: <strong style="color: #fff;">Subang Parksuites</strong></div>
+                    <div style="font-size: 13px; color: #9ca3af; margin-top: 4px;">Anggaran Gaji: <strong style="color: #4ade80;">RM 8,200 / bulan</strong></div>
+                    <div style="font-size: 13px; color: #9ca3af; margin-top: 4px;">Status DSR: <strong style="color: #38bdf8;">42.0% (LULUS MAYBANK)</strong></div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 12px; color: #9ca3af;">📅 Viewing: Ahad 3:00 PM</span>
+                    <a href="https://wa.me/60171112233" target="_blank" style="background: #166534; color: #4ade80; text-decoration: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;">📱 Hubungi Buyer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
