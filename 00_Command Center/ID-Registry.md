@@ -106,7 +106,8 @@ Related: RUL-001, IDX-001
 |----|-------|--------|--------|
 | SOP-001 | Master SOP | Draft | 01_Business |
 | SOP-002 | Client Onboarding | Draft | 01_Business |
-| SOP-003 | ZK Revenue Ops Outreach SOP | Active | 01_Business |
+| BRF-002 | Gemini Spark Co-Worker Briefing & Directive | Active | 00_Command Center\GEMINI_SPARK_COWORKER_BRIEFING.md |
+| BUS-001 | ZK Revenue Ops Strategic Architecture | Active | 01_Business |
 | SOP-004 | Objection Handling Playbook | Active | 01_Business |
 
 ### SYS — Systems

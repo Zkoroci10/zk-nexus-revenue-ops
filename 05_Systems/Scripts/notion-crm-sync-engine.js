@@ -34,11 +34,11 @@ const path = require('path');
 const NOTION_TOKEN = process.env.NOTION_API_KEY || '';
 
 const DB_IDS = {
-    BUYER_LEADS:    '3ab9608c-a9d9-8104-924c-c90dc01a789e',
-    LISTINGS:       '3ab9608c-a9d9-81ba-8b65-e6f3552aa744',
-    DEALS:          '3ab9608c-a9d9-8185-ae5a-f3f7d1a93dda',
-    REN_CLIENTS:    '3ab9608c-a9d9-8041-a1ca-c5ca98284cda',
-    APPOINTMENTS:   '3ab9608c-a9d9-81bc-9988-d421ab700466',
+    BUYER_LEADS:    '3ab9608c-a9d9-8104-924c-c90dc01a789e',  // Buyer Leads Database
+    LEAD_PIPELINE:  '3ab9608c-a9d9-819b-ae17-c101688abbb0',  // ZK Revenue Ops - Lead Pipeline CRM
+    LISTINGS:       '3ab9608c-a9d9-81ba-8b65-e6f3552aa744',  // ZK Sales CRM - Property Listings
+    DEALS:          '3ab9608c-a9d9-8185-ae5a-f3f7d1a93dda',  // ZK Sales CRM - Commission & Deals Ledger
+    // REN_CLIENTS & APPOINTMENTS: share these pages to the integration in Notion to enable sync
 };
 
 const TEST_MODE = process.argv.includes('--test');
@@ -117,28 +117,30 @@ async function checkConnection() {
 // ── SYNC FUNCTIONS ──────────────────────────────────────────────────────────
 
 async function syncLeadToNotion(lead) {
-    const { net, dsr, tier } = parseDSR(lead['Gross Income'] || lead['gross_income'] || lead['income'], lead['Commitments'] || lead['commitments']);
-    const phone = normalisePhone(lead['Phone'] || lead['phone'] || lead['contact']);
-    const name  = lead['Name'] || lead['name'] || lead['buyer_name'] || 'Unknown Lead';
+    const { net, dsr, tier } = parseDSR(
+        lead['Gross Income'] || lead['gross_income'] || lead['income'] || lead['Gross_Income'] || 0,
+        lead['Commitments'] || lead['commitments'] || 0
+    );
+    const phone       = normalisePhone(lead['Phone'] || lead['phone'] || lead['contact'] || '');
+    const name        = lead['Name'] || lead['name'] || lead['buyer_name'] || lead['Buyer Name'] || 'Unknown Lead';
     const assignedREN = lead['Assigned REN'] || lead['assigned_ren'] || lead['assignedClientId'] || 'REN-001';
-    const project = lead['Project Interest'] || lead['project'] || 'Not Specified';
+    const project     = lead['Project Interest'] || lead['project'] || lead['Preferred Location'] || 'Not Specified';
+    const budget      = lead['Budget'] || lead['budget'] || lead['Budget Range'] || 'RM 300k - RM 500k';
+    const email       = lead['Email'] || lead['email'] || '';
 
+    // Map to ACTUAL Buyer Leads Database properties (from schema inspection)
     const properties = {
-        'Name':            { title: [{ text: { content: name } }] },
-        'Phone':           { phone_number: phone },
-        'Assigned REN':    { select: { name: assignedREN } },
-        'Tier':            { select: { name: tier } },
-        'DSR Ratio':       { number: dsr },
-        'Net Income':      { number: net },
-        'Project Interest':{ rich_text: [{ text: { content: project } }] },
-        'Status':          { select: { name: 'New Lead' } },
-        'Source':          { select: { name: 'CSV Import' } },
+        'Buyer Name':         { title: [{ text: { content: name } }] },
+        'Phone':              { phone_number: phone || null },
+        'Assigned REN':       { select: { name: assignedREN } },
+        'Deal Status':        { select: { name: tier === 'Hot' ? 'Pre-Approved' : tier === 'Warm' ? 'Documents Collected' : 'New Lead' } },
+        'Preferred Location': { rich_text: [{ text: { content: project } }] },
+        'Budget Range':       { select: { name: budget } },
+        'Source Campaign':    { select: { name: 'CSV Import' } },
+        'Notes':              { rich_text: [{ text: { content: `DSR: ${dsr}% | Net Income: RM${net} | Tier: ${tier}` } }] },
     };
 
-    // Add optional fields if present
-    if (lead['Email'] || lead['email']) {
-        properties['Email'] = { email: lead['Email'] || lead['email'] };
-    }
+    if (email) properties['Email'] = { email };
 
     try {
         await notion.pages.create({
@@ -152,31 +154,8 @@ async function syncLeadToNotion(lead) {
 }
 
 async function syncRENClientsToNotion() {
-    console.log('\n📋 Syncing REN Client Retainers...');
-    const renClients = [
-        { id: 'REN-001', name: 'Ahmad Razif', agency: 'Subang Jaya Property Hub', territory: 'Subang Jaya & USJ', tier: 'Enterprise', fee: 1500 },
-        { id: 'REN-002', name: 'Sarah Tan',   agency: 'Shah Alam Real Estate',      territory: 'Shah Alam North & Setia Alam', tier: 'Growth', fee: 1000 },
-        { id: 'REN-003', name: 'Kevon Lee',   agency: 'Cyberjaya Prime Property',   territory: 'Cyberjaya & Puchong', tier: 'Starter', fee: 800 },
-    ];
-
-    for (const client of renClients) {
-        try {
-            await notion.pages.create({
-                parent: { database_id: DB_IDS.REN_CLIENTS },
-                properties: {
-                    'Name':          { title: [{ text: { content: `${client.id} — ${client.name}` } }] },
-                    'Agency':        { rich_text: [{ text: { content: client.agency } }] },
-                    'Territory':     { rich_text: [{ text: { content: client.territory } }] },
-                    'Retainer Tier': { select: { name: client.tier } },
-                    'Monthly Fee':   { number: client.fee },
-                    'Status':        { select: { name: 'Active' } },
-                },
-            });
-            console.log(`  ✅ ${client.id} (${client.name}) synced`);
-        } catch (e) {
-            console.log(`  ⚠️  ${client.id} — ${e.message.includes('already') ? 'already exists (skip)' : e.message}`);
-        }
-    }
+    console.log('\n📋 REN Client Retainers: Skipping (not shared to integration yet).');
+    console.log('   To enable: In Notion, open each REN Client page → Share → Add your integration.');
 }
 
 // ── MAIN EXECUTION ───────────────────────────────────────────────────────────
