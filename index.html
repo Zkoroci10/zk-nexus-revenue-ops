@@ -6,7 +6,7 @@
     <meta name="description" content="ZK Revenue Ops — Multi-Tenant Enterprise Command Center & REN Client Portal Engine.">
     <meta name="author" content="Zubair, ZK Revenue Ops">
     <meta name="robots" content="noindex, nofollow">
-    <!-- ZNS: SYS-CON-001 | Console-Portal Web App v3.1 Enterprise -->
+    <!-- ZNS: SYS-CON-001 | Console-Portal Web App v3.2 Enterprise -->
     <title>ZK Revenue Ops — Enterprise Command Center</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +45,13 @@
                     <span class="nav-icon">👥</span>
                     <span class="nav-text">Client Manager</span>
                 </button>
+                <button id="btn-roi-mode" class="nav-item" onclick="openRoiModal()" aria-pressed="false">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Monthly ROI Report</span>
+                </button>
                 <button id="btn-sync-mode" class="nav-item" onclick="openSyncModal()" aria-pressed="false">
                     <span class="nav-icon">🔄</span>
-                    <span class="nav-text">Live Sync &amp; Backup</span>
+                    <span class="nav-text">Notion 5-DB Sync</span>
                 </button>
             </nav>
 
@@ -57,7 +61,7 @@
                         <span class="dot live"></span>
                         <span class="status-text">SYSTEM ONLINE</span>
                     </div>
-                    <div class="sync-status" id="live-sync-indicator">GAS &amp; Notion Bridge Active</div>
+                    <div class="sync-status" id="live-sync-indicator">Notion 5-DB Sync Active</div>
                 </div>
             </div>
         </aside>
@@ -73,9 +77,10 @@
                 </div>
 
                 <div class="header-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="load10kPartitionDataset()">⚡ Load 10k Engine</button>
+                    <button class="btn btn-secondary btn-sm" onclick="openRoiModal()">📈 ROI Report</button>
                     <button class="btn btn-secondary btn-sm" onclick="exportDataCsv('leads')">📥 Export CSV</button>
-                    <button class="btn btn-secondary btn-sm" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
-                    <button class="btn btn-secondary btn-sm" onclick="openAddClientModal()">+ Add REN Client</button>
+                    <button class="btn btn-secondary btn-sm" onclick="openImportModal('leads')">📤 Bulk Import</button>
                     <button class="btn btn-primary btn-sm" onclick="openLeadModal()">+ Add New Lead</button>
                 </div>
             </header>
@@ -99,7 +104,7 @@
                         </div>
                         <div class="kpi-body">
                             <span id="dash-raw-cnt" class="kpi-value">0</span>
-                            <span class="kpi-sub">Raw Inflow Stream</span>
+                            <span class="kpi-sub">10k Multi-Tenant Engine</span>
                         </div>
                     </div>
 
@@ -110,7 +115,7 @@
                         </div>
                         <div class="kpi-body">
                             <span id="dash-hot-cnt" class="kpi-value hot-color">0</span>
-                            <span class="kpi-sub">Pre-Approved LPPSA / High DSR</span>
+                            <span class="kpi-sub">Pre-Approved LPPSA / DSR &lt; 40%</span>
                         </div>
                     </div>
 
@@ -132,7 +137,7 @@
                         </div>
                         <div class="kpi-body">
                             <span id="dash-ren-cnt" class="kpi-value">3</span>
-                            <span class="kpi-sub">Subang &amp; Shah Alam Lock</span>
+                            <span class="kpi-sub">Subang, Shah Alam, Cyber/Puchong</span>
                         </div>
                     </div>
                 </div>
@@ -177,7 +182,7 @@
                                         <span class="proj-title">Console-Portal Enterprise Overhaul</span>
                                         <span class="badge-status active">Active</span>
                                     </div>
-                                    <p class="proj-sub">Multi-tenant REN Client Manager, Bulk CSV Batch Engine &amp; Live Sync Bridge.</p>
+                                    <p class="proj-sub">Multi-tenant 10k Lead Engine, Territory Locks &amp; Notion 5-DB Sync.</p>
                                 </div>
                             </div>
                         </section>
@@ -201,9 +206,9 @@
                             <h3 id="quick-actions-heading" class="card-title mb-4">QUICK SYSTEM ACTIONS</h3>
                             <div class="quick-buttons-grid">
                                 <button class="btn btn-secondary" onclick="openLeadModal()">+ Ingest Lead</button>
-                                <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk Import CSV</button>
-                                <button class="btn btn-secondary" onclick="openAddClientModal()">+ Onboard REN Agent</button>
-                                <button class="btn btn-secondary" onclick="openSyncModal()">🔄 Live Sync Settings</button>
+                                <button class="btn btn-secondary" onclick="load10kPartitionDataset()">⚡ Load 10k Engine</button>
+                                <button class="btn btn-secondary" onclick="openRoiModal()">📈 Monthly ROI Report</button>
+                                <button class="btn btn-secondary" onclick="openSyncModal()">🔄 Notion 5-DB Sync</button>
                             </div>
                         </section>
                     </div>
@@ -214,11 +219,12 @@
             <main id="view-operator" class="view-panel" role="main" aria-label="Console Operator Hub" hidden>
                 <div class="view-header">
                     <div>
-                        <h2>Console Operator Hub</h2>
-                        <p class="view-sub">Private lead triage queue, DSR qualification, 1-click WhatsApp outreach, and buyer dossier publishing.</p>
+                        <h2>Console Operator Hub (10k Lead Engine)</h2>
+                        <p class="view-sub">Private lead triage queue, instant DSR qualification, location auto-routing, and high-performance pagination (50 leads/page).</p>
                     </div>
                     <div class="header-actions">
-                        <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
+                        <button class="btn btn-secondary" onclick="load10kPartitionDataset()">⚡ Load 10k Partition Dataset</button>
+                        <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk Import CSV</button>
                         <button class="btn btn-primary" onclick="openLeadModal()">+ Ingest New Lead</button>
                     </div>
                 </div>
@@ -226,15 +232,15 @@
                 <!-- Operator Metrics Row -->
                 <div class="metrics-grid">
                     <div class="metric-card glass-card">
-                        <span class="metric-label">RAW QUEUE</span>
+                        <span class="metric-label">TOTAL ENGINE LEADS</span>
                         <span id="metric-raw" class="metric-value">0</span>
                     </div>
                     <div class="metric-card glass-card border-hot">
-                        <span class="metric-label">TIER 1 HOT</span>
+                        <span class="metric-label">TIER 1 HOT (&lt;40% DSR)</span>
                         <span id="metric-hot" class="metric-value hot-color">0</span>
                     </div>
                     <div class="metric-card glass-card border-warm">
-                        <span class="metric-label">TIER 2 WARM</span>
+                        <span class="metric-label">TIER 2 WARM (40-65% DSR)</span>
                         <span id="metric-warm" class="metric-value warm-color">0</span>
                     </div>
                     <div class="metric-card glass-card border-client">
@@ -243,17 +249,46 @@
                     </div>
                 </div>
 
-                <!-- Filter Pills -->
-                <div class="filter-bar">
-                    <span class="filter-title">FILTER TIER:</span>
-                    <button id="filter-all" class="filter-pill active" onclick="filterLeads('All')">All Leads</button>
-                    <button id="filter-hot" class="filter-pill hot-pill" onclick="filterLeads('Hot')">🔥 Tier 1 Hot</button>
-                    <button id="filter-warm" class="filter-pill warm-pill" onclick="filterLeads('Warm')">⚡ Tier 2 Warm</button>
-                    <button id="filter-new" class="filter-pill" onclick="filterLeads('New')">🆕 New Queue</button>
-                    <button id="filter-disqualified" class="filter-pill" onclick="filterLeads('Disqualified')">✗ Disqualified</button>
+                <!-- Filter & Pagination Control Bar -->
+                <div class="filter-bar" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                        <span class="filter-title">FILTER TIER:</span>
+                        <button id="filter-all" class="filter-pill active" onclick="filterLeads('All')">All Leads</button>
+                        <button id="filter-hot" class="filter-pill hot-pill" onclick="filterLeads('Hot')">🔥 Tier 1 Hot</button>
+                        <button id="filter-warm" class="filter-pill warm-pill" onclick="filterLeads('Warm')">⚡ Tier 2 Warm</button>
+                        <button id="filter-new" class="filter-pill" onclick="filterLeads('New')">🆕 New Queue</button>
+                        <button id="filter-disqualified" class="filter-pill" onclick="filterLeads('Disqualified')">✗ Disqualified</button>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <label style="font-size:11px;color:var(--text-sub);">TERRITORY LOCK:</label>
+                        <select id="territory-filter-select" class="input-field select-sm" style="width:160px;padding:4px 8px;font-size:12px;" onchange="handleTerritoryFilterChange(event)">
+                            <option value="All">All Territories</option>
+                            <option value="REN-001">REN-001: Subang Jaya</option>
+                            <option value="REN-002">REN-002: Shah Alam North</option>
+                            <option value="REN-003">REN-003: Cyber/Puchong</option>
+                        </select>
+                    </div>
                 </div>
 
-                <!-- Kanban Board -->
+                <!-- Pagination Navigation Controls (Top) -->
+                <div class="pagination-bar glass-card p-3 mb-4" style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;margin-bottom:16px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <button class="btn btn-sm btn-secondary btn-page-prev" onclick="changePage(-1)">◄ Previous</button>
+                        <button class="btn btn-sm btn-secondary btn-page-next" onclick="changePage(1)">Next ►</button>
+                        <span id="page-info-top" class="font-mono text-sm" style="color:var(--text-sub);margin-left:8px;">Showing 0 - 0 of 0 leads (Page 1 of 1)</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <label style="font-size:11px;color:var(--text-sub);">PER PAGE:</label>
+                        <select class="input-field select-sm" style="width:70px;padding:2px 6px;font-size:12px;" onchange="setPageSize(this.value)">
+                            <option value="25">25</option>
+                            <option value="50" selected>50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Kanban Board Grid -->
                 <div class="kanban-grid">
                     <section class="kanban-column glass-card">
                         <div class="column-header">
@@ -265,7 +300,7 @@
 
                     <section class="kanban-column glass-card border-hot">
                         <div class="column-header">
-                            <span class="column-title">TIER 1 HOT (PRE-APPROVED)</span>
+                            <span class="column-title">TIER 1 HOT (PRE-APPROVED &lt;40% DSR)</span>
                             <span id="count-hot" class="column-count">0</span>
                         </div>
                         <div id="container-hot" class="kanban-list"></div>
@@ -273,7 +308,7 @@
 
                     <section class="kanban-column glass-card border-warm">
                         <div class="column-header">
-                            <span class="column-title">TIER 2 WARM (CADENCE)</span>
+                            <span class="column-title">TIER 2 WARM (40-65% DSR)</span>
                             <span id="count-warm" class="column-count">0</span>
                         </div>
                         <div id="container-warm" class="kanban-list"></div>
@@ -286,6 +321,16 @@
                         </div>
                         <div id="container-disqualified" class="kanban-list"></div>
                     </section>
+                </div>
+
+                <!-- Pagination Navigation Controls (Bottom) -->
+                <div class="pagination-bar glass-card p-3 mt-4" style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;margin-top:16px;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <button class="btn btn-sm btn-secondary btn-page-prev" onclick="changePage(-1)">◄ Previous</button>
+                        <button class="btn btn-sm btn-secondary btn-page-next" onclick="changePage(1)">Next ►</button>
+                        <span id="page-info-bottom" class="font-mono text-sm" style="color:var(--text-sub);margin-left:8px;">Showing 0 - 0 of 0 leads</span>
+                    </div>
+                    <button class="btn btn-sm btn-primary" onclick="load10kPartitionDataset()">⚡ Load 10k Sample Engine</button>
                 </div>
             </main>
 
@@ -322,12 +367,12 @@
                 <div id="client-dossier-container" class="dossiers-grid"></div>
             </main>
 
-            <!-- ── VIEW 3: REN CLIENT MANAGER (MULT-TENANT MANAGEMENT) ──────── -->
+            <!-- ── VIEW 3: REN CLIENT MANAGER (MULTI-TENANT MANAGEMENT) ──────── -->
             <main id="view-manager" class="view-panel" role="main" aria-label="REN Client Manager" hidden>
                 <div class="view-header">
                     <div>
                         <h2>REN Client Manager</h2>
-                        <p class="view-sub">Multi-tenant client seat management. Onboard new REN agents, set territory locks, and manage subscription tiers.</p>
+                        <p class="view-sub">Multi-tenant client seat management. Onboard new REN agents, set exact territory locks, and manage retainer tiers.</p>
                     </div>
                     <div class="header-actions">
                         <button class="btn btn-secondary" onclick="openImportModal('clients')">📤 Bulk Import Agents CSV</button>
@@ -348,7 +393,7 @@
     <div id="lead-modal" class="modal-overlay" role="dialog" aria-modal="true">
         <div class="modal-content glass-card">
             <div class="modal-header">
-                <h3>Direct Lead Ingestion</h3>
+                <h3>Direct Lead Ingestion &amp; Instant DSR Scoring</h3>
                 <button class="btn-close" onclick="closeLeadModal()">✕</button>
             </div>
             <form id="add-lead-form" onsubmit="handleNewLead(event)">
@@ -363,13 +408,16 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group flex-1">
-                            <label for="lead-project">Project Interest</label>
+                            <label for="lead-project">Project Interest / Location</label>
                             <input type="text" id="lead-project" placeholder="e.g. SkyResidence Subang" required class="input-field">
                         </div>
                         <div class="form-group flex-1">
-                            <label for="lead-income">Est. Income (RM/mo)</label>
-                            <input type="number" id="lead-income" placeholder="6500" class="input-field" min="0">
+                            <label for="lead-income">Gross Monthly Income (RM/mo)</label>
+                            <input type="number" id="lead-income" placeholder="6500" class="input-field" min="0" required>
                         </div>
+                    </div>
+                    <div class="status-box glass-card border-client" style="padding:10px;font-size:11px;color:var(--text-muted);">
+                        ⚡ <strong>Auto-Routing &amp; DSR Rule:</strong> Net Income calculated at 87% of Gross. DSR &lt; 40% auto-assigns to Tier 1 Hot Pre-Approved &amp; routes to assigned territory.
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -394,15 +442,15 @@
                     <div class="form-group flex-1">
                         <label for="modal-tier-select">Qualification Tier</label>
                         <select id="modal-tier-select" class="input-field">
-                            <option value="Hot">🔥 Tier 1 Hot (Pre-approved / High DSR)</option>
-                            <option value="Warm">⚡ Tier 2 Warm (In Cadence)</option>
+                            <option value="Hot">🔥 Tier 1 Hot (Pre-approved / DSR &lt; 40%)</option>
+                            <option value="Warm">⚡ Tier 2 Warm (In Cadence / DSR 40-65%)</option>
                             <option value="New">🆕 New / Screening</option>
                             <option value="Disqualified">✗ Disqualified (Out of Budget / Invalid)</option>
                         </select>
                     </div>
 
                     <div class="form-group flex-1">
-                        <label for="modal-assign-client">Assign to REN Client</label>
+                        <label for="modal-assign-client">Assign to REN Client (Territory Lock)</label>
                         <select id="modal-assign-client" class="input-field">
                             <!-- Injected dynamically via JS -->
                         </select>
@@ -429,14 +477,14 @@
                 <!-- DSR Interactive Calculator Box -->
                 <div class="dsr-calculator-box">
                     <div class="dsr-header">
-                        <span>⚡ DSR LOAN ELIGIBILITY CALCULATOR</span>
-                        <span id="dsr-ratio-badge" class="dsr-badge green">DSR: 42% (Eligible)</span>
+                        <span>⚡ DSR LOAN ELIGIBILITY CALCULATOR (NET INCOME = GROSS * 0.87)</span>
+                        <span id="dsr-ratio-badge" class="dsr-badge green">DSR: 33% (Eligible)</span>
                     </div>
                     <div class="dsr-inputs">
-                        <input type="number" id="dsr-income-input" placeholder="Monthly Income (RM)" class="input-field input-sm" oninput="calculateDsr()">
+                        <input type="number" id="dsr-income-input" placeholder="Gross Monthly Income (RM)" class="input-field input-sm" oninput="calculateDsr()">
                         <input type="number" id="dsr-commitment-input" placeholder="Existing Commitments (RM)" class="input-field input-sm" oninput="calculateDsr()">
                     </div>
-                    <div id="dsr-calc-output" class="dsr-output-text">Est. Max Installment Capacity: RM 2,730/mo &bull; Max Loan: RM 550,000</div>
+                    <div id="dsr-calc-output" class="dsr-output-text">Pendapatan Bersih (87%): RM 5,655 • Kapasiti Ansuran: RM 2,730/bln • Pinjaman Maksimum: RM 550,000</div>
                 </div>
 
                 <div class="form-group">
@@ -477,8 +525,8 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group flex-1">
-                            <label for="client-territory">Territory Lock</label>
-                            <input type="text" id="client-territory" placeholder="Subang Jaya &amp; Shah Alam" required class="input-field">
+                            <label for="client-territory">Exact Territory Lock</label>
+                            <input type="text" id="client-territory" placeholder="e.g. Subang Jaya / Shah Alam North" required class="input-field">
                         </div>
                         <div class="form-group flex-1">
                             <label for="client-tier">Service Tier</label>
@@ -498,24 +546,24 @@
         </div>
     </div>
 
-    <!-- ── MODAL: BULK CSV DATA IMPORT ────────────────────────────────── -->
+    <!-- ── MODAL: BULK CSV DATA IMPORT (RFC-4180) ───────────────────────── -->
     <div id="import-modal" class="modal-overlay" role="dialog" aria-modal="true">
         <div class="modal-content glass-card">
             <div class="modal-header">
-                <h3 id="import-modal-title">Bulk CSV Data Import</h3>
+                <h3 id="import-modal-title">Bulk CSV Data Import (RFC-4180 Compliant)</h3>
                 <button class="btn-close" onclick="closeImportModal()">✕</button>
             </div>
             <div class="modal-body space-y-4">
-                <p class="view-sub">Upload or paste CSV batch data to import multiple records at once.</p>
+                <p class="view-sub">RFC-4180 compliant CSV parser with quoted comma support, O(1) phone deduplication, and instant DSR calculation.</p>
                 <div class="form-group">
                     <label for="csv-file-input">Select CSV File</label>
                     <input type="file" id="csv-file-input" accept=".csv, .txt" class="input-field" onchange="handleCsvFileSelected(event)">
                 </div>
                 <div class="form-group">
                     <label for="csv-text-area">Or Paste Raw CSV Content</label>
-                    <textarea id="csv-text-area" rows="6" placeholder="name,phone,project,income,tier&#10;Muhammad Hariz,+60123456789,SkyResidence,6500,Hot" class="input-field font-mono"></textarea>
+                    <textarea id="csv-text-area" rows="6" placeholder="name,phone,project,income,commitments&#10;&quot;Muhammad Hariz&quot;,&quot;+60123456789&quot;,&quot;SkyResidence Subang&quot;,6500,1850" class="input-field font-mono"></textarea>
                 </div>
-                <button class="btn btn-secondary btn-sm" onclick="downloadCsvTemplate()">📥 Download CSV Format Template</button>
+                <button class="btn btn-secondary btn-sm" onclick="downloadCsvTemplate()">📥 Download RFC-4180 CSV Template</button>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" onclick="closeImportModal()">Cancel</button>
@@ -524,32 +572,82 @@
         </div>
     </div>
 
-    <!-- ── MODAL: LIVE SYNC & BACKUP CONFIG ───────────────────────────── -->
+    <!-- ── MODAL: NOTION 5-DATABASE RELATIONAL SYNC ─────────────────────── -->
     <div id="sync-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-content glass-card">
+        <div class="modal-content glass-card modal-lg">
             <div class="modal-header">
-                <h3>Live Sync &amp; Database Backup Settings</h3>
+                <h3>Notion 5-Database Relational Sync Console</h3>
                 <button class="btn-close" onclick="closeSyncModal()">✕</button>
             </div>
             <div class="modal-body space-y-4">
-                <div class="form-group">
-                    <label for="gas-url-input">Google Apps Script CRM Engine Web App URL (/exec)</label>
-                    <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="input-field font-mono">
-                </div>
-                <div class="form-group">
-                    <label for="notion-key-input">Notion API Integration Token</label>
-                    <input type="password" id="notion-key-input" placeholder="ntn_4027..." class="input-field font-mono">
-                </div>
-                <div class="status-box glass-card border-client">
-                    <div style="font-weight:700;color:var(--client-color);">Bi-Directional Backup Status: ACTIVE</div>
-                    <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">
-                        Data automatically replicates across Local Storage, Google Sheets (`gas-crm-engine.js`), and Notion Sales CRM Databases.
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="gas-url-input">Google Apps Script CRM Engine Web App URL</label>
+                        <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="input-field font-mono">
                     </div>
+                    <div class="form-group flex-1">
+                        <label for="notion-key-input">Notion Integration Token</label>
+                        <input type="password" id="notion-key-input" placeholder="ntn_4027..." class="input-field font-mono">
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h4 style="font-size:13px;color:var(--text-sub);margin-bottom:8px;">RELATIONAL NOTION DATABASES (5 ACTIVE STACKS)</h4>
+                </div>
+
+                <!-- Live Status Cards for All 5 Notion Databases -->
+                <div id="notion-db-cards-container" class="space-y-2">
+                    <!-- Injected dynamically via JS -->
+                </div>
+
+                <!-- Sync Log Activity Window -->
+                <div class="form-group">
+                    <label>Live Bi-Directional Sync Output Log</label>
+                    <textarea id="sync-log-output" readonly rows="3" class="input-field font-mono" style="font-size:11px;background:#090d16;color:#34d399;">[SYSTEM] Notion 5-Database Relational Sync Engine Ready.</textarea>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="triggerManualSync()">🔄 Trigger Instant Full Sync</button>
+                <button class="btn btn-secondary" onclick="triggerFull5DbSync()">🔄 Sync All 5 Relational DBs</button>
                 <button class="btn btn-primary" onclick="saveSyncSettings()">Save Sync Credentials</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MODAL: MONTHLY CLIENT ROI REPORT GENERATOR ──────────────────── -->
+    <div id="roi-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content glass-card modal-lg">
+            <div class="modal-header">
+                <h3>Monthly Client ROI &amp; Performance Report Generator</h3>
+                <button class="btn-close" onclick="closeRoiModal()">✕</button>
+            </div>
+            <div class="modal-body space-y-4">
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label for="roi-client-select">Select REN Client / Seat</label>
+                        <select id="roi-client-select" class="input-field" onchange="renderClientRoiReport()">
+                            <option value="ALL">All REN Retainer Clients (Aggregated Audit)</option>
+                            <option value="REN-001">Agent Ahmad (REN-001 &bull; Subang Jaya Lock)</option>
+                            <option value="REN-002">Agent Sarah (REN-002 &bull; Shah Alam North Lock)</option>
+                            <option value="REN-003">Agent Farhan (REN-003 &bull; Cyberjaya/Puchong Lock)</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label for="roi-month-select">Audit Month</label>
+                        <select id="roi-month-select" class="input-field" onchange="renderClientRoiReport()">
+                            <option value="2026-08">August 2026 (Current Period)</option>
+                            <option value="2026-07">July 2026</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- ROI Report Output Preview -->
+                <div id="roi-report-output">
+                    <!-- Rendered via JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="renderClientRoiReport()">🚀 Regenerate Report</button>
+                <button class="btn btn-primary" onclick="printRoiReport()">📄 Print / Export PDF Report</button>
             </div>
         </div>
     </div>
