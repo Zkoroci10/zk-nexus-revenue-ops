@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ZK Revenue Ops — Executive Master Console for Zubair & Team">
+    <meta name="description" content="ZK Revenue Ops — Lead Extraction, DSR Triage & Appointment Locking Console">
     <meta name="robots" content="noindex, nofollow">
-    <title>ZK Revenue Ops — Master Console</title>
+    <title>ZK Revenue Ops — Executive Triage Console</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ── DESIGN TOKENS (UI/UX Pro Max — Slate Dark) ── */
+        /* ── THEME DESIGN TOKENS ── */
         :root {
             --bg-base:       #09090b;
             --bg-surface:    #18181b;
@@ -34,6 +34,19 @@
             --radius-lg: 12px;
         }
 
+        /* Light Theme Overrides */
+        body.theme-light {
+            --bg-base:       #f8fafc;
+            --bg-surface:    #ffffff;
+            --bg-card:       #f1f5f9;
+            --bg-hover:      #e2e8f0;
+            --border:        #cbd5e1;
+            --border-subtle: #e2e8f0;
+            --text-primary:  #0f172a;
+            --text-secondary:#475569;
+            --text-muted:    #64748b;
+        }
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
@@ -45,11 +58,12 @@
             -webkit-font-smoothing: antialiased;
             min-height: 100vh;
             display: flex;
+            transition: background 0.2s ease, color 0.2s ease;
         }
 
         /* ── SIDEBAR ── */
         .sidebar {
-            width: 224px;
+            width: 230px;
             min-height: 100vh;
             background: var(--bg-surface);
             border-right: 1px solid var(--border);
@@ -66,26 +80,27 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 4px 8px 20px;
+            padding: 4px 8px 18px;
             border-bottom: 1px solid var(--border-subtle);
             margin-bottom: 16px;
         }
 
         .brand-icon {
-            width: 32px; height: 32px;
-            background: var(--accent-indigo);
+            width: 34px; height: 34px;
+            background: linear-gradient(135deg, var(--accent-indigo), #8b5cf6);
             border-radius: var(--radius-sm);
             display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 13px; color: #fff;
+            font-weight: 800; font-size: 14px; color: #fff;
             flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(99,102,241,0.3);
         }
 
-        .brand-text { font-size: 13px; font-weight: 700; color: var(--text-primary); line-height: 1.2; }
-        .brand-sub  { font-size: 10px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+        .brand-text { font-size: 13px; font-weight: 800; color: var(--text-primary); line-height: 1.2; letter-spacing: -0.01em; }
+        .brand-sub  { font-size: 10px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
 
         .nav-section-label {
             font-size: 10px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -97,11 +112,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 10px;
+            padding: 9px 10px;
             border-radius: var(--radius-sm);
             color: var(--text-secondary);
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.12s ease;
             border: 1px solid transparent;
@@ -113,7 +128,7 @@
 
         .nav-item.active {
             background: var(--accent-indigo-dim);
-            color: #818cf8;
+            color: var(--accent-indigo);
             border-color: rgba(99,102,241,0.25);
         }
 
@@ -144,20 +159,20 @@
         }
 
         .user-avatar {
-            width: 28px; height: 28px;
-            background: linear-gradient(135deg, var(--accent-indigo), #8b5cf6);
+            width: 30px; height: 30px;
+            background: var(--accent-indigo);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 11px; font-weight: 700; color: #fff;
+            font-size: 11px; font-weight: 800; color: #fff;
             flex-shrink: 0;
         }
 
-        .user-name  { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+        .user-name  { font-size: 12px; font-weight: 700; color: var(--text-primary); }
         .user-role  { font-size: 10px; color: var(--text-muted); }
 
         /* ── MAIN CONTENT ── */
         .main {
-            margin-left: 224px;
+            margin-left: 230px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -166,7 +181,7 @@
 
         /* ── TOPBAR ── */
         .topbar {
-            height: 56px;
+            height: 60px;
             background: var(--bg-surface);
             border-bottom: 1px solid var(--border);
             display: flex;
@@ -178,8 +193,8 @@
             z-index: 40;
         }
 
-        .topbar-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
-        .topbar-sub   { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+        .topbar-title { font-size: 16px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.01em; }
+        .topbar-sub   { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
 
         .topbar-actions { display: flex; align-items: center; gap: 10px; }
 
@@ -190,7 +205,7 @@
             padding: 7px 14px;
             border-radius: var(--radius-sm);
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.12s ease;
             border: 1px solid transparent;
@@ -216,15 +231,12 @@
             color: var(--accent-emerald);
             border-color: rgba(16,185,129,0.3);
         }
-        .btn-success:hover { background: rgba(16,185,129,0.2); }
+        .btn-success:hover { background: rgba(16,185,129,0.25); }
 
         .btn svg { width: 14px; height: 14px; }
 
         /* ── PAGE CONTENT ── */
-        .content {
-            padding: 24px;
-            flex: 1;
-        }
+        .content { padding: 24px; flex: 1; }
 
         /* ── STAT CARDS ── */
         .stats-grid {
@@ -241,16 +253,13 @@
             padding: 20px;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.15s ease;
         }
-
-        .stat-card:hover { border-color: var(--bg-hover); }
 
         .stat-card::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 2px;
+            height: 3px;
         }
 
         .stat-card.indigo::after  { background: var(--accent-indigo); }
@@ -262,12 +271,12 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .stat-label {
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.06em;
@@ -286,10 +295,10 @@
         .stat-icon.blue    { background: var(--accent-blue-dim);    color: var(--accent-blue); }
 
         .stat-value {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
             color: var(--text-primary);
-            line-height: 1;
+            line-height: 1.1;
             letter-spacing: -0.02em;
         }
 
@@ -299,12 +308,58 @@
             margin-top: 4px;
         }
 
+        /* ── DYNAMIC DSR THRESHOLD SLIDER CONTROL ── */
+        .dsr-slider-panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .slider-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .slider-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-primary);
+            white-space: nowrap;
+        }
+
+        .slider-input {
+            flex: 1;
+            accent-color: var(--accent-indigo);
+            cursor: pointer;
+        }
+
+        .slider-value-badge {
+            background: var(--accent-indigo-dim);
+            color: var(--accent-indigo);
+            border: 1px solid rgba(99,102,241,0.3);
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 800;
+            min-width: 90px;
+            text-align: center;
+        }
+
         /* ── SECTION PANELS ── */
         .panel {
             background: var(--bg-surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             overflow: hidden;
+            margin-bottom: 24px;
         }
 
         .panel-header {
@@ -315,31 +370,19 @@
             border-bottom: 1px solid var(--border-subtle);
         }
 
-        .panel-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .panel-sub {
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 1px;
-        }
+        .panel-title { font-size: 14px; font-weight: 800; color: var(--text-primary); }
+        .panel-sub   { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
 
         .panel-body { padding: 20px; }
 
         /* ── TABLE ── */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+        .data-table { width: 100%; border-collapse: collapse; }
 
         .data-table th {
             text-align: left;
             padding: 10px 16px;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -373,7 +416,7 @@
         .badge-hot     { background: var(--accent-emerald-dim); color: var(--accent-emerald); border: 1px solid rgba(16,185,129,0.3); }
         .badge-warm    { background: var(--accent-amber-dim);   color: var(--accent-amber);   border: 1px solid rgba(245,158,11,0.3); }
         .badge-cold    { background: var(--accent-rose-dim);    color: var(--accent-rose);    border: 1px solid rgba(244,63,94,0.3); }
-        .badge-active  { background: var(--accent-indigo-dim);  color: #818cf8;               border: 1px solid rgba(99,102,241,0.3); }
+        .badge-risk    { background: rgba(239,68,68,0.2);       color: #f87171;               border: 1px solid rgba(239,68,68,0.5); }
 
         /* ── GRID 2-col ── */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -394,7 +437,7 @@
             padding: 7px 16px;
             border-radius: 5px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
             cursor: pointer;
             transition: all 0.12s ease;
@@ -422,7 +465,7 @@
 
         .label {
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -454,7 +497,7 @@
         }
 
         .dsr-value {
-            font-size: 40px;
+            font-size: 42px;
             font-weight: 800;
             letter-spacing: -0.02em;
             line-height: 1;
@@ -462,80 +505,17 @@
         }
 
         .dsr-track {
-            height: 6px;
+            height: 8px;
             background: var(--bg-card);
-            border-radius: 3px;
+            border-radius: 4px;
             overflow: hidden;
             margin: 12px 0;
         }
 
         .dsr-fill {
             height: 100%;
-            border-radius: 3px;
+            border-radius: 4px;
             transition: width 0.4s ease, background 0.3s ease;
-        }
-
-        /* ── REN CLIENT CARDS ── */
-        .client-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .client-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .client-avatar {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 13px; font-weight: 700; color: #fff;
-            flex-shrink: 0;
-        }
-
-        .client-name  { font-size: 13px; font-weight: 700; color: var(--text-primary); }
-        .client-meta  { font-size: 11px; color: var(--text-muted); }
-
-        .client-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-
-        .client-stat {
-            background: var(--bg-surface);
-            border-radius: var(--radius-sm);
-            padding: 10px;
-            text-align: center;
-        }
-
-        .client-stat-val  { font-size: 18px; font-weight: 800; color: var(--text-primary); }
-        .client-stat-lbl  { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
-
-        /* ── SEARCH ── */
-        .search-box {
-            position: relative;
-        }
-
-        .search-box svg {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 14px; height: 14px;
-            color: var(--text-muted);
-        }
-
-        .search-box input {
-            padding-left: 32px;
-            width: 220px;
         }
 
         /* ── TOAST ── */
@@ -544,57 +524,38 @@
             bottom: 20px; right: 20px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-left: 3px solid var(--accent-emerald);
+            border-left: 4px solid var(--accent-emerald);
             color: var(--text-primary);
-            padding: 12px 16px;
+            padding: 12px 18px;
             border-radius: var(--radius-md);
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
             box-shadow: 0 8px 24px rgba(0,0,0,0.5);
             transform: translateY(80px);
             opacity: 0;
             transition: all 0.25s ease;
             z-index: 999;
-            max-width: 320px;
+            max-width: 340px;
         }
 
         .toast.show { transform: translateY(0); opacity: 1; }
 
-        /* ── PROGRESS BAR ── */
-        .progress-bar {
-            height: 2px;
-            background: var(--border-subtle);
-            border-radius: 1px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--accent-indigo);
-            border-radius: 1px;
-            transition: width 0.3s ease;
-        }
-
-        /* ── EMPTY STATE ── */
-        .empty-state {
-            text-align: center;
-            padding: 48px 24px;
+        /* ── SEARCH ── */
+        .search-box { position: relative; }
+        .search-box svg {
+            position: absolute;
+            left: 10px; top: 50%;
+            transform: translateY(-50%);
+            width: 14px; height: 14px;
             color: var(--text-muted);
         }
+        .search-box input { padding-left: 32px; width: 220px; }
 
-        .empty-state svg { width: 40px; height: 40px; margin: 0 auto 12px; opacity: 0.4; display: block; }
-        .empty-state p { font-size: 13px; }
-
-        /* ── SCROLLBAR ── */
-        ::-webkit-scrollbar { width: 5px; height: 5px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-        /* ── SVG icon helper ── */
+        /* ── SVG HELPER ── */
         .icon { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
     </style>
 </head>
-<body>
+<body class="theme-dark">
 
 <!-- ══ SIDEBAR ══════════════════════════════════════════════════════════════ -->
 <aside class="sidebar">
@@ -602,36 +563,33 @@
         <div class="brand-icon">ZK</div>
         <div>
             <div class="brand-text">ZK Revenue Ops</div>
-            <div class="brand-sub">Master Console</div>
+            <div class="brand-sub">SDR Triage Console</div>
         </div>
     </div>
 
-    <div class="nav-section-label">Operations</div>
-    <a class="nav-item active" onclick="switchSection('dashboard')">
-        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        Dashboard
-        <span class="nav-badge" id="navTotalLeads">0</span>
-    </a>
-    <a class="nav-item" onclick="switchSection('leads')">
+    <div class="nav-section-label">Core SOP Workflow</div>
+    <a class="nav-item active" onclick="switchSection('triage')">
         <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Lead Management
-        <span class="nav-badge" id="navHotLeads">0</span>
+        Lead Triage & Outreach
+        <span class="nav-badge" id="navTotalLeads">0</span>
     </a>
     <a class="nav-item" onclick="switchSection('dsr')">
         <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-        DSR Calculator
+        DSR Pre-Approval Calc
     </a>
-    <a class="nav-item" onclick="switchSection('clients')">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        REN Clients
+    <a class="nav-item" onclick="switchSection('appointments')">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Locked Appointments
     </a>
+
+    <div class="nav-section-label">Client Database Safety</div>
     <a class="nav-item" onclick="switchSection('import')">
         <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        CSV Import
+        Client Ad Handoff (CSV)
     </a>
     <a class="nav-item" onclick="switchSection('reports')">
         <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-        ROI Reports
+        Client ROI Reports
     </a>
 
     <div class="sidebar-footer">
@@ -639,7 +597,7 @@
             <div class="user-avatar">ZK</div>
             <div>
                 <div class="user-name">Zubair</div>
-                <div class="user-role">Founder & Admin</div>
+                <div class="user-role">Founder ZK Revenue Ops</div>
             </div>
         </div>
     </div>
@@ -651,13 +609,18 @@
     <!-- TOPBAR -->
     <header class="topbar">
         <div>
-            <div class="topbar-title" id="topbarTitle">Dashboard</div>
-            <div class="topbar-sub" id="topbarSub">ZK Revenue Ops — Multi-Tenant Lead & REN Management</div>
+            <div class="topbar-title" id="topbarTitle">Lead Triage & Outreach</div>
+            <div class="topbar-sub">SOP: Extract Client Ads Database → Qualify DSR → Outreach Malay → Lock Appointments</div>
         </div>
         <div class="topbar-actions">
+            <!-- Theme Switcher Button -->
+            <button class="btn btn-ghost" onclick="toggleTheme()" id="themeBtn" title="Toggle Light/Dark Theme">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                <span id="themeBtnLabel">Light Theme</span>
+            </button>
             <div class="search-box">
                 <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input class="input" type="text" id="globalSearch" placeholder="Search leads..." oninput="handleGlobalSearch()">
+                <input class="input" type="text" id="globalSearch" placeholder="Search buyer or project..." oninput="handleGlobalSearch()">
             </div>
             <button class="btn btn-ghost" onclick="syncNotionAll()">
                 <svg class="icon" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
@@ -665,7 +628,7 @@
             </button>
             <button class="btn btn-primary" onclick="switchSection('import')">
                 <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                Import CSV
+                Import Client Database
             </button>
         </div>
     </header>
@@ -673,117 +636,91 @@
     <!-- CONTENT -->
     <main class="content">
 
-        <!-- ── DASHBOARD ──────────────────────────────────────────────── -->
-        <section class="tab-panel active" id="section-dashboard">
+        <!-- ── DYNAMIC DSR THRESHOLD SLIDER CONTROL ─────────────────────── -->
+        <div class="dsr-slider-panel">
+            <div class="slider-group">
+                <div class="slider-label">Dynamic DSR Hot Threshold:</div>
+                <input type="range" class="slider-input" id="dsrSlider" min="20" max="60" value="40" step="5" oninput="updateDSRThreshold(this.value)">
+            </div>
+            <div class="slider-value-badge" id="dsrSliderBadge">DSR ≤ 40% (Hot)</div>
+        </div>
+
+        <!-- ── LEAD TRIAGE & OUTREACH ──────────────────────────────────── -->
+        <section class="tab-panel active" id="section-triage">
             <div class="stats-grid">
                 <div class="stat-card indigo">
                     <div class="stat-top">
-                        <div class="stat-label">Total Leads</div>
+                        <div class="stat-label">Total Leads Extracted</div>
                         <div class="stat-icon indigo">
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                         </div>
                     </div>
                     <div class="stat-value" id="dashTotalLeads">0</div>
-                    <div class="stat-meta">All territories combined</div>
+                    <div class="stat-meta">From Client Ad Database</div>
                 </div>
                 <div class="stat-card emerald">
                     <div class="stat-top">
-                        <div class="stat-label">Hot Leads</div>
+                        <div class="stat-label">Tier 1 Pre-Approved</div>
                         <div class="stat-icon emerald">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
                     </div>
                     <div class="stat-value" id="dashHotLeads">0</div>
-                    <div class="stat-meta">DSR below 40% — Pre-Approved</div>
+                    <div class="stat-meta" id="dashHotMeta">DSR ≤ 40% — Ready for Lock</div>
                 </div>
                 <div class="stat-card amber">
                     <div class="stat-top">
-                        <div class="stat-label">Warm Leads</div>
+                        <div class="stat-label">Tier 2 Documents Needed</div>
                         <div class="stat-icon amber">
                             <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                     </div>
                     <div class="stat-value" id="dashWarmLeads">0</div>
-                    <div class="stat-meta">DSR 40–65% — Documents Needed</div>
+                    <div class="stat-meta">DSR 41–65% — Collect Docs</div>
                 </div>
                 <div class="stat-card blue">
                     <div class="stat-top">
-                        <div class="stat-label">Active REN Clients</div>
+                        <div class="stat-label">Appointments Locked</div>
                         <div class="stat-icon blue">
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                         </div>
                     </div>
-                    <div class="stat-value">3</div>
-                    <div class="stat-meta">REN-001 / REN-002 / REN-003</div>
+                    <div class="stat-value" id="dashLockedAppts">0</div>
+                    <div class="stat-meta">Ready for Client Delivery</div>
                 </div>
             </div>
 
-            <div class="grid-2">
-                <div class="panel">
-                    <div class="panel-header">
-                        <div>
-                            <div class="panel-title">Lead Distribution by Territory</div>
-                            <div class="panel-sub">Leads assigned per REN client</div>
-                        </div>
-                    </div>
-                    <div class="panel-body" id="dashTerritoryTable">
-                        <div class="empty-state">
-                            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                            <p>Import CSV leads to see territory breakdown</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <div>
-                            <div class="panel-title">REN Client ROI Summary</div>
-                            <div class="panel-sub">Estimated pipeline per retainer</div>
-                        </div>
-                    </div>
-                    <div class="panel-body" id="dashRoiTable">
-                        <div class="empty-state">
-                            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <p>Load leads to generate ROI estimates</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── LEAD MANAGEMENT ──────────────────────────────────────── -->
-        <section class="tab-panel" id="section-leads">
             <div style="display:flex; gap:10px; align-items:center; margin-bottom:16px; flex-wrap:wrap;">
                 <div class="tab-bar" style="margin-bottom:0;">
-                    <button class="tab active" onclick="filterLeads('all',this)">All</button>
-                    <button class="tab" onclick="filterLeads('Hot',this)">Hot</button>
-                    <button class="tab" onclick="filterLeads('Warm',this)">Warm</button>
-                    <button class="tab" onclick="filterLeads('Cold',this)">Cold</button>
+                    <button class="tab active" onclick="filterLeads('all',this)">All Leads</button>
+                    <button class="tab" onclick="filterLeads('Hot',this)">Tier 1 Hot</button>
+                    <button class="tab" onclick="filterLeads('Warm',this)">Tier 2 Warm</button>
+                    <button class="tab" onclick="filterLeads('Cold',this)">Tier 3 Cold</button>
                 </div>
-                <select class="select" id="renFilter" onchange="filterLeads(null,null)" style="width:200px;">
-                    <option value="all">All Territories</option>
-                    <option value="REN-001">REN-001 Subang Jaya</option>
-                    <option value="REN-002">REN-002 Shah Alam North</option>
-                    <option value="REN-003">REN-003 Cyberjaya/Puchong</option>
+                <select class="select" id="renFilter" onchange="filterLeads(null,null)" style="width:230px;">
+                    <option value="all">All Client Databases</option>
+                    <option value="REN-001">REN-001 Ahmad Razif (Subang)</option>
+                    <option value="REN-002">REN-002 Sarah Tan (Shah Alam)</option>
+                    <option value="REN-003">REN-003 Kevon Lee (Cyberjaya)</option>
                 </select>
-                <div style="margin-left:auto; font-size:12px; color:var(--text-muted);">
-                    Showing <span id="leadCount">0</span> leads
-                </div>
             </div>
+
             <div class="panel">
                 <table class="data-table" id="leadsTable">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Project</th>
-                            <th>Territory</th>
-                            <th>DSR</th>
+                            <th>Buyer Name</th>
+                            <th>Phone Contact</th>
+                            <th>Target Project</th>
+                            <th>Assigned Client</th>
+                            <th>Net Income</th>
+                            <th>DSR %</th>
                             <th>Tier</th>
-                            <th>Action</th>
+                            <th>Outreach & Appointment Lock</th>
                         </tr>
                     </thead>
                     <tbody id="leadsTableBody">
-                        <tr><td colspan="7" style="text-align:center; padding:40px; color:var(--text-muted);">No leads loaded. Import a CSV file to get started.</td></tr>
+                        <tr><td colspan="8" style="text-align:center; padding:40px; color:var(--text-muted);">No client database loaded yet. Upload a CSV file in "Client Ad Handoff".</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -796,8 +733,8 @@
                 <div class="panel">
                     <div class="panel-header">
                         <div>
-                            <div class="panel-title">DSR Pre-Approval Calculator</div>
-                            <div class="panel-sub">Instant bank qualification assessment</div>
+                            <div class="panel-title">DSR Pre-Approval Underwriting Engine</div>
+                            <div class="panel-sub">SOP: Net Income = Gross * 87% | DSR = Commitments / Net</div>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -823,17 +760,17 @@
                                 <input class="input" type="number" id="calcTenure" value="35" min="10" max="35" oninput="runDSR()">
                             </div>
                             <div class="form-group">
-                                <label class="label">Assign REN Client</label>
+                                <label class="label">Assign to Client Database</label>
                                 <select class="select" id="calcRen">
-                                    <option value="REN-001">REN-001 (Ahmad Razif)</option>
-                                    <option value="REN-002">REN-002 (Sarah Tan)</option>
-                                    <option value="REN-003">REN-003 (Kevon Lee)</option>
+                                    <option value="REN-001">REN-001 (Ahmad Razif — Subang)</option>
+                                    <option value="REN-002">REN-002 (Sarah Tan — Shah Alam)</option>
+                                    <option value="REN-003">REN-003 (Kevon Lee — Cyberjaya)</option>
                                 </select>
                             </div>
                         </div>
                         <button class="btn btn-primary" onclick="saveDSRLead()" style="width:100%; justify-content:center; margin-top:4px;">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
-                            Save Lead to Database
+                            Save Qualified Buyer to Client Database
                         </button>
                     </div>
                 </div>
@@ -841,11 +778,11 @@
                 <div style="display:flex; flex-direction:column; gap:16px;">
                     <div class="panel">
                         <div class="panel-header">
-                            <div class="panel-title">Qualification Result</div>
+                            <div class="panel-title">Underwriting Result</div>
                         </div>
                         <div class="panel-body">
                             <div class="dsr-meter">
-                                <div style="font-size:11px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Debt Service Ratio</div>
+                                <div style="font-size:11px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Debt Service Ratio</div>
                                 <div class="dsr-value" id="dsrVal" style="color:var(--accent-emerald);">38%</div>
                                 <div class="dsr-track"><div class="dsr-fill" id="dsrFill" style="width:38%; background:var(--accent-emerald);"></div></div>
                                 <div class="badge badge-hot" id="dsrBadge" style="margin:0 auto;">Tier 1 — Pre-Approved</div>
@@ -853,13 +790,13 @@
                         </div>
                     </div>
                     <div class="panel">
-                        <div class="panel-header"><div class="panel-title">Breakdown</div></div>
+                        <div class="panel-header"><div class="panel-title">Underwriting Breakdown</div></div>
                         <div class="panel-body">
                             <table class="data-table">
-                                <tr><td style="color:var(--text-muted);">Net Income (87%)</td><td style="text-align:right; font-weight:600;" id="resNet">RM 6,525</td></tr>
-                                <tr><td style="color:var(--text-muted);">Monthly Installment</td><td style="text-align:right; font-weight:600; color:var(--accent-blue);" id="resInstall">RM 2,152</td></tr>
-                                <tr><td style="color:var(--text-muted);">Total Debt Load</td><td style="text-align:right; font-weight:600;" id="resTotal">RM 4,252</td></tr>
-                                <tr><td style="color:var(--text-muted);">Max Loan Capacity</td><td style="text-align:right; font-weight:600; color:var(--accent-amber);" id="resMax">RM 620,000</td></tr>
+                                <tr><td style="color:var(--text-muted);">Net Income (87%)</td><td style="text-align:right; font-weight:700;" id="resNet">RM 6,525</td></tr>
+                                <tr><td style="color:var(--text-muted);">Proposed Installment</td><td style="text-align:right; font-weight:700; color:var(--accent-blue);" id="resInstall">RM 2,152</td></tr>
+                                <tr><td style="color:var(--text-muted);">Total Debt Load</td><td style="text-align:right; font-weight:700;" id="resTotal">RM 4,252</td></tr>
+                                <tr><td style="color:var(--text-muted);">Max Loan Capacity</td><td style="text-align:right; font-weight:700; color:var(--accent-amber);" id="resMax">RM 620,000</td></tr>
                             </table>
                         </div>
                     </div>
@@ -867,36 +804,62 @@
             </div>
         </section>
 
-        <!-- ── REN CLIENTS ───────────────────────────────────────────── -->
-        <section class="tab-panel" id="section-clients">
-            <div class="grid-3" id="clientGrid">
-                <!-- Rendered by JS -->
-            </div>
-        </section>
-
-        <!-- ── CSV IMPORT ────────────────────────────────────────────── -->
-        <section class="tab-panel" id="section-import">
-            <div class="panel" style="max-width:600px;">
+        <!-- ── LOCKED APPOINTMENTS ────────────────────────────────────── -->
+        <section class="tab-panel" id="section-appointments">
+            <div class="panel">
                 <div class="panel-header">
                     <div>
-                        <div class="panel-title">Bulk CSV Lead Import</div>
-                        <div class="panel-sub">Supported columns: name, phone, project, income, tier, assignedClientId</div>
+                        <div class="panel-title">Confirmed Locked Appointments</div>
+                        <div class="panel-sub">SOP: Pre-approved buyers locked into gallery viewings for Clients</div>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div style="border: 2px dashed var(--border); border-radius:var(--radius-md); padding:32px; text-align:center; margin-bottom:16px; cursor:pointer;" onclick="document.getElementById('csvFile').click()">
-                        <svg class="icon" viewBox="0 0 24 24" style="width:32px;height:32px;color:var(--text-muted);display:block;margin:0 auto 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        <div style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Click to upload CSV</div>
-                        <div style="font-size:12px; color:var(--text-muted);" id="csvFileName">No file selected</div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Appointment Date/Time</th>
+                                <th>Buyer Name</th>
+                                <th>Phone Contact</th>
+                                <th>Target Project & Location</th>
+                                <th>Assigned Client</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="apptsTableBody">
+                            <tr><td colspan="7" style="text-align:center; padding:40px; color:var(--text-muted);">No locked appointments yet. Perform WhatsApp outreach on Hot leads to confirm appointments.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CLIENT AD HANDOFF (CSV) ────────────────────────────────── -->
+        <section class="tab-panel" id="section-import">
+            <div class="panel" style="max-width:640px;">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">Client Ad Database Ingestion (CSV)</div>
+                        <div class="panel-sub">Upload raw Facebook/TikTok Ad leads handed over by Client</div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group" style="margin-bottom:16px;">
+                        <label class="label">Target Client Database</label>
+                        <select class="select" id="importTargetRen">
+                            <option value="REN-001">REN-001 Ahmad Razif (Subang Jaya)</option>
+                            <option value="REN-002">REN-002 Sarah Tan (Shah Alam North)</option>
+                            <option value="REN-003">REN-003 Kevon Lee (Cyberjaya & Puchong)</option>
+                        </select>
+                    </div>
+
+                    <div style="border: 2px dashed var(--border); border-radius:var(--radius-md); padding:36px; text-align:center; margin-bottom:16px; cursor:pointer;" onclick="document.getElementById('csvFile').click()">
+                        <svg class="icon" viewBox="0 0 24 24" style="width:36px;height:36px;color:var(--text-muted);display:block;margin:0 auto 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <div style="font-weight:700; color:var(--text-primary); margin-bottom:4px;">Click to Upload Raw Ad CSV</div>
+                        <div style="font-size:12px; color:var(--text-muted);" id="csvFileName">Supported columns: name, phone, project, income</div>
                     </div>
                     <input type="file" id="csvFile" accept=".csv" style="display:none;" onchange="handleCSVUpload(event)">
-                    <div id="importProgress" style="display:none; margin-bottom:16px;">
-                        <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px;">
-                            <span style="color:var(--text-secondary);">Processing...</span>
-                            <span id="importPct" style="color:var(--accent-emerald);">0%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" id="importBar" style="width:0%"></div></div>
-                    </div>
+                    
                     <div id="importResult" style="font-size:13px; color:var(--text-muted);"></div>
                 </div>
             </div>
@@ -906,16 +869,19 @@
         <section class="tab-panel" id="section-reports">
             <div class="panel">
                 <div class="panel-header">
-                    <div class="panel-title">Monthly Client ROI Report</div>
+                    <div>
+                        <div class="panel-title">Client ROI & Delivery Performance</div>
+                        <div class="panel-sub">SOP: Monthly report proving pipeline value delivered to Client</div>
+                    </div>
                     <button class="btn btn-ghost" onclick="window.print()">
                         <svg class="icon" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
-                        Print PDF
+                        Print Client ROI PDF
                     </button>
                 </div>
                 <div class="panel-body" id="roiReportBody">
                     <div class="empty-state">
                         <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        <p>Import leads to generate ROI reports</p>
+                        <p>Import leads to generate Client ROI reports</p>
                     </div>
                 </div>
             </div>
@@ -929,12 +895,14 @@
 
 <script>
 // ── STATE ────────────────────────────────────────────────────────────────────
-let ALL_LEADS = [];
-let FILTERED  = [];
-let PAGE      = 1;
-const PER_PAGE = 50;
-let TIER_FILTER= 'all';
-let REN_FILTER = 'all';
+let ALL_LEADS   = [];
+let APPOINTMENTS= [];
+let FILTERED    = [];
+let PAGE        = 1;
+const PER_PAGE  = 50;
+let TIER_FILTER = 'all';
+let REN_FILTER  = 'all';
+let HOT_THRESHOLD = 40; // Dynamic DSR Hot Threshold %
 
 const REN_CLIENTS = [
     { id:'REN-001', name:'Ahmad Razif', agency:'Subang Jaya Property Hub', territory:'Subang Jaya & USJ',        color:'#6366f1', fee:1500 },
@@ -942,37 +910,71 @@ const REN_CLIENTS = [
     { id:'REN-003', name:'Kevon Lee',   agency:'Cyberjaya Prime Property', territory:'Cyberjaya & Puchong',     color:'#f59e0b', fee:800  },
 ];
 
+// ── THEME TOGGLE ─────────────────────────────────────────────────────────────
+function toggleTheme() {
+    const isDark = document.body.classList.contains('theme-dark');
+    if (isDark) {
+        document.body.classList.remove('theme-dark');
+        document.body.classList.add('theme-light');
+        document.getElementById('themeBtnLabel').textContent = 'Dark Theme';
+    } else {
+        document.body.classList.remove('theme-light');
+        document.body.classList.add('theme-dark');
+        document.getElementById('themeBtnLabel').textContent = 'Light Theme';
+    }
+}
+
+// ── DYNAMIC DSR THRESHOLD SLIDER ─────────────────────────────────────────────
+function updateDSRThreshold(val) {
+    HOT_THRESHOLD = parseInt(val);
+    document.getElementById('dsrSliderBadge').textContent = `DSR ≤ ${HOT_THRESHOLD}% (Hot)`;
+    document.getElementById('dashHotMeta').textContent = `DSR ≤ ${HOT_THRESHOLD}% — Ready for Lock`;
+    // Re-evaluate tiers for all leads
+    ALL_LEADS.forEach(l => {
+        l.tier = l.dsr <= HOT_THRESHOLD ? 'Hot' : (l.dsr <= 65 ? 'Warm' : 'Cold');
+    });
+    updateStats();
+    toast(`Ambang DSR Hot dikemaskini ke ≤ ${HOT_THRESHOLD}%`, 'blue');
+}
+
 // ── SECTION NAVIGATION ───────────────────────────────────────────────────────
 function switchSection(id) {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     document.getElementById('section-'+id).classList.add('active');
     event.currentTarget.classList.add('active');
-    const titles = {dashboard:'Dashboard',leads:'Lead Management',dsr:'DSR Calculator',clients:'REN Clients',import:'CSV Import',reports:'ROI Reports'};
+    const titles = {
+        triage: 'Lead Triage & Outreach',
+        dsr: 'DSR Pre-Approval Calc',
+        appointments: 'Locked Appointments',
+        import: 'Client Ad Database Ingestion',
+        reports: 'Client ROI Reports'
+    };
     document.getElementById('topbarTitle').textContent = titles[id] || id;
-    if (id === 'clients') renderClients();
+    if (id === 'appointments') renderAppointments();
     if (id === 'reports') renderROI();
 }
 
-// ── DSR LOGIC ────────────────────────────────────────────────────────────────
+// ── DSR CALCULATOR LOGIC ─────────────────────────────────────────────────────
 function calcDSR(gross, commits) {
     const g = parseFloat(gross)||0;
-    if (g <= 0) return { net:0, dsr:999, tier:'Cold', status:'Unqualified' };
-    const net = Math.round(g*0.87);
-    const c   = parseFloat(commits)>0 ? parseFloat(commits) : Math.round(net*0.3);
-    const raw = (c/net)*100;
+    if (g <= 0) return { net:0, dsr:999, tier:'Cold', status:'Unqualified', isRisk:true };
+    const net = Math.round(g * 0.87); // Net income = 87% gross
+    const c   = parseFloat(commits) > 0 ? parseFloat(commits) : Math.round(net * 0.3);
+    const raw = (c / net) * 100;
     const dsr = Math.round(raw);
-    const tier   = raw<=40 ? 'Hot' : raw<=65 ? 'Warm' : 'Cold';
-    const status = raw<=40 ? 'Pre-Approved' : raw<=65 ? 'Documents Collected' : 'Pending Submission';
-    return { net, dsr, tier, status, commitments:c };
+    const isRisk = net < 2500;
+    const tier   = dsr <= HOT_THRESHOLD ? 'Hot' : (dsr <= 65 ? 'Warm' : 'Cold');
+    const status = dsr <= HOT_THRESHOLD ? 'Pre-Approved LPPSA/Bank' : (dsr <= 65 ? 'Documents Needed' : 'Pending Submission');
+    return { net, dsr, tier, status, commitments:c, isRisk };
 }
 
 function loanInstallment(price, margin, tenure, rate) {
-    const P = price*(margin/100);
-    const r = rate/100/12;
-    const n = tenure*12;
-    if (r===0) return Math.round(P/n);
-    return Math.round(P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1));
+    const P = price * (margin / 100);
+    const r = rate / 100 / 12;
+    const n = tenure * 12;
+    if (r === 0) return Math.round(P / n);
+    return Math.round(P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1));
 }
 
 function runDSR() {
@@ -980,59 +982,57 @@ function runDSR() {
     const commit = parseFloat(document.getElementById('calcCommit').value)||0;
     const price  = parseFloat(document.getElementById('calcPrice').value)||0;
     const tenure = parseFloat(document.getElementById('calcTenure').value)||35;
-    const install= loanInstallment(price,90,tenure,4.25);
+    const install= loanInstallment(price, 90, tenure, 4.25);
     const totalC = commit + install;
     const res    = calcDSR(gross, totalC);
 
     document.getElementById('dsrVal').textContent   = res.dsr === 999 ? '999%' : res.dsr + '%';
-    document.getElementById('dsrFill').style.width   = Math.min(res.dsr,100)+'%';
-    document.getElementById('dsrFill').style.background = res.tier==='Hot'?'var(--accent-emerald)':res.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)';
-    document.getElementById('dsrVal').style.color   = res.tier==='Hot'?'var(--accent-emerald)':res.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)';
-    document.getElementById('dsrBadge').textContent = res.tier==='Hot'?'Tier 1 — Pre-Approved':res.tier==='Warm'?'Tier 2 — Documents Needed':'Cold — Pending';
+    document.getElementById('dsrFill').style.width   = Math.min(res.dsr, 100) + '%';
+    document.getElementById('dsrFill').style.background = res.tier === 'Hot' ? 'var(--accent-emerald)' : (res.tier === 'Warm' ? 'var(--accent-amber)' : 'var(--accent-rose)');
+    document.getElementById('dsrVal').style.color   = res.tier === 'Hot' ? 'var(--accent-emerald)' : (res.tier === 'Warm' ? 'var(--accent-amber)' : 'var(--accent-rose)');
+    document.getElementById('dsrBadge').textContent = res.tier === 'Hot' ? 'Tier 1 — Pre-Approved' : (res.tier === 'Warm' ? 'Tier 2 — Documents Needed' : 'Tier 3 — Pending');
     document.getElementById('dsrBadge').className   = `badge badge-${res.tier.toLowerCase()}`;
-    document.getElementById('resNet').textContent   = 'RM '+res.net.toLocaleString();
-    document.getElementById('resInstall').textContent = 'RM '+install.toLocaleString();
-    document.getElementById('resTotal').textContent = 'RM '+totalC.toLocaleString();
-    const maxI = Math.round(res.net*0.65 - commit);
-    const maxL = maxI>0 ? Math.round(maxI*200) : 0;
-    document.getElementById('resMax').textContent   = 'RM '+maxL.toLocaleString();
+    document.getElementById('resNet').textContent   = 'RM ' + res.net.toLocaleString();
+    document.getElementById('resInstall').textContent = 'RM ' + install.toLocaleString();
+    document.getElementById('resTotal').textContent = 'RM ' + totalC.toLocaleString();
+    const maxI = Math.round(res.net * 0.65 - commit);
+    const maxL = maxI > 0 ? Math.round(maxI * 200) : 0;
+    document.getElementById('resMax').textContent   = 'RM ' + maxL.toLocaleString();
 }
 
 function saveDSRLead() {
-    const name   = document.getElementById('calcName').value.trim() || 'New Lead';
+    const name   = document.getElementById('calcName').value.trim() || 'New Buyer';
     const income = parseFloat(document.getElementById('calcIncome').value)||0;
     const commit = parseFloat(document.getElementById('calcCommit').value)||0;
     const ren    = document.getElementById('calcRen').value;
     const res    = calcDSR(income, commit);
-    const lead   = { name, phone:'', project:'', income, assignedClientId:ren, tier:res.tier, dsr:res.dsr, net:res.net };
+    const lead   = { name, phone:'', project:'Subang Parksuites', income, assignedClientId:ren, tier:res.tier, dsr:res.dsr, net:res.net, isRisk:res.isRisk };
     ALL_LEADS.push(lead);
     updateStats();
-    toast('Lead "'+name+'" saved — '+res.tier+' (DSR '+res.dsr+'%)', 'emerald');
-    switchSection('leads');
+    toast(`Pembeli "${name}" disemak — ${res.tier} (DSR ${res.dsr}%) disimpankan!`, 'emerald');
+    switchSection('triage');
 }
 
 // ── CSV IMPORT ───────────────────────────────────────────────────────────────
 function handleCSVUpload(e) {
     const file = e.target.files[0];
     if (!file) return;
+    const targetRen = document.getElementById('importTargetRen').value;
     document.getElementById('csvFileName').textContent = file.name;
-    document.getElementById('importProgress').style.display = 'block';
     const reader = new FileReader();
     reader.onload = (ev) => {
-        const leads = parseCSV(ev.target.result);
-        ALL_LEADS = leads;
+        const leads = parseCSV(ev.target.result, targetRen);
+        ALL_LEADS = ALL_LEADS.concat(leads);
         updateStats();
-        document.getElementById('importBar').style.width = '100%';
-        document.getElementById('importPct').textContent = '100%';
-        document.getElementById('importResult').innerHTML = `<span style="color:var(--accent-emerald); font-weight:700;">${leads.length} leads imported successfully.</span> <span style="color:var(--text-muted);">${leads.filter(l=>l.tier==='Hot').length} Hot, ${leads.filter(l=>l.tier==='Warm').length} Warm, ${leads.filter(l=>l.tier==='Cold').length} Cold.</span>`;
-        toast(leads.length+' leads imported — system updated', 'emerald');
+        document.getElementById('importResult').innerHTML = `<span style="color:var(--accent-emerald); font-weight:700;">✅ ${leads.length} lead berjaya diekstrak & dimasukkan ke pangkalan data ${targetRen}.</span>`;
+        toast(`${leads.length} lead dimasukkan ke database ${targetRen}`, 'emerald');
     };
     reader.readAsText(file);
 }
 
-function parseCSV(raw) {
-    const lines = raw.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n').filter(l=>l.trim());
-    const hdr   = lines[0].split(',').map(h=>h.trim().replace(/^"|"$/g,'').toLowerCase());
+function parseCSV(raw, defaultRen) {
+    const lines = raw.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n').filter(l => l.trim());
+    const hdr   = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g,'').toLowerCase());
     return lines.slice(1).map(line => {
         const vals = []; let inQ=false, cur='';
         for (const ch of line) {
@@ -1041,189 +1041,181 @@ function parseCSV(raw) {
             else cur+=ch;
         }
         vals.push(cur.trim());
-        const row = Object.fromEntries(hdr.map((h,i)=>[h,vals[i]||'']));
-        const income = parseFloat(row.income||row['gross income']||row.gross_income)||0;
-        const commit = parseFloat(row.commitments||row.commitment)||0;
+        const row    = Object.fromEntries(hdr.map((h,i) => [h, vals[i]||'']));
+        const income = parseFloat(row.income || row['gross income'] || row.gross_income) || 0;
+        const commit = parseFloat(row.commitments || row.commitment) || 0;
         const res    = calcDSR(income, commit);
-        const ren    = row['assigned ren']||row.assigned_ren||row.assignedclientid||autoAssignREN(row.project||'');
-        return { name:row.name||row['buyer name']||'Unknown', phone:normalisePhone(row.phone||''), project:row.project||row['project interest']||'', income, tier:row.tier||res.tier, dsr:res.dsr, net:res.net, assignedClientId:ren };
-    }).filter(l=>l.name && l.name!=='Unknown');
-}
-
-function autoAssignREN(project='') {
-    const p = project.toLowerCase();
-    if (p.includes('subang')||p.includes('usj')||p.includes('puchong subang')) return 'REN-001';
-    if (p.includes('shah alam')||p.includes('setia alam')||p.includes('klang')) return 'REN-002';
-    return 'REN-003';
+        const ren    = row['assigned ren'] || row.assigned_ren || row.assignedclientid || defaultRen;
+        return {
+            name: row.name || row['buyer name'] || 'Unknown Buyer',
+            phone: normalisePhone(row.phone || ''),
+            project: row.project || row['project interest'] || 'Subang Parksuites',
+            income,
+            tier: res.tier,
+            dsr: res.dsr,
+            net: res.net,
+            isRisk: res.isRisk,
+            assignedClientId: ren
+        };
+    }).filter(l => l.name && l.name !== 'Unknown Buyer');
 }
 
 function normalisePhone(phone) {
     let c = (phone||'').replace(/[^0-9+]/g,'');
     if (c.startsWith('+60')) return c;
-    if (c.startsWith('60'))  return '+'+c;
-    if (c.startsWith('01'))  return '+60'+c.substring(1);
-    if (c.length>=9)         return '+60'+c;
+    if (c.startsWith('60'))  return '+' + c;
+    if (c.startsWith('01'))  return '+60' + c.substring(1);
+    if (c.length >= 9)       return '+60' + c;
     return c;
+}
+
+// ── OUTREACH & APPOINTMENT LOCK ──────────────────────────────────────────────
+function lockAppointment(index) {
+    const lead = FILTERED[index];
+    if (!lead) return;
+    const dateStr = prompt(`Setkan tarikh & masa Janji Temu (Appointment Lock) untuk ${lead.name}:`, 'Sabtu ini, 11:00 AM');
+    if (!dateStr) return;
+
+    APPOINTMENTS.push({
+        name: lead.name,
+        phone: lead.phone,
+        project: lead.project,
+        ren: lead.assignedClientId,
+        time: dateStr,
+        status: 'Locked & Confirmed'
+    });
+
+    toast(`Janji Temu ${lead.name} di-LOCK pada ${dateStr}!`, 'emerald');
+    renderAppointments();
+    updateStats();
+}
+
+function renderAppointments() {
+    const tbody = document.getElementById('apptsTableBody');
+    document.getElementById('dashLockedAppts').textContent = APPOINTMENTS.length;
+    if (APPOINTMENTS.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:40px; color:var(--text-muted);">No locked appointments yet. Perform WhatsApp outreach on Hot leads to confirm appointments.</td></tr>`;
+        return;
+    }
+    tbody.innerHTML = APPOINTMENTS.map(a => `
+        <tr>
+            <td style="font-weight:700; color:var(--accent-blue);">${a.time}</td>
+            <td style="font-weight:700; color:var(--text-primary);">${a.name}</td>
+            <td>${a.phone}</td>
+            <td>${a.project}</td>
+            <td><span style="font-weight:700; color:var(--accent-indigo);">${a.ren}</span></td>
+            <td><span class="badge badge-hot">${a.status}</span></td>
+            <td><a href="https://wa.me/${a.phone.replace('+','')}" target="_blank" class="btn btn-success" style="font-size:11px; text-decoration:none; padding:3px 8px;">WA Contact</a></td>
+        </tr>
+    `).join('');
 }
 
 // ── STATS & RENDERING ────────────────────────────────────────────────────────
 function updateStats() {
     const total = ALL_LEADS.length;
-    const hot   = ALL_LEADS.filter(l=>l.tier==='Hot').length;
-    const warm  = ALL_LEADS.filter(l=>l.tier==='Warm').length;
+    const hot   = ALL_LEADS.filter(l => l.tier === 'Hot').length;
+    const warm  = ALL_LEADS.filter(l => l.tier === 'Warm').length;
     document.getElementById('dashTotalLeads').textContent = total;
     document.getElementById('dashHotLeads').textContent   = hot;
     document.getElementById('dashWarmLeads').textContent  = warm;
     document.getElementById('navTotalLeads').textContent  = total;
-    document.getElementById('navHotLeads').textContent    = hot;
     renderLeads();
-    renderDashTables();
-}
-
-function renderDashTables() {
-    const terDiv = document.getElementById('dashTerritoryTable');
-    const roiDiv = document.getElementById('dashRoiTable');
-    if (ALL_LEADS.length===0) return;
-
-    const rows = REN_CLIENTS.map(c => {
-        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
-        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
-        return `<tr><td><span style="color:${c.color}; font-weight:700;">${c.id}</span><br><span style="font-size:11px;color:var(--text-muted);">${c.name}</span></td><td style="text-align:right;">${cLeads.length}</td><td style="text-align:right;">${hot}</td></tr>`;
-    }).join('');
-
-    terDiv.innerHTML = `<table class="data-table"><thead><tr><th>Client</th><th style="text-align:right;">Total</th><th style="text-align:right;">Hot</th></tr></thead><tbody>${rows}</tbody></table>`;
-
-    const roiRows = REN_CLIENTS.map(c => {
-        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
-        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
-        const pipe   = Math.round(hot*0.4)*15000;
-        const roi    = (pipe/c.fee).toFixed(1);
-        return `<tr><td><span style="color:${c.color}; font-weight:700;">${c.id}</span><br><span style="font-size:11px;color:var(--text-muted);">${c.name}</span></td><td style="text-align:right; color:var(--accent-emerald); font-weight:700;">RM ${pipe.toLocaleString()}</td><td style="text-align:right; color:var(--accent-amber); font-weight:700;">${roi}x</td></tr>`;
-    }).join('');
-
-    roiDiv.innerHTML = `<table class="data-table"><thead><tr><th>Client</th><th style="text-align:right;">Pipeline</th><th style="text-align:right;">ROI</th></tr></thead><tbody>${roiRows}</tbody></table>`;
 }
 
 function filterLeads(tier, btn) {
     if (tier !== null) TIER_FILTER = tier;
     REN_FILTER = document.getElementById('renFilter').value;
-    if (btn) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); }
+    if (btn) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); }
     PAGE = 1;
     renderLeads();
 }
 
-function handleGlobalSearch() {
-    PAGE = 1; renderLeads();
-}
+function handleGlobalSearch() { PAGE = 1; renderLeads(); }
 
 function renderLeads() {
     const q     = (document.getElementById('globalSearch').value||'').toLowerCase();
     FILTERED    = ALL_LEADS.filter(l => {
-        const tierOk = TIER_FILTER==='all' || l.tier===TIER_FILTER;
-        const renOk  = REN_FILTER==='all' || l.assignedClientId===REN_FILTER;
+        const tierOk = TIER_FILTER === 'all' || l.tier === TIER_FILTER;
+        const renOk  = REN_FILTER === 'all' || l.assignedClientId === REN_FILTER;
         const qOk    = !q || l.name.toLowerCase().includes(q) || (l.project||'').toLowerCase().includes(q);
         return tierOk && renOk && qOk;
     });
-    document.getElementById('leadCount').textContent = FILTERED.length;
-    const start  = (PAGE-1)*PER_PAGE;
-    const page   = FILTERED.slice(start, start+PER_PAGE);
+
+    const start  = (PAGE - 1) * PER_PAGE;
+    const page   = FILTERED.slice(start, start + PER_PAGE);
     const tbody  = document.getElementById('leadsTableBody');
 
-    if (page.length===0) {
-        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text-muted);">No leads match the current filter.</td></tr>`;
+    if (page.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:40px; color:var(--text-muted);">Tiada pembeli dalam pangkalan data ini yang memenuhi kriteria carian.</td></tr>`;
     } else {
-        tbody.innerHTML = page.map((l,i) => {
-            const waUrl = `https://wa.me/${l.phone.replace('+','')}`;
-            const badgeCls = l.tier==='Hot' ? 'badge-hot' : l.tier==='Warm' ? 'badge-warm' : 'badge-cold';
+        tbody.innerHTML = page.map((l, i) => {
+            const waMsg = encodeURIComponent(`Salam ${l.name}, saya Zubair dari ZK Revenue Ops. Saya nak sahkan kelayakan pinjaman rumah projek ${l.project}. Boleh kita tetapkan masa viewing gallery minggu ini?`);
+            const waUrl = `https://wa.me/${l.phone.replace('+','')}?text=${waMsg}`;
+            const badgeCls = l.tier === 'Hot' ? 'badge-hot' : (l.tier === 'Warm' ? 'badge-warm' : 'badge-cold');
+            const riskTag  = l.isRisk ? `<span class="badge badge-risk" style="margin-left:4px;">Gaji Rendah</span>` : '';
+
             return `<tr>
-                <td style="font-weight:600; color:var(--text-primary);">${l.name}</td>
-                <td style="color:var(--text-muted); font-size:12px;">${l.phone||'—'}</td>
-                <td>${l.project||'—'}</td>
-                <td><span style="font-size:11px; font-weight:700; color:${REN_CLIENTS.find(c=>c.id===l.assignedClientId)?.color||'var(--text-muted)'};">${l.assignedClientId||'—'}</span></td>
-                <td style="font-weight:700; color:${l.tier==='Hot'?'var(--accent-emerald)':l.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)'};">${l.dsr}%</td>
+                <td style="font-weight:700; color:var(--text-primary);">${l.name} ${riskTag}</td>
+                <td style="color:var(--text-muted); font-size:12px;">${l.phone || '—'}</td>
+                <td>${l.project || '—'}</td>
+                <td><span style="font-size:11px; font-weight:700; color:${REN_CLIENTS.find(c=>c.id===l.assignedClientId)?.color||'var(--text-muted)'};">${l.assignedClientId || '—'}</span></td>
+                <td style="font-weight:600;">RM ${(l.net||0).toLocaleString()}</td>
+                <td style="font-weight:800; color:${l.tier==='Hot'?'var(--accent-emerald)':(l.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)')};">${l.dsr}%</td>
                 <td><span class="badge ${badgeCls}">${l.tier}</span></td>
-                <td><a href="${waUrl}" target="_blank" class="btn btn-success" style="text-decoration:none; font-size:11px; padding:4px 10px;">WA</a></td>
+                <td style="display:flex; gap:6px;">
+                    <a href="${waUrl}" target="_blank" class="btn btn-success" style="text-decoration:none; font-size:11px; padding:4px 8px;">1-Click WA Outreach</a>
+                    <button class="btn btn-primary" onclick="lockAppointment(${i})" style="font-size:11px; padding:4px 8px;">Lock Appointment</button>
+                </td>
             </tr>`;
         }).join('');
     }
 
-    // Pagination
-    const pages = Math.ceil(FILTERED.length/PER_PAGE);
+    // Pagination Controls
+    const pages = Math.ceil(FILTERED.length / PER_PAGE);
     const ctrl  = document.getElementById('paginationControls');
     ctrl.innerHTML = '';
-    if (pages>1) {
-        for (let p=1; p<=pages; p++) {
+    if (pages > 1) {
+        for (let p = 1; p <= pages; p++) {
             const b = document.createElement('button');
             b.textContent = p;
-            b.className   = 'btn ' + (p===PAGE ? 'btn-primary' : 'btn-ghost');
+            b.className   = 'btn ' + (p === PAGE ? 'btn-primary' : 'btn-ghost');
             b.style.minWidth = '36px';
-            b.onclick = () => { PAGE=p; renderLeads(); };
+            b.onclick = () => { PAGE = p; renderLeads(); };
             ctrl.appendChild(b);
         }
     }
 }
 
-function renderClients() {
-    const grid = document.getElementById('clientGrid');
-    grid.innerHTML = REN_CLIENTS.map(c => {
-        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
-        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
-        const warm   = cLeads.filter(l=>l.tier==='Warm').length;
-        const pipe   = Math.round(hot*0.4)*15000;
-        const initials = c.name.split(' ').map(w=>w[0]).join('').substring(0,2);
-        return `<div class="client-card">
-            <div class="client-header">
-                <div class="client-avatar" style="background:${c.color};">${initials}</div>
-                <div>
-                    <div class="client-name">${c.id} — ${c.name}</div>
-                    <div class="client-meta">${c.agency}</div>
-                    <div class="client-meta" style="margin-top:2px;">${c.territory}</div>
-                </div>
-            </div>
-            <div class="client-stats">
-                <div class="client-stat"><div class="client-stat-val">${cLeads.length}</div><div class="client-stat-lbl">Total Leads</div></div>
-                <div class="client-stat"><div class="client-stat-val" style="color:var(--accent-emerald);">${hot}</div><div class="client-stat-lbl">Hot</div></div>
-                <div class="client-stat"><div class="client-stat-val" style="color:var(--accent-amber);">${warm}</div><div class="client-stat-lbl">Warm</div></div>
-            </div>
-            <div style="padding-top:12px; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
-                <div style="font-size:12px; color:var(--text-muted);">Est. Pipeline: <span style="color:var(--accent-amber); font-weight:700;">RM ${pipe.toLocaleString()}</span></div>
-                <a href="portal.html?ren=${c.id}" target="_blank" class="btn btn-ghost" style="font-size:11px; text-decoration:none; padding:5px 10px;">View Portal</a>
-            </div>
-        </div>`;
-    }).join('');
-}
-
 function renderROI() {
     const body = document.getElementById('roiReportBody');
-    if (ALL_LEADS.length===0) return;
+    if (ALL_LEADS.length === 0) return;
     const rows = REN_CLIENTS.map(c => {
-        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
-        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
-        const pipe   = Math.round(hot*0.4)*15000;
-        const roi    = c.fee>0 ? (pipe/c.fee).toFixed(1) : '0.0';
+        const cLeads = ALL_LEADS.filter(l => l.assignedClientId === c.id);
+        const hot    = cLeads.filter(l => l.tier === 'Hot').length;
+        const appts  = APPOINTMENTS.filter(a => a.ren === c.id).length;
+        const pipe   = Math.round(hot * 0.4) * 15000;
+        const roi    = c.fee > 0 ? (pipe / c.fee).toFixed(1) : '0.0';
         return `<tr>
             <td style="font-weight:700; color:${c.color};">${c.id}</td>
-            <td>${c.name}</td>
+            <td>${c.name} (${c.territory})</td>
             <td style="text-align:right;">${cLeads.length}</td>
             <td style="text-align:right; color:var(--accent-emerald); font-weight:700;">${hot}</td>
-            <td style="text-align:right; font-weight:700;">RM ${c.fee.toLocaleString()}</td>
+            <td style="text-align:right; color:var(--accent-blue); font-weight:700;">${appts}</td>
             <td style="text-align:right; color:var(--accent-amber); font-weight:700;">RM ${pipe.toLocaleString()}</td>
             <td style="text-align:right; color:var(--accent-indigo); font-weight:800;">${roi}x</td>
         </tr>`;
     }).join('');
-    body.innerHTML = `<table class="data-table"><thead><tr><th>ID</th><th>Name</th><th style="text-align:right;">Leads</th><th style="text-align:right;">Hot</th><th style="text-align:right;">Retainer</th><th style="text-align:right;">Pipeline</th><th style="text-align:right;">ROI</th></tr></thead><tbody>${rows}</tbody></table>`;
+    body.innerHTML = `<table class="data-table"><thead><tr><th>Client ID</th><th>Client Name & Territory</th><th style="text-align:right;">Extracted Leads</th><th style="text-align:right;">Tier 1 Pre-Approved</th><th style="text-align:right;">Appointments Locked</th><th style="text-align:right;">Delivered Pipeline</th><th style="text-align:right;">Client ROI</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
-// ── NOTION SYNC STUB ─────────────────────────────────────────────────────────
 function syncNotionAll() {
-    toast('Notion sync triggered. Run: node 05_Systems/Scripts/notion-crm-sync-engine.js', 'blue');
+    toast('Memulakan Notion CRM Sync Engine...', 'blue');
 }
 
-// ── TOAST ────────────────────────────────────────────────────────────────────
 function toast(msg, type='emerald') {
     const t = document.getElementById('toast');
     const colors = { emerald:'var(--accent-emerald)', amber:'var(--accent-amber)', blue:'var(--accent-blue)', rose:'var(--accent-rose)' };
-    t.style.borderLeftColor = colors[type]||colors.emerald;
+    t.style.borderLeftColor = colors[type] || colors.emerald;
     t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 3500);
@@ -1231,7 +1223,6 @@ function toast(msg, type='emerald') {
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
 runDSR();
-renderClients();
 </script>
 </body>
 </html>
