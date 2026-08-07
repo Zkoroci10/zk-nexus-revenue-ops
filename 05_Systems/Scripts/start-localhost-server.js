@@ -6,7 +6,7 @@
  * Module: 05_Systems/Scripts
  * BU: ZK Revenue Ops
  * Status: Active
- * Version: 2.0
+ * Version: 3.0
  * Created: 2026-08-08
  * Updated: 2026-08-08
  * Owner: Zubair (zubairisa10@gmail.com)
@@ -17,7 +17,7 @@ const http = require('http');
 const fs   = require('fs');
 const path = require('path');
 
-const PORT = 8080;
+const PORT = 3000;
 const ROOT = path.resolve(__dirname, '../../');
 
 const MIME_TYPES = {
@@ -33,7 +33,7 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
     // Disable browser caching completely for dev mode
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
 
@@ -59,7 +59,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
     console.log('=' .repeat(60));
-    console.log(`  🟢 ZK REVENUE OPS NODE DEV SERVER ACTIVE ON PORT ${PORT}`);
+    console.log(`  🟢 ZK REVENUE OPS NODE DEV SERVER ACTIVE ON FRESH PORT ${PORT}`);
     console.log(`  👉 Master Console:  http://localhost:${PORT}/index.html`);
     console.log(`  👉 REN Portal:      http://localhost:${PORT}/portal.html?ren=REN-001`);
     console.log('=' .repeat(60));
