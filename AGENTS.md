@@ -116,6 +116,12 @@ For non-trivial features, agents must use the installed skills:
 - `/to-tickets`: Deconstruct specs into actionable micro-step tasks.
 - `/implement`: Build using TDD & spec verification.
 
+### 3.7 ZK REVENUE OPS 10K-LEAD ENTERPRISE DATA SECURITY & SCALING DIRECTIVE
+Every system, portal, script, and database in ZK Revenue Ops MUST strictly enforce:
+1. **10k-Lead High-Performance Architecture:** Support 5,000 to 10,000+ lead records per client with fast pagination (50 items/page), instant search (< 10ms), and zero memory leak.
+2. **Zero Cross-Client Data Bleed (Security & Trust):** Client databases MUST be strictly isolated. Standalone dedicated portal files (`REN-001_portal.html`, `REN-002_portal.html`) or secure tenant partitions must never expose one client's leads to another.
+3. **Weekly & Monthly ROI Reporting (Process & Result):** Provide real-time pipeline value tracking, viewing calendar reminders, and printable weekly/monthly PDF ROI reports for client delivery.
+
 
 ---
 
