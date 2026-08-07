@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZK Revenue Ops — Branded REN Client Retainer Portal">
+    <meta name="robots" content="noindex, nofollow">
     <title>REN Client Portal — ZK Revenue Ops</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-canvas: #0f172a;
@@ -25,11 +25,7 @@
             --accent-indigo: #6366f1;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-canvas);
@@ -39,914 +35,276 @@
             display: flex;
             flex-direction: column;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* SVG Icon styling */
         .icon {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            fill: none;
-            display: inline-block;
-            vertical-align: middle;
+            width: 18px; height: 18px;
+            stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+            fill: none; display: inline-block; vertical-align: middle;
         }
-
-        .icon-sm {
-            width: 14px;
-            height: 14px;
-        }
-
-        .icon-lg {
-            width: 24px;
-            height: 24px;
-        }
+        .icon-sm { width: 14px; height: 14px; }
+        .icon-lg { width: 24px; height: 24px; }
 
         /* Top Navigation Header */
         .header {
             background: #0f172a;
             border-bottom: 1px solid var(--border-subtle);
             padding: 16px 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 50;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 50;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .brand-container { display: flex; align-items: center; gap: 12px; }
 
         .brand-logo {
-            width: 36px;
-            height: 36px;
+            width: 38px; height: 38px;
             background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: -0.03em;
+            display: flex; align-items: center; justify-content: center;
+            color: #ffffff; font-weight: 800; font-size: 16px; letter-spacing: -0.03em;
+            box-shadow: 0 2px 8px rgba(99,102,241,0.4);
         }
 
-        .brand-title {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .brand-title { display: flex; flex-direction: column; gap: 2px; }
+        .brand-title span:first-child { font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: #ffffff; }
 
         .brand-badge {
             background: rgba(56, 189, 248, 0.12);
             color: var(--accent-blue);
             border: 1px solid rgba(56, 189, 248, 0.3);
-            font-size: 11px;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px;
+            text-transform: uppercase; letter-spacing: 0.05em; width: fit-content;
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+        .header-actions { display: flex; align-items: center; gap: 16px; }
 
         .ren-selector-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            padding: 4px 8px 4px 12px;
-            border-radius: 8px;
+            display: flex; align-items: center; gap: 8px;
+            background: var(--bg-surface); border: 1px solid var(--border-subtle);
+            padding: 5px 12px; border-radius: 8px;
         }
 
-        .ren-selector-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
+        .ren-selector-label { font-size: 12px; color: var(--text-muted); font-weight: 600; }
 
         .ren-select {
-            background: transparent;
-            color: var(--accent-amber);
-            border: none;
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
-            outline: none;
-            cursor: pointer;
-            padding-right: 8px;
+            background: transparent; color: var(--accent-amber);
+            border: none; font-family: inherit; font-size: 13px; font-weight: 700;
+            outline: none; cursor: pointer;
         }
-
-        .ren-select option {
-            background: var(--bg-surface);
-            color: var(--text-primary);
-        }
+        .ren-select option { background: var(--bg-surface); color: var(--text-primary); }
 
         .retainer-status-badge {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(16, 185, 129, 0.12);
-            color: var(--accent-emerald);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            font-size: 12px;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 6px;
+            display: flex; align-items: center; gap: 6px;
+            background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald);
+            border: 1px solid rgba(16, 185, 129, 0.3); font-size: 12px; font-weight: 700;
+            padding: 6px 12px; border-radius: 6px;
         }
 
         .btn-export {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--accent-indigo);
-            color: #ffffff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
+            display: flex; align-items: center; gap: 8px;
+            background: var(--accent-indigo); color: #ffffff;
+            border: none; padding: 9px 18px; border-radius: 6px;
+            font-size: 13px; font-weight: 700; cursor: pointer;
             transition: all 0.15s ease;
         }
+        .btn-export:hover { background: #4f46e5; box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4); }
 
-        .btn-export:hover {
-            background: #4f46e5;
-            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
-        }
-
-        /* Container Layout */
         .container {
-            max-width: 1320px;
-            margin: 24px auto;
-            padding: 0 24px;
-            width: 100%;
-            flex: 1;
+            max-width: 1320px; margin: 24px auto; padding: 0 24px;
+            width: 100%; flex: 1;
         }
 
-        /* Metric Cards Grid */
         .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-bottom: 24px;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 16px; margin-bottom: 24px;
         }
 
         .metric-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-            transition: border-color 0.15s ease;
-        }
-
-        .metric-card:hover {
-            border-color: var(--border-strong);
+            background: var(--bg-surface); border: 1px solid var(--border-subtle);
+            border-radius: 10px; padding: 20px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; overflow: hidden;
         }
 
         .metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
         }
 
-        .card-amber::before { background: var(--accent-amber); }
-        .card-emerald::before { background: var(--accent-emerald); }
-        .card-blue::before { background: var(--accent-blue); }
+        .card-amber::before  { background: var(--accent-amber); }
+        .card-emerald::before{ background: var(--accent-emerald); }
+        .card-blue::before   { background: var(--accent-blue); }
         .card-indigo::before { background: var(--accent-indigo); }
 
-        .metric-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-
-        .metric-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+        .metric-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .metric-label  { color: var(--text-muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 
         .metric-icon-box {
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 32px; height: 32px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
         }
 
-        .box-amber { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); }
-        .box-emerald { background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); }
-        .box-blue { background: rgba(56, 189, 248, 0.12); color: var(--accent-blue); }
+        .box-amber  { background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); }
+        .box-emerald{ background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); }
+        .box-blue   { background: rgba(56, 189, 248, 0.12); color: var(--accent-blue); }
         .box-indigo { background: rgba(99, 102, 241, 0.12); color: var(--accent-indigo); }
 
-        .metric-value {
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .metric-sub {
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
+        .metric-value { font-size: 30px; font-weight: 800; line-height: 1.1; color: var(--text-primary); margin-bottom: 4px; }
+        .metric-sub   { font-size: 12px; color: var(--text-secondary); }
 
         /* Navigation Tab Toolbar */
         .tab-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 6px;
-            margin-bottom: 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--bg-surface); border: 1px solid var(--border-subtle);
+            border-radius: 10px; padding: 6px; margin-bottom: 24px;
         }
 
-        .tab-group {
-            display: flex;
-            gap: 6px;
-        }
+        .tab-group { display: flex; gap: 6px; }
 
         .tab-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
+            display: flex; align-items: center; gap: 8px;
+            background: transparent; border: none; color: var(--text-muted);
+            padding: 10px 18px; border-radius: 6px; font-size: 13px; font-weight: 700;
+            cursor: pointer; transition: all 0.15s ease; font-family: inherit;
         }
 
-        .tab-btn:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
+        .tab-btn:hover { color: var(--text-primary); background: rgba(255, 255, 255, 0.04); }
         .tab-btn.active {
-            background: var(--bg-canvas);
-            color: var(--accent-blue);
-            border: 1px solid var(--border-subtle);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background: var(--bg-canvas); color: var(--accent-blue);
+            border: 1px solid var(--border-subtle); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .tab-counter {
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent-blue);
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 10px;
-            font-weight: 700;
+            background: rgba(56, 189, 248, 0.15); color: var(--accent-blue);
+            font-size: 11px; padding: 2px 6px; border-radius: 10px; font-weight: 800;
         }
 
-        .filter-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-right: 8px;
-        }
+        .filter-controls { display: flex; align-items: center; gap: 10px; padding-right: 8px; }
 
-        .search-input-box {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-input-box .icon {
-            position: absolute;
-            left: 10px;
-            color: var(--text-muted);
-        }
+        .search-input-box { position: relative; display: flex; align-items: center; }
+        .search-input-box .icon { position: absolute; left: 10px; color: var(--text-muted); }
 
         .search-input {
-            background: var(--bg-canvas);
-            border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            padding: 7px 12px 7px 32px;
-            color: var(--text-primary);
-            font-size: 12px;
-            width: 200px;
-            outline: none;
-            font-family: inherit;
+            background: var(--bg-canvas); border: 1px solid var(--border-subtle);
+            border-radius: 6px; padding: 7px 12px 7px 32px; color: var(--text-primary);
+            font-size: 12px; width: 220px; outline: none; font-family: inherit;
         }
+        .search-input:focus { border-color: var(--accent-blue); }
 
-        .search-input:focus {
-            border-color: var(--accent-blue);
-        }
-
-        /* Tab Content Section Panels */
-        .tab-panel {
-            display: none;
-        }
-
-        .tab-panel.active {
-            display: block;
-        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
 
         /* Buyer Dossiers Cards Grid */
         .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 20px;
         }
 
         .dossier-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 20px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            background: var(--bg-surface); border: 1px solid var(--border-subtle);
+            border-radius: 10px; padding: 20px; position: relative;
+            display: flex; flex-direction: column; justify-content: space-between;
             transition: all 0.2s ease;
         }
 
         .dossier-card:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-2px);
+            border-color: var(--accent-blue); transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
-        .dossier-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-
-        .buyer-name-group {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .buyer-name {
-            font-size: 17px;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.01em;
-        }
-
-        .buyer-contact {
-            font-size: 13px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+        .dossier-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .buyer-name { font-size: 17px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.01em; }
+        .buyer-contact { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
 
         .tier-badge {
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+            font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 6px;
+            text-transform: uppercase; letter-spacing: 0.03em; display: inline-flex; align-items: center; gap: 4px;
         }
-
-        .tier-1 {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-emerald);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        .tier-2 {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-amber);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
-
-        .tier-3 {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--accent-rose);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-        }
+        .tier-1 { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tier-2 { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .tier-3 { background: rgba(239, 68, 68, 0.15); color: var(--accent-rose); border: 1px solid rgba(239, 68, 68, 0.3); }
 
         .info-matrix {
-            background: #0f172a;
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 14px;
-            margin: 14px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            background: #0f172a; border: 1px solid var(--border-subtle);
+            border-radius: 8px; padding: 14px; margin: 14px 0;
+            display: flex; flex-direction: column; gap: 8px;
         }
 
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
+        .info-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+        .info-label { color: var(--text-muted); font-weight: 500; }
+        .info-val   { font-weight: 700; color: var(--text-primary); }
 
-        .info-label {
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .info-val {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .info-val-highlight {
-            color: var(--accent-blue);
-        }
-
-        .info-val-emerald {
-            color: var(--accent-emerald);
-        }
-
-        .info-val-amber {
-            color: var(--accent-amber);
-        }
-
-        .dossier-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 12px;
-            border-top: 1px solid var(--border-subtle);
-            margin-top: 4px;
-        }
-
-        .viewing-info {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
+        .dossier-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); margin-top: 4px; padding-top: 12px; }
+        .viewing-info   { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
 
         .btn-wa-action {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-emerald);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            transition: all 0.15s ease;
+            display: flex; align-items: center; gap: 6px;
+            background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);
+            border: 1px solid rgba(16, 185, 129, 0.3); padding: 6px 12px; border-radius: 6px;
+            font-size: 12px; font-weight: 700; text-decoration: none; transition: all 0.15s ease;
+        }
+        .btn-wa-action:hover { background: rgba(16, 185, 129, 0.25); }
+
+        /* Calculator Styling */
+        .calculator-container { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .calc-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 24px; }
+        .calc-title-group { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); }
+        .calc-title { font-size: 16px; font-weight: 800; color: var(--text-primary); }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-label { font-size: 11px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+
+        .form-input, .form-select {
+            background: var(--bg-canvas); border: 1px solid var(--border-subtle);
+            border-radius: 6px; padding: 9px 12px; color: var(--text-primary);
+            font-family: inherit; font-size: 13px; outline: none; width: 100%;
         }
 
-        .btn-wa-action:hover {
-            background: rgba(16, 185, 129, 0.25);
-            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
-        }
+        .dsr-meter-box { background: #0f172a; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 20px; text-align: center; }
+        .dsr-percentage-display { font-size: 42px; font-weight: 800; line-height: 1; margin-bottom: 8px; }
+        .dsr-progress-track { height: 8px; background: #334155; border-radius: 4px; overflow: hidden; margin: 12px 0; }
+        .dsr-progress-fill { height: 100%; border-radius: 4px; transition: width 0.4s ease; }
 
-        /* Interactive DSR Calculator Styling */
-        .calculator-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .calc-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 24px;
-        }
-
-        .calc-title-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .calc-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-
-        .form-label {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .form-input {
-            background: var(--bg-canvas);
-            border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            padding: 10px 14px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 500;
-            outline: none;
-            transition: border-color 0.15s ease;
-        }
-
-        .form-input:focus {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15);
-        }
-
-        .form-select {
-            background: var(--bg-canvas);
-            border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            padding: 10px 14px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 500;
-            outline: none;
-            cursor: pointer;
-        }
-
-        .form-select option {
-            background: var(--bg-surface);
-        }
-
-        /* Results Display Panel */
-        .results-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .dsr-meter-box {
-            background: #0f172a;
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .dsr-percentage-display {
-            font-size: 42px;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .dsr-progress-track {
-            height: 10px;
-            background: #334155;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 12px 0;
-            position: relative;
-        }
-
-        .dsr-progress-fill {
-            height: 100%;
-            width: 0%;
-            border-radius: 5px;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
-        }
-
-        .dsr-status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .breakdown-matrix {
-            background: #0f172a;
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn-save-dossier {
-            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.15s ease;
-            margin-top: 8px;
-        }
-
-        .btn-save-dossier:hover {
-            opacity: 0.95;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-        }
-
-        /* Viewing Calendar Schedule Grid */
-        .calendar-section {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 10px;
-            padding: 24px;
-        }
-
-        .calendar-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-        }
-
+        /* Calendar Table */
+        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
         .calendar-table th {
-            text-align: left;
-            padding: 12px 16px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--border-subtle);
-            background: #0f172a;
+            text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-subtle); background: #0f172a;
         }
+        .calendar-table td { padding: 14px 16px; font-size: 13px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
 
-        .calendar-table td {
-            padding: 16px;
-            font-size: 13px;
-            border-bottom: 1px solid var(--border-subtle);
-            color: var(--text-secondary);
-        }
-
-        .calendar-table tr:hover td {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-
-        .pill-reminder {
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent-blue);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-
-        .pill-confirmed {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-emerald);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        .pill-pending {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-amber);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
-
-        /* Dedicated White-Paper Printable Layout (@media print) */
+        /* Print Layout */
         @media print {
-            body {
-                background: #ffffff !important;
-                color: #0f172a !important;
-                font-size: 12pt;
-            }
-
-            .header,
-            .tab-bar,
-            .btn-export,
-            .btn-wa-action,
-            .filter-controls,
-            .btn-save-dossier,
-            .search-input-box {
-                display: none !important;
-            }
-
-            .container {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            .print-header {
-                display: block !important;
-                border-bottom: 2px solid #0f172a;
-                padding-bottom: 12px;
-                margin-bottom: 20px;
-            }
-
-            .print-title {
-                font-size: 20pt;
-                font-weight: 800;
-                color: #0f172a;
-            }
-
-            .print-meta {
-                font-size: 10pt;
-                color: #475569;
-                margin-top: 4px;
-            }
-
-            .tab-panel {
-                display: block !important;
-            }
-
-            .metrics-grid {
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 12px !important;
-                margin-bottom: 20px !important;
-            }
-
-            .metric-card {
-                background: #f8fafc !important;
-                border: 1px solid #cbd5e1 !important;
-                color: #0f172a !important;
-                padding: 12px !important;
-            }
-
-            .metric-value {
-                color: #0f172a !important;
-                font-size: 20pt !important;
-            }
-
-            .metric-label, .metric-sub {
-                color: #475569 !important;
-            }
-
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 16px !important;
-            }
-
-            .dossier-card {
-                background: #ffffff !important;
-                border: 1px solid #94a3b8 !important;
-                color: #0f172a !important;
-                padding: 16px !important;
-                page-break-inside: avoid;
-            }
-
-            .buyer-name {
-                color: #0f172a !important;
-            }
-
-            .buyer-contact {
-                color: #475569 !important;
-            }
-
-            .info-matrix {
-                background: #f8fafc !important;
-                border: 1px solid #cbd5e1 !important;
-            }
-
-            .info-label {
-                color: #475569 !important;
-            }
-
-            .info-val, .info-val-highlight, .info-val-emerald, .info-val-amber {
-                color: #0f172a !important;
-            }
-
-            .tier-badge {
-                border: 1px solid #475569 !important;
-                color: #0f172a !important;
-                background: #e2e8f0 !important;
-            }
-
-            .calendar-table {
-                border: 1px solid #cbd5e1 !important;
-            }
-
-            .calendar-table th {
-                background: #f1f5f9 !important;
-                color: #0f172a !important;
-            }
-
-            .calendar-table td {
-                border-bottom: 1px solid #e2e8f0 !important;
-                color: #0f172a !important;
-            }
+            body { background: #ffffff !important; color: #0f172a !important; font-size: 12pt; }
+            .header, .tab-bar, .btn-export, .btn-wa-action, .filter-controls { display: none !important; }
+            .container { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .tab-panel { display: block !important; }
+            .dossier-card { background: #ffffff !important; border: 1px solid #cbd5e1 !important; color: #0f172a !important; page-break-inside: avoid; }
+            .info-matrix { background: #f8fafc !important; border: 1px solid #cbd5e1 !important; }
+            .info-val { color: #0f172a !important; }
         }
 
-        .print-header {
-            display: none;
-        }
-
-        /* Toast notification */
         .toast {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: var(--accent-emerald);
-            color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 100;
+            position: fixed; bottom: 24px; right: 24px; background: var(--accent-emerald);
+            color: #ffffff; padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 700;
+            display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transform: translateY(100px); opacity: 0; transition: all 0.3s ease; z-index: 100;
         }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        .toast.show { transform: translateY(0); opacity: 1; }
     </style>
 </head>
 <body>
 
-    <!-- Printable Header (Only Visible in Print Mode) -->
-    <div class="print-header">
-        <div class="print-title">ZK REVENUE OPS — REN CLIENT DOSSIER REPORT</div>
-        <div class="print-meta" id="printMetaText">Generated on: 2026-08-07 | Client Retainer Summary</div>
-    </div>
-
-    <!-- Top Navigation Header -->
+    <!-- Header Navigation -->
     <header class="header">
         <div class="brand-container">
             <div class="brand-logo">ZK</div>
             <div class="brand-title">
                 <span>ZK REVENUE OPS</span>
-                <span class="brand-badge">Client Portal</span>
+                <span class="brand-badge" id="portalRenBadge">Client Portal</span>
             </div>
         </div>
 
@@ -958,67 +316,68 @@
                     <option value="REN-001">REN-001 (Ahmad Razif — Subang Jaya)</option>
                     <option value="REN-002">REN-002 (Sarah Tan — Shah Alam North)</option>
                     <option value="REN-003">REN-003 (Kevon Lee — Cyberjaya & Puchong)</option>
-                    <option value="ALL">All REN Clients (Master View)</option>
                 </select>
             </div>
 
             <div class="retainer-status-badge" id="retainerBadge">
                 <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                <span id="retainerStatusText">Tier 1 Retainer — Active</span>
+                <span id="retainerStatusText">Tier 1 Retainer — Active 🟢</span>
             </div>
 
-            <button class="btn-export" onclick="exportPDF()">
+            <button class="btn-export" onclick="window.print()">
                 <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
                 <span>Export PDF</span>
             </button>
         </div>
     </header>
 
+    <!-- Main Container -->
     <div class="container">
-        <!-- Metric Summary Cards Grid -->
+
+        <!-- Top Metric Summary Cards Grid -->
         <div class="metrics-grid">
             <div class="metric-card card-amber">
                 <div class="metric-header">
-                    <span class="metric-label">Active Buyer Leads</span>
+                    <span class="metric-label">Assigned Buyer Leads</span>
                     <div class="metric-icon-box box-amber">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                     </div>
                 </div>
-                <div class="metric-value" id="statLeads">0</div>
-                <div class="metric-sub" id="statLeadsSub">Assigned to selected client</div>
+                <div class="metric-value" id="statLeads">34</div>
+                <div class="metric-sub">Verified in your database partition</div>
             </div>
 
             <div class="metric-card card-emerald">
                 <div class="metric-header">
-                    <span class="metric-label">Qualified DSR Buyers</span>
+                    <span class="metric-label">Tier 1 Pre-Approved</span>
                     <div class="metric-icon-box box-emerald">
                         <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
                 </div>
-                <div class="metric-value" id="statQualified">0</div>
-                <div class="metric-sub" id="statQualifiedSub">DSR ≤ 60% (Tier 1 & Tier 2)</div>
+                <div class="metric-value" id="statQualified">22</div>
+                <div class="metric-sub">DSR ≤ 40% (LPPSA/Bank Approved)</div>
             </div>
 
             <div class="metric-card card-blue">
                 <div class="metric-header">
-                    <span class="metric-label">Scheduled Viewings</span>
+                    <span class="metric-label">Confirmed Viewings</span>
                     <div class="metric-icon-box box-blue">
                         <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </div>
                 </div>
-                <div class="metric-value" id="statViewings">0</div>
-                <div class="metric-sub" id="statViewingsSub">Upcoming gallery appointments</div>
+                <div class="metric-value" id="statViewings">8</div>
+                <div class="metric-sub">Upcoming sales gallery appointments</div>
             </div>
 
             <div class="metric-card card-indigo">
                 <div class="metric-header">
-                    <span class="metric-label">Pipeline Loan Value</span>
+                    <span class="metric-label">Pipeline Loan Capacity</span>
                     <div class="metric-icon-box box-indigo">
                         <svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
                 </div>
-                <div class="metric-value" id="statLoanValue">RM 0M</div>
-                <div class="metric-sub" id="statLoanValueSub">Total estimated target loans</div>
+                <div class="metric-value" id="statLoanValue">RM 14.5M</div>
+                <div class="metric-sub">Total pre-approved housing loan value</div>
             </div>
         </div>
 
@@ -1026,16 +385,16 @@
         <div class="tab-bar">
             <div class="tab-group">
                 <button class="tab-btn active" id="tabBtnDossiers" onclick="switchTab('dossiers')">
-                    <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    <span>Buyer Dossiers</span>
-                    <span class="tab-counter" id="dossierCountTag">0</span>
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span>Verified Buyer Dossiers</span>
+                    <span class="tab-counter" id="dossierCountTag">22</span>
                 </button>
                 <button class="tab-btn" id="tabBtnCalculator" onclick="switchTab('calculator')">
-                    <svg class="icon icon-sm" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-                    <span>DSR Loan Calculator</span>
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="8" x2="16" y1="10" y2="10"/></svg>
+                    <span>DSR Loan Underwriter</span>
                 </button>
                 <button class="tab-btn" id="tabBtnCalendar" onclick="switchTab('calendar')">
-                    <svg class="icon icon-sm" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/></svg>
                     <span>Viewing Schedule</span>
                 </button>
             </div>
@@ -1058,13 +417,12 @@
         <!-- TAB 2: Interactive DSR Calculator Panel -->
         <div class="tab-panel" id="panelCalculator">
             <div class="calculator-container">
-                <!-- Input Form Card -->
                 <div class="calc-card">
                     <div class="calc-title-group">
-                        <svg class="icon icon-lg" style="color: var(--accent-blue);" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+                        <svg class="icon icon-lg" style="color: var(--accent-blue);" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/></svg>
                         <div>
-                            <div class="calc-title">Interactive DSR Loan Pre-Approval Calculator</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Calculate instant Debt Service Ratio & Bank Qualification Tier</div>
+                            <div class="calc-title">Interactive DSR Pre-Approval Calculator</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Calculate instant DSR ratio & housing loan capacity for buyers</div>
                         </div>
                     </div>
 
@@ -1072,129 +430,87 @@
                         <div class="form-grid">
                             <div class="form-group full-width">
                                 <label class="form-label">Buyer Name</label>
-                                <input type="text" class="form-input" id="calcBuyerName" placeholder="e.g. Ahmad Firdaus" value="Muhammad Hariz">
+                                <input type="text" class="form-input" id="calcBuyerName" value="Muhammad Hariz">
                             </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Phone Contact</label>
-                                <input type="text" class="form-input" id="calcPhone" placeholder="+60123456789" value="+60123456789">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Assign REN Client</label>
-                                <select class="form-select" id="calcAgentId">
-                                    <option value="REN-001">REN-001 (Ahmad Razif)</option>
-                                    <option value="REN-002">REN-002 (Sarah Tan)</option>
-                                    <option value="REN-003">REN-003 (Kevon Lee)</option>
-                                </select>
-                            </div>
-
                             <div class="form-group">
                                 <label class="form-label">Gross Monthly Income (RM)</label>
                                 <input type="number" class="form-input" id="calcIncome" value="7500" step="100">
                             </div>
-
                             <div class="form-group">
-                                <label class="form-label">Existing Monthly Commitments (RM)</label>
-                                <input type="number" class="form-input" id="calcCommitments" value="2100" step="50" placeholder="Car, PTPTN, Credit Cards">
+                                <label class="form-label">Existing Commitments (RM)</label>
+                                <input type="number" class="form-input" id="calcCommitments" value="2100" step="50">
                             </div>
-
                             <div class="form-group">
                                 <label class="form-label">Target Property Price (RM)</label>
                                 <input type="number" class="form-input" id="calcPropertyPrice" value="480000" step="5000">
                             </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Loan Margin %</label>
-                                <input type="number" class="form-input" id="calcMargin" value="90" min="50" max="100">
-                            </div>
-
                             <div class="form-group">
                                 <label class="form-label">Tenure (Years)</label>
                                 <input type="number" class="form-input" id="calcTenure" value="35" min="10" max="35">
                             </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Interest Rate (% p.a.)</label>
-                                <input type="number" class="form-input" id="calcInterest" value="4.25" step="0.05">
-                            </div>
-
                             <div class="form-group full-width">
-                                <label class="form-label">Project Interest</label>
-                                <input type="text" class="form-input" id="calcProject" value="SkyResidence Subang">
+                                <label class="form-label">Target Project</label>
+                                <input type="text" class="form-input" id="calcProject" value="Subang Parksuites">
                             </div>
                         </div>
                     </form>
                 </div>
 
-                <!-- Calculation Output Results Card -->
-                <div class="calc-card results-panel">
+                <div class="calc-card">
                     <div class="calc-title-group">
                         <svg class="icon icon-lg" style="color: var(--accent-emerald);" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         <div>
-                            <div class="calc-title">Loan Eligibility & DSR Qualification Result</div>
-                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Real-time automated underwriting assessment</div>
+                            <div class="calc-title">Underwriting Result</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Real-time automated bank qualification</div>
                         </div>
                     </div>
 
                     <div class="dsr-meter-box">
-                        <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 4px;">Calculated Debt Service Ratio</div>
+                        <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">Calculated DSR Ratio</div>
                         <div class="dsr-percentage-display" id="resDSRVal" style="color: var(--accent-emerald);">38.5%</div>
                         <div class="dsr-progress-track">
                             <div class="dsr-progress-fill" id="resDSRTrack" style="width: 38.5%; background: var(--accent-emerald);"></div>
                         </div>
-                        <div class="dsr-status-pill tier-1" id="resDSRBadge">
-                            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span id="resBadgeText">Tier 1 Pre-Approved (DSR ≤ 40%)</span>
-                        </div>
+                        <div class="tier-badge tier-1" id="resDSRBadge" style="margin: 0 auto;">Tier 1 Pre-Approved (LPPSA/Bank)</div>
                     </div>
 
-                    <div class="breakdown-matrix">
+                    <div class="info-matrix">
+                        <div class="info-row">
+                            <span class="info-label">Net Income (87% Gross)</span>
+                            <span class="info-val" id="resNet">RM 6,525 / mo</span>
+                        </div>
                         <div class="info-row">
                             <span class="info-label">Proposed Monthly Installment</span>
-                            <span class="info-val info-val-highlight" id="resInstallment">RM 2,152 / mo</span>
+                            <span class="info-val" style="color:var(--accent-blue);" id="resInstallment">RM 2,152 / mo</span>
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Total Debt Commitments (Existing + Loan)</span>
-                            <span class="info-val" id="resTotalCommitments">RM 4,252 / mo</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Net Disposable Income (NDI)</span>
-                            <span class="info-val info-val-emerald" id="resNDI">RM 3,248 / mo</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Estimated Max Housing Loan Capacity</span>
-                            <span class="info-val info-val-amber" id="resMaxLoan">RM 620,000</span>
+                            <span class="info-label">Max Housing Loan Capacity</span>
+                            <span class="info-val" style="color:var(--accent-amber);" id="resMaxLoan">RM 620,000</span>
                         </div>
                     </div>
-
-                    <button class="btn-save-dossier" onclick="saveCalculatorToDossier()">
-                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-                        <span>Attach & Save to Buyer Dossiers</span>
-                    </button>
                 </div>
             </div>
         </div>
 
         <!-- TAB 3: Viewing Schedule Calendar Panel -->
         <div class="tab-panel" id="panelCalendar">
-            <div class="calendar-section">
-                <div class="calc-title-group" style="border-bottom: none; margin-bottom: 0;">
-                    <svg class="icon icon-lg" style="color: var(--accent-blue);" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <div class="calc-card">
+                <div class="calc-title-group">
+                    <svg class="icon icon-lg" style="color: var(--accent-blue);" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/></svg>
                     <div>
-                        <div class="calc-title">Viewing Schedule Calendar & Anti-Ghosting Status</div>
-                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Track sales gallery appointments and automated T-2h Malay WhatsApp reminders</div>
+                        <div class="calc-title">Sales Gallery Viewing Calendar & Reminder Tracker</div>
+                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Confirmed buyer appointments locked by ZK Revenue Ops</div>
                     </div>
                 </div>
 
                 <table class="calendar-table">
                     <thead>
                         <tr>
-                            <th>Date & Time</th>
+                            <th>Confirmed Date & Time</th>
                             <th>Buyer Name</th>
-                            <th>Target Project & Location</th>
-                            <th>Assigned REN</th>
-                            <th>Anti-Ghosting Status</th>
+                            <th>Target Project</th>
+                            <th>Contact</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -1204,551 +520,162 @@
                 </table>
             </div>
         </div>
+
     </div>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span id="toastMsg">Calculation saved to Buyer Dossier successfully!</span>
+        <span id="toastMsg">Portal loaded successfully.</span>
     </div>
 
-    <!-- Application Script -->
     <script>
-        // REN Client Profiles Metadata
-        const REN_CLIENTS = {
+        // Sample Buyers Data partitioned by REN Client
+        const REN_DATA = {
             "REN-001": {
                 name: "Ahmad Razif",
                 agency: "Subang Jaya Property Hub",
                 territory: "Subang Jaya & USJ",
-                tierText: "Tier 1 Premium Retainer — RM 1,500/mo Active"
+                statusText: "Tier 1 Premium Retainer — Active 🟢",
+                buyers: [
+                    { name: "Muhammad Hariz", phone: "+60123456789", project: "SkyResidence Subang", income: "RM 7,500 / mo", dsr: "38.5%", tier: "Tier 1 Pre-Approved", viewing: "Sabtu ini, 11:00 AM" },
+                    { name: "Tan Wei Lun", phone: "+60171112233", project: "Subang Parksuites", income: "RM 8,200 / mo", dsr: "39.1%", tier: "Tier 1 Pre-Approved", viewing: "Ahad ini, 3:00 PM" },
+                    { name: "Siti Nurhaliza", phone: "+60193334455", project: "USJ Heights", income: "RM 6,200 / mo", dsr: "44.0%", tier: "Tier 2 Docs Needed", viewing: "Pending Date" }
+                ]
             },
             "REN-002": {
                 name: "Sarah Tan",
                 agency: "Shah Alam Real Estate",
                 territory: "Shah Alam North & Setia Alam",
-                tierText: "Tier 2 Standard Retainer — RM 1,000/mo Active"
+                statusText: "Tier 2 Growth Retainer — Active 🟢",
+                buyers: [
+                    { name: "Farhan Zulkifli", phone: "+60138889900", project: "Setia Eco Park", income: "RM 9,500 / mo", dsr: "35.2%", tier: "Tier 1 Pre-Approved", viewing: "Sabtu ini, 2:30 PM" },
+                    { name: "Devi Subramaniam", phone: "+60162223344", project: "Shah Alam North Villa", income: "RM 7,100 / mo", dsr: "38.0%", tier: "Tier 1 Pre-Approved", viewing: "Ahad ini, 11:00 AM" }
+                ]
             },
             "REN-003": {
                 name: "Kevon Lee",
-                agency: "Cyberjaya Realty",
+                agency: "Cyberjaya Prime Property",
                 territory: "Cyberjaya & Puchong",
-                tierText: "Tier 1 Premium Retainer — RM 1,500/mo Active"
-            },
-            "ALL": {
-                name: "All REN Retainers",
-                agency: "ZK Revenue Ops Master Command",
-                territory: "Subang Jaya, Shah Alam, Cyberjaya",
-                tierText: "Master Retainer Overview"
+                statusText: "Tier 3 Starter Retainer — Active 🟢",
+                buyers: [
+                    { name: "Kevin Goh", phone: "+60115556677", project: "Cyberjaya CyberResidence", income: "RM 6,800 / mo", dsr: "37.5%", tier: "Tier 1 Pre-Approved", viewing: "Sabtu ini, 4:00 PM" }
+                ]
             }
         };
 
-        // Initial Seed Dossiers Dataset
-        const INITIAL_DOSSIERS = [
-            {
-                id: "LEAD-001",
-                buyerName: "Muhammad Hariz",
-                phone: "+60123456789",
-                projectInterest: "SkyResidence Subang",
-                assignedAgentId: "REN-001",
-                assignedAgentName: "Ahmad Razif",
-                grossIncome: 7500,
-                commitments: 2100,
-                targetPrice: 480000,
-                dsrRatio: 38.5,
-                loanStatus: "Pre-Approved LPPSA",
-                tier: "Tier 1 Pre-Approved",
-                tierClass: "tier-1",
-                viewingTime: "Sabtu 11:00 AM",
-                viewingLocation: "SkyResidence Sales Gallery",
-                reminderStatus: "T-2h Reminder Sent",
-                pillClass: "pill-reminder"
-            },
-            {
-                id: "LEAD-002",
-                buyerName: "Nurul Ain Binti Razak",
-                phone: "+60198887766",
-                projectInterest: "Subang Parksuites",
-                assignedAgentId: "REN-001",
-                assignedAgentName: "Ahmad Razif",
-                grossIncome: 6200,
-                commitments: 1850,
-                targetPrice: 420000,
-                dsrRatio: 39.8,
-                loanStatus: "Pre-Approved Bank",
-                tier: "Tier 1 Pre-Approved",
-                tierClass: "tier-1",
-                viewingTime: "Sabtu 3:00 PM",
-                viewingLocation: "Subang Parksuites Gallery",
-                reminderStatus: "Confirmed",
-                pillClass: "pill-confirmed"
-            },
-            {
-                id: "LEAD-003",
-                buyerName: "Tan Wei Lun",
-                phone: "+60171112233",
-                projectInterest: "Elmina Valley Shah Alam",
-                assignedAgentId: "REN-002",
-                assignedAgentName: "Sarah Tan",
-                grossIncome: 8200,
-                commitments: 3100,
-                targetPrice: 650000,
-                dsrRatio: 52.4,
-                loanStatus: "Bank Qualified",
-                tier: "Tier 2 Bank Qualified",
-                tierClass: "tier-2",
-                viewingTime: "Ahad 3:00 PM",
-                viewingLocation: "Elmina Sales Gallery",
-                reminderStatus: "Confirmed",
-                pillClass: "pill-confirmed"
-            },
-            {
-                id: "LEAD-004",
-                buyerName: "Siti Khadijah",
-                phone: "+60134445566",
-                projectInterest: "Setia Alam Heights",
-                assignedAgentId: "REN-002",
-                assignedAgentName: "Sarah Tan",
-                grossIncome: 9500,
-                commitments: 2800,
-                targetPrice: 720000,
-                dsrRatio: 37.2,
-                loanStatus: "Pre-Approved Bank",
-                tier: "Tier 1 Pre-Approved",
-                tierClass: "tier-1",
-                viewingTime: "Ahad 11:00 AM",
-                viewingLocation: "Setia Alam Gallery",
-                reminderStatus: "T-2h Reminder Sent",
-                pillClass: "pill-reminder"
-            },
-            {
-                id: "LEAD-005",
-                buyerName: "Kavithan A/L Muthu",
-                phone: "+601122334455",
-                projectInterest: "Lakefront Cyberjaya",
-                assignedAgentId: "REN-003",
-                assignedAgentName: "Kevon Lee",
-                grossIncome: 11000,
-                commitments: 3400,
-                targetPrice: 550000,
-                dsrRatio: 38.2,
-                loanStatus: "Pre-Approved Bank",
-                tier: "Tier 1 Pre-Approved",
-                tierClass: "tier-1",
-                viewingTime: "Sabtu 2:00 PM",
-                viewingLocation: "Lakefront Gallery",
-                reminderStatus: "Confirmed",
-                pillClass: "pill-confirmed"
-            },
-            {
-                id: "LEAD-006",
-                buyerName: "Farhan Azman",
-                phone: "+60189990011",
-                projectInterest: "Puchong Horizon",
-                assignedAgentId: "REN-003",
-                assignedAgentName: "Kevon Lee",
-                grossIncome: 5500,
-                commitments: 2900,
-                targetPrice: 500000,
-                dsrRatio: 64.5,
-                loanStatus: "Underwriting Review",
-                tier: "Tier 3 Underwriting Review",
-                tierClass: "tier-3",
-                viewingTime: "Isnin 11:00 AM",
-                viewingLocation: "Puchong Gallery",
-                reminderStatus: "Pending Confirmation",
-                pillClass: "pill-pending"
-            }
-        ];
+        let CURRENT_REN = "REN-001";
 
-        let state = {
-            selectedREN: "REN-001",
-            activeTab: "dossiers",
-            searchQuery: "",
-            dossiers: []
-        };
-
-        // Initialize Application State
         function initApp() {
-            const saved = localStorage.getItem("zk_portal_dossiers");
-            if (saved) {
-                try {
-                    state.dossiers = JSON.parse(saved);
-                } catch (e) {
-                    state.dossiers = [...INITIAL_DOSSIERS];
-                }
-            } else {
-                state.dossiers = [...INITIAL_DOSSIERS];
+            const urlParams = new URLSearchParams(window.location.search);
+            const renParam  = urlParams.get('ren');
+            if (renParam && REN_DATA[renParam]) {
+                CURRENT_REN = renParam;
+                document.getElementById('renSelect').value = CURRENT_REN;
             }
-
-            renderRENHeader();
-            renderMetrics();
-            renderDossiers();
-            renderCalendar();
+            renderPortal();
             runDSRCalculation();
         }
 
-        // Handle REN Selector Dropdown Change
         function handleRENChange() {
-            state.selectedREN = document.getElementById("renSelect").value;
-            renderRENHeader();
-            renderMetrics();
-            renderDossiers();
-            renderCalendar();
+            CURRENT_REN = document.getElementById('renSelect').value;
+            renderPortal();
         }
 
-        // Render Header Metadata & Badges
-        function renderRENHeader() {
-            const renInfo = REN_CLIENTS[state.selectedREN] || REN_CLIENTS["REN-001"];
-            document.getElementById("retainerStatusText").innerText = renInfo.tierText;
+        function renderPortal() {
+            const data = REN_DATA[CURRENT_REN] || REN_DATA["REN-001"];
+            document.getElementById('portalRenBadge').textContent = `${CURRENT_REN} (${data.name})`;
+            document.getElementById('retainerStatusText').textContent = data.statusText;
 
-            const nowStr = new Date().toLocaleDateString('ms-MY', { day: 'numeric', month: 'short', year: 'numeric' });
-            document.getElementById("printMetaText").innerText = `Generated on: ${nowStr} | Client: ${renInfo.name} (${state.selectedREN}) | Territory: ${renInfo.territory}`;
+            const buyers = data.buyers;
+            document.getElementById('statLeads').textContent = buyers.length;
+            document.getElementById('statQualified').textContent = buyers.filter(b => b.tier.includes('Tier 1')).length;
+            document.getElementById('statViewings').textContent = buyers.filter(b => !b.viewing.includes('Pending')).length;
+            document.getElementById('dossierCountTag').textContent = buyers.length;
+
+            renderDossiers(buyers);
+            renderCalendar(buyers);
         }
 
-        // Filter Dossiers by Current Selection & Search Query
-        function getFilteredDossiers() {
-            return state.dossiers.filter(d => {
-                const matchREN = (state.selectedREN === "ALL") || (d.assignedAgentId === state.selectedREN);
-                const q = state.searchQuery.toLowerCase();
-                const matchQuery = !q || 
-                    d.buyerName.toLowerCase().includes(q) || 
-                    d.projectInterest.toLowerCase().includes(q) || 
-                    (d.phone && d.phone.includes(q)) || 
-                    (d.tier && d.tier.toLowerCase().includes(q));
-                return matchREN && matchQuery;
-            });
-        }
-
-        // Calculate and Render Metrics
-        function renderMetrics() {
-            const list = getFilteredDossiers();
-            const totalLeads = list.length;
-            const qualifiedCount = list.filter(d => d.dsrRatio <= 60).length;
-            const viewingsCount = list.filter(d => d.viewingTime && d.viewingTime.length > 0).length;
-            
-            const totalLoanSum = list.reduce((acc, curr) => acc + (curr.targetPrice || 0), 0);
-            const loanValFormatted = (totalLoanSum / 1000000).toFixed(1) + "M";
-
-            document.getElementById("statLeads").innerText = totalLeads;
-            document.getElementById("statQualified").innerText = qualifiedCount;
-            document.getElementById("statViewings").innerText = viewingsCount;
-            document.getElementById("statLoanValue").innerText = "RM " + loanValFormatted;
-
-            document.getElementById("dossierCountTag").innerText = totalLeads;
-        }
-
-        // Render Buyer Dossiers Grid
-        function renderDossiers() {
-            const grid = document.getElementById("dossiersGrid");
-            const list = getFilteredDossiers();
-
-            if (list.length === 0) {
-                grid.innerHTML = `
-                    <div style="grid-column: 1 / -1; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 48px; text-align: center; color: var(--text-muted);">
-                        <svg class="icon icon-lg" style="margin-bottom: 8px; color: var(--text-muted);" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                        <div style="font-weight: 600; font-size: 15px; color: var(--text-secondary);">No buyer dossiers match the selected criteria.</div>
-                        <div style="font-size: 12px; margin-top: 4px;">Try adjusting your REN client selector or search filter.</div>
-                    </div>
-                `;
-                return;
-            }
-
-            grid.innerHTML = list.map(d => {
-                const waCleanPhone = (d.phone || "").replace(/[^0-9]/g, "");
-                const waMsg = encodeURIComponent(`Salam ${d.buyerName}, saya ${d.assignedAgentName} daripada ZK Revenue Ops. Saya nak follow up berkenaan temujanji viewing di ${d.projectInterest} pada ${d.viewingTime || 'masa terdekat'}. Adakah masa ini sesuai?`);
-                const waUrl = `https://wa.me/${waCleanPhone}?text=${waMsg}`;
-
+        function renderDossiers(buyers) {
+            const grid = document.getElementById('dossiersGrid');
+            grid.innerHTML = buyers.map(b => {
+                const waMsg = encodeURIComponent(`Salam ${b.name}, saya ejen hartanah anda untuk projek ${b.project}. Saya ingin mengesahkan maklumat kelayakan DSR anda (${b.dsr}). Boleh kita berjumpa di Sales Gallery?`);
+                const waUrl = `https://wa.me/${b.phone.replace('+','')}?text=${waMsg}`;
                 return `
                     <div class="dossier-card">
-                        <div class="dossier-card-header">
-                            <div class="buyer-name-group">
-                                <div class="buyer-name">${escapeHtml(d.buyerName)}</div>
-                                <div class="buyer-contact">
-                                    <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                    <span>${escapeHtml(d.phone)}</span>
+                        <div>
+                            <div class="dossier-card-header">
+                                <div>
+                                    <div class="buyer-name">${b.name}</div>
+                                    <div class="buyer-contact">${b.phone}</div>
                                 </div>
+                                <span class="tier-badge ${b.tier.includes('Tier 1') ? 'tier-1' : 'tier-2'}">${b.tier}</span>
                             </div>
-                            <span class="tier-badge ${d.tierClass || 'tier-1'}">
-                                ${escapeHtml(d.tier || 'Tier 1 Pre-Approved')}
-                            </span>
-                        </div>
 
-                        <div class="info-matrix">
-                            <div class="info-row">
-                                <span class="info-label">Target Project</span>
-                                <span class="info-val info-val-highlight">${escapeHtml(d.projectInterest)}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Gross Income</span>
-                                <span class="info-val info-val-emerald">RM ${formatMoney(d.grossIncome)} / mo</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Existing Commitments</span>
-                                <span class="info-val">RM ${formatMoney(d.commitments)} / mo</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Property Value</span>
-                                <span class="info-val">RM ${formatMoney(d.targetPrice)}</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">DSR Ratio Status</span>
-                                <span class="info-val ${d.dsrRatio <= 40 ? 'info-val-emerald' : d.dsrRatio <= 60 ? 'info-val-amber' : 'info-val-highlight'}">
-                                    ${d.dsrRatio}% (${d.dsrRatio <= 60 ? 'Qualified' : 'High Risk'})
-                                </span>
+                            <div class="info-matrix">
+                                <div class="info-row"><span class="info-label">Projek Pilihan</span><span class="info-val">${b.project}</span></div>
+                                <div class="info-row"><span class="info-label">Anggaran Pendapatan</span><span class="info-val" style="color:var(--accent-emerald);">${b.income}</span></div>
+                                <div class="info-row"><span class="info-label">Nisbah DSR Disemak</span><span class="info-val" style="color:var(--accent-blue);">${b.dsr}</span></div>
                             </div>
                         </div>
 
                         <div class="dossier-footer">
-                            <div class="viewing-info">
-                                <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                <span>${escapeHtml(d.viewingTime || 'Viewing TBD')}</span>
-                            </div>
-
-                            <a href="${waUrl}" target="_blank" class="btn-wa-action">
-                                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                                <span>WhatsApp REN</span>
-                            </a>
+                            <span class="viewing-info">📅 Viewing: ${b.viewing}</span>
+                            <a href="${waUrl}" target="_blank" class="btn-wa-action">1-Click WA Direct Chat</a>
                         </div>
                     </div>
                 `;
             }).join('');
         }
 
-        // Render Viewing Schedule Calendar Table
-        function renderCalendar() {
-            const tbody = document.getElementById("calendarTableBody");
-            const list = getFilteredDossiers();
-
-            if (list.length === 0) {
-                tbody.innerHTML = `
-                    <tr>
-                        <td colspan="6" style="text-align: center; padding: 24px; color: var(--text-muted);">
-                            No viewings scheduled for the selected REN client filter.
-                        </td>
-                    </tr>
-                `;
-                return;
-            }
-
-            tbody.innerHTML = list.map(d => {
-                const waCleanPhone = (d.phone || "").replace(/[^0-9]/g, "");
-                const waMsg = encodeURIComponent(`Peringatan Viewing: Salam ${d.buyerName}, ini adalah peringatan mesra temujanji viewing hartanah di ${d.viewingLocation || d.projectInterest} pada ${d.viewingTime}. Sila maklumkan jika perlukan panduan lokasi. Jumpa anda di sana!`);
-                const waUrl = `https://wa.me/${waCleanPhone}?text=${waMsg}`;
-
-                return `
-                    <tr>
-                        <td style="font-weight: 600; color: var(--text-primary);">${escapeHtml(d.viewingTime || 'Sabtu 11:00 AM')}</td>
-                        <td>
-                            <div style="font-weight: 600; color: var(--text-primary);">${escapeHtml(d.buyerName)}</div>
-                            <div style="font-size: 11px; color: var(--text-muted);">${escapeHtml(d.phone)}</div>
-                        </td>
-                        <td>
-                            <div style="color: var(--accent-blue); font-weight: 600;">${escapeHtml(d.projectInterest)}</div>
-                            <div style="font-size: 11px; color: var(--text-muted);">${escapeHtml(d.viewingLocation || 'Sales Gallery')}</div>
-                        </td>
-                        <td>${escapeHtml(d.assignedAgentName || 'Agent')} (${escapeHtml(d.assignedAgentId)})</td>
-                        <td>
-                            <span class="status-pill ${d.pillClass || 'pill-reminder'}">
-                                ${escapeHtml(d.reminderStatus || 'T-2h Reminder Sent')}
-                            </span>
-                        </td>
-                        <td>
-                            <a href="${waUrl}" target="_blank" class="btn-wa-action" style="padding: 4px 8px; font-size: 11px;">
-                                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                <span>Remind WA</span>
-                            </a>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
+        function renderCalendar(buyers) {
+            const tbody = document.getElementById('calendarTableBody');
+            tbody.innerHTML = buyers.map(b => `
+                <tr>
+                    <td style="font-weight:700; color:var(--accent-blue);">${b.viewing}</td>
+                    <td style="font-weight:700; color:var(--text-primary);">${b.name}</td>
+                    <td>${b.project}</td>
+                    <td>${b.phone}</td>
+                    <td><span class="tier-badge ${b.viewing.includes('Pending') ? 'tier-2' : 'tier-1'}">${b.viewing.includes('Pending') ? 'Pending Confirmation 🟡' : 'Confirmed 🟢'}</span></td>
+                    <td><a href="https://wa.me/${b.phone.replace('+','')}" target="_blank" class="btn-wa-action" style="font-size:11px; padding:4px 8px;">Contact Buyer</a></td>
+                </tr>
+            `).join('');
         }
 
-        // Live DSR Calculator Engine
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('panel' + tabId.charAt(0).toUpperCase() + tabId.slice(1)).classList.add('active');
+            document.getElementById('tabBtn' + tabId.charAt(0).toUpperCase() + tabId.slice(1)).classList.add('active');
+        }
+
         function runDSRCalculation() {
-            const income = parseFloat(document.getElementById("calcIncome").value) || 0;
-            const commitments = parseFloat(document.getElementById("calcCommitments").value) || 0;
-            const price = parseFloat(document.getElementById("calcPropertyPrice").value) || 0;
-            const margin = parseFloat(document.getElementById("calcMargin").value) || 90;
-            const tenure = parseFloat(document.getElementById("calcTenure").value) || 35;
-            const rate = parseFloat(document.getElementById("calcInterest").value) || 4.25;
+            const income = parseFloat(document.getElementById('calcIncome').value) || 0;
+            const commit = parseFloat(document.getElementById('calcCommitments').value) || 0;
+            const price  = parseFloat(document.getElementById('calcPropertyPrice').value) || 0;
+            const tenure = parseFloat(document.getElementById('calcTenure').value) || 35;
 
-            const loanAmount = price * (margin / 100);
-            const monthlyRate = (rate / 100) / 12;
-            const totalMonths = tenure * 12;
+            const net     = Math.round(income * 0.87);
+            const install = Math.round((price * 0.9 * 0.0425) / 12);
+            const totalC  = commit + install;
+            const dsr     = net > 0 ? Math.round((totalC / net) * 100) : 0;
+            const maxL    = Math.max(0, Math.round((net * 0.65 - commit) * 200));
 
-            // Monthly installment calculation formula
-            let monthlyInstallment = 0;
-            if (monthlyRate > 0 && totalMonths > 0) {
-                monthlyInstallment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
-            }
-
-            const totalCommitments = commitments + monthlyInstallment;
-            let dsr = 0;
-            if (income > 0) {
-                dsr = (totalCommitments / income) * 100;
-            }
-
-            const ndi = Math.max(0, income - totalCommitments);
-
-            // Max Loan Capacity calculation (assuming 65% max DSR limit)
-            const maxAllowedCommitment = income * 0.65;
-            const maxInstallmentCapacity = Math.max(0, maxAllowedCommitment - commitments);
-            let maxLoanCapacity = 0;
-            if (monthlyRate > 0 && totalMonths > 0) {
-                maxLoanCapacity = maxInstallmentCapacity * (Math.pow(1 + monthlyRate, totalMonths) - 1) / (monthlyRate * Math.pow(1 + monthlyRate, totalMonths));
-            }
-
-            // Update DOM Results
-            const dsrFormatted = dsr.toFixed(1);
-            document.getElementById("resDSRVal").innerText = dsrFormatted + "%";
-            
-            const track = document.getElementById("resDSRTrack");
-            track.style.width = Math.min(100, dsr) + "%";
-
-            const badge = document.getElementById("resDSRBadge");
-            const badgeText = document.getElementById("resBadgeText");
-            const valDisplay = document.getElementById("resDSRVal");
-
-            if (dsr <= 40) {
-                valDisplay.style.color = "var(--accent-emerald)";
-                track.style.background = "var(--accent-emerald)";
-                badge.className = "dsr-status-pill tier-1";
-                badgeText.innerText = "Tier 1 Pre-Approved (DSR <= 40%)";
-            } else if (dsr <= 60) {
-                valDisplay.style.color = "var(--accent-amber)";
-                track.style.background = "var(--accent-amber)";
-                badge.className = "dsr-status-pill tier-2";
-                badgeText.innerText = "Tier 2 Bank Qualified (DSR 41-60%)";
-            } else {
-                valDisplay.style.color = "var(--accent-rose)";
-                track.style.background = "var(--accent-rose)";
-                badge.className = "dsr-status-pill tier-3";
-                badgeText.innerText = "Tier 3 Underwriting Review (DSR > 60%)";
-            }
-
-            document.getElementById("resInstallment").innerText = "RM " + formatMoney(monthlyInstallment) + " / mo";
-            document.getElementById("resTotalCommitments").innerText = "RM " + formatMoney(totalCommitments) + " / mo";
-            document.getElementById("resNDI").innerText = "RM " + formatMoney(ndi) + " / mo";
-            document.getElementById("resMaxLoan").innerText = "RM " + formatMoney(maxLoanCapacity);
+            document.getElementById('resDSRVal').textContent = dsr + '%';
+            document.getElementById('resDSRTrack').style.width = Math.min(dsr, 100) + '%';
+            document.getElementById('resNet').textContent = 'RM ' + net.toLocaleString() + ' / mo';
+            document.getElementById('resInstallment').textContent = 'RM ' + install.toLocaleString() + ' / mo';
+            document.getElementById('resMaxLoan').textContent = 'RM ' + maxL.toLocaleString();
         }
 
-        // Attach Calculator Result to State & localStorage
-        function saveCalculatorToDossier() {
-            const name = document.getElementById("calcBuyerName").value || "New Buyer";
-            const phone = document.getElementById("calcPhone").value || "+60120000000";
-            const agentId = document.getElementById("calcAgentId").value;
-            const income = parseFloat(document.getElementById("calcIncome").value) || 0;
-            const commitments = parseFloat(document.getElementById("calcCommitments").value) || 0;
-            const price = parseFloat(document.getElementById("calcPropertyPrice").value) || 0;
-            const project = document.getElementById("calcProject").value || "Property Interest";
-
-            const dsrStr = document.getElementById("resDSRVal").innerText.replace("%", "");
-            const dsrVal = parseFloat(dsrStr) || 0;
-
-            let tier = "Tier 1 Pre-Approved";
-            let tierClass = "tier-1";
-            let loanStatus = "Pre-Approved Bank";
-
-            if (dsrVal > 60) {
-                tier = "Tier 3 Underwriting Review";
-                tierClass = "tier-3";
-                loanStatus = "Underwriting Review";
-            } else if (dsrVal > 40) {
-                tier = "Tier 2 Bank Qualified";
-                tierClass = "tier-2";
-                loanStatus = "Bank Qualified";
-            }
-
-            const agentInfo = REN_CLIENTS[agentId] || REN_CLIENTS["REN-001"];
-
-            const newDossier = {
-                id: "LEAD-" + Math.floor(100 + Math.random() * 900),
-                buyerName: name,
-                phone: phone,
-                projectInterest: project,
-                assignedAgentId: agentId,
-                assignedAgentName: agentInfo.name,
-                grossIncome: income,
-                commitments: commitments,
-                targetPrice: price,
-                dsrRatio: dsrVal,
-                loanStatus: loanStatus,
-                tier: tier,
-                tierClass: tierClass,
-                viewingTime: "Sabtu 11:00 AM",
-                viewingLocation: project + " Sales Gallery",
-                reminderStatus: "T-2h Reminder Sent",
-                pillClass: "pill-reminder"
-            };
-
-            state.dossiers.unshift(newDossier);
-            localStorage.setItem("zk_portal_dossiers", JSON.stringify(state.dossiers));
-
-            renderMetrics();
-            renderDossiers();
-            renderCalendar();
-
-            showToast("Calculation saved to " + name + "'s Buyer Dossier!");
-            switchTab("dossiers");
-        }
-
-        // Tab Switching Logic
-        function switchTab(tabName) {
-            state.activeTab = tabName;
-            
-            document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
-            document.querySelectorAll(".tab-panel").forEach(panel => panel.classList.remove("active"));
-
-            if (tabName === "dossiers") {
-                document.getElementById("tabBtnDossiers").classList.add("active");
-                document.getElementById("panelDossiers").classList.add("active");
-            } else if (tabName === "calculator") {
-                document.getElementById("tabBtnCalculator").classList.add("active");
-                document.getElementById("panelCalculator").classList.add("active");
-            } else if (tabName === "calendar") {
-                document.getElementById("tabBtnCalendar").classList.add("active");
-                document.getElementById("panelCalendar").classList.add("active");
-            }
-        }
-
-        // Live Search Input Handler
         function handleSearch() {
-            state.searchQuery = document.getElementById("searchInput").value || "";
-            renderMetrics();
-            renderDossiers();
-            renderCalendar();
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const data = REN_DATA[CURRENT_REN] || REN_DATA["REN-001"];
+            const filtered = data.buyers.filter(b => b.name.toLowerCase().includes(q) || b.project.toLowerCase().includes(q));
+            renderDossiers(filtered);
         }
 
-        // PDF Print Export Trigger
-        function exportPDF() {
-            window.print();
-        }
-
-        // Toast Notification Display Helper
-        function showToast(msg) {
-            const toast = document.getElementById("toast");
-            document.getElementById("toastMsg").innerText = msg;
-            toast.classList.add("show");
-            setTimeout(() => toast.classList.remove("show"), 3500);
-        }
-
-        // Utility: Format Currency Numbers
-        function formatMoney(amount) {
-            return Math.round(amount || 0).toLocaleString('en-US');
-        }
-
-        // Utility: Escape HTML for Security
-        function escapeHtml(str) {
-            if (!str) return '';
-            return String(str)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#039;');
-        }
-
-        // Initialize on DOM Load
         document.addEventListener("DOMContentLoaded", initApp);
     </script>
 </body>

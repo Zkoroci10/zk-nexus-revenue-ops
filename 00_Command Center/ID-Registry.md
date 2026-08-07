@@ -109,6 +109,7 @@ Related: RUL-001, IDX-001
 | BRF-002 | Gemini Spark Co-Worker Briefing & Directive | Active | 00_Command Center\GEMINI_SPARK_COWORKER_BRIEFING.md |
 | BUS-001 | ZK Revenue Ops Strategic Architecture | Active | 01_Business |
 | BUS-002 | ZK Revenue Ops Core Business Model & Lead Triage SOP | Active | 01_Business\ZK-Revenue-Ops\Strategy\BUSINESS_MODEL_SOP.md |
+| BUS-003 | REN Client Portal Functional Specification & Value Architecture | Active | 01_Business\ZK-Revenue-Ops\Strategy\REN_CLIENT_PORTAL_SPEC.md |
 | SOP-004 | Objection Handling Playbook | Active | 01_Business |
 
 ### SYS — Systems
