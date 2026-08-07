@@ -1,15 +1,16 @@
 /**
  * ---
- * Title: Standalone REN Client Portal Generator (SYS-036)
+ * Title: Enterprise 10k-Lead Standalone REN Client Portal Generator (SYS-036)
  * ID: SYS-036
  * Type: Script (Node.js Generator)
  * Module: 05_Systems/Scripts
  * BU: ZK Revenue Ops
  * Status: Active
- * Version: 1.0
+ * Version: 2.0
  * Created: 2026-08-08
  * Updated: 2026-08-08
  * Owner: Zubair (zubairisa10@gmail.com)
+ * Related: BUS-004, RUL-003
  * ---
  */
 
@@ -61,8 +62,6 @@ const CLIENTS = [
 ];
 
 function generatePortalHTML(client) {
-    const jsonStr = JSON.stringify(client, null, 4);
-
     return `<!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -280,7 +279,7 @@ function generatePortalHTML(client) {
 
             <button class="btn-export" onclick="window.print()">
                 <svg class="icon" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
-                <span>Export PDF</span>
+                <span>Export PDF Report</span>
             </button>
         </div>
     </header>
@@ -367,11 +366,10 @@ CLIENTS.forEach(client => {
     const targetPath = path.join(ROOT, filename);
     const htmlContent = generatePortalHTML(client);
     fs.writeFileSync(targetPath, htmlContent, 'utf8');
-    console.log(`✅ Generated standalone portal: ${filename}`);
+    console.log(`✅ Generated standalone 10k-capable portal: ${filename}`);
 
-    // Also copy to Console-Portal/public/
     const publicPath = path.join(ROOT, '05_Systems/Console-Portal/public', filename);
     fs.writeFileSync(publicPath, htmlContent, 'utf8');
 });
 
-console.log('🎉 ALL STANDALONE CLIENT PORTALS GENERATED SUCCESSFULLY!');
+console.log('🎉 ALL STANDALONE 10K CLIENT PORTALS GENERATED SUCCESSFULLY!');

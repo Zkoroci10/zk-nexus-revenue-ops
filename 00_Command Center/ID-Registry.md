@@ -110,6 +110,7 @@ Related: RUL-001, IDX-001
 | BUS-001 | ZK Revenue Ops Strategic Architecture | Active | 01_Business |
 | BUS-002 | ZK Revenue Ops Core Business Model & Lead Triage SOP | Active | 01_Business\ZK-Revenue-Ops\Strategy\BUSINESS_MODEL_SOP.md |
 | BUS-003 | REN Client Portal Functional Specification & Value Architecture | Active | 01_Business\ZK-Revenue-Ops\Strategy\REN_CLIENT_PORTAL_SPEC.md |
+| BUS-004 | ZK Revenue Ops 10k-Lead Enterprise Scale, Data Security & ROI Reporting Spec | Active | 01_Business\ZK-Revenue-Ops\Strategy\ENTERPRISE_DATA_SECURITY_AND_SCALE_SPEC.md |
 | SOP-004 | Objection Handling Playbook | Active | 01_Business |
 
 ### SYS — Systems
