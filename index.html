@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ZK Revenue Ops — Lead Extraction, DSR Triage & Appointment Locking Console">
+    <meta name="description" content="ZK Revenue Ops — Executive SDR Triage & REN Client Management Console">
     <meta name="robots" content="noindex, nofollow">
     <title>ZK Revenue Ops — Executive Triage Console</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ── THEME DESIGN TOKENS ── */
+        /* ── THEME DESIGN TOKENS (UI/UX Pro Max) ── */
         :root {
             --bg-base:       #09090b;
             --bg-surface:    #18181b;
@@ -32,9 +32,9 @@
             --radius-sm: 6px;
             --radius-md: 8px;
             --radius-lg: 12px;
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Light Theme Overrides */
         body.theme-light {
             --bg-base:       #f8fafc;
             --bg-surface:    #ffffff;
@@ -45,6 +45,7 @@
             --text-primary:  #0f172a;
             --text-secondary:#475569;
             --text-muted:    #64748b;
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -202,7 +203,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 7px 14px;
+            padding: 8px 14px;
             border-radius: var(--radius-sm);
             font-size: 12px;
             font-weight: 700;
@@ -232,6 +233,13 @@
             border-color: rgba(16,185,129,0.3);
         }
         .btn-success:hover { background: rgba(16,185,129,0.25); }
+
+        .btn-danger {
+            background: var(--accent-rose-dim);
+            color: var(--accent-rose);
+            border-color: rgba(244,63,94,0.3);
+        }
+        .btn-danger:hover { background: rgba(244,63,94,0.25); }
 
         .btn svg { width: 14px; height: 14px; }
 
@@ -375,6 +383,117 @@
 
         .panel-body { padding: 20px; }
 
+        /* ── CLIENT MANAGER CARDS ── */
+        .client-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .client-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.15s ease;
+        }
+
+        .client-card.terminated {
+            opacity: 0.6;
+            border-color: var(--border-subtle);
+            filter: grayscale(40%);
+        }
+
+        .client-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .client-info-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .client-avatar-badge {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 800; color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .client-name-title { font-size: 14px; font-weight: 800; color: var(--text-primary); }
+        .client-agency-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+        .client-territory  { font-size: 11px; color: var(--accent-indigo); font-weight: 700; margin-top: 2px; }
+
+        .client-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .client-stat-box {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 8px;
+            text-align: center;
+        }
+
+        .client-stat-val { font-size: 16px; font-weight: 800; color: var(--text-primary); }
+        .client-stat-lbl { font-size: 9px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-top: 2px; }
+
+        .client-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* ── MODAL DIALOG ── */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 999;
+            opacity: 0; visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .modal-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            width: 100%; max-width: 480px;
+            padding: 24px;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+        }
+
+        .modal-overlay.active .modal-card { transform: scale(1); }
+
+        .modal-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 20px; padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .modal-title { font-size: 16px; font-weight: 800; color: var(--text-primary); }
+
         /* ── TABLE ── */
         .data-table { width: 100%; border-collapse: collapse; }
 
@@ -413,14 +532,14 @@
             letter-spacing: 0.03em;
         }
 
-        .badge-hot     { background: var(--accent-emerald-dim); color: var(--accent-emerald); border: 1px solid rgba(16,185,129,0.3); }
-        .badge-warm    { background: var(--accent-amber-dim);   color: var(--accent-amber);   border: 1px solid rgba(245,158,11,0.3); }
-        .badge-cold    { background: var(--accent-rose-dim);    color: var(--accent-rose);    border: 1px solid rgba(244,63,94,0.3); }
-        .badge-risk    { background: rgba(239,68,68,0.2);       color: #f87171;               border: 1px solid rgba(239,68,68,0.5); }
+        .badge-active     { background: var(--accent-emerald-dim); color: var(--accent-emerald); border: 1px solid rgba(16,185,129,0.3); }
+        .badge-terminated { background: var(--accent-rose-dim);    color: var(--accent-rose);    border: 1px solid rgba(244,63,94,0.3); }
+        .badge-hot        { background: var(--accent-emerald-dim); color: var(--accent-emerald); border: 1px solid rgba(16,185,129,0.3); }
+        .badge-warm       { background: var(--accent-amber-dim);   color: var(--accent-amber);   border: 1px solid rgba(245,158,11,0.3); }
+        .badge-cold       { background: var(--accent-rose-dim);    color: var(--accent-rose);    border: 1px solid rgba(244,63,94,0.3); }
 
         /* ── GRID 2-col ── */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 
         /* ── TABS ── */
         .tab-bar {
@@ -460,7 +579,7 @@
 
         /* ── FORM ELEMENTS ── */
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
         .form-group.full { grid-column: span 2; }
 
         .label {
@@ -475,12 +594,13 @@
             background: var(--bg-base);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 8px 12px;
+            padding: 9px 12px;
             color: var(--text-primary);
             font-family: inherit;
             font-size: 13px;
             outline: none;
             transition: border-color 0.12s ease;
+            width: 100%;
         }
 
         .input:focus, .select:focus { border-color: var(--accent-indigo); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
@@ -567,11 +687,16 @@
         </div>
     </div>
 
-    <div class="nav-section-label">Core SOP Workflow</div>
+    <div class="nav-section-label">Core Operations</div>
     <a class="nav-item active" onclick="switchSection('triage')">
         <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Lead Triage & Outreach
         <span class="nav-badge" id="navTotalLeads">0</span>
+    </a>
+    <a class="nav-item" onclick="switchSection('clients')">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        REN Client Manager
+        <span class="nav-badge" id="navTotalClients">3</span>
     </a>
     <a class="nav-item" onclick="switchSection('dsr')">
         <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
@@ -582,7 +707,7 @@
         Locked Appointments
     </a>
 
-    <div class="nav-section-label">Client Database Safety</div>
+    <div class="nav-section-label">Database & Delivery</div>
     <a class="nav-item" onclick="switchSection('import')">
         <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
         Client Ad Handoff (CSV)
@@ -626,9 +751,9 @@
                 <svg class="icon" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
                 Sync Notion
             </button>
-            <button class="btn btn-primary" onclick="switchSection('import')">
-                <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                Import Client Database
+            <button class="btn btn-primary" onclick="openAddClientModal()">
+                <svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                + Add REN Client
             </button>
         </div>
     </header>
@@ -698,10 +823,7 @@
                     <button class="tab" onclick="filterLeads('Cold',this)">Tier 3 Cold</button>
                 </div>
                 <select class="select" id="renFilter" onchange="filterLeads(null,null)" style="width:230px;">
-                    <option value="all">All Client Databases</option>
-                    <option value="REN-001">REN-001 Ahmad Razif (Subang)</option>
-                    <option value="REN-002">REN-002 Sarah Tan (Shah Alam)</option>
-                    <option value="REN-003">REN-003 Kevon Lee (Cyberjaya)</option>
+                    <!-- Rendered dynamically -->
                 </select>
             </div>
 
@@ -725,6 +847,24 @@
                 </table>
             </div>
             <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;" id="paginationControls"></div>
+        </section>
+
+        <!-- ── REN CLIENT MANAGER ──────────────────────────────────────── -->
+        <section class="tab-panel" id="section-clients">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <div>
+                    <h2 style="font-size:16px; font-weight:800; color:var(--text-primary);">REN Client Retainer Manager</h2>
+                    <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">Add, edit, or terminate REN clients. Terminating a client locks their database partition while keeping historical data safe.</div>
+                </div>
+                <button class="btn btn-primary" onclick="openAddClientModal()">
+                    <svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    + Add New REN Client
+                </button>
+            </div>
+
+            <div class="client-cards-grid" id="clientCardsGrid">
+                <!-- Rendered dynamically -->
+            </div>
         </section>
 
         <!-- ── DSR CALCULATOR ────────────────────────────────────────── -->
@@ -762,9 +902,7 @@
                             <div class="form-group">
                                 <label class="label">Assign to Client Database</label>
                                 <select class="select" id="calcRen">
-                                    <option value="REN-001">REN-001 (Ahmad Razif — Subang)</option>
-                                    <option value="REN-002">REN-002 (Sarah Tan — Shah Alam)</option>
-                                    <option value="REN-003">REN-003 (Kevon Lee — Cyberjaya)</option>
+                                    <!-- Rendered dynamically -->
                                 </select>
                             </div>
                         </div>
@@ -847,9 +985,7 @@
                     <div class="form-group" style="margin-bottom:16px;">
                         <label class="label">Target Client Database</label>
                         <select class="select" id="importTargetRen">
-                            <option value="REN-001">REN-001 Ahmad Razif (Subang Jaya)</option>
-                            <option value="REN-002">REN-002 Sarah Tan (Shah Alam North)</option>
-                            <option value="REN-003">REN-003 Kevon Lee (Cyberjaya & Puchong)</option>
+                            <!-- Rendered dynamically -->
                         </select>
                     </div>
 
@@ -890,6 +1026,50 @@
     </main>
 </div>
 
+<!-- ══ CLIENT ADD/EDIT MODAL ════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="clientModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <div class="modal-title" id="modalTitle">Add New REN Client</div>
+            <button class="btn btn-ghost" onclick="closeClientModal()" style="padding:4px 8px;">✕</button>
+        </div>
+        <form id="clientForm" onsubmit="handleSaveClient(event)">
+            <input type="hidden" id="modalClientId">
+            <div class="form-group">
+                <label class="label">Client ID Code</label>
+                <input class="input" type="text" id="modalIdCode" placeholder="e.g. REN-004" required>
+            </div>
+            <div class="form-group">
+                <label class="label">Agent Full Name</label>
+                <input class="input" type="text" id="modalName" placeholder="e.g. Mohd Hafiz" required>
+            </div>
+            <div class="form-group">
+                <label class="label">Agency Name</label>
+                <input class="input" type="text" id="modalAgency" placeholder="e.g. Klang Valley Real Estate" required>
+            </div>
+            <div class="form-group">
+                <label class="label">Assigned Territory / Location</label>
+                <input class="input" type="text" id="modalTerritory" placeholder="e.g. Cheras & Bangi" required>
+            </div>
+            <div class="form-group">
+                <label class="label">Monthly Retainer Fee (RM)</label>
+                <input class="input" type="number" id="modalFee" placeholder="1500" value="1500" required>
+            </div>
+            <div class="form-group">
+                <label class="label">Status Account</label>
+                <select class="select" id="modalStatus">
+                    <option value="Active">Active 🟢</option>
+                    <option value="Terminated">Terminated 🔴 (Lock Database)</option>
+                </select>
+            </div>
+            <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
+                <button type="button" class="btn btn-ghost" onclick="closeClientModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Client Profile</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
@@ -902,13 +1082,165 @@ let PAGE        = 1;
 const PER_PAGE  = 50;
 let TIER_FILTER = 'all';
 let REN_FILTER  = 'all';
-let HOT_THRESHOLD = 40; // Dynamic DSR Hot Threshold %
+let HOT_THRESHOLD = 40;
 
-const REN_CLIENTS = [
-    { id:'REN-001', name:'Ahmad Razif', agency:'Subang Jaya Property Hub', territory:'Subang Jaya & USJ',        color:'#6366f1', fee:1500 },
-    { id:'REN-002', name:'Sarah Tan',   agency:'Shah Alam Real Estate',    territory:'Shah Alam North & Setia Alam', color:'#10b981', fee:1000 },
-    { id:'REN-003', name:'Kevon Lee',   agency:'Cyberjaya Prime Property', territory:'Cyberjaya & Puchong',     color:'#f59e0b', fee:800  },
+// Load REN Clients from LocalStorage or default initial state
+let REN_CLIENTS = JSON.parse(localStorage.getItem('zk_ren_clients')) || [
+    { id:'REN-001', name:'Ahmad Razif', agency:'Subang Jaya Property Hub', territory:'Subang Jaya & USJ',        color:'#6366f1', fee:1500, status:'Active' },
+    { id:'REN-002', name:'Sarah Tan',   agency:'Shah Alam Real Estate',    territory:'Shah Alam North & Setia Alam', color:'#10b981', fee:1000, status:'Active' },
+    { id:'REN-003', name:'Kevon Lee',   agency:'Cyberjaya Prime Property', territory:'Cyberjaya & Puchong',     color:'#f59e0b', fee:800,  status:'Active' },
 ];
+
+function saveClientsToStorage() {
+    localStorage.setItem('zk_ren_clients', JSON.stringify(REN_CLIENTS));
+    renderClientDropdowns();
+    renderClientCards();
+}
+
+// ── CLIENT CRUD MANAGEMENT ───────────────────────────────────────────────────
+function renderClientDropdowns() {
+    const activeClients = REN_CLIENTS.filter(c => c.status === 'Active');
+    
+    // Filter dropdown in Lead Triage
+    const filterSelect = document.getElementById('renFilter');
+    filterSelect.innerHTML = `<option value="all">All Client Databases</option>` + 
+        REN_CLIENTS.map(c => `<option value="${c.id}">${c.id} ${c.name} (${c.territory}) ${c.status === 'Terminated' ? '[TERMINATED]' : ''}</option>`).join('');
+
+    // Select dropdown in DSR Calc
+    const dsrSelect = document.getElementById('calcRen');
+    dsrSelect.innerHTML = activeClients.map(c => `<option value="${c.id}">${c.id} (${c.name} — ${c.territory})</option>`).join('');
+
+    // Select dropdown in CSV Import
+    const importSelect = document.getElementById('importTargetRen');
+    importSelect.innerHTML = activeClients.map(c => `<option value="${c.id}">${c.id} ${c.name} (${c.territory})</option>`).join('');
+
+    document.getElementById('navTotalClients').textContent = REN_CLIENTS.filter(c => c.status === 'Active').length;
+}
+
+function renderClientCards() {
+    const grid = document.getElementById('clientCardsGrid');
+    grid.innerHTML = REN_CLIENTS.map((c, i) => {
+        const cLeads = ALL_LEADS.filter(l => l.assignedClientId === c.id);
+        const hot    = cLeads.filter(l => l.tier === 'Hot').length;
+        const appts  = APPOINTMENTS.filter(a => a.ren === c.id).length;
+        const isTerm = c.status === 'Terminated';
+        const initials = c.name.split(' ').map(w => w[0]).join('').substring(0,2).toUpperCase();
+        
+        return `
+            <div class="client-card ${isTerm ? 'terminated' : ''}">
+                <div>
+                    <div class="client-card-header">
+                        <div class="client-info-box">
+                            <div class="client-avatar-badge" style="background:${c.color || 'var(--accent-indigo)'};">${initials}</div>
+                            <div>
+                                <div class="client-name-title">${c.id} — ${c.name}</div>
+                                <div class="client-agency-sub">${c.agency}</div>
+                                <div class="client-territory">${c.territory}</div>
+                            </div>
+                        </div>
+                        <span class="badge ${isTerm ? 'badge-terminated' : 'badge-active'}">${c.status}</span>
+                    </div>
+
+                    <div class="client-stats-row">
+                        <div class="client-stat-box">
+                            <div class="client-stat-val">${cLeads.length}</div>
+                            <div class="client-stat-lbl">Leads</div>
+                        </div>
+                        <div class="client-stat-box">
+                            <div class="client-stat-val" style="color:var(--accent-emerald);">${hot}</div>
+                            <div class="client-stat-lbl">Hot DSR</div>
+                        </div>
+                        <div class="client-stat-box">
+                            <div class="client-stat-val" style="color:var(--accent-blue);">${appts}</div>
+                            <div class="client-stat-lbl">Appts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="client-actions">
+                    <button class="btn btn-ghost" onclick="openEditClientModal(${i})" style="font-size:11px; flex:1; justify-content:center;">Edit</button>
+                    ${isTerm ? 
+                        `<button class="btn btn-success" onclick="toggleClientStatus(${i})" style="font-size:11px; flex:1; justify-content:center;">Re-Activate</button>` : 
+                        `<button class="btn btn-danger" onclick="toggleClientStatus(${i})" style="font-size:11px; flex:1; justify-content:center;">Terminate</button>`
+                    }
+                    <a href="portal.html?ren=${c.id}" target="_blank" class="btn btn-ghost" style="font-size:11px; text-decoration:none; padding:4px 8px;">Portal</a>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function openAddClientModal() {
+    document.getElementById('modalTitle').textContent = 'Add New REN Client';
+    document.getElementById('modalClientId').value    = '';
+    document.getElementById('modalIdCode').value      = 'REN-00' + (REN_CLIENTS.length + 1);
+    document.getElementById('modalName').value        = '';
+    document.getElementById('modalAgency').value      = '';
+    document.getElementById('modalTerritory').value   = '';
+    document.getElementById('modalFee').value         = 1500;
+    document.getElementById('modalStatus').value      = 'Active';
+    document.getElementById('clientModal').classList.add('active');
+}
+
+function openEditClientModal(index) {
+    const c = REN_CLIENTS[index];
+    if (!c) return;
+    document.getElementById('modalTitle').textContent = `Edit Client — ${c.id}`;
+    document.getElementById('modalClientId').value    = index;
+    document.getElementById('modalIdCode').value      = c.id;
+    document.getElementById('modalName').value        = c.name;
+    document.getElementById('modalAgency').value      = c.agency;
+    document.getElementById('modalTerritory').value   = c.territory;
+    document.getElementById('modalFee').value         = c.fee;
+    document.getElementById('modalStatus').value      = c.status;
+    document.getElementById('clientModal').classList.add('active');
+}
+
+function closeClientModal() {
+    document.getElementById('clientModal').classList.remove('active');
+}
+
+function handleSaveClient(e) {
+    e.preventDefault();
+    const index     = document.getElementById('modalClientId').value;
+    const id        = document.getElementById('modalIdCode').value.trim();
+    const name      = document.getElementById('modalName').value.trim();
+    const agency    = document.getElementById('modalAgency').value.trim();
+    const territory = document.getElementById('modalTerritory').value.trim();
+    const fee       = parseFloat(document.getElementById('modalFee').value) || 1500;
+    const status    = document.getElementById('modalStatus').value;
+
+    const colors = ['#6366f1', '#10b981', '#f59e0b', '#3b82f6', '#ec4899', '#8b5cf6'];
+    const color  = colors[REN_CLIENTS.length % colors.length];
+
+    if (index !== '') {
+        // Edit existing
+        REN_CLIENTS[index] = { ...REN_CLIENTS[index], id, name, agency, territory, fee, status };
+        toast(`Client ${id} (${name}) berjaya dikemaskini!`, 'emerald');
+    } else {
+        // Add new
+        REN_CLIENTS.push({ id, name, agency, territory, fee, status, color });
+        toast(`Client baru ${id} (${name}) berjaya ditambah!`, 'emerald');
+    }
+
+    saveClientsToStorage();
+    closeClientModal();
+}
+
+function toggleClientStatus(index) {
+    const c = REN_CLIENTS[index];
+    if (!c) return;
+    if (c.status === 'Active') {
+        if (confirm(`Adakah kamu pasti nak Terminate client ${c.id} (${c.name})? Database lead mereka akan di-lock.`)) {
+            c.status = 'Terminated';
+            toast(`Client ${c.id} telah di-TERMINATED (Database locked)`, 'rose');
+        }
+    } else {
+        c.status = 'Active';
+        toast(`Client ${c.id} telah di-RE-ACTIVATED!`, 'emerald');
+    }
+    saveClientsToStorage();
+}
 
 // ── THEME TOGGLE ─────────────────────────────────────────────────────────────
 function toggleTheme() {
@@ -929,7 +1261,6 @@ function updateDSRThreshold(val) {
     HOT_THRESHOLD = parseInt(val);
     document.getElementById('dsrSliderBadge').textContent = `DSR ≤ ${HOT_THRESHOLD}% (Hot)`;
     document.getElementById('dashHotMeta').textContent = `DSR ≤ ${HOT_THRESHOLD}% — Ready for Lock`;
-    // Re-evaluate tiers for all leads
     ALL_LEADS.forEach(l => {
         l.tier = l.dsr <= HOT_THRESHOLD ? 'Hot' : (l.dsr <= 65 ? 'Warm' : 'Cold');
     });
@@ -945,12 +1276,14 @@ function switchSection(id) {
     event.currentTarget.classList.add('active');
     const titles = {
         triage: 'Lead Triage & Outreach',
+        clients: 'REN Client Retainer Manager',
         dsr: 'DSR Pre-Approval Calc',
         appointments: 'Locked Appointments',
         import: 'Client Ad Database Ingestion',
         reports: 'Client ROI Reports'
     };
     document.getElementById('topbarTitle').textContent = titles[id] || id;
+    if (id === 'clients') renderClientCards();
     if (id === 'appointments') renderAppointments();
     if (id === 'reports') renderROI();
 }
@@ -959,7 +1292,7 @@ function switchSection(id) {
 function calcDSR(gross, commits) {
     const g = parseFloat(gross)||0;
     if (g <= 0) return { net:0, dsr:999, tier:'Cold', status:'Unqualified', isRisk:true };
-    const net = Math.round(g * 0.87); // Net income = 87% gross
+    const net = Math.round(g * 0.87);
     const c   = parseFloat(commits) > 0 ? parseFloat(commits) : Math.round(net * 0.3);
     const raw = (c / net) * 100;
     const dsr = Math.round(raw);
@@ -1152,10 +1485,9 @@ function renderLeads() {
             const waMsg = encodeURIComponent(`Salam ${l.name}, saya Zubair dari ZK Revenue Ops. Saya nak sahkan kelayakan pinjaman rumah projek ${l.project}. Boleh kita tetapkan masa viewing gallery minggu ini?`);
             const waUrl = `https://wa.me/${l.phone.replace('+','')}?text=${waMsg}`;
             const badgeCls = l.tier === 'Hot' ? 'badge-hot' : (l.tier === 'Warm' ? 'badge-warm' : 'badge-cold');
-            const riskTag  = l.isRisk ? `<span class="badge badge-risk" style="margin-left:4px;">Gaji Rendah</span>` : '';
 
             return `<tr>
-                <td style="font-weight:700; color:var(--text-primary);">${l.name} ${riskTag}</td>
+                <td style="font-weight:700; color:var(--text-primary);">${l.name}</td>
                 <td style="color:var(--text-muted); font-size:12px;">${l.phone || '—'}</td>
                 <td>${l.project || '—'}</td>
                 <td><span style="font-size:11px; font-weight:700; color:${REN_CLIENTS.find(c=>c.id===l.assignedClientId)?.color||'var(--text-muted)'};">${l.assignedClientId || '—'}</span></td>
@@ -1222,6 +1554,7 @@ function toast(msg, type='emerald') {
 }
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
+renderClientDropdowns();
 runDSR();
 </script>
 </body>
