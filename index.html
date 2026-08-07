@@ -1163,7 +1163,7 @@ function renderClientCards() {
                         `<button class="btn btn-success" onclick="toggleClientStatus(${i})" style="font-size:11px; flex:1; justify-content:center;">Re-Activate</button>` : 
                         `<button class="btn btn-danger" onclick="toggleClientStatus(${i})" style="font-size:11px; flex:1; justify-content:center;">Terminate</button>`
                     }
-                    <a href="portal.html?ren=${c.id}" target="_blank" class="btn btn-ghost" style="font-size:11px; text-decoration:none; padding:4px 8px;">Portal</a>
+                    <a href="${c.id}_portal.html" target="_blank" class="btn btn-ghost" style="font-size:11px; text-decoration:none; padding:4px 8px;">Portal</a>
                 </div>
             </div>
         `;
