@@ -3,557 +3,1235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ZK Revenue Ops — Multi-Tenant Enterprise Command Center & REN Client Portal Engine.">
-    <meta name="author" content="Zubair, ZK Revenue Ops">
+    <meta name="description" content="ZK Revenue Ops — Executive Master Console for Zubair & Team">
     <meta name="robots" content="noindex, nofollow">
-    <!-- ZNS: SYS-CON-001 | Console-Portal Web App v3.1 Enterprise -->
-    <title>ZK Revenue Ops — Enterprise Command Center</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>ZK Revenue Ops — Master Console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ── DESIGN TOKENS (UI/UX Pro Max — Slate Dark) ── */
+        :root {
+            --bg-base:       #09090b;
+            --bg-surface:    #18181b;
+            --bg-card:       #27272a;
+            --bg-hover:      #3f3f46;
+            --border:        #3f3f46;
+            --border-subtle: #27272a;
+            --text-primary:  #fafafa;
+            --text-secondary:#a1a1aa;
+            --text-muted:    #71717a;
+            --accent-indigo: #6366f1;
+            --accent-indigo-dim: rgba(99,102,241,0.12);
+            --accent-emerald:#10b981;
+            --accent-emerald-dim: rgba(16,185,129,0.12);
+            --accent-amber:  #f59e0b;
+            --accent-amber-dim: rgba(245,158,11,0.12);
+            --accent-blue:   #3b82f6;
+            --accent-blue-dim: rgba(59,130,246,0.12);
+            --accent-rose:   #f43f5e;
+            --accent-rose-dim: rgba(244,63,94,0.12);
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            width: 224px;
+            min-height: 100vh;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 12px;
+            flex-shrink: 0;
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            z-index: 50;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px 8px 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 16px;
+        }
+
+        .brand-icon {
+            width: 32px; height: 32px;
+            background: var(--accent-indigo);
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 13px; color: #fff;
+            flex-shrink: 0;
+        }
+
+        .brand-text { font-size: 13px; font-weight: 700; color: var(--text-primary); line-height: 1.2; }
+        .brand-sub  { font-size: 10px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+
+        .nav-section-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0 8px;
+            margin: 16px 0 6px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.12s ease;
+            border: 1px solid transparent;
+            text-decoration: none;
+            margin-bottom: 2px;
+        }
+
+        .nav-item:hover { background: var(--bg-card); color: var(--text-primary); }
+
+        .nav-item.active {
+            background: var(--accent-indigo-dim);
+            color: #818cf8;
+            border-color: rgba(99,102,241,0.25);
+        }
+
+        .nav-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        .nav-badge {
+            margin-left: auto;
+            background: var(--bg-card);
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 10px;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .user-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+        }
+
+        .user-avatar {
+            width: 28px; height: 28px;
+            background: linear-gradient(135deg, var(--accent-indigo), #8b5cf6);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 700; color: #fff;
+            flex-shrink: 0;
+        }
+
+        .user-name  { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+        .user-role  { font-size: 10px; color: var(--text-muted); }
+
+        /* ── MAIN CONTENT ── */
+        .main {
+            margin-left: 224px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ── TOPBAR ── */
+        .topbar {
+            height: 56px;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+        }
+
+        .topbar-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+        .topbar-sub   { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+        .topbar-actions { display: flex; align-items: center; gap: 10px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.12s ease;
+            border: 1px solid transparent;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--accent-indigo);
+            color: #fff;
+            border-color: var(--accent-indigo);
+        }
+        .btn-primary:hover { background: #4f46e5; box-shadow: 0 0 0 3px rgba(99,102,241,0.2); }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border-color: var(--border);
+        }
+        .btn-ghost:hover { background: var(--bg-card); color: var(--text-primary); }
+
+        .btn-success {
+            background: var(--accent-emerald-dim);
+            color: var(--accent-emerald);
+            border-color: rgba(16,185,129,0.3);
+        }
+        .btn-success:hover { background: rgba(16,185,129,0.2); }
+
+        .btn svg { width: 14px; height: 14px; }
+
+        /* ── PAGE CONTENT ── */
+        .content {
+            padding: 24px;
+            flex: 1;
+        }
+
+        /* ── STAT CARDS ── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.15s ease;
+        }
+
+        .stat-card:hover { border-color: var(--bg-hover); }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+        }
+
+        .stat-card.indigo::after  { background: var(--accent-indigo); }
+        .stat-card.emerald::after { background: var(--accent-emerald); }
+        .stat-card.amber::after   { background: var(--accent-amber); }
+        .stat-card.blue::after    { background: var(--accent-blue); }
+
+        .stat-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .stat-icon {
+            width: 30px; height: 30px;
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .stat-icon svg { width: 15px; height: 15px; }
+        .stat-icon.indigo  { background: var(--accent-indigo-dim);  color: var(--accent-indigo); }
+        .stat-icon.emerald { background: var(--accent-emerald-dim); color: var(--accent-emerald); }
+        .stat-icon.amber   { background: var(--accent-amber-dim);   color: var(--accent-amber); }
+        .stat-icon.blue    { background: var(--accent-blue-dim);    color: var(--accent-blue); }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ── SECTION PANELS ── */
+        .panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .panel-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .panel-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+
+        .panel-body { padding: 20px; }
+
+        /* ── TABLE ── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 10px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-subtle);
+            background: var(--bg-base);
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+        /* ── BADGES ── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-hot     { background: var(--accent-emerald-dim); color: var(--accent-emerald); border: 1px solid rgba(16,185,129,0.3); }
+        .badge-warm    { background: var(--accent-amber-dim);   color: var(--accent-amber);   border: 1px solid rgba(245,158,11,0.3); }
+        .badge-cold    { background: var(--accent-rose-dim);    color: var(--accent-rose);    border: 1px solid rgba(244,63,94,0.3); }
+        .badge-active  { background: var(--accent-indigo-dim);  color: #818cf8;               border: 1px solid rgba(99,102,241,0.3); }
+
+        /* ── GRID 2-col ── */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+
+        /* ── TABS ── */
+        .tab-bar {
+            display: flex;
+            gap: 2px;
+            background: var(--bg-base);
+            padding: 4px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 7px 16px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.12s ease;
+            border: 1px solid transparent;
+            background: transparent;
+            font-family: inherit;
+        }
+
+        .tab:hover { color: var(--text-secondary); background: var(--bg-card); }
+
+        .tab.active {
+            background: var(--bg-surface);
+            color: var(--text-primary);
+            border-color: var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* ── FORM ELEMENTS ── */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group.full { grid-column: span 2; }
+
+        .label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .input, .select {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 8px 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.12s ease;
+        }
+
+        .input:focus, .select:focus { border-color: var(--accent-indigo); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+        .select { cursor: pointer; }
+        .select option { background: var(--bg-card); }
+
+        /* ── DSR METER ── */
+        .dsr-meter {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dsr-value {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .dsr-track {
+            height: 6px;
+            background: var(--bg-card);
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+
+        .dsr-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.4s ease, background 0.3s ease;
+        }
+
+        /* ── REN CLIENT CARDS ── */
+        .client-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .client-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .client-avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; color: #fff;
+            flex-shrink: 0;
+        }
+
+        .client-name  { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+        .client-meta  { font-size: 11px; color: var(--text-muted); }
+
+        .client-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .client-stat {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .client-stat-val  { font-size: 18px; font-weight: 800; color: var(--text-primary); }
+        .client-stat-lbl  { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
+
+        /* ── SEARCH ── */
+        .search-box {
+            position: relative;
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px; height: 14px;
+            color: var(--text-muted);
+        }
+
+        .search-box input {
+            padding-left: 32px;
+            width: 220px;
+        }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-emerald);
+            color: var(--text-primary);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 500;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            transform: translateY(80px);
+            opacity: 0;
+            transition: all 0.25s ease;
+            z-index: 999;
+            max-width: 320px;
+        }
+
+        .toast.show { transform: translateY(0); opacity: 1; }
+
+        /* ── PROGRESS BAR ── */
+        .progress-bar {
+            height: 2px;
+            background: var(--border-subtle);
+            border-radius: 1px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-indigo);
+            border-radius: 1px;
+            transition: width 0.3s ease;
+        }
+
+        /* ── EMPTY STATE ── */
+        .empty-state {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--text-muted);
+        }
+
+        .empty-state svg { width: 40px; height: 40px; margin: 0 auto 12px; opacity: 0.4; display: block; }
+        .empty-state p { font-size: 13px; }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        /* ── SVG icon helper ── */
+        .icon { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    </style>
 </head>
-<body class="theme-dark">
-    <div class="app-layout">
+<body>
 
-        <!-- ── SIDEBAR NAVIGATION ──────────────────────────────────────── -->
-        <aside class="app-sidebar" role="navigation" aria-label="Main Navigation">
-            <div class="brand-block">
-                <div class="brand-logo" aria-label="ZK Revenue Ops Logo">ZK</div>
-                <div class="brand-info">
-                    <span class="brand-title">ZK REVENUE OPS</span>
-                    <span class="brand-subtitle">Enterprise Operating System</span>
-                </div>
+<!-- ══ SIDEBAR ══════════════════════════════════════════════════════════════ -->
+<aside class="sidebar">
+    <div class="sidebar-brand">
+        <div class="brand-icon">ZK</div>
+        <div>
+            <div class="brand-text">ZK Revenue Ops</div>
+            <div class="brand-sub">Master Console</div>
+        </div>
+    </div>
+
+    <div class="nav-section-label">Operations</div>
+    <a class="nav-item active" onclick="switchSection('dashboard')">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+        <span class="nav-badge" id="navTotalLeads">0</span>
+    </a>
+    <a class="nav-item" onclick="switchSection('leads')">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Lead Management
+        <span class="nav-badge" id="navHotLeads">0</span>
+    </a>
+    <a class="nav-item" onclick="switchSection('dsr')">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+        DSR Calculator
+    </a>
+    <a class="nav-item" onclick="switchSection('clients')">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        REN Clients
+    </a>
+    <a class="nav-item" onclick="switchSection('import')">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        CSV Import
+    </a>
+    <a class="nav-item" onclick="switchSection('reports')">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        ROI Reports
+    </a>
+
+    <div class="sidebar-footer">
+        <div class="user-pill">
+            <div class="user-avatar">ZK</div>
+            <div>
+                <div class="user-name">Zubair</div>
+                <div class="user-role">Founder & Admin</div>
             </div>
+        </div>
+    </div>
+</aside>
 
-            <nav class="nav-menu">
-                <button id="btn-dashboard-mode" class="nav-item active" onclick="switchMode('dashboard')" aria-pressed="true">
-                    <span class="nav-icon">📊</span>
-                    <span class="nav-text">Command Dashboard</span>
-                </button>
-                <button id="btn-operator-mode" class="nav-item" onclick="switchMode('operator')" aria-pressed="false">
-                    <span class="nav-icon">⚙️</span>
-                    <span class="nav-text">Operator Hub</span>
-                    <span id="badge-raw-count" class="nav-badge">0</span>
-                </button>
-                <button id="btn-client-mode" class="nav-item" onclick="switchMode('client')" aria-pressed="false">
-                    <span class="nav-icon">🏢</span>
-                    <span class="nav-text">REN Client Desk</span>
-                    <span id="badge-client-seats" class="nav-badge green">3 Seats</span>
-                </button>
-                <button id="btn-manager-mode" class="nav-item" onclick="switchMode('manager')" aria-pressed="false">
-                    <span class="nav-icon">👥</span>
-                    <span class="nav-text">Client Manager</span>
-                </button>
-                <button id="btn-sync-mode" class="nav-item" onclick="openSyncModal()" aria-pressed="false">
-                    <span class="nav-icon">🔄</span>
-                    <span class="nav-text">Live Sync &amp; Backup</span>
-                </button>
-            </nav>
+<!-- ══ MAIN ═════════════════════════════════════════════════════════════════ -->
+<div class="main">
 
-            <div class="sidebar-footer">
-                <div class="system-status-card">
-                    <div class="status-indicator">
-                        <span class="dot live"></span>
-                        <span class="status-text">SYSTEM ONLINE</span>
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div>
+            <div class="topbar-title" id="topbarTitle">Dashboard</div>
+            <div class="topbar-sub" id="topbarSub">ZK Revenue Ops — Multi-Tenant Lead & REN Management</div>
+        </div>
+        <div class="topbar-actions">
+            <div class="search-box">
+                <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input class="input" type="text" id="globalSearch" placeholder="Search leads..." oninput="handleGlobalSearch()">
+            </div>
+            <button class="btn btn-ghost" onclick="syncNotionAll()">
+                <svg class="icon" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                Sync Notion
+            </button>
+            <button class="btn btn-primary" onclick="switchSection('import')">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Import CSV
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        <!-- ── DASHBOARD ──────────────────────────────────────────────── -->
+        <section class="tab-panel active" id="section-dashboard">
+            <div class="stats-grid">
+                <div class="stat-card indigo">
+                    <div class="stat-top">
+                        <div class="stat-label">Total Leads</div>
+                        <div class="stat-icon indigo">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
                     </div>
-                    <div class="sync-status" id="live-sync-indicator">GAS &amp; Notion Bridge Active</div>
+                    <div class="stat-value" id="dashTotalLeads">0</div>
+                    <div class="stat-meta">All territories combined</div>
+                </div>
+                <div class="stat-card emerald">
+                    <div class="stat-top">
+                        <div class="stat-label">Hot Leads</div>
+                        <div class="stat-icon emerald">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-value" id="dashHotLeads">0</div>
+                    <div class="stat-meta">DSR below 40% — Pre-Approved</div>
+                </div>
+                <div class="stat-card amber">
+                    <div class="stat-top">
+                        <div class="stat-label">Warm Leads</div>
+                        <div class="stat-icon amber">
+                            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-value" id="dashWarmLeads">0</div>
+                    <div class="stat-meta">DSR 40–65% — Documents Needed</div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-top">
+                        <div class="stat-label">Active REN Clients</div>
+                        <div class="stat-icon blue">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                    </div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-meta">REN-001 / REN-002 / REN-003</div>
                 </div>
             </div>
-        </aside>
 
-        <!-- ── MAIN CONTENT AREA ────────────────────────────────────────── -->
-        <div class="main-wrapper">
+            <div class="grid-2">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <div class="panel-title">Lead Distribution by Territory</div>
+                            <div class="panel-sub">Leads assigned per REN client</div>
+                        </div>
+                    </div>
+                    <div class="panel-body" id="dashTerritoryTable">
+                        <div class="empty-state">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                            <p>Import CSV leads to see territory breakdown</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <div class="panel-title">REN Client ROI Summary</div>
+                            <div class="panel-sub">Estimated pipeline per retainer</div>
+                        </div>
+                    </div>
+                    <div class="panel-body" id="dashRoiTable">
+                        <div class="empty-state">
+                            <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            <p>Load leads to generate ROI estimates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Top Header Bar -->
-            <header class="top-header" role="banner">
-                <div class="header-search">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="global-search" placeholder="Search leads, REN agents, projects, dossiers..." oninput="handleGlobalSearch(event)" aria-label="Global search">
+        <!-- ── LEAD MANAGEMENT ──────────────────────────────────────── -->
+        <section class="tab-panel" id="section-leads">
+            <div style="display:flex; gap:10px; align-items:center; margin-bottom:16px; flex-wrap:wrap;">
+                <div class="tab-bar" style="margin-bottom:0;">
+                    <button class="tab active" onclick="filterLeads('all',this)">All</button>
+                    <button class="tab" onclick="filterLeads('Hot',this)">Hot</button>
+                    <button class="tab" onclick="filterLeads('Warm',this)">Warm</button>
+                    <button class="tab" onclick="filterLeads('Cold',this)">Cold</button>
+                </div>
+                <select class="select" id="renFilter" onchange="filterLeads(null,null)" style="width:200px;">
+                    <option value="all">All Territories</option>
+                    <option value="REN-001">REN-001 Subang Jaya</option>
+                    <option value="REN-002">REN-002 Shah Alam North</option>
+                    <option value="REN-003">REN-003 Cyberjaya/Puchong</option>
+                </select>
+                <div style="margin-left:auto; font-size:12px; color:var(--text-muted);">
+                    Showing <span id="leadCount">0</span> leads
+                </div>
+            </div>
+            <div class="panel">
+                <table class="data-table" id="leadsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Project</th>
+                            <th>Territory</th>
+                            <th>DSR</th>
+                            <th>Tier</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leadsTableBody">
+                        <tr><td colspan="7" style="text-align:center; padding:40px; color:var(--text-muted);">No leads loaded. Import a CSV file to get started.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="display:flex; justify-content:center; gap:8px; margin-top:16px;" id="paginationControls"></div>
+        </section>
+
+        <!-- ── DSR CALCULATOR ────────────────────────────────────────── -->
+        <section class="tab-panel" id="section-dsr">
+            <div class="grid-2">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <div class="panel-title">DSR Pre-Approval Calculator</div>
+                            <div class="panel-sub">Instant bank qualification assessment</div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="form-group full">
+                                <label class="label">Buyer Name</label>
+                                <input class="input" type="text" id="calcName" placeholder="e.g. Ahmad Firdaus" oninput="runDSR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Gross Monthly Income (RM)</label>
+                                <input class="input" type="number" id="calcIncome" value="7500" step="100" oninput="runDSR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Existing Commitments (RM/mo)</label>
+                                <input class="input" type="number" id="calcCommit" value="2100" step="50" oninput="runDSR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Target Property Price (RM)</label>
+                                <input class="input" type="number" id="calcPrice" value="480000" step="5000" oninput="runDSR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Loan Tenure (Years)</label>
+                                <input class="input" type="number" id="calcTenure" value="35" min="10" max="35" oninput="runDSR()">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Assign REN Client</label>
+                                <select class="select" id="calcRen">
+                                    <option value="REN-001">REN-001 (Ahmad Razif)</option>
+                                    <option value="REN-002">REN-002 (Sarah Tan)</option>
+                                    <option value="REN-003">REN-003 (Kevon Lee)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="saveDSRLead()" style="width:100%; justify-content:center; margin-top:4px;">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+                            Save Lead to Database
+                        </button>
+                    </div>
                 </div>
 
-                <div class="header-actions">
-                    <button class="btn btn-secondary btn-sm" onclick="exportDataCsv('leads')">📥 Export CSV</button>
-                    <button class="btn btn-secondary btn-sm" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
-                    <button class="btn btn-secondary btn-sm" onclick="openAddClientModal()">+ Add REN Client</button>
-                    <button class="btn btn-primary btn-sm" onclick="openLeadModal()">+ Add New Lead</button>
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div class="panel-title">Qualification Result</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="dsr-meter">
+                                <div style="font-size:11px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Debt Service Ratio</div>
+                                <div class="dsr-value" id="dsrVal" style="color:var(--accent-emerald);">38%</div>
+                                <div class="dsr-track"><div class="dsr-fill" id="dsrFill" style="width:38%; background:var(--accent-emerald);"></div></div>
+                                <div class="badge badge-hot" id="dsrBadge" style="margin:0 auto;">Tier 1 — Pre-Approved</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header"><div class="panel-title">Breakdown</div></div>
+                        <div class="panel-body">
+                            <table class="data-table">
+                                <tr><td style="color:var(--text-muted);">Net Income (87%)</td><td style="text-align:right; font-weight:600;" id="resNet">RM 6,525</td></tr>
+                                <tr><td style="color:var(--text-muted);">Monthly Installment</td><td style="text-align:right; font-weight:600; color:var(--accent-blue);" id="resInstall">RM 2,152</td></tr>
+                                <tr><td style="color:var(--text-muted);">Total Debt Load</td><td style="text-align:right; font-weight:600;" id="resTotal">RM 4,252</td></tr>
+                                <tr><td style="color:var(--text-muted);">Max Loan Capacity</td><td style="text-align:right; font-weight:600; color:var(--accent-amber);" id="resMax">RM 620,000</td></tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </header>
+            </div>
+        </section>
 
-            <!-- ── VIEW 0: COMMAND DASHBOARD ───────────────────────────── -->
-            <main id="view-dashboard" class="view-panel active" role="main" aria-label="Command Dashboard">
-                <div class="view-header">
+        <!-- ── REN CLIENTS ───────────────────────────────────────────── -->
+        <section class="tab-panel" id="section-clients">
+            <div class="grid-3" id="clientGrid">
+                <!-- Rendered by JS -->
+            </div>
+        </section>
+
+        <!-- ── CSV IMPORT ────────────────────────────────────────────── -->
+        <section class="tab-panel" id="section-import">
+            <div class="panel" style="max-width:600px;">
+                <div class="panel-header">
                     <div>
-                        <h1>Executive Command Center</h1>
-                        <p class="view-sub">Unified telemetry — Revenue metrics, active lead queues, project roadmaps &amp; system health.</p>
+                        <div class="panel-title">Bulk CSV Lead Import</div>
+                        <div class="panel-sub">Supported columns: name, phone, project, income, tier, assignedClientId</div>
                     </div>
-                    <div class="pulse-date-badge" id="dash-pulse-date">TODAY</div>
                 </div>
-
-                <!-- KPI Metric Grid -->
-                <div class="kpi-grid">
-                    <div class="kpi-card glass-card">
-                        <div class="kpi-header">
-                            <span class="kpi-label">TOTAL LEADS INGESTED</span>
-                            <span class="kpi-icon">📥</span>
+                <div class="panel-body">
+                    <div style="border: 2px dashed var(--border); border-radius:var(--radius-md); padding:32px; text-align:center; margin-bottom:16px; cursor:pointer;" onclick="document.getElementById('csvFile').click()">
+                        <svg class="icon" viewBox="0 0 24 24" style="width:32px;height:32px;color:var(--text-muted);display:block;margin:0 auto 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <div style="font-weight:600; color:var(--text-primary); margin-bottom:4px;">Click to upload CSV</div>
+                        <div style="font-size:12px; color:var(--text-muted);" id="csvFileName">No file selected</div>
+                    </div>
+                    <input type="file" id="csvFile" accept=".csv" style="display:none;" onchange="handleCSVUpload(event)">
+                    <div id="importProgress" style="display:none; margin-bottom:16px;">
+                        <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px;">
+                            <span style="color:var(--text-secondary);">Processing...</span>
+                            <span id="importPct" style="color:var(--accent-emerald);">0%</span>
                         </div>
-                        <div class="kpi-body">
-                            <span id="dash-raw-cnt" class="kpi-value">0</span>
-                            <span class="kpi-sub">Raw Inflow Stream</span>
-                        </div>
+                        <div class="progress-bar"><div class="progress-fill" id="importBar" style="width:0%"></div></div>
                     </div>
-
-                    <div class="kpi-card glass-card border-hot">
-                        <div class="kpi-header">
-                            <span class="kpi-label">TIER 1 HOT BUYERS</span>
-                            <span class="kpi-icon">🔥</span>
-                        </div>
-                        <div class="kpi-body">
-                            <span id="dash-hot-cnt" class="kpi-value hot-color">0</span>
-                            <span class="kpi-sub">Pre-Approved LPPSA / High DSR</span>
-                        </div>
-                    </div>
-
-                    <div class="kpi-card glass-card border-client">
-                        <div class="kpi-header">
-                            <span class="kpi-label">PUBLISHED DOSSIERS</span>
-                            <span class="kpi-icon">📑</span>
-                        </div>
-                        <div class="kpi-body">
-                            <span id="dash-client-cnt" class="kpi-value client-color">0</span>
-                            <span class="kpi-sub">Live on REN Client Desk</span>
-                        </div>
-                    </div>
-
-                    <div class="kpi-card glass-card">
-                        <div class="kpi-header">
-                            <span class="kpi-label">ACTIVE REN SEATS</span>
-                            <span class="kpi-icon">🏢</span>
-                        </div>
-                        <div class="kpi-body">
-                            <span id="dash-ren-cnt" class="kpi-value">3</span>
-                            <span class="kpi-sub">Subang &amp; Shah Alam Lock</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2-Column Main Dashboard Content -->
-                <div class="dash-columns">
-                    <!-- Column 1: Live Lead Inflow Feed & Priorities -->
-                    <div class="dash-col space-y-6">
-                        <section class="glass-card" aria-labelledby="inflow-heading">
-                            <div class="card-header-bar">
-                                <h3 id="inflow-heading" class="card-title">RECENT LEAD INFLOW FEED</h3>
-                                <button class="btn btn-text btn-sm" onclick="switchMode('operator')">View All Queue &rarr;</button>
-                            </div>
-                            <div id="dash-recent-leads" class="recent-leads-list"></div>
-                        </section>
-
-                        <section class="glass-card" aria-labelledby="projects-heading">
-                            <div class="card-header-bar">
-                                <h3 id="projects-heading" class="card-title">ACTIVE REVOPS ROADMAP</h3>
-                                <span class="badge-tag primary-tag">02_PROJECTS</span>
-                            </div>
-                            <div class="projects-roadmap-list">
-                                <div class="roadmap-item">
-                                    <div class="roadmap-head">
-                                        <span class="proj-code">PRJ-008</span>
-                                        <span class="proj-title">Jarvis Command Center</span>
-                                        <span class="badge-status active">Active</span>
-                                    </div>
-                                    <p class="proj-sub">Local PowerShell server API &amp; telemetry monitoring hub.</p>
-                                </div>
-                                <div class="roadmap-item">
-                                    <div class="roadmap-head">
-                                        <span class="proj-code">PRJ-009</span>
-                                        <span class="proj-title">Tools &amp; CRM Standardization</span>
-                                        <span class="badge-status done">Completed</span>
-                                    </div>
-                                    <p class="proj-sub">ZNS header compliance, gas-crm-engine.js refactor &amp; GDrive sync.</p>
-                                </div>
-                                <div class="roadmap-item">
-                                    <div class="roadmap-head">
-                                        <span class="proj-code">PRJ-010</span>
-                                        <span class="proj-title">Console-Portal Enterprise Overhaul</span>
-                                        <span class="badge-status active">Active</span>
-                                    </div>
-                                    <p class="proj-sub">Multi-tenant REN Client Manager, Bulk CSV Batch Engine &amp; Live Sync Bridge.</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Column 2: Idea Catcher & Quick Actions -->
-                    <div class="dash-col space-y-6">
-                        <section class="glass-card" aria-labelledby="ideas-heading">
-                            <div class="card-header-bar">
-                                <h3 id="ideas-heading" class="card-title">IDEA CATCHER VAULT</h3>
-                                <span class="badge-tag primary-tag">PRJ-998</span>
-                            </div>
-                            <form id="dash-idea-form" onsubmit="handleDashIdea(event)" class="idea-input-row">
-                                <input type="text" id="dash-idea-text" placeholder="Dump a quick idea here..." required class="input-field">
-                                <button type="submit" class="btn btn-primary">Capture</button>
-                            </form>
-                            <div id="dash-ideas-container" class="ideas-feed"></div>
-                        </section>
-
-                        <section class="glass-card" aria-labelledby="quick-actions-heading">
-                            <h3 id="quick-actions-heading" class="card-title mb-4">QUICK SYSTEM ACTIONS</h3>
-                            <div class="quick-buttons-grid">
-                                <button class="btn btn-secondary" onclick="openLeadModal()">+ Ingest Lead</button>
-                                <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk Import CSV</button>
-                                <button class="btn btn-secondary" onclick="openAddClientModal()">+ Onboard REN Agent</button>
-                                <button class="btn btn-secondary" onclick="openSyncModal()">🔄 Live Sync Settings</button>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </main>
-
-            <!-- ── VIEW 1: CONSOLE OPERATOR HUB ───────────────────────────── -->
-            <main id="view-operator" class="view-panel" role="main" aria-label="Console Operator Hub" hidden>
-                <div class="view-header">
-                    <div>
-                        <h2>Console Operator Hub</h2>
-                        <p class="view-sub">Private lead triage queue, DSR qualification, 1-click WhatsApp outreach, and buyer dossier publishing.</p>
-                    </div>
-                    <div class="header-actions">
-                        <button class="btn btn-secondary" onclick="openImportModal('leads')">📤 Bulk CSV Import</button>
-                        <button class="btn btn-primary" onclick="openLeadModal()">+ Ingest New Lead</button>
-                    </div>
-                </div>
-
-                <!-- Operator Metrics Row -->
-                <div class="metrics-grid">
-                    <div class="metric-card glass-card">
-                        <span class="metric-label">RAW QUEUE</span>
-                        <span id="metric-raw" class="metric-value">0</span>
-                    </div>
-                    <div class="metric-card glass-card border-hot">
-                        <span class="metric-label">TIER 1 HOT</span>
-                        <span id="metric-hot" class="metric-value hot-color">0</span>
-                    </div>
-                    <div class="metric-card glass-card border-warm">
-                        <span class="metric-label">TIER 2 WARM</span>
-                        <span id="metric-warm" class="metric-value warm-color">0</span>
-                    </div>
-                    <div class="metric-card glass-card border-client">
-                        <span class="metric-label">PUBLISHED TO REN</span>
-                        <span id="metric-published" class="metric-value client-color">0</span>
-                    </div>
-                </div>
-
-                <!-- Filter Pills -->
-                <div class="filter-bar">
-                    <span class="filter-title">FILTER TIER:</span>
-                    <button id="filter-all" class="filter-pill active" onclick="filterLeads('All')">All Leads</button>
-                    <button id="filter-hot" class="filter-pill hot-pill" onclick="filterLeads('Hot')">🔥 Tier 1 Hot</button>
-                    <button id="filter-warm" class="filter-pill warm-pill" onclick="filterLeads('Warm')">⚡ Tier 2 Warm</button>
-                    <button id="filter-new" class="filter-pill" onclick="filterLeads('New')">🆕 New Queue</button>
-                    <button id="filter-disqualified" class="filter-pill" onclick="filterLeads('Disqualified')">✗ Disqualified</button>
-                </div>
-
-                <!-- Kanban Board -->
-                <div class="kanban-grid">
-                    <section class="kanban-column glass-card">
-                        <div class="column-header">
-                            <span class="column-title">NEW &amp; SCREENING QUEUE</span>
-                            <span id="count-new" class="column-count">0</span>
-                        </div>
-                        <div id="container-new" class="kanban-list"></div>
-                    </section>
-
-                    <section class="kanban-column glass-card border-hot">
-                        <div class="column-header">
-                            <span class="column-title">TIER 1 HOT (PRE-APPROVED)</span>
-                            <span id="count-hot" class="column-count">0</span>
-                        </div>
-                        <div id="container-hot" class="kanban-list"></div>
-                    </section>
-
-                    <section class="kanban-column glass-card border-warm">
-                        <div class="column-header">
-                            <span class="column-title">TIER 2 WARM (CADENCE)</span>
-                            <span id="count-warm" class="column-count">0</span>
-                        </div>
-                        <div id="container-warm" class="kanban-list"></div>
-                    </section>
-
-                    <section class="kanban-column glass-card opacity-muted">
-                        <div class="column-header">
-                            <span class="column-title">DISQUALIFIED / ARCHIVE</span>
-                            <span id="count-disqualified" class="column-count">0</span>
-                        </div>
-                        <div id="container-disqualified" class="kanban-list"></div>
-                    </section>
-                </div>
-            </main>
-
-            <!-- ── VIEW 2: REN CLIENT DESK ─────────────────────────────────── -->
-            <main id="view-client" class="view-panel" role="main" aria-label="REN Client Desk" hidden>
-                <div class="view-header">
-                    <div>
-                        <h2>REN Client Desk</h2>
-                        <p class="view-sub">Executive dashboard for Real Estate Negotiators. Verified buyer dossiers and confirmed viewing bookings.</p>
-                    </div>
-                    <div class="header-actions">
-                        <button class="btn btn-secondary" onclick="copyShareableAgentLink()">🔗 Copy Agent Shareable URL</button>
-                        <button class="btn btn-secondary" onclick="exportDossiersPdf()">📄 Export Dossiers (PDF / Print)</button>
-                    </div>
-                </div>
-
-                <!-- Dynamic REN Client Selection Banner -->
-                <div class="client-banner glass-card">
-                    <div class="client-select-wrapper">
-                        <label for="ren-client-select" class="select-label">SELECT ACTIVE REN CLIENT DESK:</label>
-                        <select id="ren-client-select" class="input-field select-lg" onchange="handleClientDeskSwitch(event)">
-                            <!-- Injected dynamically via JS -->
-                        </select>
-                    </div>
-                    <div class="client-meta-badge" id="client-meta-display">
-                        <!-- Injected dynamically via JS -->
-                    </div>
-                </div>
-
-                <div class="section-title flex-between">
-                    <h3>Verified Buyer Dossiers &amp; Confirmed Viewings</h3>
-                    <div id="shareable-url-display" class="shareable-url-badge"></div>
-                </div>
-                <div id="client-dossier-container" class="dossiers-grid"></div>
-            </main>
-
-            <!-- ── VIEW 3: REN CLIENT MANAGER (MULT-TENANT MANAGEMENT) ──────── -->
-            <main id="view-manager" class="view-panel" role="main" aria-label="REN Client Manager" hidden>
-                <div class="view-header">
-                    <div>
-                        <h2>REN Client Manager</h2>
-                        <p class="view-sub">Multi-tenant client seat management. Onboard new REN agents, set territory locks, and manage subscription tiers.</p>
-                    </div>
-                    <div class="header-actions">
-                        <button class="btn btn-secondary" onclick="openImportModal('clients')">📤 Bulk Import Agents CSV</button>
-                        <button class="btn btn-primary" onclick="openAddClientModal()">+ Onboard New REN Client</button>
-                    </div>
-                </div>
-
-                <!-- Client Table / Card Grid -->
-                <div class="client-manager-grid" id="ren-clients-manager-container">
-                    <!-- Injected via JavaScript -->
-                </div>
-            </main>
-
-        </div><!-- /.main-wrapper -->
-    </div><!-- /.app-layout -->
-
-    <!-- ── MODAL: LEAD INGESTION / EDIT ────────────────────────────────── -->
-    <div id="lead-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-content glass-card">
-            <div class="modal-header">
-                <h3>Direct Lead Ingestion</h3>
-                <button class="btn-close" onclick="closeLeadModal()">✕</button>
-            </div>
-            <form id="add-lead-form" onsubmit="handleNewLead(event)">
-                <div class="modal-body space-y-4">
-                    <div class="form-group">
-                        <label for="lead-name">Full Name</label>
-                        <input type="text" id="lead-name" placeholder="e.g. Muhammad Hariz" required class="input-field">
-                    </div>
-                    <div class="form-group">
-                        <label for="lead-phone">WhatsApp Contact (+601...)</label>
-                        <input type="tel" id="lead-phone" placeholder="+60123456789" required class="input-field">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group flex-1">
-                            <label for="lead-project">Project Interest</label>
-                            <input type="text" id="lead-project" placeholder="e.g. SkyResidence Subang" required class="input-field">
-                        </div>
-                        <div class="form-group flex-1">
-                            <label for="lead-income">Est. Income (RM/mo)</label>
-                            <input type="number" id="lead-income" placeholder="6500" class="input-field" min="0">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="closeLeadModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">+ Save Lead to Queue</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- ── MODAL: TRIAGE & QUALIFICATION ──────────────────────────────── -->
-    <div id="triage-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-content glass-card modal-lg">
-            <div class="modal-header">
-                <h3 id="modal-lead-name">Lead Triage &amp; DSR Qualification</h3>
-                <button class="btn-close" onclick="closeTriageModal()">✕</button>
-            </div>
-            <div class="modal-body space-y-4">
-                <p id="modal-lead-info" class="lead-subtitle"></p>
-
-                <div class="form-row">
-                    <div class="form-group flex-1">
-                        <label for="modal-tier-select">Qualification Tier</label>
-                        <select id="modal-tier-select" class="input-field">
-                            <option value="Hot">🔥 Tier 1 Hot (Pre-approved / High DSR)</option>
-                            <option value="Warm">⚡ Tier 2 Warm (In Cadence)</option>
-                            <option value="New">🆕 New / Screening</option>
-                            <option value="Disqualified">✗ Disqualified (Out of Budget / Invalid)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group flex-1">
-                        <label for="modal-assign-client">Assign to REN Client</label>
-                        <select id="modal-assign-client" class="input-field">
-                            <!-- Injected dynamically via JS -->
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group flex-1">
-                        <label for="modal-loan-status">Loan Pre-Approval Status</label>
-                        <select id="modal-loan-status" class="input-field">
-                            <option value="Pre-Approved">Pre-Approved Loan (Bank/LPPSA)</option>
-                            <option value="Documents Collected">Documents Collected</option>
-                            <option value="Self-Employed / Cash">Cash / Self-Employed</option>
-                            <option value="Pending Submission">Pending Submission</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group flex-1">
-                        <label for="modal-viewing-time">Confirmed Viewing Date &amp; Time</label>
-                        <input type="text" id="modal-viewing-time" placeholder="e.g. Sabtu 11:00 AM @ Sales Gallery" class="input-field">
-                    </div>
-                </div>
-
-                <!-- DSR Interactive Calculator Box -->
-                <div class="dsr-calculator-box">
-                    <div class="dsr-header">
-                        <span>⚡ DSR LOAN ELIGIBILITY CALCULATOR</span>
-                        <span id="dsr-ratio-badge" class="dsr-badge green">DSR: 42% (Eligible)</span>
-                    </div>
-                    <div class="dsr-inputs">
-                        <input type="number" id="dsr-income-input" placeholder="Monthly Income (RM)" class="input-field input-sm" oninput="calculateDsr()">
-                        <input type="number" id="dsr-commitment-input" placeholder="Existing Commitments (RM)" class="input-field input-sm" oninput="calculateDsr()">
-                    </div>
-                    <div id="dsr-calc-output" class="dsr-output-text">Est. Max Installment Capacity: RM 2,730/mo &bull; Max Loan: RM 550,000</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="modal-notes">Operator Notes (Private)</label>
-                    <textarea id="modal-notes" rows="3" placeholder="DSR check details, preferred unit layout, loan eligibility notes..." class="input-field"></textarea>
+                    <div id="importResult" style="font-size:13px; color:var(--text-muted);"></div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeTriageModal()">Cancel</button>
-                <button class="btn btn-wa-triage" onclick="triageLeadToWa()">📱 1-Click WA Outreach</button>
-                <button class="btn btn-primary" onclick="saveTriageData()">Save &amp; Dispatch to REN Desk</button>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- ── MODAL: ONBOARD NEW REN CLIENT ──────────────────────────────── -->
-    <div id="client-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-content glass-card">
-            <div class="modal-header">
-                <h3>Onboard New REN Client</h3>
-                <button class="btn-close" onclick="closeAddClientModal()">✕</button>
-            </div>
-            <form id="add-client-form" onsubmit="handleNewClientSubmit(event)">
-                <div class="modal-body space-y-4">
-                    <div class="form-group">
-                        <label for="client-name">Agent Full Name</label>
-                        <input type="text" id="client-name" placeholder="e.g. Agent Sarah" required class="input-field">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group flex-1">
-                            <label for="client-ren-no">REN Tag Number</label>
-                            <input type="text" id="client-ren-no" placeholder="REN 52109" required class="input-field">
-                        </div>
-                        <div class="form-group flex-1">
-                            <label for="client-agency">Agency Name</label>
-                            <input type="text" id="client-agency" placeholder="IQI Realty / Renstar" required class="input-field">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group flex-1">
-                            <label for="client-territory">Territory Lock</label>
-                            <input type="text" id="client-territory" placeholder="Subang Jaya &amp; Shah Alam" required class="input-field">
-                        </div>
-                        <div class="form-group flex-1">
-                            <label for="client-tier">Service Tier</label>
-                            <select id="client-tier" class="input-field">
-                                <option value="Starter">Starter (RM 800/mo)</option>
-                                <option value="Growth" selected>Growth (RM 1,500/mo)</option>
-                                <option value="Enterprise">Enterprise (RM 3,000/mo)</option>
-                            </select>
-                        </div>
-                    </div>
+        <!-- ── ROI REPORTS ───────────────────────────────────────────── -->
+        <section class="tab-panel" id="section-reports">
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">Monthly Client ROI Report</div>
+                    <button class="btn btn-ghost" onclick="window.print()">
+                        <svg class="icon" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                        Print PDF
+                    </button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="closeAddClientModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">+ Activate REN Client Seat</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- ── MODAL: BULK CSV DATA IMPORT ────────────────────────────────── -->
-    <div id="import-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-content glass-card">
-            <div class="modal-header">
-                <h3 id="import-modal-title">Bulk CSV Data Import</h3>
-                <button class="btn-close" onclick="closeImportModal()">✕</button>
-            </div>
-            <div class="modal-body space-y-4">
-                <p class="view-sub">Upload or paste CSV batch data to import multiple records at once.</p>
-                <div class="form-group">
-                    <label for="csv-file-input">Select CSV File</label>
-                    <input type="file" id="csv-file-input" accept=".csv, .txt" class="input-field" onchange="handleCsvFileSelected(event)">
-                </div>
-                <div class="form-group">
-                    <label for="csv-text-area">Or Paste Raw CSV Content</label>
-                    <textarea id="csv-text-area" rows="6" placeholder="name,phone,project,income,tier&#10;Muhammad Hariz,+60123456789,SkyResidence,6500,Hot" class="input-field font-mono"></textarea>
-                </div>
-                <button class="btn btn-secondary btn-sm" onclick="downloadCsvTemplate()">📥 Download CSV Format Template</button>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeImportModal()">Cancel</button>
-                <button class="btn btn-primary" onclick="executeBatchCsvImport()">🚀 Process &amp; Ingest Batch</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ── MODAL: LIVE SYNC & BACKUP CONFIG ───────────────────────────── -->
-    <div id="sync-modal" class="modal-overlay" role="dialog" aria-modal="true">
-        <div class="modal-content glass-card">
-            <div class="modal-header">
-                <h3>Live Sync &amp; Database Backup Settings</h3>
-                <button class="btn-close" onclick="closeSyncModal()">✕</button>
-            </div>
-            <div class="modal-body space-y-4">
-                <div class="form-group">
-                    <label for="gas-url-input">Google Apps Script CRM Engine Web App URL (/exec)</label>
-                    <input type="text" id="gas-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="input-field font-mono">
-                </div>
-                <div class="form-group">
-                    <label for="notion-key-input">Notion API Integration Token</label>
-                    <input type="password" id="notion-key-input" placeholder="ntn_4027..." class="input-field font-mono">
-                </div>
-                <div class="status-box glass-card border-client">
-                    <div style="font-weight:700;color:var(--client-color);">Bi-Directional Backup Status: ACTIVE</div>
-                    <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">
-                        Data automatically replicates across Local Storage, Google Sheets (`gas-crm-engine.js`), and Notion Sales CRM Databases.
+                <div class="panel-body" id="roiReportBody">
+                    <div class="empty-state">
+                        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        <p>Import leads to generate ROI reports</p>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="triggerManualSync()">🔄 Trigger Instant Full Sync</button>
-                <button class="btn btn-primary" onclick="saveSyncSettings()">Save Sync Credentials</button>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <script src="js/app.js"></script>
+    </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── STATE ────────────────────────────────────────────────────────────────────
+let ALL_LEADS = [];
+let FILTERED  = [];
+let PAGE      = 1;
+const PER_PAGE = 50;
+let TIER_FILTER= 'all';
+let REN_FILTER = 'all';
+
+const REN_CLIENTS = [
+    { id:'REN-001', name:'Ahmad Razif', agency:'Subang Jaya Property Hub', territory:'Subang Jaya & USJ',        color:'#6366f1', fee:1500 },
+    { id:'REN-002', name:'Sarah Tan',   agency:'Shah Alam Real Estate',    territory:'Shah Alam North & Setia Alam', color:'#10b981', fee:1000 },
+    { id:'REN-003', name:'Kevon Lee',   agency:'Cyberjaya Prime Property', territory:'Cyberjaya & Puchong',     color:'#f59e0b', fee:800  },
+];
+
+// ── SECTION NAVIGATION ───────────────────────────────────────────────────────
+function switchSection(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('section-'+id).classList.add('active');
+    event.currentTarget.classList.add('active');
+    const titles = {dashboard:'Dashboard',leads:'Lead Management',dsr:'DSR Calculator',clients:'REN Clients',import:'CSV Import',reports:'ROI Reports'};
+    document.getElementById('topbarTitle').textContent = titles[id] || id;
+    if (id === 'clients') renderClients();
+    if (id === 'reports') renderROI();
+}
+
+// ── DSR LOGIC ────────────────────────────────────────────────────────────────
+function calcDSR(gross, commits) {
+    const g = parseFloat(gross)||0;
+    if (g <= 0) return { net:0, dsr:999, tier:'Cold', status:'Unqualified' };
+    const net = Math.round(g*0.87);
+    const c   = parseFloat(commits)>0 ? parseFloat(commits) : Math.round(net*0.3);
+    const raw = (c/net)*100;
+    const dsr = Math.round(raw);
+    const tier   = raw<=40 ? 'Hot' : raw<=65 ? 'Warm' : 'Cold';
+    const status = raw<=40 ? 'Pre-Approved' : raw<=65 ? 'Documents Collected' : 'Pending Submission';
+    return { net, dsr, tier, status, commitments:c };
+}
+
+function loanInstallment(price, margin, tenure, rate) {
+    const P = price*(margin/100);
+    const r = rate/100/12;
+    const n = tenure*12;
+    if (r===0) return Math.round(P/n);
+    return Math.round(P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1));
+}
+
+function runDSR() {
+    const gross  = parseFloat(document.getElementById('calcIncome').value)||0;
+    const commit = parseFloat(document.getElementById('calcCommit').value)||0;
+    const price  = parseFloat(document.getElementById('calcPrice').value)||0;
+    const tenure = parseFloat(document.getElementById('calcTenure').value)||35;
+    const install= loanInstallment(price,90,tenure,4.25);
+    const totalC = commit + install;
+    const res    = calcDSR(gross, totalC);
+
+    document.getElementById('dsrVal').textContent   = res.dsr === 999 ? '999%' : res.dsr + '%';
+    document.getElementById('dsrFill').style.width   = Math.min(res.dsr,100)+'%';
+    document.getElementById('dsrFill').style.background = res.tier==='Hot'?'var(--accent-emerald)':res.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)';
+    document.getElementById('dsrVal').style.color   = res.tier==='Hot'?'var(--accent-emerald)':res.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)';
+    document.getElementById('dsrBadge').textContent = res.tier==='Hot'?'Tier 1 — Pre-Approved':res.tier==='Warm'?'Tier 2 — Documents Needed':'Cold — Pending';
+    document.getElementById('dsrBadge').className   = `badge badge-${res.tier.toLowerCase()}`;
+    document.getElementById('resNet').textContent   = 'RM '+res.net.toLocaleString();
+    document.getElementById('resInstall').textContent = 'RM '+install.toLocaleString();
+    document.getElementById('resTotal').textContent = 'RM '+totalC.toLocaleString();
+    const maxI = Math.round(res.net*0.65 - commit);
+    const maxL = maxI>0 ? Math.round(maxI*200) : 0;
+    document.getElementById('resMax').textContent   = 'RM '+maxL.toLocaleString();
+}
+
+function saveDSRLead() {
+    const name   = document.getElementById('calcName').value.trim() || 'New Lead';
+    const income = parseFloat(document.getElementById('calcIncome').value)||0;
+    const commit = parseFloat(document.getElementById('calcCommit').value)||0;
+    const ren    = document.getElementById('calcRen').value;
+    const res    = calcDSR(income, commit);
+    const lead   = { name, phone:'', project:'', income, assignedClientId:ren, tier:res.tier, dsr:res.dsr, net:res.net };
+    ALL_LEADS.push(lead);
+    updateStats();
+    toast('Lead "'+name+'" saved — '+res.tier+' (DSR '+res.dsr+'%)', 'emerald');
+    switchSection('leads');
+}
+
+// ── CSV IMPORT ───────────────────────────────────────────────────────────────
+function handleCSVUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    document.getElementById('csvFileName').textContent = file.name;
+    document.getElementById('importProgress').style.display = 'block';
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+        const leads = parseCSV(ev.target.result);
+        ALL_LEADS = leads;
+        updateStats();
+        document.getElementById('importBar').style.width = '100%';
+        document.getElementById('importPct').textContent = '100%';
+        document.getElementById('importResult').innerHTML = `<span style="color:var(--accent-emerald); font-weight:700;">${leads.length} leads imported successfully.</span> <span style="color:var(--text-muted);">${leads.filter(l=>l.tier==='Hot').length} Hot, ${leads.filter(l=>l.tier==='Warm').length} Warm, ${leads.filter(l=>l.tier==='Cold').length} Cold.</span>`;
+        toast(leads.length+' leads imported — system updated', 'emerald');
+    };
+    reader.readAsText(file);
+}
+
+function parseCSV(raw) {
+    const lines = raw.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n').filter(l=>l.trim());
+    const hdr   = lines[0].split(',').map(h=>h.trim().replace(/^"|"$/g,'').toLowerCase());
+    return lines.slice(1).map(line => {
+        const vals = []; let inQ=false, cur='';
+        for (const ch of line) {
+            if (ch==='"') { inQ=!inQ; }
+            else if (ch===',' && !inQ) { vals.push(cur.trim()); cur=''; }
+            else cur+=ch;
+        }
+        vals.push(cur.trim());
+        const row = Object.fromEntries(hdr.map((h,i)=>[h,vals[i]||'']));
+        const income = parseFloat(row.income||row['gross income']||row.gross_income)||0;
+        const commit = parseFloat(row.commitments||row.commitment)||0;
+        const res    = calcDSR(income, commit);
+        const ren    = row['assigned ren']||row.assigned_ren||row.assignedclientid||autoAssignREN(row.project||'');
+        return { name:row.name||row['buyer name']||'Unknown', phone:normalisePhone(row.phone||''), project:row.project||row['project interest']||'', income, tier:row.tier||res.tier, dsr:res.dsr, net:res.net, assignedClientId:ren };
+    }).filter(l=>l.name && l.name!=='Unknown');
+}
+
+function autoAssignREN(project='') {
+    const p = project.toLowerCase();
+    if (p.includes('subang')||p.includes('usj')||p.includes('puchong subang')) return 'REN-001';
+    if (p.includes('shah alam')||p.includes('setia alam')||p.includes('klang')) return 'REN-002';
+    return 'REN-003';
+}
+
+function normalisePhone(phone) {
+    let c = (phone||'').replace(/[^0-9+]/g,'');
+    if (c.startsWith('+60')) return c;
+    if (c.startsWith('60'))  return '+'+c;
+    if (c.startsWith('01'))  return '+60'+c.substring(1);
+    if (c.length>=9)         return '+60'+c;
+    return c;
+}
+
+// ── STATS & RENDERING ────────────────────────────────────────────────────────
+function updateStats() {
+    const total = ALL_LEADS.length;
+    const hot   = ALL_LEADS.filter(l=>l.tier==='Hot').length;
+    const warm  = ALL_LEADS.filter(l=>l.tier==='Warm').length;
+    document.getElementById('dashTotalLeads').textContent = total;
+    document.getElementById('dashHotLeads').textContent   = hot;
+    document.getElementById('dashWarmLeads').textContent  = warm;
+    document.getElementById('navTotalLeads').textContent  = total;
+    document.getElementById('navHotLeads').textContent    = hot;
+    renderLeads();
+    renderDashTables();
+}
+
+function renderDashTables() {
+    const terDiv = document.getElementById('dashTerritoryTable');
+    const roiDiv = document.getElementById('dashRoiTable');
+    if (ALL_LEADS.length===0) return;
+
+    const rows = REN_CLIENTS.map(c => {
+        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
+        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
+        return `<tr><td><span style="color:${c.color}; font-weight:700;">${c.id}</span><br><span style="font-size:11px;color:var(--text-muted);">${c.name}</span></td><td style="text-align:right;">${cLeads.length}</td><td style="text-align:right;">${hot}</td></tr>`;
+    }).join('');
+
+    terDiv.innerHTML = `<table class="data-table"><thead><tr><th>Client</th><th style="text-align:right;">Total</th><th style="text-align:right;">Hot</th></tr></thead><tbody>${rows}</tbody></table>`;
+
+    const roiRows = REN_CLIENTS.map(c => {
+        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
+        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
+        const pipe   = Math.round(hot*0.4)*15000;
+        const roi    = (pipe/c.fee).toFixed(1);
+        return `<tr><td><span style="color:${c.color}; font-weight:700;">${c.id}</span><br><span style="font-size:11px;color:var(--text-muted);">${c.name}</span></td><td style="text-align:right; color:var(--accent-emerald); font-weight:700;">RM ${pipe.toLocaleString()}</td><td style="text-align:right; color:var(--accent-amber); font-weight:700;">${roi}x</td></tr>`;
+    }).join('');
+
+    roiDiv.innerHTML = `<table class="data-table"><thead><tr><th>Client</th><th style="text-align:right;">Pipeline</th><th style="text-align:right;">ROI</th></tr></thead><tbody>${roiRows}</tbody></table>`;
+}
+
+function filterLeads(tier, btn) {
+    if (tier !== null) TIER_FILTER = tier;
+    REN_FILTER = document.getElementById('renFilter').value;
+    if (btn) { document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); }
+    PAGE = 1;
+    renderLeads();
+}
+
+function handleGlobalSearch() {
+    PAGE = 1; renderLeads();
+}
+
+function renderLeads() {
+    const q     = (document.getElementById('globalSearch').value||'').toLowerCase();
+    FILTERED    = ALL_LEADS.filter(l => {
+        const tierOk = TIER_FILTER==='all' || l.tier===TIER_FILTER;
+        const renOk  = REN_FILTER==='all' || l.assignedClientId===REN_FILTER;
+        const qOk    = !q || l.name.toLowerCase().includes(q) || (l.project||'').toLowerCase().includes(q);
+        return tierOk && renOk && qOk;
+    });
+    document.getElementById('leadCount').textContent = FILTERED.length;
+    const start  = (PAGE-1)*PER_PAGE;
+    const page   = FILTERED.slice(start, start+PER_PAGE);
+    const tbody  = document.getElementById('leadsTableBody');
+
+    if (page.length===0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text-muted);">No leads match the current filter.</td></tr>`;
+    } else {
+        tbody.innerHTML = page.map((l,i) => {
+            const waUrl = `https://wa.me/${l.phone.replace('+','')}`;
+            const badgeCls = l.tier==='Hot' ? 'badge-hot' : l.tier==='Warm' ? 'badge-warm' : 'badge-cold';
+            return `<tr>
+                <td style="font-weight:600; color:var(--text-primary);">${l.name}</td>
+                <td style="color:var(--text-muted); font-size:12px;">${l.phone||'—'}</td>
+                <td>${l.project||'—'}</td>
+                <td><span style="font-size:11px; font-weight:700; color:${REN_CLIENTS.find(c=>c.id===l.assignedClientId)?.color||'var(--text-muted)'};">${l.assignedClientId||'—'}</span></td>
+                <td style="font-weight:700; color:${l.tier==='Hot'?'var(--accent-emerald)':l.tier==='Warm'?'var(--accent-amber)':'var(--accent-rose)'};">${l.dsr}%</td>
+                <td><span class="badge ${badgeCls}">${l.tier}</span></td>
+                <td><a href="${waUrl}" target="_blank" class="btn btn-success" style="text-decoration:none; font-size:11px; padding:4px 10px;">WA</a></td>
+            </tr>`;
+        }).join('');
+    }
+
+    // Pagination
+    const pages = Math.ceil(FILTERED.length/PER_PAGE);
+    const ctrl  = document.getElementById('paginationControls');
+    ctrl.innerHTML = '';
+    if (pages>1) {
+        for (let p=1; p<=pages; p++) {
+            const b = document.createElement('button');
+            b.textContent = p;
+            b.className   = 'btn ' + (p===PAGE ? 'btn-primary' : 'btn-ghost');
+            b.style.minWidth = '36px';
+            b.onclick = () => { PAGE=p; renderLeads(); };
+            ctrl.appendChild(b);
+        }
+    }
+}
+
+function renderClients() {
+    const grid = document.getElementById('clientGrid');
+    grid.innerHTML = REN_CLIENTS.map(c => {
+        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
+        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
+        const warm   = cLeads.filter(l=>l.tier==='Warm').length;
+        const pipe   = Math.round(hot*0.4)*15000;
+        const initials = c.name.split(' ').map(w=>w[0]).join('').substring(0,2);
+        return `<div class="client-card">
+            <div class="client-header">
+                <div class="client-avatar" style="background:${c.color};">${initials}</div>
+                <div>
+                    <div class="client-name">${c.id} — ${c.name}</div>
+                    <div class="client-meta">${c.agency}</div>
+                    <div class="client-meta" style="margin-top:2px;">${c.territory}</div>
+                </div>
+            </div>
+            <div class="client-stats">
+                <div class="client-stat"><div class="client-stat-val">${cLeads.length}</div><div class="client-stat-lbl">Total Leads</div></div>
+                <div class="client-stat"><div class="client-stat-val" style="color:var(--accent-emerald);">${hot}</div><div class="client-stat-lbl">Hot</div></div>
+                <div class="client-stat"><div class="client-stat-val" style="color:var(--accent-amber);">${warm}</div><div class="client-stat-lbl">Warm</div></div>
+            </div>
+            <div style="padding-top:12px; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+                <div style="font-size:12px; color:var(--text-muted);">Est. Pipeline: <span style="color:var(--accent-amber); font-weight:700;">RM ${pipe.toLocaleString()}</span></div>
+                <a href="portal.html?ren=${c.id}" target="_blank" class="btn btn-ghost" style="font-size:11px; text-decoration:none; padding:5px 10px;">View Portal</a>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function renderROI() {
+    const body = document.getElementById('roiReportBody');
+    if (ALL_LEADS.length===0) return;
+    const rows = REN_CLIENTS.map(c => {
+        const cLeads = ALL_LEADS.filter(l=>l.assignedClientId===c.id);
+        const hot    = cLeads.filter(l=>l.tier==='Hot').length;
+        const pipe   = Math.round(hot*0.4)*15000;
+        const roi    = c.fee>0 ? (pipe/c.fee).toFixed(1) : '0.0';
+        return `<tr>
+            <td style="font-weight:700; color:${c.color};">${c.id}</td>
+            <td>${c.name}</td>
+            <td style="text-align:right;">${cLeads.length}</td>
+            <td style="text-align:right; color:var(--accent-emerald); font-weight:700;">${hot}</td>
+            <td style="text-align:right; font-weight:700;">RM ${c.fee.toLocaleString()}</td>
+            <td style="text-align:right; color:var(--accent-amber); font-weight:700;">RM ${pipe.toLocaleString()}</td>
+            <td style="text-align:right; color:var(--accent-indigo); font-weight:800;">${roi}x</td>
+        </tr>`;
+    }).join('');
+    body.innerHTML = `<table class="data-table"><thead><tr><th>ID</th><th>Name</th><th style="text-align:right;">Leads</th><th style="text-align:right;">Hot</th><th style="text-align:right;">Retainer</th><th style="text-align:right;">Pipeline</th><th style="text-align:right;">ROI</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+// ── NOTION SYNC STUB ─────────────────────────────────────────────────────────
+function syncNotionAll() {
+    toast('Notion sync triggered. Run: node 05_Systems/Scripts/notion-crm-sync-engine.js', 'blue');
+}
+
+// ── TOAST ────────────────────────────────────────────────────────────────────
+function toast(msg, type='emerald') {
+    const t = document.getElementById('toast');
+    const colors = { emerald:'var(--accent-emerald)', amber:'var(--accent-amber)', blue:'var(--accent-blue)', rose:'var(--accent-rose)' };
+    t.style.borderLeftColor = colors[type]||colors.emerald;
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+runDSR();
+renderClients();
+</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿<#
+<#
 ---
 Title: ZNS Validator (PowerShell)
 ID: SYS-022
@@ -31,7 +31,8 @@ $issues = @()
 $mdFiles = Get-ChildItem -Path $WorkspaceDir -Recurse -Filter "*.md" | Where-Object {
     $_.FullName -notmatch '\\\.git\\' -and 
     $_.FullName -notmatch '\\\.snapshots\\' -and 
-    $_.FullName -notmatch '\\\.agents\\'
+    $_.FullName -notmatch '\\\.agents\\' -and 
+    $_.FullName -notmatch '\\node_modules\\'
 }
 
 foreach ($file in $mdFiles) {

@@ -101,6 +101,22 @@ Scripts use comment-block headers (PowerShell `<# ... #>`, JS `/** ... */`).
 python "C:\Users\Dell\Documents\Projects ZK Nexus\05_Systems\Scripts\validate_zns.py" --workspace-root "C:\Users\Dell\Documents\Projects ZK Nexus"
 ```
 
+### 3.5 PONYTAIL YAGNI SENIOR DEV GUARDRAIL (MANDATORY FOR ALL AGENTS)
+All agents (Antigravity, OpenCODE, Kilo Code, Pi, OMP, Cline) MUST follow the **Ponytail Ladder of Laziness** before writing code:
+1. **Does it need to exist at all?** (Apply YAGNI — zero bloat).
+2. **Is it already in ZK-Nexus?** (Reuse existing components/scripts).
+3. **Does the standard library do it?** (Prefer native JS/Node/Python features).
+4. **Can it be written concisely in minimal code?**
+5. **Only write the minimum code required.** (Target 80% code reduction).
+
+### 3.6 MATT POCOCK SPEC-DRIVEN PIPELINE
+For non-trivial features, agents must use the installed skills:
+- `/grill-with-docs`: Align on architectural decisions before implementation.
+- `/to-spec`: Synthesize plans into formal ZNS specifications.
+- `/to-tickets`: Deconstruct specs into actionable micro-step tasks.
+- `/implement`: Build using TDD & spec verification.
+
+
 ---
 
 ## 4. ACTIVE PROJECTS

@@ -110,3 +110,7 @@ _create_dirs.py
 scratch/
 local/
 personal/
+
+# External Repositories (Cloned Toolsets)
+05_Systems/External-Repos/
+

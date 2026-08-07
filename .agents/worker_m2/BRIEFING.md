@@ -1,39 +1,52 @@
-# BRIEFING — Worker M2
+# BRIEFING — 2026-08-07T04:12:30Z
 
 ## Mission
-Execute Milestone 2 Project Archiving and Reference Repair plan.
+Implement the complete Branded REN Client Portal (`portal.html` and `05_Systems/Console-Portal/public/portal.html`) adhering strictly to UI/UX Pro Max standards (Slate Dark aesthetic, ZERO emojis, dynamic buyer dossiers, interactive DSR calculator, viewing calendar grid, 1-click PDF print export).
 
 ## 🔒 My Identity
-- Archetype: teamwork_preview_worker
-- Working directory: c:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2
-- Parent: Project Orchestrator
+- Archetype: implementer
+- Roles: implementer, qa, specialist
+- Working directory: C:\Users\Dell\Documents\Projects ZK Nexus\.agents\worker_m2
+- Original parent: 0edd6ac6-6ce3-46da-a98a-5c63107be662
+- Milestone: M2
 
 ## 🔒 Key Constraints
-- DO NOT CHEAT. All implementations must be genuine.
-- Ensure 0 broken links and full ZNS compliance.
+- Stripe/Linear Slate Dark aesthetic (`#0f172a` canvas, `#1e293b` cards, `#334155` borders, `#38bdf8` sky blue, `#10b981` emerald, `#f59e0b` amber, `#6366f1` indigo).
+- Crisp Inter typography & STRICTLY ZERO EMOJIS anywhere (use Lucide/Feather inline SVG icons).
+- White-label header with dynamic REN selector (`REN-001`, `REN-002`, `REN-003`), retainer status, lead summary, PDF export.
+- Assigned buyer dossiers grid dynamically filtered by selected REN with detailed financial metrics and Malay WhatsApp direct link.
+- Interactive DSR loan pre-approval calculator component (<40% Tier 1 Pre-Approved).
+- Viewing calendar schedule grid with anti-ghosting status pills (`T-2h Reminder Sent`).
+- 1-Click PDF print export (`@media print`) clean white paper A4 dossier print cards.
+- Keep `05_Systems/Console-Portal/public/portal.html` and `portal.html` (root) 100% byte-for-byte identical.
+- 0 ZNS validation errors.
 
 ## Current Parent
-- Conversation ID: 9ea319a6-f1c2-4c1a-8e62-87f63c6fce13
+- Conversation ID: 0edd6ac6-6ce3-46da-a98a-5c63107be662
+- Updated: 2026-08-07T04:12:30Z
 
 ## Task Summary
-- **What to build**: Move completed projects (PRJ-002, PRJ-003, PRJ-004) to archive, update registries (Active-Projects-List, Archive-Index, ID-Registry), repair frontmatter/links in project charters/reports, and run validate-zns.ps1.
-- **Success criteria**: All project directories moved, all registries updated, frontmatter Module=99_Archive/Status=Completed set, 0 broken links, 100% ZNS compliance.
+- **What to build**: Complete interactive Branded REN Client Portal HTML/CSS/JS web application.
+- **Success criteria**: All 9 requirements met, zero emojis, full interactivity, 0 ZNS errors, identical sync across both portal paths.
+- **Interface contracts**: PROJECT.md
+- **Code layout**: `05_Systems/Console-Portal/public/portal.html` and `portal.html`
+
+## Key Decisions Made
+- Single-file standalone HTML structure with embedded vanilla JS and CSS custom properties for zero-dependency execution.
+- Rich seed dataset for REN-001, REN-002, and REN-003 with local storage persistence and fallback loading.
+- Inline Lucide SVG icons used exclusively; zero emojis present in codebase.
 
 ## Change Tracker
-- **Files moved**:
-  - `02_Projects/Active/PRJ-002_Workspace-Cleanup` -> `99_Archive/Completed-Projects/PRJ-002_Workspace-Cleanup`
-  - `02_Projects/Active/PRJ-003_Business-Readiness` -> `99_Archive/Completed-Projects/PRJ-003_Business-Readiness`
-  - `02_Projects/Active/PRJ-004_Sales-Engine` -> `99_Archive/Completed-Projects/PRJ-004_Sales-Engine`
-- **Files modified**:
-  - `02_Projects/Active-Projects-List.md`: Updated Archive Location column for PRJ-002, PRJ-003, PRJ-004.
-  - `99_Archive/Archive-Index.md`: Populated PRJ-001 through PRJ-004 in Archived Items and Completed Projects tables.
-  - `00_Command Center/ID-Registry.md`: Updated PRJ-004 status from Active to Completed.
-  - `99_Archive/Completed-Projects/PRJ-002_Workspace-Cleanup/project-charter.md`: Module=99_Archive, Status=Completed, link repair.
-  - `99_Archive/Completed-Projects/PRJ-002_Workspace-Cleanup/project-report.md`: Module=99_Archive.
-  - `99_Archive/Completed-Projects/PRJ-003_Business-Readiness/project-charter.md`: Module=99_Archive, Status=Completed.
-  - `99_Archive/Completed-Projects/PRJ-003_Business-Readiness/project-report.md`: Module=99_Archive, link repair.
-  - `99_Archive/Completed-Projects/PRJ-004_Sales-Engine/project-report.md`: Module=99_Archive, Status=Completed.
-- **Build status**: PASS (298 valid ZNS files, 0 non-compliant).
+- **Files modified**: `05_Systems/Console-Portal/public/portal.html`, `portal.html`
+- **Build status**: PASS (0 ZNS errors, SHA256 hashes identical)
+- **Pending issues**: None
 
 ## Quality Status
-- **Validation result**: `validate-zns.ps1` returned exit code 0, 100% compliance.
+- **Build/test result**: PASS (Tested DSR formula, REN selector filtering, emoji scanner = 0, validate-zns.ps1 = 0 errors)
+- **Lint status**: 0 ZNS violations
+- **Tests added/modified**: Automated hash check & python emoji scanner
+
+## Loaded Skills
+- **Source**: `C:\Users\Dell\Documents\Projects ZK Nexus\.agents\skills\ui-ux-pro-max-skill\SKILL.md`
+- **Local copy**: `C:\Users\Dell\Documents\Projects ZK Nexus\.agents\skills\ui-ux-pro-max-skill\SKILL.md`
+- **Core methodology**: Production UI design engineering, Slate Dark palette, 8pt spacing, WCAG AA contrast, crisp Inter font, ZERO emojis, component modularity.

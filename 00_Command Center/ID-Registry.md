@@ -116,6 +116,8 @@ Related: RUL-001, IDX-001
 |----|------|--------|--------|
 | SYS-001 | ZK Revenue Ops WebApp | Active | 05_Systems |
 | SYS-002 | Jarvis Command Center WebApp | In Development | 05_Systems |
+| SYS-023 | External AI Coding Tools Registry | Active | 05_Systems |
+
 
 ### WFR — Workforce Records
 
